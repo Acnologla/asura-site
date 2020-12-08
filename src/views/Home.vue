@@ -2,7 +2,7 @@
     <div class="home">
         <Galos @change="change"></Galos>
         <center>
-            <h1 style="margin-top: -70px;font-family: Roboto;font-size: 32px">{{this.classes[this.current+1].name}}</h1>
+            <h1 style="margin-top: -90px;font-family: Roboto;font-size: 32px">{{this.classes[this.current+1].name}}</h1>
             <br>
             <div class="columns is-multiline" style="margin-left: 30px;margin-right: 30px">
                 <Skill class="column is-three-quarters-mobile is-half-tablet is-one-third-desktop is-one-quarter-widescreen is-one-quarter-fullhd" v-for="(skill,i) in skills" :key="i" :skill="skill"></Skill>

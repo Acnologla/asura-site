@@ -3,6 +3,9 @@
   <b-carousel
       @change="change($event)"
       class = "galos"
+      arrow
+      :arrowHover="false"
+      :indicator="false"
       :pause-info="false"
       :repeat="false"
       :autoplay="false"
