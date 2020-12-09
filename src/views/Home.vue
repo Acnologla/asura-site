@@ -35,11 +35,13 @@ export default {
     methods: {
         change(val) {
             this.current = val
+            this.$router.push({query: {
+                galo: val,
+            }})
             this.updateSkills()
         },
         findBad(galo){
             if (!this.classes[galo+1].disadvantages) return [];
-            console.log(this.classes[galo+1].disadvantages.map(disadvantage => this.classes[disadvantage]))
             return this.classes[galo+1].disadvantages.map(disadvantage => this.classes[disadvantage])
         },
         findGood(galo){
@@ -68,6 +70,9 @@ export default {
         await axios.get("https://raw.githubusercontent.com/Acnologla/asura/master/resources/galo/effects.json").then(effects => {
             this.effects = effects.data
         })
+         if (this.$route.query.galo){
+            this.current = parseInt(this.$route.query.galo)
+        }
         this.updateSkills()
     },
     components: {

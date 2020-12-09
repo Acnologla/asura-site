@@ -4,6 +4,7 @@
       @change="change($event)"
       class = "galos"
       arrow
+      v-model="selected"
       :arrowHover="false"
       :indicator="false"
       :pause-info="false"
@@ -27,7 +28,8 @@ export default {
   name: "galos",
   data(){
     return {
-      sprites: []
+      sprites: [],
+      selected: 0
     }
   },
   methods: {
@@ -36,6 +38,9 @@ export default {
     }
   },
   created(){
+    if (this.$route.query.galo){
+      this.selected = parseInt(this.$route.query.galo)
+    }
     axios.get("https://raw.githubusercontent.com/Acnologla/asura/master/resources/galo/sprites.json").then(result => {
       this.sprites = result.data[0]
     })
