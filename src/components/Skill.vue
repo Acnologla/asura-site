@@ -9,7 +9,7 @@
     <div class="content" style="text-align: left">
       Dano minimo: {{skill.damage[0]}}
       <br>
-      Dano maximo: {{skill.damage[1]}}
+      Dano maximo: {{skill.damage[1] - 1}}
       <div v-if="skill.effect">
             <hr>
             <p v-if="effect" style="cursor: pointer" @click="changeEffect">
@@ -22,7 +22,7 @@
                 <span v-if="skill.effect.effect.type === 1">
                 Dano minimo: {{skill.effect.effect.range[0]}}
                 <br>
-                Dano maximo: {{skill.effect.effect.range[1]}}
+                Dano maximo: {{skill.effect.effect.range[1] - 1}}
                 </span>
                 <span v-if="skill.effect.effect.type === 2">
                 Cura minima: {{skill.effect.effect.range[0]}} 
