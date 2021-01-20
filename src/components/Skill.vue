@@ -31,6 +31,7 @@
                 </span>
                 <span v-if="skill.effect.effect.type === 3">Stun: 1 turno</span>
                 <span v-if="skill.effect.effect.type === 4">Dano reduzido: {{skill.effect.effect.range[0]}}%</span>
+                <span v-if="skill.effect.effect.type === 5">Refletir o proximo ataque</span>
             </p>
             <b-button v-else @click="changeEffect" type="is-primary is-light">Efeito</b-button>
       </div>
