@@ -1,4 +1,4 @@
 module.exports = {
   lintOnSave: false,
-  publicPath: "/asura-galos"
+  publicPath: "/asura-site"
 }
