@@ -1,3 +1,5 @@
+const path= require("path")
+const fs = require("fs")
 module.exports = {
   lintOnSave: false,
   publicPath: "/asura-site",
@@ -8,6 +10,17 @@ module.exports = {
         return opts;
       });
     }
-
+  },
+  configureWebpack: {
+    plugins: [
+     {
+      apply: (compiler) => {
+        compiler.hooks.afterEmit.tap('AfterEmitPlugin', (compilation) => {
+         const content = fs.readFileSync(path.join(__dirname, "./dist/404.html"), "utf-8")
+         fs.writeFileSync(path.join(__dirname, "./dist/index.html"), content)
+        });
+     }
+    }
+    ]
   }
 }
