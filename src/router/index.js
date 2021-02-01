@@ -3,6 +3,8 @@ import VueRouter from 'vue-router'
 import Galos from "../views/Galos"
 import Home from '../views/Home'
 import Donate from "../views/Donate"
+import RinhaTutorial from "../views/RinhaTutorial"
+
 
 Vue.use(VueRouter)
 
@@ -21,6 +23,11 @@ const routes = [
     path: "/donate",
     name: "Donate",
     component: Donate
+  },
+  {
+    path: "/tutorial",
+    name: "RinhaTutorial",
+    component: RinhaTutorial
   }
 ]
 

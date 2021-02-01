@@ -2,10 +2,12 @@ module.exports = {
   lintOnSave: false,
   publicPath: "/asura-site",
   chainWebpack: (config) => {
-    config.plugin('html').tap((opts) => {
-      opts[0].filename = './404.html';
-      return opts;
-    });
+    if (process.env.NODE_ENV === "production"){
+      config.plugin('html').tap((opts) => {
+        opts[0].filename = './404.html';
+        return opts;
+      });
+    }
 
   }
 }

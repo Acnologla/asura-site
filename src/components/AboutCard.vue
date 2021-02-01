@@ -20,8 +20,7 @@
                 {{ title }}
               </h2>
               <br />
-              <p class="aboutDescription">
-                {{ description }}
+              <p v-html="description" class="aboutDescription">
               </p>
             </div>
           </div>
@@ -34,8 +33,7 @@
                 {{ title }}
               </h2>
               <br />
-              <p class="aboutDescription">
-                {{ description }}
+                <p v-html="description" class="aboutDescription">
               </p>
             </div>
           </div>
