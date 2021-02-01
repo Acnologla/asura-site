@@ -17,7 +17,7 @@
             Atualmente é preciso gastar 20 dolares mensalmente (cerca de 110 reais) para
             hospedar o asura.
             <br />
-            Doar ajuda o bot a se manter online, faz a qualidade do bot aumenta, fique
+            Doar ajuda o bot a se manter online, faz a qualidade do bot aumentar, fique
             mais divertido, e ajuda o dono do bot.
           </p>
         </div>
