@@ -1,0 +1,14 @@
+.title {
+    font-family: Rubik;
+    font-weight: 500px;
+    width: 80vw;
+  }
+.subtitle {
+    font-family: Rubik;
+    font-weight: 400px;
+}
+.aboutDescription {
+    font-family: Rubik;
+    font-weight: 400px;
+    font-size: 20px;
+  }

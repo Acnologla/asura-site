@@ -1,6 +1,7 @@
 <template>
   <div id="app">
-    <router-view/>
+    <Nav/>
+    <router-view style="margin-top: 70px"/>
   </div>
 </template>
 
@@ -26,3 +27,10 @@
   color: #42b983;
 }
 </style>
+
+<script>
+  import Nav from "./components/Nav"
+  export default {
+    components: {Nav}
+  }
+</script>
