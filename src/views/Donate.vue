@@ -44,7 +44,7 @@
 <style>
 .donateTitle {
   font-family: Rubik;
-  font-weight: 500px;
+  font-weight: 500;
    font-size: 40px
 }
 </style>
