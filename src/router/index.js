@@ -3,8 +3,8 @@ import VueRouter from 'vue-router'
 import Galos from "../views/Galos"
 import Home from '../views/Home'
 import Donate from "../views/Donate"
-import RinhaTutorial from "../views/RinhaTutorial"
 
+const RinhaTutorial = () => import("../views/RinhaTutorial")
 
 Vue.use(VueRouter)
 
