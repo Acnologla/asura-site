@@ -26,6 +26,20 @@
 #nav a.router-link-exact-active {
   color: #42b983;
 }
+[data-theme='dark']{
+    background-color: #2A2D32;
+    color: white;
+}
+[data-theme='dark'] #app{
+    color: white;
+}
+[data-theme="dark"] .card{
+  background-color: #1D1F21;
+  color: white;
+}
+[data-theme="dark"] .card-footer{
+  border-top-color: #2A2D32;
+}
 </style>
 
 <script>

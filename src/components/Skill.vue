@@ -53,6 +53,14 @@
         margin-top: auto;  
 }
 
+[data-theme="dark"] .card hr{
+  background-color: #2A2D32;
+}
+
+[data-theme="dark"] .button.is-primary.is-light{
+    color: #f2effb;
+    background-color: #552fbc
+}
 </style>
 <script>
 export default{

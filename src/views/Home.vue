@@ -1,6 +1,5 @@
 <template>
   <div>
-  <div class="bgBox"></div>
     <main>
       <div class="text">
         <h1 class="title">Se divirta no seu Servidor de Discord com o Asura</h1>
@@ -45,20 +44,6 @@
 </template>
 
 <style>
-.bgBox {
-  position: absolute;
-  top: 70px;
-  width: 100vw;
-  height: 100vh;
-  background-color: #f3f4f5;
-  clip-path: polygon(100% 0, 0 100%, 100% 100%);
-  transform: rotate(180deg);
-}
-@media screen and (max-width: 768px) {
-  .bgBox{
-    display: none;
-  }
-}
 @media screen and (max-width: 490px) {
   .invite {
     margin-right: 0px !important;
@@ -83,6 +68,12 @@
   left: 50%;
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
+}
+[data-theme="dark"] .arrow{
+  color: white;
+}
+[data-theme="dark"] .arrow:hover{
+  color: grey;
 }
 </style>
 <script>

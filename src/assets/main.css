@@ -11,3 +11,6 @@
     font-weight: 400px;
     font-size: 20px;
   }
+[data-theme="dark"] .title, [data-theme="dark"] .subtitle{
+  color: #fff !important;
+}

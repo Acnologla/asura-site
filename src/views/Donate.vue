@@ -29,6 +29,7 @@
       <div style="text-align: center">
         <h2 class="donateTitle">Premio por doar</h2>
       </div>
+      <br>
        <div style="max-width:500px" class="columns is-centered">
             <div class = "column is-three-quarters-mobile is-half">
                 <DonateCard price="R$ 15 a cada 400 moedas" description="Comprar dinheiro avulsamente na sua conta" title="Compra de dinheiro"/>
