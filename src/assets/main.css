@@ -12,5 +12,5 @@
     font-size: 20px;
   }
 [data-theme="dark"] .title, [data-theme="dark"] .subtitle{
-  color: #fff !important;
+  color: #ECEFF4 !important;
 }

@@ -15,7 +15,7 @@
             <a
               href=" https://discordapp.com/oauth2/authorize?client_id=470684281102925844&scope=bot&permissions=8"
               target="_blank"
-              style="color: white"
+              style="color: #ECEFF4"
               >Me adicione</a
             >
           </b-button>
@@ -70,7 +70,7 @@
   transform: translate(-50%, -50%);
 }
 [data-theme="dark"] .arrow{
-  color: white;
+  color: #ECEFF4;
 }
 [data-theme="dark"] .arrow:hover{
   color: grey;

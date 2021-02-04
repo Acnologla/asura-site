@@ -53,10 +53,10 @@
     font-size: 20px;
 }
 [data-theme="dark"] .navTitle{
-    color: #fff;
+    color: #ECEFF4;
 }
 [data-theme="dark"] .navItem{
-    color: #fff ;
+    color: #ECEFF4 ;
 }
 [data-theme="dark"] .navItem:hover{
     color: grey;

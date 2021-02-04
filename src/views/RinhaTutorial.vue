@@ -89,6 +89,9 @@ article {
 .bold {
   font-weight: 600;
 }
+[data-theme="dark"] .bold{
+  color: #E5E9F0;
+}
 </style>
 <script>
 import "../assets/main.css";

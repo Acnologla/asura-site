@@ -30,12 +30,12 @@
         <h2 class="donateTitle">Premio por doar</h2>
       </div>
       <br>
-       <div style="max-width:500px" class="columns is-centered">
+       <div id="donateCards" style="max-width:500px" class="columns is-centered">
             <div class = "column is-three-quarters-mobile is-half">
                 <DonateCard price="R$ 15 a cada 400 moedas" description="Comprar dinheiro avulsamente na sua conta" title="Compra de dinheiro"/>
             </div>
             <div class = "column is-three-quarters-mobile is-half">
-                <DonateCard price = "R$ X reais mensalmente" description="Beneficios: <br>  -Galo exclusivo  <br> -Xp extra por partida" title="Vip"/>
+                <DonateCard price = "R$ 40 reais mensalmente" description="Beneficios: <br>  -Galo exclusivo  <br> -Xp extra por partida" title="Vip"/>
 
             </div>
        </div>
@@ -43,6 +43,11 @@
   </article>
 </template>
 <style>
+@media screen and (max-width: 499px) {
+  #donateCards{
+    max-width: 100% !important;
+  }
+}
 .donateTitle {
   font-family: Rubik;
   font-weight: 500;
