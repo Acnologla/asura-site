@@ -3,6 +3,7 @@ const fs = require("fs")
 module.exports = {
   lintOnSave: false,
   publicPath: "/asura-site",
+  productionSourceMap: false,
   chainWebpack: (config) => {
     if (process.env.NODE_ENV === "production"){
       config.plugin('html').tap((opts) => {
