@@ -12,6 +12,7 @@
     "buefy": "^0.9.4",
     "core-js": "^3.6.5",
     "node-sass": "^5.0.0",
+    "prerender-spa-plugin": "^3.4.0",
     "sass-loader": "^10.1.1",
     "vue": "^2.6.11",
     "vue-router": "^3.2.0"

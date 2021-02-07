@@ -14,24 +14,3 @@
 [data-theme="dark"] .title, [data-theme="dark"] .subtitle{
   color: #ECEFF4 !important;
 }
-
-
-* {
-  scrollbar-width: thin;
-  scrollbar-color: #552fbc
-}
-
-*::-webkit-scrollbar {
-  width: 8px;
-}
-
-*::-webkit-scrollbar-track {
-  background: #F1F1F1;  
-  margin-top: 5px;
-  margin-bottom: 5px;
-}
-
-*::-webkit-scrollbar-thumb {
-  background-color: #552fbc;
-  border-radius: 20px;
-}
