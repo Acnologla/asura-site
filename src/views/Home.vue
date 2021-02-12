@@ -10,17 +10,15 @@
           <b-button
             class="invite"
             type="is-primary"
-            style="margin-right: 30px; width: 180px"
+            style="margin-right: 30px; width: 180px;color: #ECEFF4"
+            href=" https://discordapp.com/oauth2/authorize?client_id=470684281102925844&scope=bot&permissions=8"
+            target="_blank"
+            tag="a"
           >
-            <a
-              href=" https://discordapp.com/oauth2/authorize?client_id=470684281102925844&scope=bot&permissions=8"
-              target="_blank"
-              style="color: #ECEFF4"
-              >Me adicione</a
-            >
+            Me adicione
           </b-button>
-          <b-button type="is-primary is-light" style="width: 180px">
-            <a href="https://discord.gg/tdVWQGV" target="_blank">Servidor de suporte</a>
+          <b-button tag="a" href="https://discord.gg/tdVWQGV" target="_blank" type="is-primary is-light" style="width: 180px">
+            Servidor de suporte
           </b-button>
         </div>
       </div>

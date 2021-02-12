@@ -53,6 +53,9 @@
 .card-footer {
   margin-top: auto;
 }
+[data-theme="dark"] b{
+  font-weight: 500
+}
 </style>
 <script>
 export default {

@@ -2,13 +2,13 @@
     <div>
         <Galos @change="change"></Galos>
         <center>
-            <h1 style="margin-top: -90px;font-family: Roboto;font-size: 32px">{{this.classes[this.current+1].name }}</h1>
+            <h1 style="margin-top: -90px;font-family: Rubik;font-size: 32px">{{this.classes[this.current+1].name }}</h1>
             <br>
             <div class="columns is-variable is-centered" style="margin-left: 30px;margin-right: 30px">
                 <card class ="column is-three-quarters-mobile is-half-tablet is-one-third" type="Bom contra" :galos="findGood(this.current)" ></card>
                 <card class ="column is-three-quarters-mobile is-half-tablet is-one-third" type="Ruim contra" :galos="findBad(this.current)" ></card>
             </div>
-            <h1 style="margin-bottom:20px;font-family: Roboto;font-size: 32px">Habilidades</h1>
+            <h1 style="margin-bottom:20px;font-family: Rubik;font-size: 32px">Habilidades</h1>
             <br>
             <div class="columns is-multiline" style="margin-left: 30px;margin-right: 30px">
                 <Skill class="column is-three-quarters-mobile is-half-tablet is-one-third-desktop is-one-quarter-widescreen is-one-quarter-fullhd" v-for="(skill,i) in skills" :key="i" :skill="skill"></Skill>

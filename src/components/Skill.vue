@@ -44,7 +44,9 @@
 </div>
 </template>
 <style scoped>
-
+.card-header-title{
+    font-weight: 500 ;
+}
 .card {
         display: flex;
         flex-direction: column;

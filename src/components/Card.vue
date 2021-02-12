@@ -18,6 +18,11 @@
   </div>
 </div>
 </template>
+<style scoped>
+.card-header-title{
+    font-weight: 500 ;
+}
+</style>
 <script>
 export default{
     name: "Card",
