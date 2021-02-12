@@ -1,26 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <meta property="og:title" content="Asura"/>
-    <meta property="og:description" content="Um bot de diversão para o discord">
-    <meta property="og:image" content="https://cdn.discordapp.com/avatars/470684281102925844/e1dfb36e69e5b83f081f8ee3ba1adbd3.png?size=512">
-    <meta property="og:site_name" content="Asura bot"/>
-    <meta name="theme-color" content="#552fbc">
-    <link rel="stylesheet" href="https://cdn.materialdesignicons.com/5.3.45/css/materialdesignicons.min.css">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500&display=swap" rel="stylesheet">
-    <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900italic,900' rel='stylesheet' type='text/css'>
-    <link rel="icon" href="https://cdn.discordapp.com/avatars/470684281102925844/e1dfb36e69e5b83f081f8ee3ba1adbd3.webp?size=512">
-    <title>Asura site</title>
-  </head>
-  <body>
-    <noscript>
-      <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
-    </noscript>
-    <div id="app"></div>
-    <!-- built files will be auto injected -->
-  </body>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <meta property="og:title" content="Asura" />
+  <meta property="og:description" content="Um bot de diversão para o discord">
+  <meta property="og:image"
+    content="https://cdn.discordapp.com/avatars/470684281102925844/e1dfb36e69e5b83f081f8ee3ba1adbd3.png?size=512">
+  <meta property="og:site_name" content="Asura bot" />
+  <meta name="theme-color" content="#552fbc">
+  <link rel="stylesheet" href="https://cdn.materialdesignicons.com/5.3.45/css/materialdesignicons.min.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500&display=swap" rel="stylesheet">
+  <link
+    href='https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900italic,900'
+    rel='stylesheet' type='text/css'>
+  <link rel="icon"
+    href="https://cdn.discordapp.com/avatars/470684281102925844/e1dfb36e69e5b83f081f8ee3ba1adbd3.webp?size=512">
+  <title>Asura site</title>
+  <style>
+    [v-cloak]>* {
+      display: none
+    }
+
+    [v-cloak]::before {
+      background-position: center;
+      background-size: 25vw;
+      background-repeat: no-repeat;
+      display: block;
+      width: 100vw;
+      height: 100vh;
+      content: " ";
+      background-image: url("https://cdn.discordapp.com/attachments/397528821307539486/809593361505058836/Rolling-1s-474px.png");
+    }
+  </style>
+</head>
+
+<body>
+  <noscript>
+    <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled.
+        Please enable it to continue.</strong>
+  </noscript>
+  <div id="app" v-cloak></div>
+  <!-- built files will be auto injected -->
+</body>
+
 </html>
