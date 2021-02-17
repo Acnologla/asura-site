@@ -35,7 +35,7 @@
                 <DonateCard price="R$ 15 a cada 400 moedas" description="Comprar dinheiro avulsamente na sua conta." title="Compra de dinheiro"/>
             </div>
             <div class = "column is-three-quarters-mobile is-half">
-                <DonateCard price = "R$ 40 reais mensalmente" description="Background exclusivo.  <br>Xp extra por partida. <br>Badge exclusiva." title="Vip"/>
+                <DonateCard price = "R$ 35 reais mensalmente" description="Background exclusivo.  <br>Xp extra por partida. <br>Trocar nome do galo gratuitamente." title="Vip"/>
 
             </div>
        </div>

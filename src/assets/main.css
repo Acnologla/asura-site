@@ -4,11 +4,11 @@
   }
 .subtitle {
     font-family: Rubik;
-    font-weight: 400px;
+    font-weight: 400;
 }
 .aboutDescription {
     font-family: Rubik;
-    font-weight: 400px;
+    font-weight: 400;
     font-size: 20px;
   }
 [data-theme="dark"] .title, [data-theme="dark"] .subtitle{

@@ -40,13 +40,22 @@
         dinheiro. Dinheiro pode user usado para mudar o nome do seu galo usando
         <span class="bold">j!changename novoNome</span> (ira custar 100 de dinheiro), ou
         pode ser usado para comprar lootboxs usando <span class="bold">j!lootbox</span>.
-        Existem 3 tipos de lootbox (comum, normal e rara) quando voce abrir uma delas voce
+        Existem 3 tipos de lootbox (comum, normal, rara e cosmetica) quando voce abrir uma delas voce
         ira ganhar um galo de uma das 4 raridades, quanto maior o nivel da caixa mais a
         sua chance de pegar galos mais raros. Apos abrir uma lootbox use
         <span class="bold">j!equip</span> para ver e quipar o galo que voce ganhou, caso
         queira equipar seu galo use <span class="bold">j!equip numerodoGalo</span> ou caso
         queira vender ele para ganhar mais dinheiro use
         <span class="bold">j!equip numeroDoGalo remove</span>.
+      </p>
+    </section>
+    <hr style="margin-left: 10vw; margin-right: 10vw; background-color: #552fbc" />
+     <section>
+      <h2 class="title">Cosmeticos</h2>
+      <p class="aboutDescription">
+          Voce pode comprar lootboxs cosmeticas usando <span class="bold">j!lootbox buy cosmetica</span> 
+          sempre que voce abrir uma lootbox cosmetica voce ira ganhar um background
+          que ira ser usado como imagem de fundo nos comandos <span class="bold">j!galo & j!perfil</span>. Voce pode equipar backgrounds usando o comando <span class="bold">j!backgrounds</span>, existem 4 raridades de backgrounds (comuns, raros, epicos e lendarios).
       </p>
     </section>
     <hr style="margin-left: 10vw; margin-right: 10vw; background-color: #552fbc" />
@@ -74,6 +83,7 @@
         contra um amigo ganha faz voce ganhar 1 de xp para o seu clan. Quanto mais alto o
         nivel do seu clan mais vantagens os membros do clan terão, sendo o nivel 5 o
         maximo de nivel para um clan.
+        Cada clan ira ter uma missão por semana, e quando ela for concluida ira dar xp e dinheiro dividido entre todos os membros do clan.
       </p>
     </section>
     <hr style="margin-left: 10vw; margin-right: 10vw; background-color: #552fbc" />
@@ -90,7 +100,8 @@ article {
   font-weight: 600;
 }
 [data-theme="dark"] .bold{
-  color: #E5E9F0;
+  color: #fff;
+  font-weight: 500;
 }
 </style>
 <script>
