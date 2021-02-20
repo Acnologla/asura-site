@@ -23,7 +23,7 @@
         </div>
       </div>
       <a class="arrow" href="#about">
-        <i class="fas fa-chevron-down"></i>
+           <font-awesome-icon icon="chevron-down" />
       </a>
     </main>
     <section>

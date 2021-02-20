@@ -9,8 +9,10 @@ module.exports = {
      {
       apply: (compiler) => {
         compiler.hooks.afterEmit.tap('AfterEmitPlugin', () => {
-         const content = fs.readFileSync(path.join(__dirname, "./dist/index.html"), "utf-8")
-         fs.writeFileSync(path.join(__dirname, "./dist/404.html"), content)
+          try{
+            const content = fs.readFileSync(path.join(__dirname, "./dist/index.html"), "utf-8")
+            fs.writeFileSync(path.join(__dirname, "./dist/404.html"), content)
+          }catch(_){}
         });
      }
     }

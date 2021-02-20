@@ -19,7 +19,8 @@
                 Doaçoes
             </b-navbar-item>
             <b-navbar-item class="navItem" @click="changeTheme">
-               <i id="themeIcon" class="fas"></i>
+                <font-awesome-icon v-if="dark" icon="sun" />
+                <font-awesome-icon v-else icon="moon" />
             </b-navbar-item>
             <b-navbar-item tag="div" id="add" style="margin-right: 30px">
                 <div>
@@ -89,24 +90,16 @@ export default{
             }
         },
         changeTheme(){
-            if (this.dark){
-                localStorage.removeItem("theme")
-            }else{
-                localStorage.setItem("theme", "dark")
-            }
+            this.dark
+                ? localStorage.removeItem("theme")
+                : localStorage.setItem("theme", "dark")
             this.dark = !this.dark
             this.applyTheme()
         },
         applyTheme(){
-            if (this.dark){
-                themeIcon.classList.remove("fa-moon")
-                themeIcon.classList.add("fa-sun")
-                document.body.setAttribute("data-theme", "dark")
-            }else{
-                 themeIcon.classList.remove("fa-sun")
-                themeIcon.classList.add("fa-moon")
-                document.body.removeAttribute("data-theme")
-            }
+            this.dark
+                ? document.body.setAttribute("data-theme", "dark")
+                : document.body.removeAttribute("data-theme")
         }
     }
 }

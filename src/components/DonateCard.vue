@@ -7,9 +7,10 @@
     </header>
     <div class="card-content">
       <div v-html="description" class="content" style="text-align: left"></div>
-      <p><b>{{price}}</b></p>
     </div>
-    <footer class="card-footer" style="justify-content: center">
+    <footer  class="card-footer" style="display:block !important;justify-content: center">
+    <p><b>{{price}}</b></p>
+    <br>
     <b-button
         label="Comprar"
         type="is-success"
