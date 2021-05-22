@@ -11,10 +11,9 @@
         >
         Apos isso use o comando <span class="bold">j!missoes</span> para ver suas missoes
         diarias, voce ira começar com 3 e elas voltaram uma a cada dia. Use
-        <span class="bold">j!train</span> para batalhar contra um galo aleatorio sem valer
-        nada, apenas para completar as suas missoes diarias ou use
+        <span class="bold">j!train</span> para ganhar xp e dinheiro.
         <span class="bold">j!rinha @usuario</span> para batalhar com algum amigo, caso
-        vença voce ira ganhar 5 de dinheiro e xp baseado no nivel do seu adversario
+        vença voce ira ganhar 4 de dinheiro e xp baseado no nivel do seu adversario
         (tambem completa missoes diarias).
       </p>
     </section>
