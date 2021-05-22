@@ -1,6 +1,6 @@
 <template>
     <div>
-        <Galos @change="change"></Galos>
+        <Galos :classes="classes" @change="change"></Galos>
         <center>
             <h1 style="margin-top: -90px;font-family: Rubik;font-size: 32px">{{this.classes[this.current+1].name }}</h1>
             <br>

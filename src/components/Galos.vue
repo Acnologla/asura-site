@@ -14,7 +14,7 @@
   >
         <b-carousel-item v-for="(sprite, i) in sprites" :key="i">
            <span class="image">
-              <img :src="sprite" style="height: 200px">
+              <img :src="sprite" :style="`height: 200px;border: 4px solid ${colors[classes[selected+1].rarity]}`">
             </span>
         </b-carousel-item>
   </b-carousel>
@@ -29,8 +29,12 @@ export default {
   data(){
     return {
       sprites: [],
-      selected: 0
+      selected: 0,
+      colors: ["#CDE3FF", "#0000FF", "#9400D3", "#FF9000", "#FF4040"]
     }
+  },
+  props: {
+    classes: Array
   },
   methods: {
     change(val){
