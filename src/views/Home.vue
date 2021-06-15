@@ -64,11 +64,7 @@
       transform: translateY(-5px);
   }
 }
-@media screen and (max-width: 490px) {
-  .invite {
-    margin-right: 0px !important;
-  }
-}
+
 #about {
   margin-top: 100vh;
   width: 100%;
@@ -94,6 +90,14 @@
 }
 [data-theme="dark"] .arrow:hover{
   color: grey;
+}
+@media screen and (max-width: 490px) {
+  .invite {
+    margin-right: 0px !important;
+  }
+  .arrow{
+    top: 82vh;
+  }
 }
 </style>
 <script>
