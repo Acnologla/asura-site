@@ -28,6 +28,9 @@ body {
   color: #2c3e50;
 }
 
+.title{
+  color: #4c566a !important
+}
 #nav a.router-link-exact-active {
   color: #42b983;
 }

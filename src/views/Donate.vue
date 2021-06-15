@@ -54,7 +54,11 @@
 .donateTitle {
   font-family: Rubik;
   font-weight: 500;
-   font-size: 40px
+   font-size: 40px;
+   color: #4c566a
+}
+[data-theme="dark"] .donateTitle{
+  color: #ECEFF4 
 }
 </style>
 <script>

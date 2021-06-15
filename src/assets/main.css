@@ -16,7 +16,7 @@
 }
 
 [data-theme="dark"] .menu-label, [data-theme="dark"] .menu-list li span {
-  color: white !important;
+  color: #ECEFF4  !important;
 }
 
 [data-theme="dark"] .menu-list li a:hover:not(.is-active){
