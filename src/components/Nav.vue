@@ -1,5 +1,5 @@
 <template>
- <b-navbar centered  :type="dark ? 'is-dark' : ''" class="nav" style="box-shadow: 0px 0px 20px rgba(0,0,0,0.1)a" fixed-top>
+ <b-navbar centered  :type="dark ? 'is-dark' : ''" class="nav" style="box-shadow: 0px 0px 20px rgba(0,0,0,0.1);max-width: 100vw;" fixed-top>
         <template #brand>
         <b-navbar-item style="margin-left: 30px" tag="router-link" :to="{ name: 'Home' }"  >
           <span class="navTitle">Asura Bot</span>
