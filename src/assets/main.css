@@ -14,3 +14,12 @@
 [data-theme="dark"] .title, [data-theme="dark"] .subtitle{
   color: #ECEFF4 !important;
 }
+
+[data-theme="dark"] .menu-label, [data-theme="dark"] .menu-list li span {
+  color: white !important;
+}
+
+[data-theme="dark"] .menu-list li a:hover:not(.is-active){
+  background-color: #1D1F21;
+  opacity: 0.5;
+}
