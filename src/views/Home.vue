@@ -15,14 +15,18 @@
             target="_blank"
             tag="a"
           >
+          <span style="font-weight: 500">
             Me adicione
+          </span>
           </b-button>
           <b-button tag="a" href="https://discord.gg/tdVWQGV" target="_blank" type="is-primary is-light" style="width: 180px">
+            <span style="font-weight: 500">
             Servidor de suporte
+          </span>
           </b-button>
         </div>
       </div>
-      <a class="arrow" href="#about">
+      <a class="arrow object" href="#about">
            <font-awesome-icon icon="chevron-down" />
       </a>
     </main>
@@ -41,7 +45,25 @@
   </div>
 </template>
 
-<style>
+<style> 
+.object {
+  animation: MoveUpDown 2.5s infinite;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+
+@keyframes MoveUpDown {
+  0%, 20%, 50%, 80%, 100% {
+      transform: translateY(15px);
+  }
+  40% {
+      transform: translateY(-10px);
+  }
+  60% {
+      transform: translateY(-5px);
+  }
+}
 @media screen and (max-width: 490px) {
   .invite {
     margin-right: 0px !important;

@@ -14,9 +14,6 @@
   color: #2c3e50;
 }
 
-nav {
-    border-bottom: 4px solid #552fbc;
-}
 
 #nav {
   padding: 30px;

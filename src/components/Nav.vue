@@ -1,14 +1,11 @@
 <template>
- <b-navbar :type="dark ? 'is-dark' : ''" class="nav" style="box-shadow: 0px 0px 20px rgba(0,0,0,0.1)a" fixed-top>
+ <b-navbar centered  :type="dark ? 'is-dark' : ''" class="nav" style="box-shadow: 0px 0px 20px rgba(0,0,0,0.1)a" fixed-top>
         <template #brand>
         <b-navbar-item style="margin-left: 30px" tag="router-link" :to="{ name: 'Home' }"  >
           <span class="navTitle">Asura Bot</span>
         </b-navbar-item>
         </template>
-        <template #end>
-         <b-navbar-item tag="router-link" :to="{ name: 'Home' }" class="navItem">
-                Home
-            </b-navbar-item>
+        <template #start>
             <b-navbar-item href="#about" @click="about" class="navItem">
                 Sobre
             </b-navbar-item>
@@ -18,6 +15,11 @@
             <b-navbar-item tag="router-link" :to="{ name: 'Donate' }"  class="navItem">
                 Doaçoes
             </b-navbar-item>
+              <b-navbar-item tag="router-link" :to="{ name: 'Commands' }"  class="navItem">
+                Comandos
+            </b-navbar-item>
+        </template>
+        <template #end>
             <b-navbar-item class="navItem" @click="changeTheme">
                 <font-awesome-icon v-if="dark" icon="sun" />
                 <font-awesome-icon v-else icon="moon" />
@@ -30,7 +32,7 @@
                 </div>
             </b-navbar-item>
         </template>
-      <template slot-scope="{isOpened, toggleActive}" slot="burger">
+      <template slot-scope="{toggleActive}" slot="burger">
             <a style="margin-top:5px;margin-right: 30px" role="button" @click="toggleActive" aria-label="menu" class= "navbar-burger burger"><span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span></a>
         </template>
     </b-navbar>
@@ -43,7 +45,7 @@
   }
 }
 .navTitle{
-    font-weight: 500;
+    font-weight: 600;
     color: rgb(76, 86, 106);
     font-family: Rubik;
     font-size: 30px;
