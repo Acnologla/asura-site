@@ -19,6 +19,13 @@
     </section>
     <hr style="margin-left: 10vw; margin-right: 10vw; background-color: #552fbc" />
     <section>
+      <h2 class="title">Upgrades de galos</h2>
+      <p class="aboutDescription">
+        Quando você atingir o nível 35 do seu galo, você pode evoluir ele deixando ele mais forte, a cada upgrade de galo que você fizer, você ganha 10% a mais de ataque, de efeito e de cura! Mas lembrando, sempre que você usar esse upgrade seu galo voltará ao nível 1 ganhando apenas metade do xp do comando j!train e xp de suas missões diárias, os upgrades de galos são infinitos e você pode usar sempre que quiser, apenas precisa estar no nível 35.
+      </p>
+    </section>
+    <hr style="margin-left: 10vw; margin-right: 10vw; background-color: #552fbc" />
+    <section>
       <h2 class="title">Habilidades</h2>
       <p class="aboutDescription">
         A cada nivel seu galo ganha 3 de vida e pode ou não ganhar uma habilidade, seu
@@ -35,17 +42,7 @@
     <section>
       <h2 class="title">Economia</h2>
       <p class="aboutDescription">
-        A cada rinha contra um amigo ganha, ou a cada missão concluida voce vai ganhar
-        dinheiro. Dinheiro pode user usado para mudar o nome do seu galo usando
-        <span class="bold">j!changename novoNome</span> (ira custar 100 de dinheiro), ou
-        pode ser usado para comprar lootboxs usando <span class="bold">j!lootbox</span>.
-        Existem 3 tipos de lootbox (comum, normal, rara e cosmetica) quando voce abrir uma delas voce
-        ira ganhar um galo de uma das 4 raridades, quanto maior o nivel da caixa mais a
-        sua chance de pegar galos mais raros. Apos abrir uma lootbox use
-        <span class="bold">j!equip</span> para ver e quipar o galo que voce ganhou, caso
-        queira equipar seu galo use <span class="bold">j!equip numerodoGalo</span> ou caso
-        queira vender ele para ganhar mais dinheiro use
-        <span class="bold">j!equip numeroDoGalo remove</span>.
+        A cada rinha contra um amigo ganha, ou a cada missão concluída você vai ganhar dinheiro. Dinheiro pode user usado para mudar o nome do seu galo usando <span class="bold">j!changename novoNome (ira custar 100 de dinheiro)</span>, ou pode ser usado para comprar lootboxs usando <span class="bold">j!lootbox</span>. Existem 7 tipos de lootbox (comum, normal, rara, épica, lendária, itens especiais e cosmética) quando você abrir uma delas você ira ganhar um galo de uma das 4 raridades, quanto maior o nível da caixa mais a sua chance de pegar galos mais raros. Apos abrir uma lootbox use j!equip para ver o número e equipar o galo que você ganhou, caso queira equipar seu galo use <span class="bold"> j!equip numerodoGalo</span> ou caso queira vender ele para ganhar mais dinheiro use <span class="bold">j!equip numeroDoGalo remove</span>. Sobre Asura coins, você pode conseguir eles vendendo galos com mais de um upgrades de galo, ela serve para você comprar caixas lendárias e de itens especiais, essas caixas te darão chances melhores comparada as outras!
       </p>
     </section>
     <hr style="margin-left: 10vw; margin-right: 10vw; background-color: #552fbc" />
@@ -75,17 +72,23 @@
     <section>
       <h2 class="title">Clãs</h2>
       <p class="aboutDescription">
-        Voce pode criar um clan usando <span class="bold">j!clan create nome</span> (ira
-        custar 1000 de dinheiro), ou voce pode entrar em algum clan caso seja convidado
-        por algum usuario que ja esteja em um. Cada clan tem um numero maximo de membros
-        de até 15 pessoas (20 pessoas caso seu clan chegue até ao nivel 3), cada rinha
-        contra um amigo ganha faz voce ganhar 1 de xp para o seu clan. Quanto mais alto o
-        nivel do seu clan mais vantagens os membros do clan terão, sendo o nivel 5 o
-        maximo de nivel para um clan.
-        Cada clan ira ter uma missão por semana, e quando ela for concluida ira dar xp e dinheiro dividido entre todos os membros do clan.
+        Você pode criar um clan usando <span class="bold"> j!clan create nome</span> (ira custar 1000 de dinheiro), ou você pode entrar em algum clan caso seja convidado por algum usuário que possua administrador ou seja dono do clan. Cada clan tem um número máximo de membros de até 15 pessoas (20 pessoas caso seu clan chegue até ao nível 3), cada j!train que você ganhar faz com que seu clan ganhe mais 1 de xp. Quanto mais alto o nível do seu clan mais vantagens os membros do clan terão, sendo o nível 5 o máximo de nível para um clan. Cada clan ira ter uma missão por mês e quando ela for concluída todos os membros do clan receberão recompensas! O banco do clan serve para você juntar dinheiro e comprar novas vantagens extras para o clan, todos os membros poderam depositar dinheiro para ajudar o clan, ele tambem ira gerar passivamente uma quantia de dinheiro, com o dinheiro do banco vocês poderão comprar alguns upgrades, sendo eles atualmente: 1 membro adicional por clan e melhoramento na geração passiva de dinheiro.
       </p>
     </section>
     <hr style="margin-left: 10vw; margin-right: 10vw; background-color: #552fbc" />
+       <section>
+      <h2 class="title">Arenas</h2>
+      <p class="aboutDescription">
+Você pode comprar um ingresso para a arena por 500 de dinheiro, na arena você ira batalhar com um galo dois níveis maior que o seu e com o mesmo item que você, caso tenha um, seu galo precisa ser no minímo level 5 para poder batalhar na arena. Se você perder 3 vezes você ira ganhar uma quantia de dinheiro e xp conforme o máximo de vitórias que você teve, cada vitória na arena te garantirá 80 de dinheiro, se você chegar ao máximo de vitórias (12) na arena você vai ganhar 960 de dinheiro e 240 de xp para seu galo.
+      </p>
+    </section>
+        <hr style="margin-left: 10vw; margin-right: 10vw; background-color: #552fbc" />
+     <section>
+      <h2 class="title">Upgrades</h2>
+      <p class="aboutDescription">
+Você pode conseguir xp de upgrades usando o comando j!train, cada vez que você ganhar você ganha mais 1 de xp, quando atingir certa quantia de xp você pode escolher alguns upgrades que te darão novas vantagens, cada tipo de upgrade te leva a um caminho único, então escolha com cuidado pois não poderá ser escolhidos outra vez!      </p>
+    </section>
+        <hr style="margin-left: 10vw; margin-right: 10vw; background-color: #552fbc" />
     <h2 class="title">Ainda tem alguma duvida? não hesite em entrar no meu <a href="https://discord.gg/tdVWQGV" target="_blank">Servidor de suporte</a>.</h2>
   </article>
 </template>
