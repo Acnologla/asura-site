@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
-import {Button, Modal, Carousel, Navbar, Input, Menu} from 'buefy'
+import {Button, Modal, Carousel, Navbar, Input, Menu, Checkbox} from 'buefy'
 import 'buefy/dist/buefy.css'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faChevronDown, faSun, faMoon, faPlusCircle, faMinusCircle  } from '@fortawesome/free-solid-svg-icons'
@@ -16,6 +16,7 @@ Vue.use(Button)
 Vue.use(Modal)
 Vue.use(Carousel)
 Vue.use(Navbar)
+Vue.use(Checkbox)
 Vue.use(Input)
 Vue.use(Menu)
 new Vue({
