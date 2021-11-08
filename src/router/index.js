@@ -6,6 +6,7 @@ import Donate from "../views/Donate"
 import Commands from "../views/Commands"
 
 const RinhaTutorial = () => import("../views/RinhaTutorial")
+const RinhaInfo = () => import("../views/RinhaInfo")
 
 Vue.use(VueRouter)
 
@@ -34,6 +35,11 @@ const routes = [
     path: "/tutorial",
     name: "RinhaTutorial",
     component: RinhaTutorial
+  },
+  {
+    path: "/info",
+    name: "RinhaInfo",
+    component: RinhaInfo
   }
 ]
 
