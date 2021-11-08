@@ -1,6 +1,6 @@
 <template>
   <div class = "itemClass" style="cursor: pointer">
-    <h2 style="color: #552fbc" @click="toggleActive">
+    <h2  @click="toggleActive">
        <font-awesome-icon v-if="active" icon="chevron-down" />
       <font-awesome-icon v-else icon="chevron-right" />
       {{ name }}
