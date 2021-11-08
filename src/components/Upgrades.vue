@@ -2,7 +2,6 @@
   <div style="margin-left: 30px;text-align: left">
     <div v-for="(upgrade, i) in upgrades" :key="i">
       <Upgrade
-        :isFirst="true"
         :upgrade="upgrade"
       />
     </div>

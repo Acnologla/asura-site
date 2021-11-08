@@ -5,7 +5,7 @@
       <font-awesome-icon v-else icon="chevron-right" />
       {{ item.name }}
     </h2>
-    <div style="margin-left: 30px" v-if="active">
+    <div style="margin-left: 22px" v-if="active">
       <p v-if="item.effect == 1">
         Aumenta o dano das suas habilidades em
         {{ Math.round((item.payload - 1) * 100) }}%
@@ -40,7 +40,7 @@
 </template>
 <style scoped>
 h2 {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
 }
 p {
   font-size: 1rem;

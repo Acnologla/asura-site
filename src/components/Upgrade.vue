@@ -20,10 +20,10 @@
 </template>
 <style scoped>
 h2 {
-  font-size: 2rem;
+  font-size: 1.7rem;
 }
 p {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
 }
 @media screen and (min-width: 1024px) {
 .up{
@@ -46,7 +46,6 @@ export default {
     },
   },
   props: {
-    isFirst: Boolean,
     upgrade: {
       type: Object,
       required: true,
