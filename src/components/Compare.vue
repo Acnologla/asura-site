@@ -1,6 +1,6 @@
 
 <template>
-  <div>
+  <div style="display: flex">
     <b-button
       style="margin-left: 10px"
       @click="
