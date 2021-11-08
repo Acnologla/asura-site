@@ -1,16 +1,17 @@
 <template>
   <div>
-    <h2 style="cursor: pointer;color: #552fbc" @click="toggleActive">
+    <h2 style="cursor: pointer" @click="toggleActive">
       <font-awesome-icon v-if="active" icon="chevron-down" />
       <font-awesome-icon v-else icon="chevron-right" />
       {{ upgrade.name }}
     </h2>
-    <div v-if="active">
+    <div class = "up" v-if="active">
       <p>{{ upgrade.value }}</p>
       <div v-if="upgrade.childs" style="margin-left: 30px">
         <Upgrade
           v-for="(upgrade, i) in upgrade.childs"
           :key="i"
+          :isFirst="false"
           :upgrade="upgrade"
         />
       </div>
@@ -24,6 +25,12 @@ h2 {
 p {
   font-size: 1.5rem;
 }
+@media screen and (min-width: 1024px) {
+.up{
+  margin-left: 30px;
+}
+}
+
 </style>
 <script>
 export default {
@@ -39,6 +46,7 @@ export default {
     },
   },
   props: {
+    isFirst: Boolean,
     upgrade: {
       type: Object,
       required: true,
