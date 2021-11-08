@@ -11,7 +11,6 @@
         <Upgrade
           v-for="(upgrade, i) in upgrade.childs"
           :key="i"
-          :isFirst="false"
           :upgrade="upgrade"
         />
       </div>
