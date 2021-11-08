@@ -17,7 +17,7 @@
 </template>
 <style scoped>
 h2 {
-    font-size: 2rem;
+    font-size: 1.7rem;
 }
 .itemClass{
     text-align: left;
