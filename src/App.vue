@@ -2,6 +2,7 @@
   <div id="app">
     <Nav/>
     <router-view style="margin-top: 70px"/>
+    <Footer/>
   </div>
 </template>
 
@@ -52,7 +53,8 @@ body {
 
 <script>
   import Nav from "./components/Nav"
+  import Footer from "./components/Footer"
   export default {
-    components: {Nav}
+    components: {Nav,Footer}
   }
 </script>
