@@ -5,11 +5,11 @@ import {Button, Modal, Carousel, Navbar, Input, Menu, Checkbox} from 'buefy'
 import 'buefy/dist/buefy.css'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faChevronDown, faSun, faMoon, faPlusCircle, faMinusCircle, faChevronRight} from '@fortawesome/free-solid-svg-icons'
-import { faGithub } from '@fortawesome/free-brands-svg-icons'
+import { faGithub, faDiscord } from '@fortawesome/free-brands-svg-icons'
 
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
-library.add(faChevronDown, faSun, faMoon, faPlusCircle, faMinusCircle, faChevronRight,faGithub)
+library.add(faChevronDown, faSun, faMoon, faPlusCircle, faMinusCircle, faChevronRight,faGithub,faDiscord)
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 
 Vue.config.productionTip = false
