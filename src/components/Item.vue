@@ -33,7 +33,10 @@
         Reflete todo dano levado em {{ Math.round(item.payload * 100) }}%
       </p>
       <p v-if="item.effect == 8">
-        Voce ganha {{ item.payload }} de xp adicional todo train
+        Voce ganha {{ item.payload*100 }}% de xp adicional todo train
+      </p>
+      <p v-if="item.effect == 9">
+        Voce ganha ouro adicional todo train
       </p>
     </div>
   </div>

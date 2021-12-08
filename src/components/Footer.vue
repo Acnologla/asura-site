@@ -1,53 +1,123 @@
 <template>
   <footer class="footer" style="margin-top: 50px">
     <div
-      style="
-        display: flex;
-        align-items: center;
-        width: 100%;
-        justify-content: center;
-      "
+      class="columns is-centered is-variable"
+      style="width: 100%; margin-left: 15px; margin-right: 15px"
     >
-      <img
-        width="50"
-        height="50"
-        style="border-radius: 50%"
-        src="https://cdn.discordapp.com/avatars/470684281102925844/e1dfb36e69e5b83f081f8ee3ba1adbd3.webp?size=512"
-      />
-      <h3 style="margin-left: 10px; font-size: 28px; font-weight: 600">
-        Asura Bot
-      </h3>
-    </div>
-    <hr
-      style="
-        background-color: #552fbc;
-        width: 80vw;
-        margin-top: 10px;
-        margin-bottom: 0px;
-      "
-    />
-    <div style="display: flex; font-size: 20px">
-      <ul>
-        <li>
-          <a @click="about" href="#about">Sobre</a>
-        </li>
-        <li>
-          <a
-          target="_blank"
-            href="https://discordapp.com/oauth2/authorize?client_id=470684281102925844&scope=bot&permissions=8Discord"
-            >Convite</a
-          >
-        </li>
-        <li>
-          <a target="_blank" href="https://discord.gg/tdVWQGV">Servidor de suporte</a>
-        </li>
-        <li>
-          <router-link :to="{ name: 'Commands' }"> Comandos </router-link>
-        </li>
-        <li>
-          <a target="_blank" href="https://github.com/Acnologla/asura"> Github </a>
-        </li>
-      </ul>
+      <div class="column is-one-third" style="text-align: left">
+        <div
+          style="
+            display: flex;
+            align-items: center;
+            width: 100%;
+            justify-content: center;
+          "
+        >
+          <img
+            width="50"
+            height="50"
+            style="border-radius: 50%"
+            src="https://cdn.discordapp.com/avatars/470684281102925844/e1dfb36e69e5b83f081f8ee3ba1adbd3.webp?size=512"
+          />
+          <h3 style="margin-left: 10px; font-size: 28px; font-weight: 600">
+            Asura Bot
+          </h3>
+        </div>
+            <hr style=";margin-top:10px;margin-bottom:10px; background-color: #552fbc" />
+        <div class="footerText">
+          <p>
+            Batalhe com outros galos, veja avatares antigos, jogue uno e muito
+            mais
+          </p>
+          <div style="font-size: 28px; margin-top: 20px">
+            <a  target="_blank" href="https://github.com/Acnologla/asura">
+              <font-awesome-icon :icon="['fab', 'github']" />
+            </a>
+            <a target="_blank" href="https://discord.gg/tdVWQGV">
+              <font-awesome-icon
+                style="margin-left: 20px"
+                :icon="['fab', 'discord']"
+              />
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="column is-one-third">
+        <div class="center">
+          <ul>
+            <li class="footerTitle">
+              Asura
+              <hr
+                style="
+                  margin-top: 5px;
+                  margin-bottom: 5px;
+                  background-color: #552fbc;
+                "
+              />
+            </li>
+            <li>
+              <a @click="about" href="#about">Sobre</a>
+            </li>
+            <li>
+              <a
+                target="_blank"
+                href="https://discordapp.com/oauth2/authorize?client_id=470684281102925844&scope=bot&permissions=8Discord"
+                >Convite</a
+              >
+            </li>
+            <li>
+              <a target="_blank" href="https://discord.gg/tdVWQGV"
+                >Servidor de suporte</a
+              >
+            </li>
+            <li>
+              <router-link :to="{ name: 'Commands' }"> Comandos </router-link>
+            </li>
+            <li>
+              <a target="_blank" href="https://github.com/Acnologla/asura">
+                Github
+              </a>
+            </li>
+            <li>
+              <router-link :to="{ name: 'Donate' }"> Doar </router-link>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="column is-one-third">
+        <div class="center">
+          <ul>
+            <li class="footerTitle">
+              Rinha
+              <hr
+                style="
+                  margin-top: 5px;
+                  margin-bottom: 5px;
+                  background-color: #552fbc;
+                "
+              />
+            </li>
+            <li>
+              <router-link :to="{ name: 'RinhaTutorial' }">
+                Tutorial rinha
+              </router-link>
+            </li>
+            <li>
+              <router-link :to="{ name: 'RinhaInfo' }">
+                Informaçoes da rinha
+              </router-link>
+            </li>
+            <li>
+              <router-link :to="{ name: 'Galos' }">
+                Lista de galos
+              </router-link>
+            </li>
+            <li>
+              <router-link :to="{ name: 'Donate' }"> Comprar items </router-link>
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
   </footer>
 </template>
@@ -62,14 +132,17 @@
   padding: 1.5rem 0.75rem 1rem;
   justify-content: center;
 }
+ul {
+  text-align: left;
+}
+.center {
+  display: flex;
+  justify-content: center;
+}
 li a {
   color: #2c3e50;
 }
-li {
-  margin-top: 10px;
-  float: left;
-  margin-left: 10px;
-}
+
 [data-theme="dark"] .footer {
   background-color: #1d1f21;
 }
@@ -79,8 +152,21 @@ li {
 [data-theme="dark"] li a {
   color: #eceff4;
 }
+.footerTitle {
+  text-align: center;
+  font-weight: 600;
+  font-size: 20px;
+}
 li a:hover {
   color: #552fbc;
+}
+@media screen and (max-width: 768px) {
+  ul {
+    text-align: center;
+  }
+  .footerText {
+    text-align: center;
+  }
 }
 </style>
 <script>

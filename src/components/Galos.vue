@@ -1,8 +1,8 @@
 <template>
-<center>
-  <b-carousel
+  <center>
+    <b-carousel
       @change="change($event)"
-      class = "galos"
+      class="galos"
       arrow
       v-model="selected"
       :arrowHover="false"
@@ -11,48 +11,59 @@
       :repeat="false"
       :autoplay="false"
       :indicator-inside="false"
-  >
-        <b-carousel-item v-for="(sprite, i) in sprites" :key="i">
-           <span class="image">
-              <img :src="sprite" :style="`height: 200px;border: 4px solid ${colors[classes[selected+1].rarity]}`">
-            </span>
-        </b-carousel-item>
-  </b-carousel>
-</center>
-
+    >
+      <b-carousel-item v-for="(sprite, i) in sprites" :key="i">
+        <span class="image">
+          <img :src="sprite" :style="getStyle()" />
+        </span>
+      </b-carousel-item>
+    </b-carousel>
+  </center>
 </template>
 <script>
-import axios from "axios"
+import axios from "axios";
 
 export default {
   name: "galos",
-  data(){
+  data() {
     return {
       sprites: [],
       selected: 0,
-      colors: ["#CDE3FF", "#0000FF", "#9400D3", "#FF9000", "#FF4040"]
-    }
+      colors: ["#CDE3FF", "#0000FF", "#9400D3", "#FF9000","#CDE3FF", "GRADIENT"],
+    };
   },
   props: {
-    classes: Array
+    classes: Array,
   },
   methods: {
-    change(val){
-      this.$emit("change",val)
-    }
+    change(val) {
+      this.$emit("change", val);
+    },
+    getStyle() {
+      const color = this.colors[this.classes[this.selected + 1].rarity];
+      console.log(color)
+      if (color === "GRADIENT") {
+        return `height: 200px;border-radius: 4px;border-style:solid; border-image: linear-gradient(to bottom right, #b827fc 0%, #2c90fc 25%, #b8fd33 50%, #fec837 75%, #fd1892 100%);  border-image-slice: 1;`;
+      }
+      return `height: 200px;border: 4px solid ${color}`;
+    },
   },
-  created(){
-    if (this.$route.query.galo){
-      this.selected = parseInt(this.$route.query.galo)
+  created() {
+    if (this.$route.query.galo) {
+      this.selected = parseInt(this.$route.query.galo);
     }
-    axios.get("https://raw.githubusercontent.com/Acnologla/asura/master/resources/galo/sprites.json").then(result => {
-      this.sprites = result.data[0]
-    })
-  }
-}
+    axios
+      .get(
+        "https://raw.githubusercontent.com/Acnologla/asura/master/resources/galo/sprites.json"
+      )
+      .then((result) => {
+        this.sprites = result.data[0];
+      });
+  },
+};
 </script>
 <style>
-.galos{
+.galos {
   width: 300px;
   height: 300px;
 }
