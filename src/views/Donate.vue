@@ -39,7 +39,7 @@
                 <DonateCard price = "R$ 12 a cada 1700 Xp" description="Comprar Xp avulsamente na sua conta." title="Compra de Xp"/>
             </div>
              <div class = "column is-three-quarters-mobile is-one-third">
-                <DonateCard price = "R$ 25 mensalmente" description="Background exclusivo.  <br>Xp extra por partida. <br>Trocar nome do galo gratuitamente.<br>Poder mudar o background para qualquer imagem" title="Vip"/>
+                <DonateCard price = "R$ 25 mensalmente" description="Ouro extra por partida.  <br>Xp extra por partida. <br>Trocar nome do galo gratuitamente.<br>Poder mudar o background para qualquer imagem" title="Vip"/>
             </div>
        </div>
     </center>
