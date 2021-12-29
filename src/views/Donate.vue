@@ -33,10 +33,10 @@
       <br>
        <div id="donateCards" style="max-width:750px" class="columns is-centered">
             <div class = "column is-three-quarters-mobile is-one-third">
-                <DonateCard price="R$ 12 a cada 600 moedas" description="Comprar dinheiro avulsamente na sua conta." title="Compra de dinheiro"/>
+                <DonateCard price="R$ 10 a cada 600 moedas" description="Comprar dinheiro avulsamente na sua conta." title="Compra de dinheiro"/>
             </div>
             <div class = "column is-three-quarters-mobile is-one-third">
-                <DonateCard price = "R$ 12 a cada 1700 Xp" description="Comprar Xp avulsamente na sua conta." title="Compra de Xp"/>
+                <DonateCard price = "R$ 10 a cada 1700 Xp" description="Comprar Xp avulsamente na sua conta." title="Compra de Xp"/>
             </div>
              <div class = "column is-three-quarters-mobile is-one-third">
                 <DonateCard price = "R$ 25 mensalmente" description="Ouro extra por partida.  <br>Xp extra por partida. <br>Trocar nome do galo gratuitamente.<br>Poder mudar o background para qualquer imagem" title="Vip"/>
