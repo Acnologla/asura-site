@@ -74,8 +74,8 @@
               <router-link :to="{ name: 'Commands' }"> Comandos </router-link>
             </li>
             <li>
-              <a target="_blank" href="https://github.com/Acnologla/asura">
-                Github
+              <a target="_blank" href="https://top.gg/bot/470684281102925844">
+                Votar
               </a>
             </li>
             <li>

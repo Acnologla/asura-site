@@ -18,6 +18,9 @@
               <b-navbar-item tag="router-link" :to="{ name: 'Commands' }"  class="navItem">
                 Comandos
             </b-navbar-item>
+            <b-navbar-item tag="a" href="https://top.gg/bot/470684281102925844" target="_blank"  class="navItem">
+                Votar
+            </b-navbar-item>
         </template>
         <template #end>
             <b-navbar-item class="navItem" @click="changeTheme">
