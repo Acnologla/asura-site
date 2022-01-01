@@ -17,9 +17,13 @@
           <p class="aboutDescription">
             Atualmente é preciso gastar 20 dolares mensalmente (cerca de 110 reais) para
             hospedar o asura.
-            <br />
+            <br>
             Doar ajuda o bot a se manter online, faz a qualidade do bot aumentar, fique
             mais divertido, e ajuda o dono do bot.
+            <br>
+            <br>
+            Caso não tenha dinheiro para doar pro asura voce ainda pode ajudar votando no <a target="_blank" href="https://top.gg/bot/470684281102925844">top.gg</a>.
+            Ao votar voce pode usar seu comando de daily denovo, exemplificando: voce pode pegar 3 dailys ao dia caso vote a cada 12 horas.
           </p>
         </div>
       </div>
@@ -38,8 +42,8 @@
             <div class = "column is-three-quarters-mobile is-one-third">
                 <DonateCard price = "R$ 10 a cada 1700 Xp" description="Comprar Xp avulsamente na sua conta." title="Compra de Xp"/>
             </div>
-             <div class = "column is-three-quarters-mobile is-one-third">
-                <DonateCard price = "R$ 25 mensalmente" description="Ouro extra por partida.  <br>Xp extra por partida. <br>Trocar nome do galo gratuitamente.<br>Poder mudar o background para qualquer imagem" title="Vip"/>
+             <div class = "column is-three-quarters-mobile is-half">
+                <DonateCard price = "R$ 25 mensalmente" description="Ouro extra por partida.  <br>Xp extra por partida. <br>Trocar nome do galo gratuitamente.<br>Xp e dinheiro adicionais no comando j!daily.<br>Poder mudar o background para qualquer imagem" title="Vip"/>
             </div>
        </div>
     </center>

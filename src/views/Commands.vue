@@ -15,13 +15,21 @@
           <b-menu>
             <b-menu-list label="Categoria">
               <b-menu-item
-                @click="() => filterCategory(1)"
+                @click="() => filterCategory(0)"
                 :active="true"
                 label="Comandos normais"
               />
               <b-menu-item
-                @click="() => filterCategory(0)"
+                @click="() => filterCategory(1)"
                 label="Comandos de rinha"
+              />
+                <b-menu-item
+                @click="() => filterCategory(2)"
+                label="Comandos de perfil"
+              />
+                <b-menu-item
+                @click="() => filterCategory(3)"
+                label="Comandos de jogos"
               />
             </b-menu-list>
           </b-menu>
@@ -67,7 +75,7 @@ export default {
     return {
       commands: [],
       displayCommands: [],
-      category: 1
+      category: 0
     };
   },
   components: {
@@ -87,7 +95,7 @@ export default {
     filterCategory(category) {
     this.category = category
       this.displayCommands = this.commands.filter(
-        (a) => a.category !== category
+        (a) => a.category === category 
       );
     },
   },
@@ -98,7 +106,7 @@ export default {
       )
       .then(({ data }) => {
         this.commands = data;
-        this.filterCategory(1);
+        this.filterCategory(0);
       });
   },
 };

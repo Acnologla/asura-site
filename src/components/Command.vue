@@ -32,9 +32,6 @@
   cursor: pointer;
   border-radius: 20px;
 }
-.command:hover {
-  opacity: 0.7;
-}
 .commandInfo {
   margin-left: 20px;
   padding-top: 15px;
@@ -57,6 +54,11 @@
 }
 [data-theme="dark"] .command{
   background-color: #1D1F21;
+}
+@media screen and (min-width: 1024px) {
+.command:hover {
+  opacity: 0.7;
+}
 }
 </style>
 <script>
