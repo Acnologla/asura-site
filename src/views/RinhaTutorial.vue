@@ -4,7 +4,7 @@
       <h2 class="title">Como jogar</h2>
       <p class="aboutDescription">
         Primeiro use o comando <span class="bold">j!galo</span> para ver o tipo do seu
-        galo, existem 4 raridades de galo (comum, raro, epico, lendario) voce ira começar
+        galo, existem 5 raridades de galo (comum, raro, epico, lendario, mitico) voce ira começar
         com um galo comum aleatorio,
         <router-link target="_blank" :to="{ name: 'Galos' }"
           >Veja aqui a lista de galos e habilidades.</router-link
@@ -42,7 +42,7 @@
     <section>
       <h2 class="title">Economia</h2>
       <p class="aboutDescription">
-        A cada rinha contra um amigo ganha, ou a cada missão concluída você vai ganhar dinheiro. Dinheiro pode user usado para mudar o nome do seu galo usando <span class="bold">j!changename novoNome (ira custar 100 de dinheiro)</span>, ou pode ser usado para comprar lootboxs usando <span class="bold">j!lootbox</span>. Existem 7 tipos de lootbox (comum, normal, rara, épica, lendária, itens especiais e cosmética) quando você abrir uma delas você ira ganhar um galo de uma das 4 raridades, quanto maior o nível da caixa mais a sua chance de pegar galos mais raros. Apos abrir uma lootbox use j!equip para ver o número e equipar o galo que você ganhou, caso queira equipar seu galo use <span class="bold"> j!equip numerodoGalo</span> ou caso queira vender ele para ganhar mais dinheiro use <span class="bold">j!equip numeroDoGalo remove</span>. Sobre Asura coins, você pode conseguir eles vendendo galos com mais de um upgrades de galo, ela serve para você comprar caixas lendárias e de itens especiais, essas caixas te darão chances melhores comparada as outras!
+        A cada rinha contra um amigo ganha, ou a cada missão concluída você vai ganhar dinheiro. Dinheiro pode user usado para mudar o nome do seu galo usando <span class="bold">j!changename novoNome (ira custar 100 de dinheiro)</span>, ou pode ser usado para comprar lootboxs usando <span class="bold">j!lootbox</span>. Existem 7 tipos de lootbox (comum, normal, rara, épica, lendária, itens especiais e cosmética) quando você abrir uma delas você ira ganhar um galo de uma das 5 raridades, quanto maior o nível da caixa mais a sua chance de pegar galos mais raros. Apos abrir uma lootbox use j!equip para ver o número e equipar o galo que você ganhou, caso queira equipar seu galo use <span class="bold"> j!equip numerodoGalo</span> ou caso queira vender ele para ganhar mais dinheiro use <span class="bold">j!equip numeroDoGalo remove</span>. Sobre Asura coins, você pode conseguir eles vendendo galos com mais de um upgrades de galo, ela serve para você comprar caixas lendárias e de itens especiais, essas caixas te darão chances melhores comparada as outras!
       </p>
     </section>
     <hr style="margin-left: 10vw; margin-right: 10vw; background-color: #552fbc" />
@@ -72,14 +72,13 @@
     <section>
       <h2 class="title">Clãs</h2>
       <p class="aboutDescription">
-        Você pode criar um clan usando <span class="bold"> j!clan create nome</span> (ira custar 1000 de dinheiro), ou você pode entrar em algum clan caso seja convidado por algum usuário que possua administrador ou seja dono do clan. Cada clan tem um número máximo de membros de até 15 pessoas (20 pessoas caso seu clan chegue até ao nível 3), cada j!train que você ganhar faz com que seu clan ganhe mais 1 de xp. Quanto mais alto o nível do seu clan mais vantagens os membros do clan terão, sendo o nível 5 o máximo de nível para um clan. Cada clan ira ter uma missão por mês e quando ela for concluída todos os membros do clan receberão recompensas! O banco do clan serve para você juntar dinheiro e comprar novas vantagens extras para o clan, todos os membros poderam depositar dinheiro para ajudar o clan, ele tambem ira gerar passivamente uma quantia de dinheiro, com o dinheiro do banco vocês poderão comprar alguns upgrades, sendo eles atualmente: 1 membro adicional por clan e melhoramento na geração passiva de dinheiro.
-      </p>
+Você pode criar um clan usando <span class="bold">j!clan create nome</span> (ira custar 1000 de dinheiro), ou você pode entrar em algum clan caso seja convidado por algum usuário que seja administrador ou  dono do clan. Cada clan tem um número máximo de membros de até 25 pessoas (que podem ser aumentados com upgrades de banco do clã). Cada j!train que você ganhar faz com que seu clan ganhe mais 1 de xp. Quanto mais alto o nível do seu clan mais vantagens os membros do clan terão. Cada clan irá ter uma missão por mês e quando ela for concluída todos os membros do clan receberão recompensas!<br>Use <span class="bold">j!clan banco</span> para abrir o banco do clan, o banco do clan serve para você juntar dinheiro e comprar novas vantagens extras para o clan, todos os membros podem depositar dinheiro para ajudar o clan, com o dinheiro do banco vocês poderão comprar alguns upgrades  disponiveis.</p>
     </section>
     <hr style="margin-left: 10vw; margin-right: 10vw; background-color: #552fbc" />
        <section>
       <h2 class="title">Arenas</h2>
       <p class="aboutDescription">
-Você pode comprar um ingresso para a arena por 500 de dinheiro, na arena você ira batalhar com um galo dois níveis maior que o seu e com o mesmo item que você, caso tenha um, seu galo precisa ser no minímo level 5 para poder batalhar na arena. Se você perder 3 vezes você ira ganhar uma quantia de dinheiro e xp conforme o máximo de vitórias que você teve, cada vitória na arena te garantirá 80 de dinheiro, se você chegar ao máximo de vitórias (12) na arena você vai ganhar 960 de dinheiro e 240 de xp para seu galo.
+Você pode comprar um ingresso para a arena por 500 de dinheiro, na arena você irá batalhar com outros players que podem ter níveis e itens (caso tenha um) maiores ou menores que o seu. O seu galo precisa ser no minímo level 5 para poder batalhar na arena. Se você perder 3 vezes você ira ganhar uma quantia de dinheiro e xp conforme o máximo de vitórias que você teve, cada vitória na arena te garantirá 80 de dinheiro e 20 de XP, se você chegar ao máximo de vitórias (12) na arena você vai ganhar 960 de dinheiro e 240 de xp para seu galo.
       </p>
     </section>
         <hr style="margin-left: 10vw; margin-right: 10vw; background-color: #552fbc" />
