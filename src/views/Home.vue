@@ -11,7 +11,7 @@
             class="invite"
             type="is-primary"
             style="margin-right: 30px; width: 180px;color: #ECEFF4"
-            href=" https://discordapp.com/oauth2/authorize?client_id=470684281102925844&scope=bot&permissions=8"
+            href=" https://discordapp.com/oauth2/authorize?client_id=470684281102925844&scope=applications.commands%20bot&permissions=8"
             target="_blank"
             tag="a"
           >
