@@ -29,7 +29,7 @@
             </b-navbar-item>
             <b-navbar-item tag="div" id="add" style="margin-right: 30px">
                 <div>
-                    <a target="_blank" href="https://discordapp.com/oauth2/authorize?client_id=470684281102925844&scope=bot&permissions=8Discord" class="button is-primary">
+                    <a target="_blank" href=" https://discordapp.com/oauth2/authorize?client_id=470684281102925844&scope=applications.commands%20bot&permissions=8" class="button is-primary">
                        <span style="font-weight: 500"> Me adicione</span>
                     </a>
                 </div>
