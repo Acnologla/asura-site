@@ -5,9 +5,10 @@ import Home from '../views/Home'
 import Donate from "../views/Donate"
 import Commands from "../views/Commands"
 
+
 const RinhaTutorial = () => import("../views/RinhaTutorial")
 const RinhaInfo = () => import("../views/RinhaInfo")
-
+const CreateGalo = () => import("../views/CreateGalo")
 Vue.use(VueRouter)
 
 const routes = [
@@ -40,6 +41,11 @@ const routes = [
     path: "/info",
     name: "RinhaInfo",
     component: RinhaInfo
+  },
+  {
+    path: "/create",
+    name: "CreateGalo",
+    component: CreateGalo
   }
 ]
 
