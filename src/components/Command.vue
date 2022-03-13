@@ -2,7 +2,7 @@
   <div class="command">
     <div class="commandContainer" @click="() => (active = !active)">
       <div>
-        <p class="commandTitle">{{ command.aliases[0] }}</p>
+        <p class="commandTitle">{{ command.name }}</p>
         <p class="commandHelp">{{ command.help }}</p>
       </div>
       <div class="is-hidden-mobile" style="margin-left: auto">
@@ -19,8 +19,6 @@
       </div>
     </div>
     <div class="commandInfo" v-if="active">
-      <p>Outras alternativas: <span style="color:#7957d5" v-for="(aliase,i) in command.aliases.slice(1)" :key=i>{{aliase}}{{i == command.aliases.length-2 ? "" :  ","}} </span> </p>
-      <p>Exemplo de uso: {{ command.usage }}</p>
       <p>Cooldown: {{ command.cooldown }} segundos</p>
     </div>
   </div>
@@ -52,13 +50,13 @@
 .commandHelp {
   font-size: 20px;
 }
-[data-theme="dark"] .command{
-  background-color: #1D1F21;
+[data-theme="dark"] .command {
+  background-color: #1d1f21;
 }
 @media screen and (min-width: 1024px) {
-.command:hover {
-  opacity: 0.7;
-}
+  .command:hover {
+    opacity: 0.7;
+  }
 }
 </style>
 <script>
