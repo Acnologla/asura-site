@@ -130,8 +130,7 @@ export default {
         },
         {
           title: "Minijogos",
-          description:
-            "Voce pode jogar uno, 2048, jogo da velha, connect4 e xadrez.",
+          description: "Voce pode jogar uno, 2048, jogo da velha e connect4.",
           image: "https://i.imgur.com/bIj7xSH.png",
         },
         {

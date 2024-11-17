@@ -12,7 +12,9 @@
       </p>
       <p v-if="item.effect == 2">
         Suas habilidades tem chance de causar:
-        <Effect :skill="{effect:{chance: 0.3, effect:effects[item.payload] } }"/>
+        <Effect
+          :skill="{ effect: { chance: 0.3, effect: effects[item.payload] } }"
+        />
       </p>
       <p v-if="item.effect == 3">
         Aumenta a chance dos seus efeitos em
@@ -33,11 +35,21 @@
         Reflete todo dano levado em {{ Math.round(item.payload * 100) }}%
       </p>
       <p v-if="item.effect == 8">
-        Voce ganha {{ item.payload*100 }}% de xp adicional todo train
+        Voce ganha {{ item.payload * 100 }}% de xp adicional todo train
       </p>
       <p v-if="item.effect == 9">
-        Voce ganha ouro adicional todo train
+        Voce ganha 2 de xp adicional por treino
       </p>
+      <p v-if="item.effect == 11">
+        Aumenta a sua cura e diminue a do oponente em
+        {{ Math.round((item.payload - 1) * 100) }}%
+      </p>
+      <p v-if="item.effect == 12">
+        Diminui o dano de efeitos que voce recebe em
+        {{ Math.round((1 - item.payload) * 100) }}%
+      </p>
+
+      <p></p>
     </div>
   </div>
 </template>

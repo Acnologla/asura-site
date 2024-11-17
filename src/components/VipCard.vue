@@ -1,17 +1,44 @@
 <template>
   <div class="card">
     <header class="card-header">
-      <p style="color: #552fbc" class="card-header-title" v-html="title"></p>
+      <p style="color: #552fbc" class="card-header-title">
+        Vip
+      </p>
     </header>
     <div class="card-content">
-      <div v-html="description" class="content" style="text-align: left"></div>
+      <div class="content" style="text-align: left">
+        <h3>Vantagens:</h3>
+        <ul>
+          <li>Ouro extra e xp extra por treino.</li>
+          <li>
+            Trocar o nome do galo gratuitamente.
+          </li>
+          <li>Xp extra no passe de batalha.</li>
+          <li>Conteúdo exclusivo no passe de batalha.</li>
+          <li>Bônus adicional no comando daily.</li>
+          <li>Ganha mais Asura Coins ao vender galos.</li>
+          <li>Bônus na torre e nas raids.</li>
+        </ul>
+      </div>
     </div>
+
     <footer
       class="card-footer"
       style="display:block !important;justify-content: center"
     >
-      <p>
-        <b>{{ price }}</b>
+      <h3
+        style="text-align: left;padding-left: 25px;font-size: 1.5em;font-weight: 600;margin-bottom: 15px;"
+      >
+        Preços:
+      </h3>
+      <p style="text-align: left;padding-left: 40px;">
+        <b>R$35</b>/Mês Mensal<br />
+        <b>R$31,5</b>/Mês Trimestral
+        <span style="color:#552fbc;font-weight: 600;">(10%OFF)</span><br />
+        <b>R$29</b>/Mês Semestral
+        <span style="color:#552fbc;font-weight: 600;">(17%OFF)</span><br />
+        <b>R$26</b>/Mês Anual
+        <span style="color:#552fbc;font-weight: 600;">(25%OFF)</span>
       </p>
       <br />
       <b-button
@@ -65,6 +92,19 @@
 }
 [data-theme="dark"] b {
   font-weight: 500;
+}
+
+@media screen and (max-width: 550px) {
+  .card-footer > * {
+    padding-left: 15px !important;
+  }
+  .card-content {
+    padding-left: 15px !important;
+  }
+
+  .card-content ul {
+    margin-left: 1.4em;
+  }
 }
 </style>
 <script>

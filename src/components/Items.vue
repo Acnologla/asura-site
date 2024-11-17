@@ -19,7 +19,15 @@ export default {
   },
   data() {
     return {
-      names: ["Comum", "Raro", "Epico", "Lendario", "Especial", "Evento"],
+      names: [
+        "Comum",
+        "Raro",
+        "Epico",
+        "Lendario",
+        "Especial",
+        "Evento",
+        "Mitico",
+      ],
       items: [],
       effects: [],
     };
