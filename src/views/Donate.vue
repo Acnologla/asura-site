@@ -17,7 +17,7 @@
         >
           <h1 class="title">Por que doar para o asura?</h1>
           <p class="aboutDescription">
-            Atualmente é preciso gastar 20 dolares mensalmente (cerca de 110
+            Atualmente é preciso gastar 35 dolares mensalmente (cerca de 210
             reais) para hospedar o asura.
             <br />
             Doar ajuda o bot a se manter online, faz a qualidade do bot
@@ -28,22 +28,16 @@
             votando no
             <a target="_blank" href="https://top.gg/bot/470684281102925844"
               >top.gg</a
-            >. Ao votar voce pode usar seu comando de daily denovo,
-            exemplificando: voce pode pegar 3 dailys ao dia caso vote a cada 12
-            horas.
+            >. <br />
           </p>
         </div>
       </div>
     </section>
-    <br /><br />
+
     <hr
       style="margin-left: 20vw; margin-right: 20vw; background-color: #552fbc"
     />
     <center>
-      <div style="text-align: center">
-        <h2 class="donateTitle">Premio por doar</h2>
-      </div>
-      <br />
       <div
         id="donateCards"
         style="max-width: 750px"
@@ -51,34 +45,30 @@
       >
         <div class="column is-three-quarters-mobile is-one-third">
           <DonateCard
-            price="R$ 10 a cada 800 moedas"
+            price="R$ 10 a cada 1000 moedas"
             description="Comprar dinheiro avulsamente na sua conta."
             title="Compra de dinheiro"
           />
         </div>
         <div class="column is-three-quarters-mobile is-one-third">
           <DonateCard
-            price="R$ 10 a cada 2500 Xp"
+            price="R$ 10 a cada 3000 Xp"
             description="Comprar Xp avulsamente na sua conta."
             title="Compra de Xp"
           />
         </div>
         <div class="column is-three-quarters-mobile is-one-third">
           <DonateCard
-            price="R$ 18 a cada 1 Asura Coin"
+            price="R$ 15 a cada 1 Asura Coin"
             description="Comprar Asura coins avulsamente na sua conta."
             title="Compra de Asura coins"
           />
         </div>
         <div
-          class="column is-three-quarters-mobile is-half"
+          class="column is-three-quarters-mobile is-full"
           style="margin-top: 20px"
         >
-          <DonateCard
-            price="R$ 32 mensalmente"
-            description="Ouro extra por partida.  <br>Xp extra por partida. <br>Trocar nome do galo gratuitamente.<br>Xp extra no passe de batalha.<br>Conteudo exclusivo no passe de batalha.<br>Bonus adicional no comando daily"
-            title="Vip"
-          />
+          <VipCard />
         </div>
       </div>
     </center>
@@ -103,8 +93,9 @@
 <script>
 import "../assets/main.css";
 import DonateCard from "../components/DonateCard";
+import VipCard from "../components/VipCard.vue";
 export default {
   name: "Donate",
-  components: { DonateCard },
+  components: { DonateCard, VipCard },
 };
 </script>
