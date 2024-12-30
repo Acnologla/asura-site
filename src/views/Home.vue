@@ -12,9 +12,10 @@
             class="invite"
             type="is-primary"
             style="margin-right: 30px; width: 180px; color: #eceff4"
-            href=" https://discordapp.com/oauth2/authorize?client_id=470684281102925844&scope=applications.commands%20bot&permissions=8"
+            href="#"
             target="_blank"
             tag="a"
+            @click="btn"
           >
             <span style="font-weight: 500"> Me adicione </span>
           </b-button>
@@ -113,6 +114,19 @@ import "../assets/main.css";
 export default {
   name: "Home",
   components: { AboutCard },
+  methods: {
+    btn() {
+      gtag("event", "conversion", {
+        send_to: "AW-11526751589/-iaDCOaJj_4ZEOWKsfgq",
+        value: 10.0,
+        currency: "BRL",
+      });
+      window.open(
+        "https://discordapp.com/oauth2/authorize?client_id=470684281102925844&scope=applications.commands%20bot&permissions=8",
+        "_blank"
+      );
+    },
+  },
   data() {
     return {
       cards: [
