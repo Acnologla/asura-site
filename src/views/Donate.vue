@@ -45,14 +45,14 @@
       >
         <div class="column is-three-quarters-mobile is-one-third">
           <DonateCard
-            price="R$ 10 a cada 1000 moedas"
+            price="R$ 10 a cada 3000 moedas"
             description="Comprar dinheiro avulsamente na sua conta."
             title="Compra de dinheiro"
           />
         </div>
         <div class="column is-three-quarters-mobile is-one-third">
           <DonateCard
-            price="R$ 10 a cada 3000 Xp"
+            price="R$ 10 a cada 4000 Xp"
             description="Comprar Xp avulsamente na sua conta."
             title="Compra de Xp"
           />
