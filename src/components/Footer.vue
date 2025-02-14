@@ -23,17 +23,19 @@
             Asura Bot
           </h3>
         </div>
-            <hr style=";margin-top:10px;margin-bottom:10px; background-color: #552fbc" />
+        <hr
+          style=";margin-top:10px;margin-bottom:10px; background-color: #552fbc"
+        />
         <div class="footerText">
           <p>
             Batalhe com outros galos, veja avatares antigos, jogue uno e muito
             mais
           </p>
           <div style="font-size: 28px; margin-top: 20px">
-            <a  target="_blank" href="https://github.com/Acnologla/asura">
+            <a target="_blank" href="https://github.com/Acnologla/asura">
               <font-awesome-icon :icon="['fab', 'github']" />
             </a>
-            <a target="_blank" href="https://discord.gg/tdVWQGV">
+            <a target="_blank" href="https://discord.gg/CfkBZyVsd7">
               <font-awesome-icon
                 style="margin-left: 20px"
                 :icon="['fab', 'discord']"
@@ -66,7 +68,7 @@
               >
             </li>
             <li>
-              <a target="_blank" href="https://discord.gg/tdVWQGV"
+              <a target="_blank" href="https://discord.gg/CfkBZyVsd7"
                 >Servidor de suporte</a
               >
             </li>
@@ -113,7 +115,9 @@
               </router-link>
             </li>
             <li>
-              <router-link :to="{ name: 'Donate' }"> Comprar items </router-link>
+              <router-link :to="{ name: 'Donate' }">
+                Comprar items
+              </router-link>
             </li>
           </ul>
         </div>
@@ -181,4 +185,4 @@ export default {
     },
   },
 };
-</script>   
+</script>

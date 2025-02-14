@@ -48,7 +48,9 @@
         Diminui o dano de efeitos que voce recebe em
         {{ Math.round((1 - item.payload) * 100) }}%
       </p>
-
+      <p v-if="item.effect == 13">
+        Ganha {{ item.payload }} de dinheiro extra por rinha
+      </p>
       <p></p>
     </div>
   </div>

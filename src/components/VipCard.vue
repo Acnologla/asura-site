@@ -67,7 +67,7 @@
               >
                 Atualmente doaçoes devem ser feitas no privado do acnologla, ou
                 em algum canal no servidor de
-                <a target="_blank" href="https://discord.gg/tdVWQGV"
+                <a target="_blank" href="https://discord.gg/CfkBZyVsd7"
                   >suporte do discord.</a
                 >
               </p>
