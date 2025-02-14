@@ -29,7 +29,15 @@ export default {
     return {
       sprites: [],
       selected: 0,
-      colors: ["#CDE3FF", "#0000FF", "#9400D3", "#FF9000","#CDE3FF", "GRADIENT"],
+      colors: [
+        "#CDE3FF",
+        "#0000FF",
+        "#9400D3",
+        "#FF9000",
+        "#FF4040",
+        "GRADIENT",
+        "#FF00FF",
+      ],
     };
   },
   props: {
@@ -41,7 +49,7 @@ export default {
     },
     getStyle() {
       const color = this.colors[this.classes[this.selected + 1].rarity];
-      console.log(color)
+      console.log(color);
       if (color === "GRADIENT") {
         return `height: 200px;border-radius: 4px;border-style:solid; border-image: linear-gradient(to bottom right, #b827fc 0%, #2c90fc 25%, #b8fd33 50%, #fec837 75%, #fd1892 100%);  border-image-slice: 1;`;
       }

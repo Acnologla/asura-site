@@ -21,7 +21,7 @@
           </b-button>
           <b-button
             tag="a"
-            href="https://discord.gg/tdVWQGV"
+            href="https://discord.gg/CfkBZyVsd7"
             target="_blank"
             type="is-primary is-light"
             style="width: 180px"

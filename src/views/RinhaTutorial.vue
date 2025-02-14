@@ -207,7 +207,7 @@
     />
     <h2 class="title">
       Ainda tem alguma duvida? não hesite em entrar no meu
-      <a href="https://discord.gg/tdVWQGV" target="_blank"
+      <a href="https://discord.gg/CfkBZyVsd7" target="_blank"
         >Servidor de suporte</a
       >.
     </h2>
