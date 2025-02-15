@@ -133,7 +133,7 @@ export default {
         {
           title: "Rinha de galo",
           description:
-            "Voce pode batalhar com seu galo, upar de nivel, desbloquear novos galos, enfrentar uma terrivel dungeon e matar inumeros chefes.   <a href='/asura-site/tutorial'>Clique aqui para ver o tutorial</a>",
+            "Voce pode batalhar com seu galo, upar de nivel, desbloquear novos galos, enfrentar uma terrivel dungeon e matar inumeros chefes.   <a href='/tutorial'>Clique aqui para ver o tutorial</a>",
           image: "https://i.imgur.com/KRBafek.png",
         },
         {
