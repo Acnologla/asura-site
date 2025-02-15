@@ -1,5 +1,6 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
+import AllGalos from "../views/AllGalos.vue";
 import Galos from "../views/Galos";
 import Home from "../views/Home";
 import Donate from "../views/Donate";
@@ -34,9 +35,14 @@ const routes = [
     component: Commands,
   },
   {
+    path: "/galo",
+    name: "Galo",
+    component: Galos,
+  },
+  {
     path: "/galos",
     name: "Galos",
-    component: Galos,
+    component: AllGalos,
   },
   {
     path: "/donate",
