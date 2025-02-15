@@ -18,6 +18,10 @@ module.exports = {
                 path.join(__dirname, "./dist/404.html"),
                 content
               );
+              fs.writeFileSync(
+                path.join(__dirname, "./dist/CNAME"),
+                "asurabot.com.br"
+              );
             } catch (_) {}
           });
         },
