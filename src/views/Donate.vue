@@ -9,6 +9,7 @@
             src="https://cdn.discordapp.com/avatars/470684281102925844/e1dfb36e69e5b83f081f8ee3ba1adbd3.webp?size=512"
             alt="Asura image"
             style="border-radius: 20px"
+            id="asuraImage"
           />
         </div>
         <div
@@ -69,7 +70,7 @@
           class="column is-three-quarters-mobile is-half-tablet is-one-third-desktop is-one-fifth-fullhd"
         >
           <DonateCard
-            price="R$ 10 a 1000 UserXp"
+            price="R$ 10 a cada 1000 UserXp"
             description="Comprar UserXp avulsamente na sua conta."
             title="Compra de UserXp"
           />
@@ -100,6 +101,20 @@
 @media screen and (max-width: 499px) {
   #donateCards {
     max-width: 100% !important;
+  }
+  #asuraImage {
+    width: 150px;
+  }
+  article {
+    margin-top: 40px !important;
+  }
+  h1 {
+    font-size: 25px !important;
+    margin-bottom: 10px !important;
+    margin-top: -10px !important;
+  }
+  .aboutDescription {
+    font-size: 18px;
   }
 }
 .donateTitle {
