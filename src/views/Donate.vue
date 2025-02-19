@@ -45,7 +45,7 @@
       >
         <div class="column is-three-quarters-mobile is-one-third">
           <DonateCard
-            price="R$ 10 a cada 3000 moedas"
+            price="R$ 10 a cada 4000 moedas"
             description="Comprar dinheiro avulsamente na sua conta."
             title="Compra de dinheiro"
           />
