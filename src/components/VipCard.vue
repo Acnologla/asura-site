@@ -20,7 +20,7 @@
           <li>Bônus na torre e nas raids.</li>
           <li>Bônus de xp no egg.</li>
           <li>Chance extra para conseguir chaves.</li>
-          <li>Xp extra no galinheiro.</li>
+          <li>Xp e money extra no galinheiro.</li>
           <li>40 Treinos extras por dia.</li>
         </ul>
       </div>
