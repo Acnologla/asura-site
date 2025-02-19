@@ -1,0 +1,98 @@
+[
+  {
+    "name": "Garra demoniaca",
+    "damage": [18, 32],
+    "level": 1
+  },
+  {
+    "name": "Baforada",
+    "damage": [23, 37],
+    "level": 2
+  },
+  {
+    "name": "Fogo infernal",
+    "damage": [28, 47],
+    "level": 3
+  },
+  {
+    "name": "Fragilidade",
+    "damage": [15, 31],
+    "effect": [1, 32],
+    "level": 4
+  },
+  {
+    "name": "Bola de escuridão",
+    "damage": [28, 57],
+    "level": 5
+  },
+  {
+    "name": "Aperto demoniaco",
+    "damage": [33, 57],
+    "level": 7
+  },
+  {
+    "name": "Espada do inferno",
+    "damage": [38, 57],
+    "level": 9
+  },
+  {
+    "name": "Posessão",
+    "damage": [45, 60],
+    "level": 10,
+    "effect": [1, 33]
+  },
+  {
+    "name": "Escuridão avassaladora",
+    "damage": [53, 62],
+    "level": 12
+  },
+  {
+    "name": "Furia demoniaca",
+    "damage": [65, 78],
+    "level": 13
+  },
+  {
+    "name": "Beijo do demonio",
+    "damage": [53, 82],
+    "level": 15
+  },
+  {
+    "name": "Escuridão densa",
+    "damage": [61, 90],
+    "level": 17
+  },
+  {
+    "name": "Prisão infernal",
+    "damage": [53, 70],
+    "effect": [0.65, 3],
+    "level": 19
+  },
+  {
+    "name": "Fragilidade demoniaca",
+    "damage": [40, 70],
+    "effect": [1, 32],
+    "level": 21
+  },
+  {
+    "name": "Inferno na terra",
+    "damage": [80, 103],
+    "level": 22
+  },
+  {
+    "name": "Espada de lucifer",
+    "damage": [100, 130],
+    "level": 25
+  },
+  {
+    "name": "Destruiçao em massa",
+    "damage": [100, 200],
+    "level": 30
+  },
+  {
+    "name": "Fragilidade destrutiva",
+    "damage": [130, 170],
+    "effect": [1, 32],
+    "evolved": true,
+    "level": 30
+  }
+]

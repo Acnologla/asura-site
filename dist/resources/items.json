@@ -1,0 +1,422 @@
+[
+  {
+    "name": "Garras",
+    "effect": 1,
+    "level": 0,
+    "payload": 1.1
+  },
+  {
+    "name": "Tocha",
+    "effect": 2,
+    "level": 0,
+    "payload": 8
+  },
+  {
+    "name": "Amplificador",
+    "effect": 3,
+    "level": 0,
+    "payload": 0.2
+  },
+  {
+    "name": "Reforçado de crista",
+    "effect": 4,
+    "level": 0,
+    "payload": 1.1
+  },
+  {
+    "name": "Armadura",
+    "effect": 5,
+    "level": 0,
+    "payload": 0.75
+  },
+  {
+    "name": "Poção de cura",
+    "effect": 2,
+    "level": 0,
+    "payload": 2
+  },
+  {
+    "name": "Espinho gelido",
+    "effect": 2,
+    "level": 0,
+    "payload": 11
+  },
+  {
+    "name": "Pote de ácido",
+    "effect": 2,
+    "level": 0,
+    "payload": 23
+  },
+  {
+    "name": "Espada",
+    "effect": 1,
+    "level": 1,
+    "payload": 1.2
+  },
+  {
+    "name": "Faca envenada",
+    "effect": 2,
+    "level": 1,
+    "payload": 16
+  },
+  {
+    "name": "Amplificador potente",
+    "effect": 3,
+    "level": 1,
+    "payload": 0.25
+  },
+  {
+    "name": "Rosa da vida",
+    "effect": 4,
+    "level": 1,
+    "payload": 1.25
+  },
+  {
+    "name": "Armadura de diamante",
+    "effect": 5,
+    "level": 1,
+    "payload": 0.6
+  },
+  {
+    "name": "Machado divino",
+    "effect": 1,
+    "level": 2,
+    "payload": 1.35
+  },
+  {
+    "name": "Amplificador espiritual",
+    "effect": 3,
+    "level": 2,
+    "payload": 0.35
+  },
+  {
+    "name": "Canhao de plasma",
+    "effect": 2,
+    "level": 2,
+    "payload": 20
+  },
+  {
+    "name": "Elixir da vida eterna",
+    "effect": 4,
+    "level": 2,
+    "payload": 1.5
+  },
+  {
+    "name": "Armadura de obisidiana",
+    "effect": 5,
+    "level": 2,
+    "payload": 0.5
+  },
+  {
+    "name": "Escalibur",
+    "effect": 1,
+    "level": 3,
+    "payload": 1.5
+  },
+  {
+    "name": "Imortalidade",
+    "effect": 4,
+    "level": 3,
+    "payload": 1.75
+  },
+  {
+    "name": "Maldição fragilizadora",
+    "effect": 2,
+    "level": 3,
+    "payload": 32
+  },
+  {
+    "name": "Armadura da divindade",
+    "effect": 5,
+    "level": 3,
+    "payload": 0.45
+  },
+  {
+    "name": "Amplificador divino",
+    "effect": 3,
+    "level": 3,
+    "payload": 0.4
+  },
+  {
+    "name": "Multiplicador",
+    "effect": 6,
+    "level": 0,
+    "payload": 1.1
+  },
+  {
+    "name": "Multiplicador potente",
+    "effect": 6,
+    "level": 1,
+    "payload": 1.2
+  },
+  {
+    "name": "Multiplicador espiritual",
+    "effect": 6,
+    "level": 2,
+    "payload": 1.35
+  },
+  {
+    "name": "Multiplicador divino",
+    "effect": 6,
+    "level": 3,
+    "payload": 1.5
+  },
+  {
+    "name": "Refletidor",
+    "effect": 7,
+    "level": 0,
+    "payload": 0.25
+  },
+  {
+    "name": "Refletidor potente",
+    "effect": 7,
+    "level": 1,
+    "payload": 0.35
+  },
+  {
+    "name": "Refletidor espiritual",
+    "effect": 7,
+    "level": 2,
+    "payload": 0.4
+  },
+  {
+    "name": "Refletidor divino",
+    "effect": 7,
+    "level": 3,
+    "payload": 0.5
+  },
+  {
+    "name": "Beta Escalibur",
+    "effect": 1,
+    "level": 4,
+    "payload": 1.6
+  },
+  {
+    "name": "Beta Multiplicador",
+    "effect": 6,
+    "level": 4,
+    "payload": 1.6
+  },
+  {
+    "name": "Beta refletidor",
+    "effect": 7,
+    "level": 4,
+    "payload": 0.65
+  },
+  {
+    "name": "Beta Amplificador",
+    "effect": 3,
+    "level": 4,
+    "payload": 0.45
+  },
+  {
+    "name": "Beta Armor",
+    "effect": 5,
+    "level": 4,
+    "payload": 0.4
+  },
+  {
+    "name": "Beta imortalidade",
+    "effect": 4,
+    "level": 4,
+    "payload": 1.9
+  },
+  {
+    "name": "Iluminação",
+    "effect": 2,
+    "level": 4,
+    "payload": 17
+  },
+  {
+    "name": "Farmador",
+    "effect": 8,
+    "level": 0,
+    "payload": 0.2
+  },
+  {
+    "name": "Farmador melhorado",
+    "effect": 8,
+    "level": 1,
+    "payload": 0.25
+  },
+  {
+    "name": "Farmador duplo",
+    "effect": 8,
+    "level": 2,
+    "payload": 0.3
+  },
+  {
+    "name": "Farmador divino",
+    "effect": 8,
+    "level": 3,
+    "payload": 0.35
+  },
+  {
+    "name": "Beta Farmador",
+    "effect": 8,
+    "level": 4,
+    "payload": 0.45
+  },
+  {
+    "name": "Arvore de natal",
+    "effect": 9,
+    "level": 5,
+    "payload": 1
+  },
+  {
+    "name": "Clan upgrader",
+    "effect": 10,
+    "level": 5,
+    "payload": 1
+  },
+  {
+    "name": "Drenador",
+    "effect": 11,
+    "level": 0,
+    "payload": 1.35
+  },
+  {
+    "name": "Drenador melhorado",
+    "effect": 11,
+    "level": 1,
+    "payload": 1.45
+  },
+  {
+    "name": "Drenador duplo",
+    "effect": 11,
+    "level": 2,
+    "payload": 1.6
+  },
+  {
+    "name": "Drenador divino",
+    "effect": 11,
+    "level": 3,
+    "payload": 1.75
+  },
+  {
+    "name": "Beta Drenador",
+    "effect": 11,
+    "level": 4,
+    "payload": 1.9
+  },
+  {
+    "name": "Drenador mitico",
+    "effect": 11,
+    "level": 6,
+    "payload": 2.5
+  },
+  {
+    "name": "Escalibur mitica",
+    "effect": 1,
+    "level": 6,
+    "payload": 2
+  },
+  {
+    "name": "Multiplicador mitico",
+    "effect": 6,
+    "level": 6,
+    "payload": 2
+  },
+  {
+    "name": "Refletidor mitico",
+    "effect": 7,
+    "level": 6,
+    "payload": 0.9
+  },
+  {
+    "name": "Amplificador mitico",
+    "effect": 3,
+    "level": 6,
+    "payload": 0.75
+  },
+  {
+    "name": "Armadura mitica",
+    "effect": 5,
+    "level": 6,
+    "payload": 0.25
+  },
+  {
+    "name": "Imortalidade mitica",
+    "effect": 4,
+    "level": 6,
+    "payload": 2.75
+  },
+  {
+    "name": "Stunador",
+    "effect": 2,
+    "level": 6,
+    "payload": 3
+  },
+  {
+    "name": "Farmador mitico",
+    "effect": 8,
+    "level": 6,
+    "payload": 0.8
+  },
+  {
+    "name": "Escudo",
+    "effect": 12,
+    "level": 0,
+    "payload": 0.6
+  },
+  {
+    "name": "Escudo melhorado",
+    "effect": 12,
+    "level": 1,
+    "payload": 0.45
+  },
+  {
+    "name": "Escudo de aço",
+    "effect": 12,
+    "level": 2,
+    "payload": 0.4
+  },
+  {
+    "name": "Escudo de diamante",
+    "effect": 12,
+    "level": 3,
+    "payload": 0.35
+  },
+  {
+    "name": "Beta escudo",
+    "effect": 12,
+    "level": 4,
+    "payload": 0.25
+  },
+  {
+    "name": "Escudo mitico",
+    "effect": 12,
+    "level": 6,
+    "payload": 0.05
+  },
+  {
+    "name": "Minerador",
+    "effect": 13,
+    "level": 1,
+    "payload": 1
+  },
+  {
+    "name": "Minerador aprimorado",
+    "effect": 13,
+    "level": 2,
+    "payload": 2
+  },
+  {
+    "name": "Minerador de diamante",
+    "effect": 13,
+    "level": 3,
+    "payload": 3
+  },
+  {
+    "name": "Beta Minerador",
+    "effect": 13,
+    "level": 4,
+    "payload": 4
+  },
+  {
+    "name": "Minerador mitico",
+    "effect": 13,
+    "level": 6,
+    "payload": 5
+  }
+]
