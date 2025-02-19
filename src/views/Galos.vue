@@ -88,9 +88,7 @@ export default {
     },
     fetchSkills(selectedClass) {
       return axios
-        .get(
-          `https://raw.githubusercontent.com/Acnologla/asura/master/resources/galo/attacks/${selectedClass.name}.json`
-        )
+        .get(`/resources/attacks/${selectedClass.name}.json`)
         .then((skills) => {
           skills.data
             .filter((skill) => skill.effect)
@@ -109,20 +107,12 @@ export default {
     },
   },
   async created() {
-    await axios
-      .get(
-        "https://raw.githubusercontent.com/Acnologla/asura/master/resources/galo/class.json"
-      )
-      .then((classes) => {
-        this.classes = classes.data;
-      });
-    await axios
-      .get(
-        "https://raw.githubusercontent.com/Acnologla/asura/master/resources/galo/effects.json"
-      )
-      .then((effects) => {
-        this.effects = effects.data;
-      });
+    await axios.get("/resources/class.json").then((classes) => {
+      this.classes = classes.data;
+    });
+    await axios.get("/resources/effects.json").then((effects) => {
+      this.effects = effects.data;
+    });
     if (this.$route.query.galo) {
       this.current = parseInt(this.$route.query.galo);
     }

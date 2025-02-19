@@ -1,9 +1,7 @@
 <template>
   <div style="margin-left: 30px;text-align: left">
     <div v-for="(upgrade, i) in upgrades" :key="i">
-      <Upgrade
-        :upgrade="upgrade"
-      />
+      <Upgrade :upgrade="upgrade" />
     </div>
   </div>
 </template>
@@ -17,17 +15,13 @@ export default {
   },
   data() {
     return {
-        upgrades : []
+      upgrades: [],
     };
   },
   created() {
-    axios
-      .get(
-        "https://raw.githubusercontent.com/Acnologla/asura/master/resources/galo/upgrades.json"
-      )
-      .then((upgrades) => {
-        this.upgrades = upgrades.data;
-      });
+    axios.get("/resources/upgrades.json").then((upgrades) => {
+      this.upgrades = upgrades.data;
+    });
   },
 };
 </script>

@@ -33,20 +33,12 @@ export default {
     };
   },
   created() {
-    axios
-      .get(
-        "https://raw.githubusercontent.com/Acnologla/asura/master/resources/galo/effects.json"
-      )
-      .then((effects) => {
-        this.effects = effects.data;
-      });
-    axios
-      .get(
-        "https://raw.githubusercontent.com/Acnologla/asura/master/resources/galo/items.json"
-      )
-      .then((items) => {
-        this.items = items.data;
-      });
+    axios.get("/resources/effects.json").then((effects) => {
+      this.effects = effects.data;
+    });
+    axios.get("/resources/items.json").then((items) => {
+      this.items = items.data;
+    });
   },
 };
 </script>

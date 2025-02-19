@@ -19,7 +19,9 @@
           <li>Ganha mais Asura Coins ao vender galos.</li>
           <li>Bônus na torre e nas raids.</li>
           <li>Bônus de xp no egg.</li>
-          <li>35 Treinos extras por dia.</li>
+          <li>Chance extra para conseguir chaves</li>
+          <li>Xp extra no galinheiro</li>
+          <li>40 Treinos extras por dia.</li>
         </ul>
       </div>
     </div>

@@ -123,20 +123,12 @@ export default {
     },
   },
   async created() {
-    axios
-      .get(
-        "https://raw.githubusercontent.com/Acnologla/asura/master/resources/galo/sprites.json"
-      )
-      .then((result) => {
-        this.sprites = result.data[0];
-      });
-    await axios
-      .get(
-        "https://raw.githubusercontent.com/Acnologla/asura/master/resources/galo/class.json"
-      )
-      .then((classes) => {
-        this.classes = classes.data;
-      });
+    axios.get("/resources/sprites.json").then((result) => {
+      this.sprites = result.data[0];
+    });
+    await axios.get("/resources/class.json").then((classes) => {
+      this.classes = classes.data;
+    });
   },
 };
 </script>

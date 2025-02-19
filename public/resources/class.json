@@ -1,0 +1,267 @@
+[
+  {
+    "name": "BugError404NotE E E BOOM",
+    "rarity": -1
+  },
+  {
+    "name": "Normal",
+    "disadvantages": [],
+    "rarity": 0
+  },
+  {
+    "name": "Papel",
+    "disadvantages": [4, 5, 7, 12, 17],
+    "rarity": 0
+  },
+  {
+    "name": "Pedra",
+    "disadvantages": [2, 6, 14, 16],
+    "rarity": 0
+  },
+  {
+    "name": "Cortante",
+    "disadvantages": [3, 9, 10, 17],
+    "rarity": 0
+  },
+  {
+    "name": "Fogo",
+    "disadvantages": [3, 7, 8, 11, 21],
+    "rarity": 0
+  },
+  {
+    "name": "Gelo",
+    "disadvantages": [2, 7, 9, 12],
+    "rarity": 0
+  },
+  {
+    "name": "Magma",
+    "disadvantages": [8, 10],
+    "rarity": 1
+  },
+  {
+    "name": "Agua",
+    "disadvantages": [9, 6],
+    "rarity": 1
+  },
+  {
+    "name": "Natureza",
+    "disadvantages": [7, 12, 5],
+    "rarity": 1
+  },
+  {
+    "name": "Luz",
+    "disadvantages": [13],
+    "rarity": 2
+  },
+  {
+    "name": "Metal",
+    "disadvantages": [8, 2, 14, 9],
+    "rarity": 0
+  },
+  {
+    "name": "Plasma",
+    "disadvantages": [11, 10],
+    "rarity": 1
+  },
+  {
+    "name": "Escuridao",
+    "disadvantages": [14, 22],
+    "rarity": 2
+  },
+  {
+    "name": "Robotico",
+    "disadvantages": [8],
+    "rarity": 1
+  },
+  {
+    "name": "Arcano",
+    "disadvantages": [],
+    "rarity": 2
+  },
+  {
+    "name": "Acido",
+    "disadvantages": [9, 4, 17],
+    "rarity": 0
+  },
+  {
+    "name": "Eletrico",
+    "disadvantages": [12, 26],
+    "rarity": 1
+  },
+  {
+    "name": "Gravidade",
+    "disadvantages": [10],
+    "rarity": 2
+  },
+  {
+    "name": "Angelical",
+    "disadvantages": [],
+    "rarity": 3
+  },
+  {
+    "name": "Madeira",
+    "disadvantages": [5, 21],
+    "rarity": 0
+  },
+  {
+    "name": "Explosão",
+    "disadvantages": [],
+    "rarity": 1
+  },
+  {
+    "name": "Sol",
+    "disadvantages": [18],
+    "rarity": 2
+  },
+  {
+    "name": "Demoniaco",
+    "disadvantages": [],
+    "rarity": 3
+  },
+  {
+    "name": "Vampirico",
+    "disadvantages": [22],
+    "rarity": 2
+  },
+  {
+    "name": "Areia",
+    "disadvantages": [8],
+    "rarity": 1
+  },
+  {
+    "name": "Borracha",
+    "disadvantages": [5],
+    "rarity": 0
+  },
+  {
+    "name": "Lua",
+    "disadvantages": [],
+    "rarity": 2
+  },
+  {
+    "name": "Radioativo",
+    "disadvantages": [29, 27],
+    "rarity": 1
+  },
+  {
+    "name": "Dragao",
+    "disadvantages": [],
+    "rarity": 2
+  },
+  {
+    "name": "Ninja",
+    "disadvantages": [],
+    "rarity": 2
+  },
+  {
+    "name": "Eclipse",
+    "disadvantages": [],
+    "rarity": 3
+  },
+  {
+    "name": "Tempo",
+    "disadvantages": [],
+    "rarity": 5
+  },
+  {
+    "name": "Phoenix",
+    "rarity": 5
+  },
+  {
+    "name": "Samurai",
+    "rarity": 1,
+    "disadvantages": [12]
+  },
+  {
+    "name": "Emo",
+    "rarity": 0,
+    "disadvantages": [2, 14, 31, 7]
+  },
+  {
+    "name": "Zumbi",
+    "rarity": 3
+  },
+  {
+    "name": "Dinossauro",
+    "rarity": 0,
+    "disadvantages": [5, 15, 25]
+  },
+  {
+    "name": "Ar",
+    "rarity": 1,
+    "disadvantages": [20, 15]
+  },
+  {
+    "name": "Fantasma",
+    "rarity": 2
+  },
+  {
+    "name": "Mago",
+    "rarity": 3
+  },
+  {
+    "name": "Desenho",
+    "rarity": 3
+  },
+  {
+    "name": "Esqueleto",
+    "rarity": 0,
+    "disadvantages": [6, 26, 36, 3]
+  },
+  {
+    "name": "Slime",
+    "rarity": 2
+  },
+  {
+    "name": "Militar",
+    "rarity": 1,
+    "disadvantages": [20]
+  },
+  {
+    "name": "Apocalipse",
+    "rarity": 3
+  },
+  {
+    "name": "Existencial",
+    "rarity": 5
+  },
+  {
+    "name": "Pelucia",
+    "rarity": 0,
+    "disadvantages": [4, 5, 12, 17]
+  },
+  {
+    "name": "Porcelana",
+    "rarity": 0,
+    "disadvantages": [4, 5, 12, 17]
+  },
+  {
+    "name": "Mumia",
+    "rarity": 1,
+    "disadvantages": [26]
+  },
+  {
+    "name": "Black",
+    "rarity": 5
+  },
+  {
+    "name": "White",
+    "rarity": 5
+  },
+  {
+    "name": "Natal",
+    "rarity": 4
+  },
+  {
+    "name": "Termico",
+    "rarity": 4
+  },
+  {
+    "name": "Panda",
+    "rarity": 3
+  },
+  {
+    "name": "Nephilim",
+    "rarity": 6
+  }
+]

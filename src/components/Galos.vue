@@ -60,13 +60,9 @@ export default {
     if (this.$route.query.galo) {
       this.selected = parseInt(this.$route.query.galo);
     }
-    axios
-      .get(
-        "https://raw.githubusercontent.com/Acnologla/asura/master/resources/galo/sprites.json"
-      )
-      .then((result) => {
-        this.sprites = result.data[0];
-      });
+    axios.get("/resources/sprites.json").then((result) => {
+      this.sprites = result.data[0];
+    });
   },
 };
 </script>

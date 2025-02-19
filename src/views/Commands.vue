@@ -23,11 +23,11 @@
                 @click="() => filterCategory(1)"
                 label="Comandos de rinha"
               />
-                <b-menu-item
+              <b-menu-item
                 @click="() => filterCategory(2)"
                 label="Comandos de perfil"
               />
-                <b-menu-item
+              <b-menu-item
                 @click="() => filterCategory(3)"
                 label="Comandos de jogos"
               />
@@ -75,7 +75,7 @@ export default {
     return {
       commands: [],
       displayCommands: [],
-      category: 0
+      category: 0,
     };
   },
   components: {
@@ -86,28 +86,27 @@ export default {
       const validate = text.replace(/ /g, "");
       if (validate !== "") {
         this.displayCommands = this.commands.filter((command) =>
-          command.aliases.some(aliase => levenshtein(aliase, validate) <= 1 || aliase.includes(validate) )
+          command.aliases.some(
+            (aliase) =>
+              levenshtein(aliase, validate) <= 1 || aliase.includes(validate)
+          )
         );
-      }else{
-          this.filterCategory(this.category)
+      } else {
+        this.filterCategory(this.category);
       }
     },
     filterCategory(category) {
-    this.category = category
+      this.category = category;
       this.displayCommands = this.commands.filter(
-        (a) => a.category === category 
+        (a) => a.category === category
       );
     },
   },
   mounted() {
-    axios
-      .get(
-        "https://raw.githubusercontent.com/Acnologla/asura/master/generate/commands.json"
-      )
-      .then(({ data }) => {
-        this.commands = data;
-        this.filterCategory(0);
-      });
+    axios.get("/resources/commands.json").then(({ data }) => {
+      this.commands = data;
+      this.filterCategory(0);
+    });
   },
 };
 </script>
