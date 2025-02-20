@@ -35,9 +35,7 @@
         <template>
           <div class="card">
             <header class="card-header">
-              <p
-                style="color: black;padding: 30px;font-weight: 500;font-size: 18px;"
-              >
+              <p class="popup-text">
                 Atualmente doaçoes devem ser feitas no privado do acnologla, ou
                 em algum canal no servidor de
                 <a target="_blank" href="https://discord.gg/CfkBZyVsd7"
@@ -55,6 +53,13 @@
 .card-footer {
   border-top: 0px;
 }
+
+.popup-text {
+  color: black;
+  padding: 30px;
+  font-weight: 500;
+  font-size: 18px;
+}
 .card {
   display: flex;
   flex-direction: column;
@@ -65,6 +70,10 @@
 }
 [data-theme="dark"] b {
   font-weight: 500;
+}
+[data-theme="dark"] .popup-text {
+  color: white;
+  font-weight: 200;
 }
 </style>
 <script>
