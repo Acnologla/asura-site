@@ -21,7 +21,7 @@
           <li>Bônus de xp no egg.</li>
           <li>Chance extra para conseguir chaves.</li>
           <li>Xp e money extra no galinheiro.</li>
-          <li>40 Treinos extras por dia.</li>
+          <li>50 Treinos extras por dia.</li>
         </ul>
       </div>
     </div>

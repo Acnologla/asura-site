@@ -1,0 +1,141 @@
+[
+  { "name": "BugError404NotE E E BOOM", "rarity": -1 },
+  {
+    "rarity": 4,
+    "type": 0,
+    "name": "Vip background",
+    "value": "https://cdn.asurabot.com.br/cdn/skins/Vipbackground.jpg"
+  },
+  {
+    "rarity": 0,
+    "type": 0,
+    "name": "City background",
+    "value": "https://cdn.asurabot.com.br/cdn/skins/Citybackground.jpg"
+  },
+  {
+    "rarity": 0,
+    "type": 0,
+    "name": "Balcony background",
+    "value": "https://cdn.asurabot.com.br/cdn/skins/Balconybackground.jpg"
+  },
+  {
+    "rarity": 0,
+    "type": 0,
+    "name": "Stairs background",
+    "value": "https://cdn.asurabot.com.br/cdn/skins/Stairsbackground.jpg"
+  },
+  {
+    "rarity": 0,
+    "type": 0,
+    "name": "Forest background",
+    "value": "https://cdn.asurabot.com.br/cdn/skins/Forestbackground.jpg"
+  },
+  {
+    "rarity": 1,
+    "type": 0,
+    "name": "Sky background",
+    "value": "https://cdn.asurabot.com.br/cdn/skins/Skybackground.jpg"
+  },
+  {
+    "rarity": 1,
+    "type": 0,
+    "name": "Tree background",
+    "value": "https://cdn.asurabot.com.br/cdn/skins/Treebackground.png"
+  },
+  {
+    "rarity": 1,
+    "type": 0,
+    "name": "Moon background",
+    "value": "https://cdn.asurabot.com.br/cdn/skins/Moonbackground.jpg"
+  },
+  {
+    "rarity": 2,
+    "type": 0,
+    "name": "Ocean background",
+    "value": "https://cdn.asurabot.com.br/cdn/skins/Oceanbackground.jpg"
+  },
+  {
+    "rarity": 2,
+    "type": 0,
+    "name": "Cloud background",
+    "value": "https://cdn.asurabot.com.br/cdn/skins/Cloudbackground.jpg"
+  },
+  {
+    "rarity": 3,
+    "type": 0,
+    "name": "Explosion background",
+    "value": "https://cdn.asurabot.com.br/cdn/skins/Explosionbackground.jpg"
+  },
+  {
+    "rarity": 0,
+    "type": 0,
+    "name": "Grass background",
+    "value": "https://cdn.asurabot.com.br/cdn/skins/Grassbackground.png"
+  },
+  {
+    "rarity": 0,
+    "type": 0,
+    "name": "BlackSky background",
+    "value": "https://cdn.asurabot.com.br/cdn/skins/BlackSkybackground.jpg"
+  },
+  {
+    "rarity": 1,
+    "type": 0,
+    "name": "Stars background",
+    "value": "https://cdn.asurabot.com.br/cdn/skins/Starsbackground.jpg"
+  },
+  {
+    "rarity": 1,
+    "type": 0,
+    "name": "PinkTree background",
+    "value": "https://cdn.asurabot.com.br/cdn/skins/PinkTreebackground.jpg"
+  },
+  {
+    "rarity": 2,
+    "type": 0,
+    "name": "PurpleSky backgroundd",
+    "value": "https://cdn.asurabot.com.br/cdn/skins/PurpleSkybackgroundd.jpg"
+  },
+  {
+    "rarity": 3,
+    "type": 0,
+    "name": "Nexus background",
+    "value": "https://cdn.asurabot.com.br/cdn/skins/Nexusbackground.jpg"
+  },
+  {
+    "rarity": 1,
+    "type": 0,
+    "name": "Earth background",
+    "value": "https://cdn.asurabot.com.br/cdn/skins/Earthbackground.jpg"
+  },
+  {
+    "rarity": 2,
+    "type": 0,
+    "name": "Red sun background",
+    "value": "https://cdn.asurabot.com.br/cdn/skins/Redsunbackground.jpg"
+  },
+  {
+    "rarity": 3,
+    "type": 0,
+    "name": "Flowers background",
+    "value": "https://cdn.asurabot.com.br/cdn/skins/Flowersbackground.png"
+  },
+  {
+    "rarity": 4,
+    "type": 1,
+    "name": "Clan beta",
+    "value": "https://ik.imagekit.io/ar6qa6zityxe/clanbeta_vFFTrrVnJ.png"
+  },
+  {
+    "rarity": 4,
+    "type": 1,
+    "name": "VIP",
+    "value": "https://ik.imagekit.io/ar6qa6zityxe/Fire_Badge_DRMFvNKDmS.png"
+  },
+  {
+    "rarity": 4,
+    "type": 1,
+    "name": "Dungeon finish",
+    "value": "https://ik.imagekit.io/ar6qa6zityxe/deungeonfinish_GEv-aQjJi.png"
+  }
+]

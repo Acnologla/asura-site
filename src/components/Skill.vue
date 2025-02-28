@@ -19,7 +19,7 @@
         <div v-if="skill.effect.chance > 0">
           <hr />
           <div v-if="effect" style="cursor: pointer" @click="changeEffect">
-            <Effect :skill="skill"/>
+            <Effect :skill="skill" />
           </div>
           <b-button v-else @click="changeEffect" type="is-primary is-light"
             >Efeito</b-button
@@ -146,6 +146,10 @@
           {{ " |" + toCompare.level }}
         </span>
       </p>
+
+      <p v-if="skill.evolved" class="card-footer-item" style="color: #552fbc">
+        Evoluida
+      </p>
     </footer>
   </div>
 </template>
@@ -177,12 +181,11 @@
 }
 </style>
 <script>
-
 import Effect from "./Effect.vue";
 export default {
   name: "Skill",
   components: {
-    Effect
+    Effect,
   },
   data() {
     return {

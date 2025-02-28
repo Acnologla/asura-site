@@ -49,7 +49,6 @@ export default {
     },
     getStyle() {
       const color = this.colors[this.classes[this.selected + 1].rarity];
-      console.log(color);
       if (color === "GRADIENT") {
         return `height: 200px;border-radius: 4px;border-style:solid; border-image: linear-gradient(to bottom right, #b827fc 0%, #2c90fc 25%, #b8fd33 50%, #fec837 75%, #fd1892 100%);  border-image-slice: 1;`;
       }
@@ -70,5 +69,11 @@ export default {
 .galos {
   width: 300px;
   height: 300px;
+}
+
+@media screen and (max-width: 768px) {
+  .galos {
+    height: 230px;
+  }
 }
 </style>

@@ -1,0 +1,520 @@
+[
+  {
+    "rarity": 4,
+    "type": 1,
+    "name": "Exsleonar",
+    "value": "https://cdn.discordapp.com/attachments/736504238565359637/954817334252535898/Badge.png"
+  },
+  {
+    "rarity": 0,
+    "type": 0,
+    "name": "Anime City background",
+    "value": "https://cdn.asurabot.com.br/cdn/skins/AnimeCitybackground.jpg"
+  },
+  {
+    "rarity": 0,
+    "type": 0,
+    "name": "Mountain background",
+    "value": "https://cdn.asurabot.com.br/cdn/skins/Mountainbackground.jpg"
+  },
+  {
+    "rarity": 0,
+    "type": 0,
+    "name": "Water background",
+    "value": "https://cdn.asurabot.com.br/cdn/skins/Waterbackground.jpg"
+  },
+  {
+    "rarity": 0,
+    "type": 0,
+    "name": "Sun Water background",
+    "value": "https://cdn.asurabot.com.br/cdn/skins/SunWaterbackground.jpg"
+  },
+  {
+    "rarity": 1,
+    "type": 0,
+    "name": "Red Moon background",
+    "value": "https://cdn.asurabot.com.br/cdn/skins/RedMoonbackground.png"
+  },
+  {
+    "rarity": 1,
+    "type": 0,
+    "name": "Moon city background",
+    "value": "https://cdn.asurabot.com.br/cdn/skins/Mooncitybackground.png"
+  },
+  {
+    "rarity": 1,
+    "type": 0,
+    "name": "Galaxy background",
+    "value": "https://cdn.asurabot.com.br/cdn/skins/Galaxybackground.jpg"
+  },
+  {
+    "rarity": 2,
+    "type": 0,
+    "name": "Giant star background",
+    "value": "https://cdn.asurabot.com.br/cdn/skins/Giantstarbackground.jpg"
+  },
+  {
+    "rarity": 2,
+    "type": 0,
+    "name": "Dark Planet background",
+    "value": "https://cdn.asurabot.com.br/cdn/skins/DarkPlanetbackground.png"
+  },
+  {
+    "rarity": 3,
+    "type": 0,
+    "name": "Sun Forest background",
+    "value": "https://cdn.asurabot.com.br/cdn/skins/SunForestbackground.jpg"
+  },
+  {
+    "name": "Skin Original",
+    "rarity": 3,
+    "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinOriginalR.png",
+    "value": "https://cdn.asurabot.com.br/cdn/skins/SkinOriginal.png",
+    "type": 2,
+    "extra": 41
+  },
+  {
+    "name": "Skin Popeye",
+    "rarity": 2,
+    "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinPopeyeR.png",
+    "value": "https://cdn.asurabot.com.br/cdn/skins/SkinPopeye.png",
+    "type": 2,
+    "extra": 41
+  },
+  {
+    "name": "Skin Anime",
+    "rarity": 3,
+    "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinAnimeR.png",
+    "value": "https://cdn.asurabot.com.br/cdn/skins/SkinAnime.png",
+    "type": 2,
+    "extra": 41
+  },
+  {
+    "name": "Skin pintor",
+    "rarity": 4,
+    "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinpintorR.png",
+    "value": "https://cdn.asurabot.com.br/cdn/skins/Skinpintor.png",
+    "type": 2,
+    "extra": 41
+  },
+  {
+    "name": "Skin borboleta",
+    "rarity": 4,
+    "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinborboletaR.png",
+    "value": "https://cdn.asurabot.com.br/cdn/skins/Skinborboleta.png",
+    "type": 2,
+    "extra": 32
+  },
+  {
+    "name": "Skin Arcanjo",
+    "rarity": 4,
+    "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinArcanjoR.png",
+    "value": "https://cdn.asurabot.com.br/cdn/skins/SkinArcanjo.png",
+    "type": 2,
+    "extra": 19
+  },
+  {
+    "name": "Skin Fogo infernal",
+    "rarity": 4,
+    "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinFogoinfernalR.png",
+    "value": "https://cdn.asurabot.com.br/cdn/skins/SkinFogoinfernal.png",
+    "type": 2,
+    "extra": 23
+  },
+  {
+    "rarity": 4,
+    "type": 1,
+    "name": "Badge BP0",
+    "value": "https://ik.imagekit.io/ar6qa6zityxe/TOP2_eR6CnIO6xF.png"
+  },
+  {
+    "rarity": 4,
+    "type": 1,
+    "name": "Badge VIPBP0",
+    "value": "https://cdn.discordapp.com/attachments/932046460969701396/1064630645734772826/Sem_Titulo-1.png"
+  },
+  {
+    "name": "Skin Sakura",
+    "rarity": 3,
+    "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinSakuraR.png",
+    "value": "https://cdn.asurabot.com.br/cdn/skins/SkinSakura.png",
+    "type": 2,
+    "extra": 33
+  },
+  {
+    "name": "Skin Fome",
+    "rarity": 2,
+    "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinFomeR.png",
+    "value": "https://cdn.asurabot.com.br/cdn/skins/SkinFome.png",
+    "type": 2,
+    "extra": 45
+  },
+  {
+    "name": "Skin Guerra",
+    "rarity": 3,
+    "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinGuerraR.png",
+    "value": "https://cdn.asurabot.com.br/cdn/skins/SkinGuerra.png",
+    "type": 2,
+    "extra": 45
+  },
+  {
+    "name": "Skin Morte",
+    "rarity": 2,
+    "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinMorteR.png",
+    "value": "https://cdn.asurabot.com.br/cdn/skins/SkinMorte.png",
+    "type": 2,
+    "extra": 45
+  },
+  {
+    "name": "Skin Esqueleto Amaldicoado",
+    "rarity": 1,
+    "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinEsqueletoAmaldicoadoR.png",
+    "value": "https://cdn.asurabot.com.br/cdn/skins/SkinEsqueletoAmaldicoado.png",
+    "type": 2,
+    "extra": 42
+  },
+  {
+    "name": "Skin Esqueleto Congelado",
+    "rarity": 0,
+    "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinEsqueletoCongeladoR.png",
+    "value": "https://cdn.asurabot.com.br/cdn/skins/SkinEsqueletoCongelado.png",
+    "type": 2,
+    "extra": 42
+  },
+  {
+    "name": "Skin Esqueleto Tostado",
+    "rarity": 3,
+    "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinEsqueletoTostadoR.png",
+    "value": "https://cdn.asurabot.com.br/cdn/skins/SkinEsqueletoTostado.png",
+    "type": 2,
+    "extra": 42
+  },
+  {
+    "name": "Skin Era dos Buracos Negros",
+    "rarity": 2,
+    "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinEradosBuracosNegrosR.png",
+    "value": "https://cdn.asurabot.com.br/cdn/skins/SkinEradosBuracosNegros.png",
+    "type": 2,
+    "extra": 46
+  },
+  {
+    "name": "Skin Digital Existence",
+    "rarity": 2,
+    "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinDigitalExistenceR.png",
+    "value": "https://cdn.asurabot.com.br/cdn/skins/SkinDigitalExistence.png",
+    "type": 2,
+    "extra": 46
+  },
+  {
+    "name": "Skin Existencia Maligna",
+    "rarity": 3,
+    "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinExistenciaMalignaR.png",
+    "value": "https://cdn.asurabot.com.br/cdn/skins/SkinExistenciaMaligna.png",
+    "type": 2,
+    "extra": 46
+  },
+  {
+    "name": "Skin Existencia Distorcida",
+    "rarity": 3,
+    "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinExistenciaDistorcidaR.png",
+    "value": "https://cdn.asurabot.com.br/cdn/skins/SkinExistenciaDistorcida.png",
+    "type": 2,
+    "extra": 46
+  },
+  {
+    "name": "Skin Deutsch WW2",
+    "rarity": 0,
+    "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinDeutschWW2R.png",
+    "value": "https://cdn.asurabot.com.br/cdn/skins/SkinDeutschWW2.png",
+    "type": 2,
+    "extra": 44
+  },
+  {
+    "name": "Skin Soviet",
+    "rarity": 2,
+    "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinSovietR.png",
+    "value": "https://cdn.asurabot.com.br/cdn/skins/SkinSoviet.png",
+    "type": 2,
+    "extra": 44
+  },
+  {
+    "name": "Skin Tundra",
+    "rarity": 3,
+    "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinTundraR.png",
+    "value": "https://cdn.asurabot.com.br/cdn/skins/SkinTundra.png",
+    "type": 2,
+    "extra": 44
+  },
+  {
+    "name": "Skin Cadaver Seco",
+    "rarity": 0,
+    "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinCadaverSecoR.png",
+    "value": "https://cdn.asurabot.com.br/cdn/skins/SkinCadaverSeco.png",
+    "type": 2,
+    "extra": 49
+  },
+  {
+    "name": "Skin Florestal",
+    "rarity": 3,
+    "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinFlorestalR.png",
+    "value": "https://cdn.asurabot.com.br/cdn/skins/SkinFlorestal.png",
+    "type": 2,
+    "extra": 49
+  },
+  {
+    "name": "Skin Mumia Antiga",
+    "rarity": 1,
+    "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinMumiaAntigaR.png",
+    "value": "https://cdn.asurabot.com.br/cdn/skins/SkinMumiaAntiga.png",
+    "type": 2,
+    "extra": 49
+  },
+  {
+    "name": "Skin Extra-Terrestre",
+    "rarity": 0,
+    "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinExtraTerrestreR.png",
+    "value": "https://cdn.asurabot.com.br/cdn/skins/SkinExtraTerrestre.png",
+    "type": 2,
+    "extra": 47
+  },
+  {
+    "name": "Skin Fluorescente",
+    "rarity": 1,
+    "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinFluorescenteR.png",
+    "value": "https://cdn.asurabot.com.br/cdn/skins/SkinFluorescente.png",
+    "type": 2,
+    "extra": 47
+  },
+  {
+    "name": "Skin Strong Red",
+    "rarity": 2,
+    "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinStrongRedR.png",
+    "value": "https://cdn.asurabot.com.br/cdn/skins/SkinStrongRed.png",
+    "type": 2,
+    "extra": 47
+  },
+  {
+    "name": "Skin Degrade de Calor",
+    "rarity": 2,
+    "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinDegradedeCalorR.png",
+    "value": "https://cdn.asurabot.com.br/cdn/skins/SkinDegradedeCalor.png",
+    "type": 2,
+    "extra": 48
+  },
+  {
+    "name": "Skin Ladrilhado",
+    "rarity": 1,
+    "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinLadrilhadoR.png",
+    "value": "https://cdn.asurabot.com.br/cdn/skins/SkinLadrilhado.png",
+    "type": 2,
+    "extra": 48
+  },
+  {
+    "name": "Skin Porcelana Estilizada",
+    "rarity": 0,
+    "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinPorcelanaEstilizadaR.png",
+    "value": "https://cdn.asurabot.com.br/cdn/skins/SkinPorcelanaEstilizada.png",
+    "type": 2,
+    "extra": 48
+  },
+  {
+    "name": "Skin Slime Maldito",
+    "rarity": 1,
+    "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinSlimeMalditoR.png",
+    "value": "https://cdn.asurabot.com.br/cdn/skins/SkinSlimeMaldito.png",
+    "type": 2,
+    "extra": 43
+  },
+  {
+    "name": "Skin Slime Metalico",
+    "rarity": 3,
+    "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinSlimeMetalicoR.png",
+    "value": "https://cdn.asurabot.com.br/cdn/skins/SkinSlimeMetalico.png",
+    "type": 2,
+    "extra": 43
+  },
+  {
+    "name": "Skin Slime Incandescente",
+    "rarity": 2,
+    "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinSlimeIncandescenteR.png",
+    "value": "https://cdn.asurabot.com.br/cdn/skins/SkinSlimeIncandescente.png",
+    "type": 2,
+    "extra": 43
+  },
+  {
+    "rarity": 0,
+    "type": 0,
+    "name": "Amazon Rainflorest",
+    "value": "https://cdn.asurabot.com.br/cdn/skins/AmazonRainflorest.png"
+  },
+  {
+    "rarity": 1,
+    "type": 0,
+    "name": "Astronaut in Moon",
+    "value": "https://cdn.asurabot.com.br/cdn/skins/AstronautinMoon.png"
+  },
+  {
+    "rarity": 2,
+    "type": 0,
+    "name": "Binary Planet",
+    "value": "https://cdn.asurabot.com.br/cdn/skins/BinaryPlanet.png"
+  },
+  {
+    "rarity": 1,
+    "type": 0,
+    "name": "Modern Carrier",
+    "value": "https://cdn.asurabot.com.br/cdn/skins/ModernCarrier.png"
+  },
+  {
+    "rarity": 0,
+    "type": 0,
+    "name": "Sun Rising Empire",
+    "value": "https://cdn.asurabot.com.br/cdn/skins/SunRisingEmpire.png"
+  },
+  {
+    "rarity": 1,
+    "type": 0,
+    "name": "Jetfighter",
+    "value": "https://cdn.asurabot.com.br/cdn/skins/Jetfighter.png"
+  },
+  {
+    "rarity": 1,
+    "type": 0,
+    "name": "Jungle Path",
+    "value": "https://cdn.asurabot.com.br/cdn/skins/JunglePath.png"
+  },
+  {
+    "rarity": 0,
+    "type": 0,
+    "name": "Dollar Rain",
+    "value": "https://cdn.asurabot.com.br/cdn/skins/DollarRain.png"
+  },
+  {
+    "rarity": 0,
+    "type": 0,
+    "name": "Moon Effect",
+    "value": "https://cdn.asurabot.com.br/cdn/skins/MoonEffect.png"
+  },
+  {
+    "rarity": 0,
+    "type": 0,
+    "name": "Moscow",
+    "value": "https://cdn.asurabot.com.br/cdn/skins/Moscow.png"
+  },
+  {
+    "rarity": 3,
+    "type": 0,
+    "name": "Polar Northern Lights",
+    "value": "https://cdn.asurabot.com.br/cdn/skins/PolarNorthernLights.png"
+  },
+  {
+    "rarity": 0,
+    "type": 0,
+    "name": "Plains River",
+    "value": "https://cdn.asurabot.com.br/cdn/skins/PlainsRiver.png"
+  },
+  {
+    "rarity": 2,
+    "type": 0,
+    "name": "Sakura Path",
+    "value": "https://cdn.asurabot.com.br/cdn/skins/SakuraPath.png"
+  },
+  {
+    "rarity": 1,
+    "type": 0,
+    "name": "Ultra Tech Civilization",
+    "value": "https://cdn.asurabot.com.br/cdn/skins/UltraTechCivilization.png"
+  },
+  {
+    "rarity": 2,
+    "type": 0,
+    "name": "100 years war",
+    "value": "https://cdn.asurabot.com.br/cdn/skins/100yearswar.png"
+  },
+  {
+    "rarity": 0,
+    "type": 0,
+    "name": "WW2 Map",
+    "value": "https://cdn.asurabot.com.br/cdn/skins/WW2Map.png"
+  },
+  {
+    "name": "Skin Existência Dourada",
+    "rarity": 3,
+    "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinExistnciaDouradaR.png",
+    "value": "https://cdn.asurabot.com.br/cdn/skins/SkinExistnciaDourada.png",
+    "type": 2,
+    "extra": 46
+  },
+  {
+    "name": "Skin Rá",
+    "rarity": 3,
+    "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinRR.png",
+    "value": "https://cdn.asurabot.com.br/cdn/skins/SkinR.png",
+    "type": 2,
+    "extra": 51
+  },
+  {
+    "name": "Skin Black Flame",
+    "rarity": 3,
+    "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinBlackFlameR.png",
+    "value": "https://cdn.asurabot.com.br/cdn/skins/SkinBlackFlame.png",
+    "type": 2,
+    "extra": 33
+  },
+  {
+    "name": "Skin Sakura",
+    "rarity": 4,
+    "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinSakuraR.png",
+    "value": "https://cdn.asurabot.com.br/cdn/skins/SkinSakura.png",
+    "type": 2,
+    "extra": 46
+  },
+  {
+    "name": "Skin Blue Flame",
+    "rarity": 4,
+    "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinBlueFlameR.png",
+    "value": "https://cdn.asurabot.com.br/cdn/skins/SkinBlueFlame.png",
+    "type": 2,
+    "extra": 33
+  },
+  {
+    "name": "Skin Blue Time",
+    "rarity": 4,
+    "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinBlueTimeR.png",
+    "value": "https://cdn.asurabot.com.br/cdn/skins/SkinBlueTime.png",
+    "type": 2,
+    "extra": 32
+  },
+  {
+    "name": "Skin Curto Circuito",
+    "rarity": 4,
+    "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinCurtoCircuitoR.png",
+    "value": "https://cdn.asurabot.com.br/cdn/skins/SkinCurtoCircuito.png",
+    "type": 2,
+    "extra": 33
+  },
+  {
+    "name": "Skin Curtindo o verão",
+    "rarity": 3,
+    "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinCurtindooveroR.png",
+    "value": "https://cdn.asurabot.com.br/cdn/skins/SkinCurtindoovero.png",
+    "type": 2,
+    "extra": 54
+  },
+  {
+    "name": "Skin Crimson Knight",
+    "rarity": 2,
+    "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinCrimsonKnightR.png",
+    "value": "https://cdn.asurabot.com.br/cdn/skins/SkinCrimsonKnight.png",
+    "type": 2,
+    "extra": 55
+  },
+  {
+    "name": "Skin Arcanjo",
+    "rarity": 3,
+    "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinArcanjoR.png",
+    "value": "https://cdn.asurabot.com.br/cdn/skins/SkinArcanjo.png",
+    "type": 2,
+    "extra": 55
+  }
+]

@@ -9,10 +9,7 @@
         </div>
       </h1>
       <br />
-      <div
-        class="columns is-variable is-centered"
-        style="margin-left: 30px;margin-right: 30px"
-      >
+      <div class="columns is-variable is-centered cPrincipal">
         <card
           class="column is-three-quarters-mobile is-half-tablet is-one-third"
           type="Bom contra"
@@ -28,10 +25,7 @@
         Habilidades
       </h1>
       <br />
-      <div
-        class="columns is-multiline"
-        style="margin-left: 30px;margin-right: 30px"
-      >
+      <div class="columns is-multiline cPrincipal">
         <Skill
           class="column is-three-quarters-mobile is-half-tablet is-one-third-desktop is-one-quarter-widescreen is-one-quarter-fullhd"
           v-for="(skill, i) in skills"
@@ -43,6 +37,20 @@
     </center>
   </div>
 </template>
+
+<style scoped>
+.cPrincipal {
+  margin-right: 30px;
+  margin-left: 30px;
+}
+
+@media screen and (max-width: 768px) {
+  .cPrincipal {
+    margin-right: 0px;
+    margin-left: 0px;
+  }
+}
+</style>
 <script>
 import Galos from "@/components/Galos";
 import Skill from "@/components/Skill";
