@@ -108,8 +108,8 @@
   {
     "name": "Skin Arcanjo",
     "rarity": 4,
-    "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinArcanjoR.png",
-    "value": "https://cdn.asurabot.com.br/cdn/skins/SkinArcanjo.png",
+    "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/arcanjo2R.png",
+    "value": "https://cdn.asurabot.com.br/cdn/skins/arcanjo2.png",
     "type": 2,
     "extra": 19
   },
@@ -136,8 +136,8 @@
   {
     "name": "Skin Sakura",
     "rarity": 3,
-    "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinSakuraR.png",
-    "value": "https://cdn.asurabot.com.br/cdn/skins/SkinSakura.png",
+    "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/sakura2R.png",
+    "value": "https://cdn.asurabot.com.br/cdn/skins/sakura2.png",
     "type": 2,
     "extra": 33
   },
