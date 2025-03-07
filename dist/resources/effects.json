@@ -1034,5 +1034,34 @@
     "turns": 2,
     "type": 1,
     "phrase": "%s está sob mordida infernal! (-%d)"
+  },
+  {
+    "range": [22, 27],
+    "name": "Tinta",
+    "turns": 2,
+    "type": 1,
+    "phrase": "%s está sob molhado de tinta! (-%d)"
+  },
+  {
+    "range": [25, 35],
+    "name": "Tinta preta",
+    "turns": 2,
+    "type": 1,
+    "phrase": "%s está sob molhado de tinta preta! (-%d)"
+  },
+  {
+    "range": [17, 25],
+    "type": 2,
+    "name": "Cristalizando",
+    "turns": 2,
+    "self": true,
+    "phrase": "%s está cristalizando! (+%d)"
+  },
+  {
+    "range": [20, 27],
+    "name": "Cristalizando",
+    "turns": 2,
+    "type": 1,
+    "phrase": "%s está cristalizando! (-%d)"
   }
 ]

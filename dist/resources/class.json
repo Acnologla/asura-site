@@ -263,5 +263,21 @@
   {
     "name": "Nephilim",
     "rarity": 6
+  },
+  {
+    "name": "Holograma",
+    "rarity": 0
+  },
+  {
+    "name": "Pintor",
+    "rarity": 1
+  },
+  {
+    "name": "Cristal",
+    "rarity": 2
+  },
+  {
+    "name": "Pneu",
+    "rarity": 3
   }
 ]
