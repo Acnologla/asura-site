@@ -11,13 +11,13 @@
   },
   {
     "name": "Prisão aquatica",
-    "damage": [10, 13],
+    "damage": [10, 15],
     "level": 3,
     "effect": [0.5, 3]
   },
   {
     "name": "Agua cristalina",
-    "damage": [5, 10],
+    "damage": [7, 10],
     "level": 4,
     "effect": [1, 2],
     "self": true
@@ -40,7 +40,7 @@
   },
   {
     "name": "Rio",
-    "damage": [5, 15],
+    "damage": [7, 15],
     "effect": [1, 2],
     "level": 10,
     "self": true
