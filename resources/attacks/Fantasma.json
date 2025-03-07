@@ -44,30 +44,30 @@
   },
   {
     "name": "Amaldiçoado",
-    "damage": [10, 15],
+    "damage": [10, 14],
     "level": 12,
     "effect": [1, 15]
   },
   {
     "name": "Envenenado",
-    "damage": [20, 25],
+    "damage": [18, 25],
     "level": 13,
     "effect": [1, 16]
   },
   {
     "name": "Tortura",
-    "damage": [50, 54],
+    "damage": [49, 54],
     "level": 15
   },
   {
     "name": "Posessão sombria",
-    "damage": [15, 20],
+    "damage": [14, 20],
     "level": 17,
     "effect": [1, 33]
   },
   {
     "name": "Capa fantasma",
-    "damage": [20, 25],
+    "damage": [17, 25],
     "level": 19,
     "effect": [1, 4]
   },
@@ -80,11 +80,11 @@
     "name": "Grito tenebroso",
     "damage": [20, 35],
     "level": 22,
-    "effect": [0.45, 3]
+    "effect": [0.4, 3]
   },
   {
     "name": "Maldição poderosa",
-    "damage": [25, 35],
+    "damage": [23, 35],
     "level": 25,
     "effect": [1, 15]
   },

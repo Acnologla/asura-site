@@ -38,7 +38,7 @@
   },
   {
     "name": "Flecha de fogo",
-    "damage": [10, 20],
+    "damage": [10, 15],
     "level": 10,
     "effect": [1, 8]
   },
@@ -55,23 +55,23 @@
   },
   {
     "name": "Osso negro",
-    "damage": [44, 51],
+    "damage": [44, 50],
     "level": 15
   },
   {
     "name": "Endurecimento",
-    "damage": [49, 59],
+    "damage": [47, 53],
     "level": 16
   },
   {
     "name": "Flecha venenosa",
-    "damage": [25, 40],
+    "damage": [25, 33],
     "level": 19,
     "effect": [1, 16]
   },
   {
     "name": "Osso supremo",
-    "damage": [50, 60],
+    "damage": [47, 60],
     "level": 21
   },
   {
@@ -82,7 +82,7 @@
   },
   {
     "name": "Exercito esqueleto",
-    "damage": [52, 68],
+    "damage": [52, 63],
     "level": 25
   },
   {
