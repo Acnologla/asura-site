@@ -11,6 +11,7 @@ const RinhaInfo = () => import("../views/RinhaInfo");
 const CreateGalo = () => import("../views/CreateGalo");
 const Terms = () => import("../views/Terms");
 const Privacy = () => import("../views/Privacy");
+const Trade = () => import("../views/Trade");
 Vue.use(VueRouter);
 
 const routes = [
@@ -23,6 +24,11 @@ const routes = [
     path: "/terms",
     name: "Terms",
     component: Terms,
+  },
+  {
+    path: "/trade",
+    name: "Trade",
+    component: Trade,
   },
   {
     path: "/privacy",

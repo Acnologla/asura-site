@@ -24,7 +24,7 @@
           </h3>
         </div>
         <hr
-          style=";margin-top:10px;margin-bottom:10px; background-color: #552fbc"
+          style="margin-top:10px;margin-bottom:10px; background-color: #552fbc"
         />
         <div class="footerText">
           <p>
