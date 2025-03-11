@@ -1,12 +1,14 @@
 <template>
   <main v-if="loaded">
-    <div class="columns is-mobile">
-      <div class="column is-6-mobile is-5-tablet">
+    <div class="columns  is-centered is-multiline is-mobile">
+      <div class="column is-10-mobile is-6-tablet is-5-desktop">
         <UserTrade
           :info="info"
-          :trade="trade[user.id]"
+          :items="trade[user.id]"
           :getItemImage="getItemImage"
           :confirmed="user.confirm"
+          title="Sua oferta"
+          :removeItem="removeItem"
         />
         <br />
         <button class="button is-primary" @click="user.confirm = !user.confirm">
@@ -21,13 +23,14 @@
         />
       </div>
       <div
-        class="column is-6-mobile is-5-tablet is-offset-0-mobile is-offset-2-tablet"
+        class="column is-10-mobile is-6-tablet is-5-desktop is-offset-0-tablet is-offset-2-desktop"
       >
         <UserTrade
-          :trade="getReverseTrade()"
+          :items="getReverseTrade()"
           :getItemImage="getItemImage"
           :info="info"
           :confirmed="true"
+          title="Oferta dele"
         />
       </div>
     </div>
@@ -48,42 +51,72 @@ export default {
         confirm: false,
         roosters: [
           {
+            id: 1,
             type: 5,
           },
           {
+            id: 2,
             type: 18,
           },
           {
+            id: 3,
             type: 25,
           },
           {
+            id: 4,
             type: 44,
+          },
+          {
+            id: 43,
+            type: 52,
+          },
+          {
+            id: 45,
+            type: 32,
           },
         ],
         items: [
           {
+            id: 5,
+
             type: 2,
             itemID: 1,
+            quantity: 19,
           },
           {
+            id: 6,
+
             type: 2,
             itemID: 5,
+            quantity: 1,
           },
           {
+            id: 7,
+
             type: 3,
             itemID: 12,
+            quantity: 4,
           },
           {
+            id: 8,
+
             type: 3,
             itemID: 33,
+            quantity: 2,
           },
           {
+            id: 9,
+
             type: 5,
             itemID: 0,
+            quantity: 1,
           },
           {
+            id: 12,
+
             type: 5,
             itemID: 3,
+            quantity: 3,
           },
         ],
       },
@@ -146,7 +179,7 @@ export default {
       // 0 rooster, 1 item, 2 cosmetic
       switch (item.tradeType) {
         case "rooster":
-          return this.info.sprites[item.type];
+          return this.info.sprites[item.type - 1];
         case "item":
           if (item.type === 3) {
             return this.info.cosmetics[item.itemID].value;
@@ -154,8 +187,25 @@ export default {
           return "https://static.thenounproject.com/png/4241034-200.png";
       }
     },
+    removeItem(item) {
+      const trade = this.trade[this.user.id];
+      const index = trade.findIndex((i) => i.id === item.id);
+      if (index === -1) return;
+      if (item.quantity > 1) {
+        item.quantity--;
+        return;
+      }
+      trade.splice(index, 1);
+    },
     addItemToTrade(item) {
-      this.trade[this.user.id].push(item);
+      const trade = this.trade[this.user.id];
+      const has = trade.find((i) => i.id === item.id);
+      if (has) {
+        if (has.quantity === item.quantity) return;
+        has.quantity++;
+        return;
+      }
+      trade.push({ ...item, quantity: 1 });
     },
   },
   components: {

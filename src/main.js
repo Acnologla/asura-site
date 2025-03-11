@@ -11,6 +11,7 @@ import {
   Checkbox,
   Select,
   Field,
+  Tabs,
 } from "buefy";
 import "buefy/dist/buefy.css";
 import { library } from "@fortawesome/fontawesome-svg-core";
@@ -50,6 +51,7 @@ Vue.use(Checkbox);
 Vue.use(Select);
 Vue.use(Field);
 Vue.use(Input);
+Vue.use(Tabs);
 Vue.use(Menu);
 new Vue({
   router,

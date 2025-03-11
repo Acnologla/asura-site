@@ -1,119 +1,139 @@
 <template>
-  <main
-    class="trade"
-    :style="`border: 3px solid ${confirmed ? 'green' : '#552fbc'};`"
+  <div
+    class="trade-offer-container"
+    :style="` border: 3px solid ${confirmed ? 'green' : '#e0e0e0'};`"
   >
-    <div v-if="trade" class="trade-grid">
-      <div
-        class="item-slot"
-        v-for="(item, i) in Array.from({ length: 12 }).map((_, i) => trade[i])"
-        :key="i"
-      >
-        <div v-if="item" class="item-content">
-          <img :src="getItemImage(item)" alt="" />
-          <p>{{ item.name }}</p>
+    <h3 class="offer-title">{{ title }}</h3>
+    <div class="items-grid">
+      <div class="grid-row" v-for="row in 3" :key="`row-${row}`">
+        <div
+          class="grid-cell"
+          v-for="col in 4"
+          :key="`cell-${row}-${col}`"
+          @click="removeItem(items[getItemIndex(row, col)])"
+        >
+          <TradeItemCard
+            style="cursor: pointer;"
+            v-if="getItemIndex(row, col) < items.length"
+            :imageURL="getItemImage(items[getItemIndex(row, col)])"
+            :item="items[getItemIndex(row, col)]"
+          />
+          <div v-else class="empty-slot">
+            <div class="placeholder-circle"></div>
+          </div>
         </div>
-        <div v-else class="empty-slot"></div>
       </div>
     </div>
-  </main>
+  </div>
 </template>
 
 <script>
+import TradeItemCard from "./TradeItemCard.vue";
+
 export default {
-  name: "UserTrade",
+  name: "TradeOfferComponent",
+  components: {
+    TradeItemCard,
+  },
   props: {
-    trade: Array,
-    info: Object,
-    getItemImage: Function,
+    items: {
+      type: Array,
+      default: () => [],
+    },
+    maxSlots: {
+      type: Number,
+      default: 12, // Increased to account for 3 rows of 4 items each
+    },
+    getItemImage: {
+      type: Function,
+      required: true,
+    },
+    title: String,
     confirmed: Boolean,
+    removeItem: Function,
+  },
+  methods: {
+    getItemIndex(row, col) {
+      // Calculate the index based on row and column
+      return (row - 1) * 4 + (col - 1);
+    },
   },
 };
 </script>
 
 <style scoped>
-.trade {
-  border: 1px solid #552fbc;
-  padding: 3px;
+.trade-offer-container {
   width: 100%;
-  max-width: 800px;
-  background-color: #f8f9fa;
-  border-radius: 6px;
+  max-width: 600px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  padding: 16px;
+  margin: 0 auto;
+  box-sizing: border-box;
 }
 
-.trade-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 0;
-  row-gap: 0;
-  align-items: start;
-}
-
-.item-slot {
-  position: relative;
-  width: 100%;
-  aspect-ratio: 1 / 0.9; /* Slightly shorter height than width */
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.offer-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #333;
+  margin: 0 0 16px 0;
   padding: 0;
-  margin: 0;
-  overflow: hidden;
+  text-align: center;
 }
 
-.item-content {
-  width: 100%;
-  height: 100%;
+.items-grid {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  gap: 12px;
 }
 
-.item-content img {
-  width: 65%;
-  height: 65%;
-  object-fit: contain;
-  margin: 0;
-}
-
-.item-content p {
-  margin: 0;
-  padding: 0;
-  font-size: 0.75rem;
-  text-align: center;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+.grid-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
   width: 100%;
-  color: #333;
-  line-height: 0.9;
+}
+
+.grid-cell {
+  position: relative;
+  width: 100%;
+  height: 120px;
+  border-radius: 4px;
+  overflow: hidden;
 }
 
 .empty-slot {
-  width: 50%;
-  height: 50%;
-  border: 1px solid #6c5ce7;
-  border-radius: 50%;
-  background: linear-gradient(145deg, #a29bfe, #74b9ff);
-  box-shadow: none;
-  margin: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #f0f0f0;
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-@media (max-width: 768px) {
-  .trade {
-    padding: 2px;
+.placeholder-circle {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #e0e0e0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .grid-row {
+    gap: 8px;
   }
 
-  .empty-slot {
-    width: 55%;
-    height: 55%;
+  .grid-cell {
+    height: 100px;
   }
 }
 
 @media (max-width: 480px) {
-  .item-content p {
-    font-size: 0.65rem;
+  .grid-row {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 </style>
