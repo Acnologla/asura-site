@@ -52,7 +52,7 @@ export default {
     user: Object,
     getItemImage: Function,
     addItemToTrade: Function,
-    info: Object,
+    map: Function,
   },
   components: {
     TradeItemCard,
@@ -62,49 +62,22 @@ export default {
   },
   methods: {
     getSectionItems(section) {
-      const mapItems = (items, type, infoGetter, rarityGetter) => {
-        return items
-          .filter((item) => item.type === type)
-          .map((item) => ({
-            ...item,
-            name: infoGetter(item.itemID),
-            tradeType: "item",
-            rarity: rarityGetter(item.itemID),
-          }));
-      };
-
+      const mapped = this.map(this.user.roosters, this.user.items);
+      const items = mapped.filter((m) => m.tradeType === "item");
       switch (section) {
         case "Roosters":
-          return this.user.roosters.map((r) => ({
-            ...r,
-            name: this.info.classes[r.type].name,
-            tradeType: "rooster",
-            rarity: this.info.classes[r.type].rarity,
-          }));
+          return mapped.filter((m) => m.tradeType === "rooster");
 
         case "Items":
-          return mapItems(
-            this.user.items,
-            2,
-            (itemId) => this.info.items[itemId].name,
-            (itemId) => this.info.items[itemId].level
-          );
+          return items
+            .filter((t) => t.type === 2)
+            .filter((t) => t.rarity !== 6);
 
         case "Cosmetics":
-          return mapItems(
-            this.user.items,
-            3,
-            (itemId) => this.info.cosmetics[itemId].name,
-            (itemId) => this.info.cosmetics[itemId].rarity
-          );
+          return items.filter((t) => t.type === 3);
 
         case "Shards":
-          return mapItems(
-            this.user.items,
-            5,
-            (itemId) => "Shard " + this.info.rarities[itemId],
-            (itemId) => itemId
-          );
+          return items.filter((t) => t.type === 5);
       }
     },
   },
