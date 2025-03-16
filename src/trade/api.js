@@ -1,5 +1,5 @@
 import axios from "axios";
 
 export const client = axios.create({
-  baseURL: "http://localhost:80",
+  baseURL: "https://trade.asurabot.com.br",
 });
