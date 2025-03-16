@@ -43,7 +43,7 @@
           class="column is-three-quarters-mobile is-half-tablet is-one-third-desktop is-half-tablet is-one-third-desktop is-one-fifth-fullhd"
         >
           <DonateCard
-            price="R$ 10 a cada 8000 moedas"
+            price="R$ 10 a cada 10000 moedas"
             description="Comprar dinheiro avulsamente na sua conta."
             title="Compra de dinheiro"
           />
@@ -52,7 +52,7 @@
           class="column is-three-quarters-mobile is-half-tablet is-one-third-desktop is-one-fifth-fullhd"
         >
           <DonateCard
-            price="R$ 10 a cada 5000 Xp"
+            price="R$ 10 a cada 6500 Xp"
             description="Comprar Xp avulsamente na sua conta."
             title="Compra de Xp"
           />
@@ -70,7 +70,7 @@
           class="column is-three-quarters-mobile is-half-tablet is-one-third-desktop is-one-fifth-fullhd"
         >
           <DonateCard
-            price="R$ 10 a cada 1500 UserXp"
+            price="R$ 10 a cada 2000 UserXp"
             description="Comprar UserXp avulsamente na sua conta."
             title="Compra de UserXp"
           />

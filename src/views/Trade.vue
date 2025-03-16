@@ -160,6 +160,10 @@ export default {
           alert("Trade confirmada");
           this.$router.push("/");
           break;
+        case "trade_error":
+          alert(`Erro troca, desconfirme e tente denovo: ${message.error}`);
+
+          break;
       }
     },
     getItemImage(item) {

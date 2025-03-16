@@ -36,13 +36,14 @@
         Preços:
       </h3>
       <p style="text-align: left;padding-left: 40px;">
-        <b>R$35</b>/Mês Mensal<br />
-        <b>R$31,5</b>/Mês Trimestral
-        <span style="color:#552fbc;font-weight: 600;">(10%OFF)</span><br />
-        <b>R$29</b>/Mês Semestral
-        <span style="color:#552fbc;font-weight: 600;">(17%OFF)</span><br />
-        <b>R$26</b>/Mês Anual
-        <span style="color:#552fbc;font-weight: 600;">(25%OFF)</span>
+        <b>R$35</b> Mensal<br />
+        <span class="slashed">R$105 </span><b> R$84</b> Trimestral
+        <span style="color:#552fbc;font-weight: 600;">(20%OFF)</span>
+        <br />
+        <span class="slashed">R$210</span><b> R$153</b> Semestral
+        <span style="color:#552fbc;font-weight: 600;">(27%OFF)</span><br />
+        <span class="slashed">R$420</span> <b>R$273</b> Anual
+        <span style="color:#552fbc;font-weight: 600;">(35%OFF)</span>
       </p>
       <br />
       <b-button
@@ -97,6 +98,11 @@
   flex-direction: column;
   height: 100%;
 }
+.slashed {
+  text-decoration: line-through;
+  font-size: 115%;
+}
+
 .card-footer {
   margin-top: auto;
 }

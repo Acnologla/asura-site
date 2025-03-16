@@ -3,16 +3,26 @@
     <section>
       <h2 class="title">Como jogar</h2>
       <p class="aboutDescription">
-        Para começar, use o comando <span class="bold">/galo</span> e descubra
-        qual é seu galo inicial! Existem 5 raridades de galos, comuns, raros,
-        épicos, lendários e míticos, e você pode começar apenas com comuns,
-        raros ou épicos. Depois, use <span class="bold">/daily</span> para
-        receber o bônus diário de moedas e xp, que aumenta caso você esteja em
-        meu Servidor Suporte. Use <span class="bold">/train</span> para treinar
-        seu galo, aumentando sua força ao ganhar batalhas. Para ver suas
-        tarefas, use <span class="bold">/mission</span>, mas saiba que essas
-        missões só podem ser cumpridas em treinos. Eu tenho muitos comandos
-        divertidos, e espero que aproveite!
+        Para começar, use <code>j!galo</code> para descobrir qual é seu tipo e
+        raridade, sendo que existem <span class="bold">6</span>, sendo elas:
+        <span class="underline">Comuns</span>,
+        <span class="underline">Raros</span>,
+        <span class="underline">Épicos</span>,
+        <span class="underline">Lendários</span>,
+        <span class="underline">Míticos</span> e
+        <span class="underline">Divinos</span>. Após ver qual galo você possui,
+        use <code>j!train</code> para treiná-lo. O treino dá
+        <span class="bold">xp</span> e <span class="bold">gold</span> caso
+        ganhe, necessários para o crescimento de seu galo. Todos os dias, você
+        pode vencer até <span class="underline">280</span> treinos, durante os
+        quais você pode ganhar <span class="bold">Chaves de Raids</span> (Use
+        <code>j!raid</code> para saber mais), além também de completar missões,
+        vistas com <code>j!mission</code>. Caso tenha alguma dúvida, fique à
+        vontade para entrar no
+        <a href="https://discord.gg/eYr8mPGAJr" target="_blank"
+          ><span class="bold">Servidor Oficial do Bot</span></a
+        >
+        e perguntar, além dos Suportes, há diversos membros dispostos a ajudar!
       </p>
     </section>
     <hr
@@ -21,31 +31,26 @@
     <section>
       <h2 class="title">Galos</h2>
       <p class="aboutDescription">
-        Existem vários tipos de galos diferentes, com várias raridades e
-        habilidades, que você vai conhecer ao longo do tempo! De cara, você pode
-        ter notado que a cor da borda de alguns galos é diferente da dos outros,
-        e é isso que você usa pra descobrir a raridade de seu lutador. Galos
-        comuns têm a borda branca, galos raros têm a borda azul, galos épicos
-        têm a borda roxa, galos lendários têm a borda laranja, e galos míticos
-        têm a borda colorida. É claro que as raridades influenciam a força de um
-        galo, mas muitas coisas também, como as habilidades escolhidas, as
-        vantagens e desvantagens de tipagem, e as evoluções ou resets que ele
-        tiver. O sistema de habilidades do bot é fácil de entender, e tem 5
-        slots para ataques. Assim, quando você tiver 6 habilidades ou mais,
-        poderá escolher 5 delas para usar em suas lutas, com
-        <span class="bold">/skills</span> (Lembre-se de sempre usar o comando ao
-        ganhar um novo ataque, para ver se ele tem algum efeito, ou alterar seu
-        skillset, já que se você não escolher, o galo sempre vai usar os últimos
-        5 ataques desbloqueados). Por fim, existe o sistema de resets, que podem
-        mudar completamente o jeito que você joga. Ao chegar no nível 35, você
-        consegue dar upgrade no seu galo, que volta ele para o nível 1, fazendo
-        ele perder todos os seus ataques, mas em compensação, ganhando
-        <span class="bold">+15%</span> de dano e efeitos pra sempre. Mas
-        cuidado, enquanto o número de resets que você pode conquistar é
-        infinito, cada reset, o seu galo passa a ganhar
-        <span class="bold">-25%</span> de xp. Se você conseguir alcançar
-        <span class="bold">5</span> resets, vai poder evoluir o seu galo,
-        fazendo ele ganhar um novo ataque exclusivo no nível 30!
+        Existem vários galos no bot, com diferentes raridades e habilidades, que
+        você vai conhecer ao longo do tempo. Cada raridade possui sua borda,
+        sendo <span class="bold">Comum – Cinza</span>,
+        <span class="bold">Raro – Azul</span>,
+        <span class="bold">Épico – Roxo</span>,
+        <span class="bold">Lendário – Amarelo</span>,
+        <span class="bold">Mítico – Branco</span>, e
+        <span class="bold">Divino – Magenta</span>. A força de um galo depende
+        de vários fatores, como resets, raridade e skills. Para alterar suas
+        habilidades basta usar <code>j!skills</code> e escolher a que você
+        queira equipar, assim podendo criar skillsets específicas para seu galo.
+        Por fim, existe um sistema de resets que aumenta a força de seu galo,
+        deixando-o com <span class="bold">+15% de dano e efeitos</span> mas
+        perdendo <span class="bold">-25% xp</span> ganho. Para resetar seu galo
+        basta chegar ao <span class="bold">nível 35</span> e clicar no botão
+        <span class="bold">Upgrade</span> que vai aparecer no
+        <code>j!galo</code>. Ao alcançar <span class="bold">5</span> resets você
+        pode evoluir seu galo, deixando ele com
+        <span class="bold">+150 de HP máximo</span> e um ataque exclusivo no
+        <span class="bold">nível 30</span>.
       </p>
     </section>
     <hr
@@ -54,23 +59,23 @@
     <section>
       <h2 class="title">Economia</h2>
       <p class="aboutDescription">
-        Por padrão, se ganha 8 moedas a cada vitória em treinos, mas existem
-        formas de aumentar essa quantidade, como upgrades utilitários ou clans
-        de alto nível. Além disso, usar o <span class="bold">/daily</span>,
-        tentar completar o passe de batalha (visto usando
-        <span class="bold">/battlpass</span>), cumprir missões com
-        <span class="bold">/missions</span>, e vender itens ou galos com
-        <span class="bold">/sell</span> também ajudam a farmar dinheiro. A parte
-        de gastar é muito mais fácil, já que você pode comprar lootboxes usando
-        <span class="bold">/lootbox buy</span>, trocar o nome de seus galos
-        usando <span class="bold">/changename</span> e comprar upgrades pro seu
-        clan com o dinheiro depositado no banco usando
-        <span class="bold">/clan banco</span>. Além disso, você pode enviar
-        dinheiro pra seus amigos com <span class="bold">/givemoney</span>, e
-        trocar galos, itens, skins e backgrounds com
-        <span class="bold">/trade</span> (Devido à um bug, apenas quem usar o
-        comando consegue enviar coisas na troca, então para realmente trocar, os
-        dois usuários têm que usar o comando um depois do outro).
+        Por padrão, se ganha <span class="bold">6 gold</span> a cada vitória nos
+        treinos, mas existem formas de aumentar essa quantidade, como certos
+        <span class="bold">upgrades</span> ou os
+        <span class="bold">buffs de clans</span> a partir de um certo nível.
+        Além dessas formas de aumentar seu ganho de gold nos trains, há outras
+        maneiras de ganhar gold sem ser treinando, como ao usar o
+        <code>j!daily</code> para ganhar a recompensa diária, completando
+        <span class="bold">Missões</span> (se vê com <code>j!mission</code>) ou
+        no sistema de <span class="bold">Raids</span>. Gastar dinheiro, por
+        outro lado, é bem mais fácil. Você pode comprar, visualizar e abrir
+        lootboxes usando os comandos derivados do <code>j!lootbox</code>, e
+        trocar o nome do seu galo usando <code>j!changename</code>. Caso queira
+        enviar gold para alguém (com limite mínimo de
+        <span class="bold">120</span> e o limite máximo de
+        <span class="bold">9999</span> gold por dia) basta usar o
+        <code>j!givemoney</code>. Para saber quanto gold, asuracoins e outras
+        informações, use o <code>j!money</code>.
       </p>
     </section>
     <hr
@@ -79,16 +84,34 @@
     <section>
       <h2 class="title">Tipos de luta</h2>
       <p class="aboutDescription">
-        Existem vários tipos de batalhas no bot, e cabe a você testar cada uma!
-        Para começar, com <span class="bold">/rinha</span>, você consegue duelar
-        contra amigos. Outra forma é a Arena, um sistema em que você luta contra
-        qualquer outra pessoa que use o comando
-        <span class="bold">/arena batalhar</span> ao mesmo tempo que você. Para
-        entrar na arena, você deve comprar ingressos com
-        <span class="bold">/arena ingresso</span>, que custam 200 moedas. Em
-        troca, você pode lutar até 12 batalhas, e se perder 3, seu ingresso
-        acaba. Se vencer as 12, recebe a recompensa máxima, ganhando muitas
-        moedas e xp!
+        Existem vários tipos de rinhas além do <code>j!train</code>, onde podem
+        se ganhar diferentes recompensas, como a
+        <span class="bold">Arena</span> (usando o <code>j!arena ingresso</code>,
+        que custa <span class="bold">200</span> gold) onde você luta contra
+        outros jogadores que tenham usado o comando. Caso vença
+        <span class="bold">12</span> vezes ganhará uma recompensa, mas você pode
+        perder no máximo <span class="bold">3</span> lutas! Parecida com a
+        Arena, a <span class="bold">Ranked</span> é um modo de rinha rankeada,
+        onde cada vitória garante <span class="underline">Elo</span>. Com uma
+        certa quantia de <span class="underline">Elo</span>, você pode avançar
+        para o próximo <span class="underline">Rank</span>, ganhando grandes
+        recompensas. Use <code>j!ranked battle</code> para batalhar contra
+        outros players, assim como na Arena. Agora, para as lutas contra
+        <span class="bold">chefes poderosos</span>, temos várias alternativas.
+        Uma delas, a <span class="bold">Raid</span>, é um modo que você entra
+        usando <span class="underline">chaves</span> recebidas nos treinos, e
+        pode lutar com até <span class="bold">4</span> amigos contra um boss da
+        raridade da chave, ganhando xp e gold no final de cada etapa. Use
+        <code>j!raid</code> para saber mais! Outro tipo de luta, parecida com a
+        Raid, é a <span class="bold">Server Battle</span>, um evento do
+        servidor, em que aparece um galo enfurecido em canais movimentados
+        (ative essa função com <code>j!config</code>), e que pode ser batalhado
+        por até <span class="underline">10</span> pessoas, dando
+        <span class="bold">180</span> de xp e <span class="bold">400</span> gold
+        para todos os membros. Além disso, há também a
+        <span class="bold">Tower</span>, um modo semanal de torre em que você
+        vai batalhando galos cada vez mais fortes e ganhando recompensas a cada
+        5 andares.
       </p>
     </section>
     <hr
@@ -97,15 +120,18 @@
     <section>
       <h2 class="title">Itens e Dungeons</h2>
       <p class="aboutDescription">
-        Itens são ferramentas que você pode equipar para aumentar seu poder de
-        luta, sua vida, seu xp, e todo tipo de coisa! Eles são permanentes (não
-        acabam ou são destruídos depois de um certo tempo), e afetam todos os
-        seus galos ao mesmo tempo. Para ganhar itens ou galos novos, você deve
-        entrar nas Dungeons, usando <span class="bold">/dungeon</span>! As
-        Dungeons são um sistema em que você luta contra chefões cada vez mais
-        poderosos que podem te dar recompensas valiosas. Para ver e equipar seus
-        itens, use <span class="bold">/item</span>. Itens funcionam em duelos,
-        treinos e na própria Dungeon.
+        Itens são ferramentas essenciais para sua jogatina, aumentando seu
+        <span class="underline">dano</span>,
+        <span class="underline">vida</span>,
+        <span class="underline">ganho de xp</span>,
+        <span class="underline">ganho de gold</span> e etc, dependendo de qual
+        item você usar. Para ganhar itens, basta você vencer contra
+        <span class="bold">Bosses</span> na dungeon, usando o
+        <code>j!dungeon battle</code>. A cada andar, os
+        <span class="bold">Bosses</span> ficam mais difíceis, sendo que o último
+        é o <span class="bold">24</span>. Ao completar ele, a dungeon recomeça,
+        mas com o diferencial de que os <span class="bold">Bosses</span> terão
+        mais níveis, ou seja, mais HP.
       </p>
     </section>
 
@@ -115,38 +141,23 @@
     <section>
       <h2 class="title">Atributos e Upgrades</h2>
       <p class="aboutDescription">
-        Atributos e Upgrades são sistemas que afetam todos os galos da sua
-        conta, e mudam completamente o jeito que você luta e upa. Eles são
-        escolhidos usando pontos de <span class="bold">userxp</span> (a cada
-        vitória em treinos se ganha 1), visto usando
-        <span class="bold">/money</span>. A cada 100 userxp, você pode alocar um
-        ponto em um dos 4 atributos, Vida, Dano Bruto, Dano de Efeitos e Sorte,
-        usando <span class="bold">/attributes</span>, sendo que o máximo em cada
-        um é 300 pontos. Cada ponto em <span class="bold">Vida</span> te dá
-        <span class="bold">+3</span> de vida máxima, cada ponto em
-        <span class="bold">Dano Bruto</span> te dá
-        <span class="bold">+0,6</span> de dano em todos os seus ataques, cada
-        ponto em <span class="bold">Dano de Efeitos</span> te dá
-        <span class="bold">+0,4</span> de dano em todos os seus efeitos, e cada
-        ponto em <span class="bold">Sorte</span>
-        <span class="bold">multiplica o seu pity</span>. Já os Upgrades são 3
-        Árvores de passivas, e você pode escolher uma das 3 ao alcançar
-        <span class="bold">150</span> userxp, usando
-        <span class="bold">/upgrades</span> (Cuidado, o bot conta a partir de
-        zero, como 0, 1, 2, então o terceiro upgrade tem o id 2 e não 3). Você
-        não pode trocar seu Upgrade depois de escolher, então pense bem! Os 3
-        iniciais são <span class="bold">Vida</span> (<span class="bold"
-          >+20</span
-        >
-        de hp máximo), <span class="bold">Esquiva</span> (<span class="bold"
-          >4%</span
-        >
-        de chance de desviar de ataques), e
-        <span class="bold">Utilitários</span> (<span class="bold">+3</span> de
-        xp por treino). Quando você conseguir <span class="bold">800</span>,
-        <span class="bold">5.000</span> e
-        <span class="bold">15.000</span> userxp, poderá escolher Upgrades mais
-        avançados, mas só da Árvore que você pegou no começo!
+        Atributos e Upgrades são sistemas que afetam todos os galos de sua
+        conta, e aumentam sua força ou capacidade de upar. O
+        <span class="bold">Upgrade</span> é baseado na sua quantidade de
+        <span class="bold">userxp</span>. Por padrão, se ganha apenas 1
+        <span class="bold">userxp</span> por vitória nos treinos (visto com
+        <code>j!money</code>). Os upgrades são divididos em
+        <span class="underline">3 árvores de passivas</span>, sendo elas
+        <span class="bold">Utilitários</span>, <span class="bold">Vida</span> e
+        <span class="bold">Esquiva</span>. Use <code>j!upgrades</code> para
+        olhar, alocar e ver o seu progresso em ganhar pontos de upgrades. Caso
+        queira ver todos os upgrades de todas as árvores, olhe no
+        <a href="https://asurabot.com.br/info" target="_blank"
+          ><span class="bold">Site Oficial do Bot</span></a
+        >. Já quanto ao sistema de <span class="bold">Atributos</span>, neste
+        você ganha <span class="bold">1</span> ponto a cada
+        <span class="bold">100</span> userxp. Para visualizar seus pontos e
+        alocar eles onde quiser, use <code>j!atributos</code>.
       </p>
     </section>
     <hr
@@ -155,22 +166,53 @@
     <section>
       <h2 class="title">Clan</h2>
       <p class="aboutDescription">
-        Os clans são grupos de jogadores que upam, treinam e lutam juntos. Para
-        criar um clã, você deve usar <span class="bold">/clan create</span>, que
-        custa 1000 moedas. No nível 1, os clans dão
-        <span class="bold">+10%</span> de xp bônus em treinos, e a cada nível,
-        ele ganha mais buffs. Com <span class="bold">/clan view</span>, você
-        pode ver os status do seu clan, além da lista de membros. Se quiser
-        convidar seus amigos, use <span class="bold">/clan invite</span>, mas
-        você deve ser o Dono ou um Administrador. Todo mês o clan recebe uma
-        nova missão, vista usando <span class="bold">/clan mission</span>. A
-        missão é matar <span class="bold">20.000</span> galos, e todos os
-        membros do clan ajudam a completar. No fim, todos ganham a recompensa,
-        que é uma enorme quantidade de moedas e xp. Por fim, existe a raid do
-        clan, em que até <span class="bold">7</span> membros lutam contra um
-        boss, que fica mais fácil quanto mais pessoas entrarem na batalha. Você
-        pode entrar na raid do clan a cada <span class="bold">4 horas</span>,
-        usando <span class="bold">/clan battle</span>.
+        Clans são grupos de jogadores que treinam e lutam juntos. Para criar um,
+        basta usar <code>j!clan create</code>, mas saiba que custa
+        <span class="bold">1000</span> gold. Cada galo que os membros dos clans
+        matam em treinos garante xp ao clan, e quando este sobe de nível, todos
+        os membros recebem buffs, como xp e gold extra por treinos. Caso seja
+        Administrador ou Dono de um clan, use <code>j!clan invite @user</code>,
+        e caso queira sair de um, é só usar <code>j!clan leave</code>. Todo mês
+        o clan recebe a missão de matar
+        <span class="underline">20.000 Galos</span>, e que dá grandes
+        quantidades de xp e gold para os membros. Caso tenha gold no banco do
+        clan, você pode também comprar upgrades para ele, usando
+        <code>j!clan upgrade</code>, podendo aumentar o máximo de membros ou o
+        valor da recompensa da missão. Por fim, existe a batalha do clan, que
+        pode ser acessada com <code>j!clan battle</code>, e que dura três dias
+        (ou menos, caso consigam matar o Boss do Clan), em que todos os membros
+        podem contribuir, lutando contra um
+        <span class="underline">Galo Térmico</span> com muita vida. Ao final dos
+        três dias, todos os membros do clan recebem xp e gold proporcional ao
+        dano que deram juntos ao Boss.
+      </p>
+    </section>
+    <hr
+      style="margin-left: 10vw; margin-right: 10vw; background-color: #552fbc"
+    />
+    <section>
+      <h2 class="title">Lootbox, Pity e Shop</h2>
+      <p class="aboutDescription">
+        O principal jeito de conseguir novos galos são as Lootboxes, ganhadas na
+        <span class="bold">Dungeon</span> ou compradas com
+        <span class="bold">gold</span>. Usando <code>j!lootbox buy</code>, você
+        pode comprar caixas, usando <code>j!lootbox open</code> você pode abrir
+        suas caixas, e com <code>j!lootbox view</code> você pode visualizar suas
+        caixas. Já o <span class="bold">Pity</span> é o sistema de sorte do bot,
+        que influencia suas chances de conseguir galos, cosméticos e itens de
+        maiores raridades. Para aumentar seu pity, basta abrir Lootboxes, mas
+        saiba que o Pity é resetado quando você recebe algo que seja da maior
+        raridade possível de vir na caixa. Por fim, o
+        <span class="bold">Shop</span> é a lojinha do bot, acessada com
+        <code>j!shop</code>, e que atualiza de
+        <span class="underline">10 em 10 horas</span>, e oferece diversos
+        produtos, desde <span class="bold">xp</span>,
+        <span class="bold">galos</span> e <span class="bold">cosméticos</span>,
+        como também <span class="bold">itens</span> e
+        <span class="bold">AsuraCoins</span>. Mas saiba que os produtos do Shop
+        vêm com preços acima do que realmente valem, então pode valer a pena
+        esperar a chance de que um deles venha com o
+        <span class="bold">desconto aleatório de 20%</span>!
       </p>
     </section>
     <hr
@@ -181,10 +223,10 @@
       <p class="aboutDescription">
         Quer ganhar elo e subir de rank? Quer ganhar prêmios valiosos e aparecer
         no ranking geral de jogadores? Então é com as rankeadas que você vai
-        conseguir! Para começar, use <span class="bold">/ranked battle</span>,
-        que funciona do mesmo jeito que a Arena, em que outros jogadores têm que
-        usar o comando ao mesmo tempo que você. A cada vitória, você ganha elo,
-        e com pontos suficientes, sobe de rank, ganhando muitas recompensas!
+        conseguir! Para começar, use <code>/ranked battle</code>, em que outros
+        jogadores têm que usar o comando ao mesmo tempo que você. A cada
+        vitória, você ganha <span class="bold">elo</span>, e com pontos
+        suficientes, sobe de rank, ganhando muitas recompensas!
       </p>
     </section>
     <hr
@@ -194,12 +236,12 @@
       <h2 class="title">Cosméticos</h2>
       <p class="aboutDescription">
         Você pode ganhar skins e backgrounds ao longo da sua jornada, ao comprar
-        lootboxes cosméticas, que custam 500 moedas. Skins alteram o visual dos
-        seus galos, e backgrounds alteram a imagem que aparece nos comandos
-        <span class="bold">/galo</span> e <span class="bold">/profile</span>. Ao
+        lootboxes cosméticas, que custam <span class="bold">500 moedas</span>.
+        Skins alteram o visual dos seus galos, e backgrounds alteram a imagem
+        que aparece nos comandos <code>/galo</code> e <code>/profile</code>. Ao
         comprar a lootbox cosmética, pode vir qualquer skin de qualquer galo,
-        além de qualquer background, que são equipados com
-        <span class="bold">/skins</span> e <span class="bold">/equipitem</span>.
+        além de qualquer background, que são equipados com <code>/skins</code> e
+        <code>/equipitem</code>.
       </p>
     </section>
     <hr
@@ -222,6 +264,10 @@ article {
 .bold {
   font-weight: 600;
 }
+.underline {
+  text-decoration: underline;
+}
+
 [data-theme="dark"] .bold {
   color: #fff;
   font-weight: 500;

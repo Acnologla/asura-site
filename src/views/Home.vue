@@ -103,6 +103,10 @@
   .invite {
     margin-right: 0px !important;
   }
+  .title {
+    margin-bottom: 30px !important;
+  }
+
   .arrow {
     top: 82vh;
   }

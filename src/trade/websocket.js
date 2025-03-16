@@ -3,7 +3,7 @@ let w = {
 };
 
 export const connect = (token, messageCallback) => {
-  const ws = new WebSocket(`ws://localhost:80/ws?token=${token}`);
+  const ws = new WebSocket(`wss://trade.asurabot.com.br/ws?token=${token}`);
 
   ws.onopen = () => {
     console.log("connected");
