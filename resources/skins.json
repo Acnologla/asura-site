@@ -1,49 +1,49 @@
 [
   {
     "name": "Skin Fênix da 'liberdade'",
-    "rarity": 0,
-    "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinFnixdaliberdadeR.png",
-    "value": "https://cdn.asurabot.com.br/cdn/skins/SkinFnixdaliberdade.png",
+    "rarity": 1,
+    "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/phoenix1R.png",
+    "value": "https://cdn.asurabot.com.br/cdn/skins/phoenix1.png",
     "type": 2,
     "extra": 33
   },
   {
     "name": "Skin Fênix fogo Branco",
     "rarity": 2,
-    "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinFnixfogoBrancoR.png",
-    "value": "https://cdn.asurabot.com.br/cdn/skins/SkinFnixfogoBranco.png",
+    "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/phoenix5R.png",
+    "value": "https://cdn.asurabot.com.br/cdn/skins/phoenix5.png",
     "type": 2,
     "extra": 33
   },
   {
     "name": "Skin Retornando às cinzas",
     "rarity": 3,
-    "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinRetornandoscinzasR.png",
-    "value": "https://cdn.asurabot.com.br/cdn/skins/SkinRetornandoscinzas.png",
+    "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/phoenix2R.png",
+    "value": "https://cdn.asurabot.com.br/cdn/skins/phoenix2.png",
     "type": 2,
     "extra": 33
   },
   {
     "name": "Skin Acelerador de Partículas",
     "rarity": 3,
-    "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinAceleradordePartculasR.png",
-    "value": "https://cdn.asurabot.com.br/cdn/skins/SkinAceleradordePartculas.png",
+    "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/tempo1R.png",
+    "value": "https://cdn.asurabot.com.br/cdn/skins/tempo1.png",
     "type": 2,
     "extra": 32
   },
   {
-    "name": "Skin Máquina do tempo Soviética",
-    "rarity": 1,
-    "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinMquinadotempoSoviticaR.png",
-    "value": "https://cdn.asurabot.com.br/cdn/skins/SkinMquinadotempoSovitica.png",
+    "name": "Skin Tempo quebrado",
+    "rarity": 3,
+    "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/tempo4R.png",
+    "value": "https://cdn.asurabot.com.br/cdn/skins/tempo4.png",
     "type": 2,
     "extra": 32
   },
   {
-    "name": "Skin Tv de tubo",
-    "rarity": 0,
-    "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinTvdetuboR.jpg",
-    "value": "https://cdn.asurabot.com.br/cdn/skins/SkinTvdetubo.jpg",
+    "name": "Skin Tempo congelado",
+    "rarity": 2,
+    "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/tempo5R.png",
+    "value": "https://cdn.asurabot.com.br/cdn/skins/tempo5.png",
     "type": 2,
     "extra": 32
   },
@@ -98,72 +98,72 @@
   {
     "name": "Skin Eclípse de Sangue",
     "rarity": 2,
-    "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinEclpsedeSangueR.png",
-    "value": "https://cdn.asurabot.com.br/cdn/skins/SkinEclpsedeSangue.png",
+    "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/eclipse1R.png",
+    "value": "https://cdn.asurabot.com.br/cdn/skins/eclipse1.png",
     "type": 2,
     "extra": 31
   },
   {
     "name": "Skin Eclípse Parcial",
     "rarity": 1,
-    "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinEclpseParcialR.png",
-    "value": "https://cdn.asurabot.com.br/cdn/skins/SkinEclpseParcial.png",
+    "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/eclipse2R.png",
+    "value": "https://cdn.asurabot.com.br/cdn/skins/eclipse2.png",
     "type": 2,
     "extra": 31
   },
   {
     "name": "Skin Eclípse Total",
     "rarity": 0,
-    "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinEclpseTotalR.png",
-    "value": "https://cdn.asurabot.com.br/cdn/skins/SkinEclpseTotal.png",
+    "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/eclipse3R.png",
+    "value": "https://cdn.asurabot.com.br/cdn/skins/eclipse3.png",
     "type": 2,
     "extra": 31
   },
   {
     "name": "Skin Bruxa",
     "rarity": 0,
-    "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinBruxaR.jpg",
-    "value": "https://cdn.asurabot.com.br/cdn/skins/SkinBruxa.jpg",
+    "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/skinmago01R.png",
+    "value": "https://cdn.asurabot.com.br/cdn/skins/skinmago01.png",
     "type": 2,
     "extra": 40
   },
   {
     "name": "Skin Corrompido por poder",
     "rarity": 1,
-    "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinCorrompidoporpoderR.jpg",
-    "value": "https://cdn.asurabot.com.br/cdn/skins/SkinCorrompidoporpoder.jpg",
+    "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/skinmago03R.png",
+    "value": "https://cdn.asurabot.com.br/cdn/skins/skinmago03.png",
     "type": 2,
     "extra": 40
   },
   {
-    "name": "Skin Rasputin",
-    "rarity": 1,
-    "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinRasputinR.jpg",
-    "value": "https://cdn.asurabot.com.br/cdn/skins/SkinRasputin.jpg",
+    "name": "Skin Mana",
+    "rarity": 3,
+    "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/skinmago02R.png",
+    "value": "https://cdn.asurabot.com.br/cdn/skins/skinmago02.png",
     "type": 2,
     "extra": 40
   },
   {
     "name": "Skin Degeneração",
     "rarity": 3,
-    "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinDegeneraoR.png",
-    "value": "https://cdn.asurabot.com.br/cdn/skins/SkinDegenerao.png",
+    "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/zumbi03R.png",
+    "value": "https://cdn.asurabot.com.br/cdn/skins/zumbi03.png",
     "type": 2,
     "extra": 36
   },
   {
     "name": "Skin Super Zumbi",
     "rarity": 0,
-    "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinSuperZumbiR.jpg",
-    "value": "https://cdn.asurabot.com.br/cdn/skins/SkinSuperZumbi.jpg",
+    "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/zumbi02R.png",
+    "value": "https://cdn.asurabot.com.br/cdn/skins/zumbi02.png",
     "type": 2,
     "extra": 36
   },
   {
     "name": "Skin Zumbi Aquático",
     "rarity": 1,
-    "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinZumbiAquticoR.png",
-    "value": "https://cdn.asurabot.com.br/cdn/skins/SkinZumbiAqutico.png",
+    "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/zumbi01R.png",
+    "value": "https://cdn.asurabot.com.br/cdn/skins/zumbi01.png",
     "type": 2,
     "extra": 36
   },
