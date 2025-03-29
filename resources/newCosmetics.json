@@ -532,5 +532,78 @@
     "value": "https://cdn.asurabot.com.br/cdn/skins/skinwhite03.png",
     "type": 2,
     "extra": 51
+  },
+  {
+    "name": "Skin Diamante transversal",
+    "rarity": 2,
+    "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/cristal1R.png",
+    "value": "https://cdn.asurabot.com.br/cdn/skins/cristal1.png",
+    "type": 2,
+    "extra": 58
+  },
+
+  {
+    "name": "Skin Pedra de fogo",
+    "rarity": 1,
+    "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/cristal2R.png",
+    "value": "https://cdn.asurabot.com.br/cdn/skins/cristal2.png",
+    "type": 2,
+    "extra": 58
+  },
+  {
+    "name": "Skin Obsidiana",
+    "rarity": 3,
+    "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/cristal3R.png",
+    "value": "https://cdn.asurabot.com.br/cdn/skins/cristal3.png",
+    "type": 2,
+    "extra": 58
+  },
+  {
+    "rarity": 2,
+    "type": 0,
+    "name": "Sakura background",
+    "value": "https://cdn.asurabot.com.br/cdn/backgrounds/sakura.jpg"
+  },
+  {
+    "rarity": 0,
+    "type": 0,
+    "name": "Explosion background",
+    "value": "https://cdn.asurabot.com.br/cdn/backgrounds/explosion.jpg"
+  },
+  {
+    "rarity": 3,
+    "type": 0,
+    "name": "Black city background",
+    "value": "https://cdn.asurabot.com.br/cdn/backgrounds/blackcity.jpg"
+  },
+  {
+    "rarity": 1,
+    "type": 0,
+    "name": "Gotham background",
+    "value": "https://cdn.asurabot.com.br/cdn/backgrounds/gotham.jpg"
+  },
+  {
+    "rarity": 0,
+    "type": 0,
+    "name": "Japam Street background",
+    "value": "https://cdn.asurabot.com.br/cdn/backgrounds/japanstreet.jpg"
+  },
+  {
+    "rarity": 1,
+    "type": 0,
+    "name": "Bathroom background",
+    "value": "https://cdn.asurabot.com.br/cdn/backgrounds/bathroom.jpg"
+  },
+  {
+    "rarity": 3,
+    "type": 0,
+    "name": "Purple moon background",
+    "value": "https://cdn.asurabot.com.br/cdn/backgrounds/purplemoon.jpg"
+  },
+  {
+    "rarity": 2,
+    "type": 0,
+    "name": "Red man sky",
+    "value": "https://cdn.asurabot.com.br/cdn/backgrounds/redsky.jpg"
   }
 ]
