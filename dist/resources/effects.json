@@ -1063,5 +1063,12 @@
     "turns": 2,
     "type": 1,
     "phrase": "%s está cristalizando! (-%d)"
+  },
+  {
+    "range": [9, 12],
+    "name": "Ferrugem",
+    "turns": 2,
+    "type": 1,
+    "phrase": "%s está enferrugando! (-%d)"
   }
 ]
