@@ -279,5 +279,25 @@
   {
     "name": "Pneu",
     "rarity": 3
+  },
+  {
+    "name": "Invisivel",
+    "rarity": 0
+  },
+  {
+    "name": "Egirl",
+    "rarity": 1
+  },
+  {
+    "name": "Gigante",
+    "rarity": 2
+  },
+  {
+    "name": "Musico",
+    "rarity": 3
+  },
+  {
+    "name": "Graal",
+    "rarity": 5
   }
 ]

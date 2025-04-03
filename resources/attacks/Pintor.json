@@ -17,7 +17,7 @@
   },
   {
     "name": "Mancha curativa",
-    "damage": [6, 10],
+    "damage": [6, 8],
     "level": 4,
     "self": true,
     "effect": [1, 2]
@@ -46,7 +46,7 @@
   },
   {
     "name": "Lamina de pigmento",
-    "damage": [10, 17],
+    "damage": [10, 14],
     "level": 12,
     "effect": [1, 7]
   },

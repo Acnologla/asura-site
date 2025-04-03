@@ -1,0 +1,93 @@
+[
+  {
+    "name": "Brisa Fantasma",
+    "damage": [9, 28],
+    "level": 1
+  },
+  {
+    "name": "Sombra Ilusória",
+    "damage": [1, 2],
+    "level": 2,
+    "effect": [1, 1]
+  },
+  {
+    "name": "Cortina de Névoa",
+    "damage": [14, 21],
+    "level": 3
+  },
+  {
+    "name": "Lâmina Espectral",
+    "damage": [14, 19],
+    "level": 4,
+    "effect": [1, 1]
+  },
+  {
+    "name": "Meteoro Fantasma",
+    "damage": [24, 31],
+    "level": 5
+  },
+  {
+    "name": "Explosão Sombria",
+    "damage": [26, 31],
+    "level": 6
+  },
+  {
+    "name": "Tormenta Invisível",
+    "damage": [27, 32],
+    "level": 7
+  },
+  {
+    "name": "Fúria Sombria",
+    "damage": [29, 33],
+    "level": 8
+  },
+  {
+    "name": "Sombras Profundas",
+    "damage": [32, 41],
+    "level": 10
+  },
+  {
+    "name": "Chuva Fantasmagórica",
+    "damage": [39, 51],
+    "level": 12
+  },
+  {
+    "name": "Magia Oculta",
+    "damage": [18, 26],
+    "level": 13,
+    "effect": [1, 14],
+    "self": true
+  },
+  {
+    "name": "Estrela Invisível",
+    "damage": [49, 61],
+    "level": 15
+  },
+  {
+    "name": "Névoa Encantada",
+    "damage": [26, 33],
+    "level": 17,
+    "self": true,
+    "effect": [1, 14]
+  },
+  {
+    "name": "Espectro Carmesim",
+    "damage": [49, 58],
+    "level": 18
+  },
+  {
+    "name": "Destino Incerto",
+    "damage": [50, 60],
+    "level": 22
+  },
+  {
+    "name": "Colapso Fantasma",
+    "damage": [54, 63],
+    "level": 24
+  },
+  {
+    "name": "Dimensão Invisível",
+    "damage": [55, 99],
+    "level": 30
+  }
+]
