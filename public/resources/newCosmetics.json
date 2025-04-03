@@ -605,5 +605,75 @@
     "type": 0,
     "name": "Red man sky",
     "value": "https://cdn.asurabot.com.br/cdn/backgrounds/redsky.jpg"
+  },
+  {
+    "name": "Skin Verde",
+    "rarity": 0,
+    "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/holo1R.png",
+    "value": "https://cdn.asurabot.com.br/cdn/skins/holo1.png",
+    "type": 2,
+    "extra": 56
+  },
+  {
+    "name": "Skin Vermelho",
+    "rarity": 1,
+    "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/holo2R.png",
+    "value": "https://cdn.asurabot.com.br/cdn/skins/holo2.png",
+    "type": 2,
+    "extra": 56
+  },
+  {
+    "rarity": 1,
+    "type": 0,
+    "name": "Raining blue moon background",
+    "value": "https://cdn.asurabot.com.br/cdn/backgrounds/rainingbluemoon.jpg"
+  },
+  {
+    "rarity": 0,
+    "type": 0,
+    "name": "A blue sky background",
+    "value": "https://cdn.asurabot.com.br/cdn/backgrounds/abluesky.jpg"
+  },
+  {
+    "rarity": 1,
+    "type": 0,
+    "name": "Japan house sun background",
+    "value": "https://cdn.asurabot.com.br/cdn/backgrounds/japanhousesun.jpg"
+  },
+  {
+    "rarity": 3,
+    "type": 0,
+    "name": "Japan city sun background",
+    "value": "https://cdn.asurabot.com.br/cdn/backgrounds/japancitysun.jpg"
+  },
+  {
+    "rarity": 0,
+    "type": 0,
+    "name": "Cyclops background",
+    "value": "https://cdn.asurabot.com.br/cdn/backgrounds/cyclops.jpg"
+  },
+  {
+    "rarity": 2,
+    "type": 0,
+    "name": "City 53 background",
+    "value": "https://cdn.asurabot.com.br/cdn/backgrounds/city53.jpg"
+  },
+  {
+    "rarity": 2,
+    "type": 0,
+    "name": "City 52 background",
+    "value": "https://cdn.asurabot.com.br/cdn/backgrounds/city52.jpg"
+  },
+  {
+    "rarity": 0,
+    "type": 0,
+    "name": "Quiet neighborhood background",
+    "value": "https://cdn.asurabot.com.br/cdn/backgrounds/quietneighborhood.jpg"
+  },
+  {
+    "rarity": 3,
+    "type": 0,
+    "name": "Fantasyy world background",
+    "value": "https://cdn.asurabot.com.br/cdn/backgrounds/fantasyworld.jpg"
   }
 ]

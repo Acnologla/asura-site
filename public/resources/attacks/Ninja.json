@@ -17,7 +17,7 @@
   },
   {
     "name": "Faca",
-    "damage": [5, 15],
+    "damage": [7, 15],
     "level": 4,
     "effect": [1, 1]
   },
@@ -28,7 +28,7 @@
   },
   {
     "name": "Bomba de fumaça",
-    "damage": [3, 5],
+    "damage": [3, 7],
     "level": 7,
     "effect": [1, 4]
   },
@@ -39,7 +39,7 @@
   },
   {
     "name": "Katana",
-    "damage": [5, 15],
+    "damage": [7, 15],
     "effect": [1, 7],
     "level": 10
   },
@@ -56,7 +56,7 @@
   },
   {
     "name": "Katana afiada",
-    "damage": [30, 35],
+    "damage": [32, 37],
     "level": 15,
     "effect": [1, 7]
   },
@@ -72,7 +72,7 @@
   },
   {
     "name": "Katana negra",
-    "damage": [25, 30],
+    "damage": [25, 33],
     "level": 21,
     "effect": [1, 36]
   },

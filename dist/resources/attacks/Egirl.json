@@ -1,0 +1,99 @@
+[
+  {
+    "name": "Lâmina Kawaii",
+    "damage": [18, 24],
+    "level": 1
+  },
+  {
+    "name": "Pulso Fofinho",
+    "damage": [10, 18],
+    "level": 2,
+    "self": true,
+    "effect": [0.5, 2]
+  },
+  {
+    "name": "Espadona Estilosa",
+    "damage": [25, 30],
+    "level": 3
+  },
+  {
+    "name": "Técnica UwU",
+    "damage": [29, 36],
+    "level": 4
+  },
+  {
+    "name": "Espada Fashion",
+    "damage": [11, 26],
+    "level": 6,
+    "effect": [1, 1]
+  },
+  {
+    "name": "Katana Cute",
+    "damage": [35, 36],
+    "level": 7
+  },
+  {
+    "name": "Defesa Estética",
+    "damage": [9, 21],
+    "level": 8,
+    "effect": [1, 14],
+    "self": true
+  },
+  {
+    "name": "Espírito Gamer",
+    "damage": [37, 40],
+    "level": 10
+  },
+  {
+    "name": "Depressão...",
+    "damage": [40, 56],
+    "level": 12,
+    "effect": [1, 50]
+  },
+  {
+    "name": "Soco Rosa",
+    "damage": [37, 44],
+    "level": 14
+  },
+  {
+    "name": "Spam de Emojis",
+    "damage": [37, 51],
+    "level": 15
+  },
+  {
+    "name": "Tsundere",
+    "damage": [28, 39],
+    "level": 16,
+    "self": true,
+    "effect": [1, 47]
+  },
+  {
+    "name": "Ataque Simp",
+    "damage": [45, 59],
+    "level": 18
+  },
+  {
+    "name": "Depressão 2...",
+    "damage": [75, 82],
+    "level": 21,
+    "effect": [1, 51]
+  },
+  {
+    "name": "Golpe Aesthetic",
+    "damage": [55, 64],
+    "level": 23
+  },
+  {
+    "name": "Fofinha!",
+    "damage": [47, 56],
+    "level": 25,
+    "self": true,
+    "effect": [1, 47]
+  },
+  {
+    "name": "Menstruação",
+    "damage": [115, 135],
+    "level": 30,
+    "effect": [1, 140]
+  }
+]
