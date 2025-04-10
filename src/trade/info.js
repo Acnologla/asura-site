@@ -17,4 +17,12 @@ export const getInfo = async (info) =>
       const newCosmetics = await axios.get("/resources/newCosmetics.json");
       info.cosmetics = cosmetics.data.concat(skins.data, newCosmetics.data);
     }),
+    ...new Array(8).fill(0).map((_, i) =>
+      axios
+        .get(`/resources/pets/${i}.json`)
+        .then((classes) => {
+          info.pets[i] = classes.data;
+        })
+        .catch(() => 1)
+    ),
   ]);

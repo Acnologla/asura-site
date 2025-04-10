@@ -67,6 +67,7 @@ export default {
         confirm: false,
         roosters: [],
         items: [],
+        pets: [],
       },
       trade: {},
       info: {
@@ -74,6 +75,7 @@ export default {
         classes: [],
         items: [],
         cosmetics: [],
+        pets: [],
         rarities: [
           "Comum",
           "Raro",
@@ -99,6 +101,7 @@ export default {
     this.other.id = r.data.other_id;
     this.user.roosters = r.data.roosters;
     this.user.items = r.data.items;
+    this.user.pets = r.data.pets;
     this.loaded = true;
   },
 
@@ -128,7 +131,8 @@ export default {
       }));
       const roosters = result.filter((i) => i.tradeType === "rooster");
       const itemsNew = result.filter((i) => i.tradeType === "item");
-      const r = this.map(roosters, itemsNew);
+      const petsNew = result.filter((i) => i.tradeType === "pet");
+      const r = this.map(roosters, itemsNew, petsNew);
       return r;
     },
     tradeCallback(message) {
@@ -171,6 +175,8 @@ export default {
       switch (item.tradeType) {
         case "rooster":
           return this.info.sprites[item.type - 1];
+        case "pet":
+          return this.info.pets[item.type].sprite;
         case "item":
           if (item.type === 3) {
             return this.info.cosmetics[item.item_id].value;
@@ -187,6 +193,16 @@ export default {
       } else trade.splice(index, 1);
       this.addItemToWs(item, true);
     },
+    itemTypeToInt(type) {
+      switch (type) {
+        case "rooster":
+          return 1;
+        case "item":
+          return 0;
+        case "pet":
+          return 2;
+      }
+    },
     addItemToWs(item, remove) {
       this.wsConnection.ws.send(
         JSON.stringify({
@@ -196,7 +212,7 @@ export default {
           data: {
             item_id: item.id,
             remove,
-            type: item.tradeType === "rooster" ? 1 : 0,
+            type: this.itemTypeToInt(item.tradeType),
           },
         })
       );
@@ -211,12 +227,19 @@ export default {
       this.addItemToWs(item, false);
     },
 
-    map(roosters, items) {
+    map(roosters, items, pets) {
       const r = roosters.map((r) => ({
         ...r,
         name: this.info.classes[r.type].name,
         tradeType: "rooster",
         rarity: this.info.classes[r.type].rarity,
+      }));
+
+      const r2 = pets.map((r) => ({
+        ...r,
+        name: this.info.pets[r.type].name,
+        tradeType: "pet",
+        rarity: this.info.pets[r.type].rarity,
       }));
 
       const mapItems = (items, type, infoGetter, rarityGetter) => {
@@ -251,7 +274,7 @@ export default {
           (itemId) => itemId
         ),
       ];
-      return r.concat(itemsNew);
+      return r.concat(itemsNew).concat(r2);
     },
   },
   components: {

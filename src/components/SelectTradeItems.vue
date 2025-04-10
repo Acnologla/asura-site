@@ -45,7 +45,7 @@
 
 <script>
 import TradeItemCard from "./TradeItemCard.vue";
-const sections = ["Roosters", "Items", "Cosmetics", "Shards"];
+const sections = ["Roosters", "Items", "Cosmetics", "Shards", "Pets"];
 export default {
   name: "SelectTradeItems",
   props: {
@@ -62,11 +62,18 @@ export default {
   },
   methods: {
     getSectionItems(section) {
-      const mapped = this.map(this.user.roosters, this.user.items);
+      const mapped = this.map(
+        this.user.roosters,
+        this.user.items,
+        this.user.pets
+      );
       const items = mapped.filter((m) => m.tradeType === "item");
       switch (section) {
         case "Roosters":
           return mapped.filter((m) => m.tradeType === "rooster");
+
+        case "Pets":
+          return mapped.filter((m) => m.tradeType === "pet");
 
         case "Items":
           return items

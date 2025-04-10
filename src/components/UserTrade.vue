@@ -42,7 +42,7 @@ export default {
     },
     maxSlots: {
       type: Number,
-      default: 12, // Increased to account for 3 rows of 4 items each
+      default: 12,
     },
     getItemImage: {
       type: Function,
@@ -54,7 +54,6 @@ export default {
   },
   methods: {
     getItemIndex(row, col) {
-      // Calculate the index based on row and column
       return (row - 1) * 4 + (col - 1);
     },
   },
