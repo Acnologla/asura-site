@@ -68,37 +68,37 @@
   },
   {
     "name": "Milagre Do Tempo",
-    "damage": [27, 38],
+    "damage": [28, 39],
     "effect": [1, 3],
     "level": 19
   },
   {
     "name": "Bênção Suprema",
-    "damage": [60, 80],
+    "damage": [65, 85],
     "level": 21,
     "effect": [1, 146]
   },
   {
     "name": "Eternidade Dourada",
-    "damage": [70, 85],
+    "damage": [72, 90],
     "level": 22,
     "self": true,
     "effect": [1, 144]
   },
   {
     "name": "Destino Iluminado",
-    "damage": [75, 95],
+    "damage": [75, 105],
     "level": 25,
     "effect": [1, 147]
   },
   {
     "name": "Juízo Final",
-    "damage": [165, 241],
+    "damage": [170, 251],
     "level": 30
   },
   {
     "name": "Ressurreição Suprema",
-    "damage": [35, 40],
+    "damage": [35, 45],
     "level": 30,
     "evolved": true,
     "effect": [1, 3]

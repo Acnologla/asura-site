@@ -85,12 +85,16 @@ export default {
     handleInput(text) {
       const validate = text.replace(/ /g, "");
       if (validate !== "") {
-        this.displayCommands = this.commands.filter((command) =>
-          command.aliases.some(
-            (aliase) =>
-              levenshtein(aliase, validate) <= 1 || aliase.includes(validate)
-          )
-        );
+        this.displayCommands = this.commands.filter((command) => {
+          command.aliases = command.aliases || [];
+
+          return (
+            command.aliases.some(
+              (aliase) =>
+                levenshtein(aliase, validate) <= 1 || aliase.includes(validate)
+            ) || command.name.includes(validate)
+          );
+        });
       } else {
         this.filterCategory(this.category);
       }

@@ -52,7 +52,7 @@
         outlined
         size="is-medium"
         style="margin-bottom: 25px"
-        @click="isComponentModalActive = true"
+        @click="buy"
       />
 
       <b-modal
@@ -139,6 +139,11 @@ export default {
     description: String,
     title: String,
     price: String,
+  },
+  methods: {
+    buy() {
+      window.open(this.url, "_blank");
+    },
   },
   data() {
     return {

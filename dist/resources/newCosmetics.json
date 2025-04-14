@@ -108,16 +108,16 @@
   {
     "name": "Skin Arcanjo",
     "rarity": 4,
-    "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/arcanjo2R.png",
-    "value": "https://cdn.asurabot.com.br/cdn/skins/arcanjo2.png",
+    "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/angelicalR.png",
+    "value": "https://cdn.asurabot.com.br/cdn/skins/angelical1.png",
     "type": 2,
     "extra": 19
   },
   {
     "name": "Skin Fogo infernal",
     "rarity": 4,
-    "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinFogoinfernalR.png",
-    "value": "https://cdn.asurabot.com.br/cdn/skins/SkinFogoinfernal.png",
+    "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/demoniaco4R.png",
+    "value": "https://cdn.asurabot.com.br/cdn/skins/demoniaco4.png",
     "type": 2,
     "extra": 23
   },
@@ -143,25 +143,25 @@
   },
   {
     "name": "Skin Fome",
-    "rarity": 2,
-    "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinFomeR.png",
-    "value": "https://cdn.asurabot.com.br/cdn/skins/SkinFome.png",
+    "rarity": 3,
+    "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/apocalipse3R.png",
+    "value": "https://cdn.asurabot.com.br/cdn/skins/apocalipse3.png",
     "type": 2,
     "extra": 45
   },
   {
     "name": "Skin Guerra",
     "rarity": 3,
-    "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinGuerraR.png",
-    "value": "https://cdn.asurabot.com.br/cdn/skins/SkinGuerra.png",
+    "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/apocalipse2R.png",
+    "value": "https://cdn.asurabot.com.br/cdn/skins/apocalipse2.png",
     "type": 2,
     "extra": 45
   },
   {
     "name": "Skin Morte",
-    "rarity": 2,
-    "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinMorteR.png",
-    "value": "https://cdn.asurabot.com.br/cdn/skins/SkinMorte.png",
+    "rarity": 3,
+    "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/apocalipse1R.png",
+    "value": "https://cdn.asurabot.com.br/cdn/skins/apocalipse1.png",
     "type": 2,
     "extra": 45
   },

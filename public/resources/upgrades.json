@@ -2,36 +2,52 @@
   {
     "name": "Utilitarios",
     "value": "Ganha 3 de xp a mais por treino",
+    "nameTranslation": "upgrades.utilities_name",
+    "descriptionTranslation": "upgrades.utilities_description",
     "childs": [
       {
         "name": "Sorte aumentada",
         "value": "Lootbox tem chances maiores de vir galos raros",
+        "nameTranslation": "upgrades.increased_luck_name",
+        "descriptionTranslation": "upgrades.increased_luck_description",
         "childs": [
           {
             "name": "Sorte nas caixas",
             "value": "Lootbox tem chances maiores de vir galos epicos",
+            "nameTranslation": "upgrades.box_luck_name",
+            "descriptionTranslation": "upgrades.box_luck_description",
             "childs": [
               {
                 "name": "Sorte lendaria",
-                "value": "Lootbox tem chances maiores de vir galos lendarios"
+                "value": "Lootbox tem chances maiores de vir galos lendarios",
+                "nameTranslation": "upgrades.legendary_luck_name",
+                "descriptionTranslation": "upgrades.legendary_luck_description"
               },
               {
                 "name": "Sorte Epica",
-                "value": "Lootbox tem chances maiores de vir galos Epicos e raros"
+                "value": "Lootbox tem chances maiores de vir galos Epicos e raros",
+                "nameTranslation": "upgrades.epic_luck_name",
+                "descriptionTranslation": "upgrades.epic_luck_description"
               }
             ]
           },
           {
             "name": "Sorte nas habilidades",
             "value": "Efeitos tem mais chances de serem aplicados",
+            "nameTranslation": "upgrades.skill_luck_name",
+            "descriptionTranslation": "upgrades.skill_luck_description",
             "childs": [
               {
                 "name": "Mais Sorte nas habilidades",
-                "value": "Efeitos tem ainda mais chances de serem aplicados"
+                "value": "Efeitos tem ainda mais chances de serem aplicados",
+                "nameTranslation": "upgrades.more_skill_luck_name",
+                "descriptionTranslation": "upgrades.more_skill_luck_description"
               },
               {
                 "name": "Sorte na dungeon",
-                "value": "Dungeon tem chance de dar itens melhores"
+                "value": "Dungeon tem chance de dar itens melhores",
+                "nameTranslation": "upgrades.dungeon_luck_name",
+                "descriptionTranslation": "upgrades.dungeon_luck_description"
               }
             ]
           }
@@ -40,32 +56,46 @@
       {
         "name": "Mais bonus",
         "value": "Missoes dão dinheiro extra",
+        "nameTranslation": "upgrades.more_bonus_name",
+        "descriptionTranslation": "upgrades.more_bonus_description",
         "childs": [
           {
             "name": "Rinhas ricas",
             "value": "Rinhas dão 3 de dinheiro extra",
+            "nameTranslation": "upgrades.rich_fights_name",
+            "descriptionTranslation": "upgrades.rich_fights_description",
             "childs": [
               {
                 "name": "Mais treino",
-                "value": "40 treinos extras por dia"
+                "value": "40 treinos extras por dia",
+                "nameTranslation": "upgrades.more_training_name",
+                "descriptionTranslation": "upgrades.more_training_description"
               },
               {
                 "name": "MissoesXP",
-                "value": "Xp extra por missoes"
+                "value": "Xp extra por missoes",
+                "nameTranslation": "upgrades.xp_missions_name",
+                "descriptionTranslation": "upgrades.xp_missions_description"
               }
             ]
           },
           {
             "name": "Rinhas habilidosas",
             "value": "Rinhas dão 6 de xp extra",
+            "nameTranslation": "upgrades.skilled_fights_name",
+            "descriptionTranslation": "upgrades.skilled_fights_description",
             "childs": [
               {
                 "name": "Rinhas mais habilidosas",
-                "value": "Rinhas dão 10 de xp extra"
+                "value": "Rinhas dão 10 de xp extra",
+                "nameTranslation": "upgrades.more_skilled_fights_name",
+                "descriptionTranslation": "upgrades.more_skilled_fights_description"
               },
               {
                 "name": "MissoesDinheiro",
-                "value": "Dinheiro extra por missoes"
+                "value": "Dinheiro extra por missoes",
+                "nameTranslation": "upgrades.money_missions_name",
+                "descriptionTranslation": "upgrades.money_missions_description"
               }
             ]
           }
@@ -76,28 +106,40 @@
   {
     "name": "Buff de vida",
     "value": "Seu galo começa com 35 de vida extra nas batalhas",
+    "nameTranslation": "upgrades.life_buff_name",
+    "descriptionTranslation": "upgrades.life_buff_description",
     "childs": [
       {
         "name": "Buff de dano",
         "value": "Os ataques do seu galo tem 10 de dano adicional",
+        "nameTranslation": "upgrades.damage_buff_name",
+        "descriptionTranslation": "upgrades.damage_buff_description",
         "childs": [
           {
             "name": "Buff de dano",
             "value": "Os ataques do seu galo tem 30 de dano adicional",
+            "nameTranslation": "upgrades.damage_buff_improved_name",
+            "descriptionTranslation": "upgrades.damage_buff_improved_description",
             "childs": [
               {
                 "name": "Buff de dano aprimorado",
-                "value": "Os ataques do seu galo tem 60 de dano adicional"
+                "value": "Os ataques do seu galo tem 60 de dano adicional",
+                "nameTranslation": "upgrades.damage_buff_enhanced_name",
+                "descriptionTranslation": "upgrades.damage_buff_enhanced_description"
               }
             ]
           },
           {
             "name": "Efeitos mais fortes",
             "value": "Os Efeitos do seu galo tem 30 de dano adicional",
+            "nameTranslation": "upgrades.stronger_effects_name",
+            "descriptionTranslation": "upgrades.stronger_effects_description",
             "childs": [
               {
                 "name": "Efeitos ainda mais fortes",
-                "value": "Os Efeitos do seu galo tem 60 de dano adicional"
+                "value": "Os Efeitos do seu galo tem 60 de dano adicional",
+                "nameTranslation": "upgrades.even_stronger_effects_name",
+                "descriptionTranslation": "upgrades.even_stronger_effects_description"
               }
             ]
           }
@@ -106,28 +148,40 @@
       {
         "name": "Buff de vida",
         "value": "Seu galo começa com 70 de vida extra nas batalhas",
+        "nameTranslation": "upgrades.life_buff_improved_name",
+        "descriptionTranslation": "upgrades.life_buff_improved_description",
         "childs": [
           {
             "name": "Regeneração",
             "value": "Seu galo regenera 20 de vida a cada ataque",
+            "nameTranslation": "upgrades.regeneration_name",
+            "descriptionTranslation": "upgrades.regeneration_description",
             "childs": [
               {
                 "name": "Regeneração Amplificada",
-                "value": "Seu galo regenera 45 de vida a cada ataque"
+                "value": "Seu galo regenera 45 de vida a cada ataque",
+                "nameTranslation": "upgrades.amplified_regeneration_name",
+                "descriptionTranslation": "upgrades.amplified_regeneration_description"
               },
               {
                 "name": "Degeneração",
-                "value": "O galo do oponente perde 40 de vida a cada ataque"
+                "value": "O galo do oponente perde 40 de vida a cada ataque",
+                "nameTranslation": "upgrades.degeneration_name",
+                "descriptionTranslation": "upgrades.degeneration_description"
               }
             ]
           },
           {
             "name": "Mais vida",
             "value": "Seu galo começa com 115 de vida extra nas batalhas",
+            "nameTranslation": "upgrades.more_life_name",
+            "descriptionTranslation": "upgrades.more_life_description",
             "childs": [
               {
                 "name": "Intankavel",
-                "value": "Seu galo começa com 200 de vida extra nas batalhas"
+                "value": "Seu galo começa com 200 de vida extra nas batalhas",
+                "nameTranslation": "upgrades.unstoppable_name",
+                "descriptionTranslation": "upgrades.unstoppable_description"
               }
             ]
           }
@@ -138,36 +192,52 @@
   {
     "name": "Esquiva",
     "value": "Seu galo tem 3% de chance de se esquivar de dano de ataques",
+    "nameTranslation": "upgrades.dodge_name",
+    "descriptionTranslation": "upgrades.dodge_description",
     "childs": [
       {
         "name": "Esquiva melhorada",
         "value": "Chance de esquiva aumenta para 5%",
+        "nameTranslation": "upgrades.improved_dodge_name",
+        "descriptionTranslation": "upgrades.improved_dodge_description",
         "childs": [
           {
             "name": "Chance adicional",
             "value": "Chance de esquiva aumenta para 8%",
+            "nameTranslation": "upgrades.additional_chance_name",
+            "descriptionTranslation": "upgrades.additional_chance_description",
             "childs": [
               {
                 "name": "Esquiva suprema",
-                "value": "Chance de esquiva aumenta para 10%"
+                "value": "Chance de esquiva aumenta para 10%",
+                "nameTranslation": "upgrades.supreme_dodge_name",
+                "descriptionTranslation": "upgrades.supreme_dodge_description"
               },
               {
                 "name": "Esquiva em efeitos",
-                "value": "Afeta efeitos de dano"
+                "value": "Afeta efeitos de dano",
+                "nameTranslation": "upgrades.effect_dodge_name",
+                "descriptionTranslation": "upgrades.effect_dodge_description"
               }
             ]
           },
           {
             "name": "Ataques criticos",
             "value": "Chance de 10% de causar um ataque critico de 120%",
+            "nameTranslation": "upgrades.critical_attacks_name",
+            "descriptionTranslation": "upgrades.critical_attacks_description",
             "childs": [
               {
                 "name": "Mais chance",
-                "value": "Chance de ataque critico aumentado para 20%"
+                "value": "Chance de ataque critico aumentado para 20%",
+                "nameTranslation": "upgrades.more_chance_name",
+                "descriptionTranslation": "upgrades.more_chance_description"
               },
               {
                 "name": "Mais dano",
-                "value": "Dano do ataque critico aumentado para 140%"
+                "value": "Dano do ataque critico aumentado para 140%",
+                "nameTranslation": "upgrades.more_damage_name",
+                "descriptionTranslation": "upgrades.more_damage_description"
               }
             ]
           }
@@ -176,24 +246,34 @@
       {
         "name": "Voodoo",
         "value": "O galo do seu oponente começa com 10 de vida a menos",
+        "nameTranslation": "upgrades.voodoo_name",
+        "descriptionTranslation": "upgrades.voodoo_description",
         "childs": [
           {
             "name": "Fraqueza",
             "value": "O galo do oponente começa 1 nivel a menos",
+            "nameTranslation": "upgrades.weakness_name",
+            "descriptionTranslation": "upgrades.weakness_description",
             "childs": [
               {
                 "name": "Fraqueza amplificada",
-                "value": "O galo do oponente começa 3 niveis a menos"
+                "value": "O galo do oponente começa 3 niveis a menos",
+                "nameTranslation": "upgrades.amplified_weakness_name",
+                "descriptionTranslation": "upgrades.amplified_weakness_description"
               }
             ]
           },
           {
             "name": "Voodoo melhorado",
             "value": "O galo do seu oponente começa com 30 de vida a menos",
+            "nameTranslation": "upgrades.improved_voodoo_name",
+            "descriptionTranslation": "upgrades.improved_voodoo_description",
             "childs": [
               {
                 "name": "Voodo eterno",
-                "value": "O galo do seu oponente começa com 50 de vida a menos"
+                "value": "O galo do seu oponente começa com 50 de vida a menos",
+                "nameTranslation": "upgrades.eternal_voodoo_name",
+                "descriptionTranslation": "upgrades.eternal_voodoo_description"
               }
             ]
           }

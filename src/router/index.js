@@ -12,6 +12,11 @@ const CreateGalo = () => import("../views/CreateGalo");
 const Terms = () => import("../views/Terms");
 const Privacy = () => import("../views/Privacy");
 const Trade = () => import("../views/Trade");
+const backgrounds = () => import("../views/AllBackgrounds");
+const background = () => import("../views/Background");
+const pets = () => import("../views/AllPets");
+const pet = () => import("../views/Pet");
+
 Vue.use(VueRouter);
 
 const routes = [
@@ -19,6 +24,26 @@ const routes = [
     path: "/",
     name: "Home",
     component: Home,
+  },
+  {
+    path: "/backgrounds",
+    name: "Backgrounds",
+    component: backgrounds,
+  },
+  {
+    path: "/background",
+    name: "Background",
+    component: background,
+  },
+  {
+    path: "/pets",
+    name: "Pets",
+    component: pets,
+  },
+  {
+    path: "/pet",
+    name: "Pet",
+    component: pet,
   },
   {
     path: "/terms",

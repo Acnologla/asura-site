@@ -1,4 +1,21 @@
 import axios from "axios";
+
+export const GetCosmeticInfo = () =>
+  axios.get("/resources/cosmetics.json").then(async (cosmetics) => {
+    const skins = await axios.get("/resources/skins.json");
+    const newCosmetics = await axios.get("/resources/newCosmetics.json");
+    return cosmetics.data.concat(skins.data, newCosmetics.data);
+  });
+
+const PET_NUMBER = 8;
+
+export const GetPets = () =>
+  new Array(PET_NUMBER).fill(0).map((_, i) =>
+    axios
+      .get(`/resources/pets/${i}.json`)
+      .then((classes) => classes.data)
+      .catch(() => 1)
+  );
 export const getInfo = async (info) =>
   Promise.all([
     axios.get("/resources/sprites.json").then((result) => {
@@ -17,7 +34,7 @@ export const getInfo = async (info) =>
       const newCosmetics = await axios.get("/resources/newCosmetics.json");
       info.cosmetics = cosmetics.data.concat(skins.data, newCosmetics.data);
     }),
-    ...new Array(8).fill(0).map((_, i) =>
+    ...new Array(PET_NUMBER).fill(0).map((_, i) =>
       axios
         .get(`/resources/pets/${i}.json`)
         .then((classes) => {

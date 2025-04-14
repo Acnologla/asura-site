@@ -50,48 +50,48 @@
   {
     "name": "Skin Anjo Feminino",
     "rarity": 2,
-    "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinAnjoFemininoR.jpg",
-    "value": "https://cdn.asurabot.com.br/cdn/skins/SkinAnjoFeminino.jpg",
+    "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/angelical3R.png",
+    "value": "https://cdn.asurabot.com.br/cdn/skins/angelical3.png",
     "type": 2,
     "extra": 19
   },
   {
     "name": "Skin Armas Divinas",
     "rarity": 1,
-    "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinArmasDivinasR.jpg",
-    "value": "https://cdn.asurabot.com.br/cdn/skins/SkinArmasDivinas.jpg",
+    "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/angelical2R.png",
+    "value": "https://cdn.asurabot.com.br/cdn/skins/angelical2.png",
     "type": 2,
     "extra": 19
   },
   {
     "name": "Skin Templário",
     "rarity": 3,
-    "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinTemplrioR.png",
-    "value": "https://cdn.asurabot.com.br/cdn/skins/SkinTemplrio.png",
+    "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/angelical4R.png",
+    "value": "https://cdn.asurabot.com.br/cdn/skins/angelical4.png",
     "type": 2,
     "extra": 19
   },
   {
     "name": "Skin Armas Amaldiçoadas",
     "rarity": 0,
-    "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinArmasAmaldioadasR.png",
-    "value": "https://cdn.asurabot.com.br/cdn/skins/SkinArmasAmaldioadas.png",
+    "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/demoniaco1R.png",
+    "value": "https://cdn.asurabot.com.br/cdn/skins/demoniaco1.png",
     "type": 2,
     "extra": 23
   },
   {
     "name": "Skin Cabra",
     "rarity": 3,
-    "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinCabraR.jpg",
-    "value": "https://cdn.asurabot.com.br/cdn/skins/SkinCabra.jpg",
+    "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/demoniaco2R.png",
+    "value": "https://cdn.asurabot.com.br/cdn/skins/demoniaco2.png",
     "type": 2,
     "extra": 23
   },
   {
     "name": "Skin Exorcizado",
     "rarity": 2,
-    "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinExorcizadoR.jpg",
-    "value": "https://cdn.asurabot.com.br/cdn/skins/SkinExorcizado.jpg",
+    "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/demoniaco3R.png",
+    "value": "https://cdn.asurabot.com.br/cdn/skins/demoniaco3.png",
     "type": 2,
     "extra": 23
   },

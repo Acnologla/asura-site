@@ -1,0 +1,23 @@
+{
+  "id": 3,
+  "name": "rust",
+  "rarity": 3,
+  "sprite": "https://cdn.asurabot.com.br/cdn/pets/2.png",
+  "reverseSprite": "https://cdn.asurabot.com.br/cdn/pets/2R.png",
+  "skills": [
+    {
+      "name": "Ferrugem",
+      "damage": [8, 14],
+      "effect": [1, 139]
+    },
+    {
+      "name": "Bicada da ferrugem",
+      "damage": [41, 49]
+    },
+    {
+      "name": "Proteção enferrujada",
+      "damage": [32, 35],
+      "effect": [1, 4]
+    }
+  ]
+}

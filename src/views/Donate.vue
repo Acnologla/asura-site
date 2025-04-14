@@ -46,15 +46,17 @@
             price="R$ 10 a cada 10000 moedas"
             description="Comprar dinheiro avulsamente na sua conta."
             title="Compra de dinheiro"
+            url="https://asurabot-discord.mycartpanda.com/products/compra-de-dinheiro-10000"
           />
         </div>
         <div
           class="column is-three-quarters-mobile is-half-tablet is-one-third-desktop is-one-fifth-fullhd"
         >
           <DonateCard
-            price="R$ 10 a cada 6500 Xp"
+            price="R$ 10 a cada 7000 Xp"
             description="Comprar Xp avulsamente na sua conta."
             title="Compra de Xp"
+            url="https://asurabot-discord.mycartpanda.com/products/xp-para-o-galo"
           />
         </div>
         <div
@@ -64,6 +66,7 @@
             price="R$ 15 a cada 1 Asura Coin"
             description="Comprar Asura coins avulsamente na sua conta."
             title="Compra de Asura coins"
+            url="https://asurabot-discord.mycartpanda.com/products/compra-de-asura-coins"
           />
         </div>
         <div
@@ -73,6 +76,7 @@
             price="R$ 10 a cada 2000 UserXp"
             description="Comprar UserXp avulsamente na sua conta."
             title="Compra de UserXp"
+            url="https://asurabot-discord.mycartpanda.com/products/userxp"
           />
         </div>
         <div
@@ -82,13 +86,16 @@
             price="R$ 50 a cada 1 Reset"
             description="Comprar Um reset de galo avulsamente na sua conta."
             title="Compra de Resets"
+            url="https://asurabot-discord.mycartpanda.com/products/compra-de-resets"
           />
         </div>
         <div
           class="column is-three-quarters-mobile is-three-quarters-tablet is-three-quarters-tablet is-half-desktop is-half-fullhd"
           style="margin-top: 20px"
         >
-          <VipCard />
+          <VipCard
+            url="https://asurabot-discord.mycartpanda.com/products/vip-asurabot"
+          />
         </div>
       </div>
     </center>

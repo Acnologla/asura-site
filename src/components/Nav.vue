@@ -22,6 +22,16 @@
       <b-navbar-item tag="router-link" :to="{ name: 'Galos' }" class="navItem">
         Galos
       </b-navbar-item>
+      <b-navbar-item tag="router-link" :to="{ name: 'Pets' }" class="navItem">
+        Pombos
+      </b-navbar-item>
+      <b-navbar-item
+        tag="router-link"
+        :to="{ name: 'Backgrounds' }"
+        class="navItem"
+      >
+        Backgrounds
+      </b-navbar-item>
       <b-navbar-item tag="router-link" :to="{ name: 'Donate' }" class="navItem">
         Doaçoes
       </b-navbar-item>
@@ -31,14 +41,6 @@
         class="navItem"
       >
         Comandos
-      </b-navbar-item>
-      <b-navbar-item
-        tag="a"
-        href="https://top.gg/bot/470684281102925844"
-        target="_blank"
-        class="navItem"
-      >
-        Votar
       </b-navbar-item>
     </template>
     <template #end>

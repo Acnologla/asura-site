@@ -21,6 +21,12 @@
           :galos="findBad(this.current)"
         ></card>
       </div>
+      <b-button
+        type="is-primary"
+        style="margin-top: -15px;margin-bottom: 15px;"
+        @click="scrollToSkins"
+        >Skins</b-button
+      >
       <h1 style="margin-bottom:20px;font-family: Rubik;font-size: 32px">
         Habilidades
       </h1>
@@ -33,6 +39,37 @@
           :toCompare="toCompare[i]"
           :skill="skill"
         ></Skill>
+      </div>
+
+      <h1
+        style="margin-top:40px;margin-bottom:20px;font-family: Rubik;font-size: 32px"
+        id="skins-title"
+      >
+        Skins Disponíveis
+      </h1>
+      <div
+        v-if="skins.length > 0"
+        class="columns is-multiline is-centered cPrincipal"
+      >
+        <div
+          v-for="(skin, i) in skins"
+          :key="i"
+          class="column is-one-mobile is-5-tablet is-one-quarter-desktop  is-one-quarter-widescreen is-one-fifth-fullhd"
+        >
+          <div class="skin-card" :style="getSkinCardStyle(skin)">
+            <img :src="skin.value" :alt="skin.name" class="skin-image" />
+            <h3 class="skin-name">{{ skin.name }}</h3>
+            <span
+              class="skin-rarity"
+              :style="{ color: getRarityColor(skin.rarity) }"
+            >
+              {{ getRarityName(skin.rarity) }}
+            </span>
+          </div>
+        </div>
+      </div>
+      <div v-else class="no-skins">
+        <p>Sem skins disponíveis para este personagem</p>
       </div>
     </center>
   </div>
@@ -50,6 +87,47 @@
     margin-left: 0px;
   }
 }
+
+.skin-card {
+  border: 3px solid;
+  border-radius: 8px;
+  max-width: 350px;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+}
+
+.skin-card:hover {
+  transform: translateY(-5px);
+}
+
+.skin-image {
+  width: 100%;
+  height: 200px;
+  border-radius: 4px;
+}
+
+.skin-name {
+  margin: 0.5rem 0;
+  font-size: 1rem;
+  text-align: center;
+}
+
+.skin-rarity {
+  font-weight: bold;
+}
+
+.no-skins {
+  padding: 20px;
+  background: #f5f5f5;
+  border-radius: 8px;
+  margin-bottom: 40px;
+}
 </style>
 <script>
 import Galos from "@/components/Galos";
@@ -57,6 +135,7 @@ import Skill from "@/components/Skill";
 import Card from "@/components/Card";
 import Compare from "@/components/Compare";
 import axios from "axios";
+import { GetCosmeticInfo } from "../trade/info";
 export default {
   name: "Home",
   data() {
@@ -66,9 +145,45 @@ export default {
       toCompare: [],
       classes: [, {}],
       effects: [],
+      skins: [],
+      rarities: [
+        {
+          name: "Comum",
+          color: "#CDE3FF",
+        },
+        {
+          name: "Raro",
+          color: "#0000FF",
+        },
+        {
+          name: "Epico",
+          color: "#9400D3",
+        },
+        {
+          name: "Lendario",
+          color: "#FF9000",
+        },
+        {
+          name: "Especial",
+          color: "#FF4040",
+        },
+        {
+          name: "Mitico",
+          color: "GRADIENT",
+        },
+        {
+          name: "Deus",
+          color: "#FF00FF",
+        },
+      ],
     };
   },
   methods: {
+    scrollToSkins() {
+      const element = document.getElementById("skins-title");
+      element.scrollIntoView({ behavior: "smooth" });
+    },
+
     change(val) {
       this.current = val;
       this.$router.push({
@@ -77,6 +192,7 @@ export default {
         },
       });
       this.updateSkills();
+      this.updateSkins();
     },
     async compare(galo) {
       const skills = await this.fetchSkills(galo);
@@ -113,6 +229,38 @@ export default {
       const selectedClass = this.classes[this.current + 1];
       this.skills = await this.fetchSkills(selectedClass);
     },
+    async updateSkins() {
+      try {
+        const response = await GetCosmeticInfo();
+        this.skins = response.filter(
+          (skin) => skin.type === 2 && skin.extra === this.current + 1
+        );
+      } catch (error) {
+        console.error("Error fetching skins:", error);
+        this.skins = [];
+      }
+    },
+    getSkinCardStyle(skin) {
+      const color = this.getRarityColor(skin.rarity);
+      if (color === "GRADIENT") {
+        return {
+          borderImage:
+            "linear-gradient(to bottom right, #b827fc 0%, #2c90fc 25%, #b8fd33 50%, #fec837 75%, #fd1892 100%)",
+          borderImageSlice: 1,
+        };
+      }
+      return { borderColor: color };
+    },
+    getRarityColor(rarityIndex) {
+      return rarityIndex >= 0 && rarityIndex < this.rarities.length
+        ? this.rarities[rarityIndex].color
+        : "#CDE3FF";
+    },
+    getRarityName(rarityIndex) {
+      return rarityIndex >= 0 && rarityIndex < this.rarities.length
+        ? this.rarities[rarityIndex].name
+        : "Comum";
+    },
   },
   async created() {
     await axios.get("/resources/class.json").then((classes) => {
@@ -124,7 +272,8 @@ export default {
     if (this.$route.query.galo) {
       this.current = parseInt(this.$route.query.galo);
     }
-    this.updateSkills();
+    await this.updateSkills();
+    await this.updateSkins();
   },
   components: {
     Galos,
