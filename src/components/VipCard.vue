@@ -139,6 +139,7 @@ export default {
     description: String,
     title: String,
     price: String,
+    url: String,
   },
   methods: {
     buy() {
