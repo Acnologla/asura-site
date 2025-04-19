@@ -105,7 +105,7 @@
   },
   {
     "name": "Buff de vida",
-    "value": "Seu galo começa com 35 de vida extra nas batalhas",
+    "value": "Seu galo começa com 70 de vida extra nas batalhas",
     "nameTranslation": "upgrades.life_buff_name",
     "descriptionTranslation": "upgrades.life_buff_description",
     "childs": [
@@ -147,25 +147,25 @@
       },
       {
         "name": "Buff de vida",
-        "value": "Seu galo começa com 70 de vida extra nas batalhas",
+        "value": "Seu galo começa com 200 de vida extra nas batalhas",
         "nameTranslation": "upgrades.life_buff_improved_name",
         "descriptionTranslation": "upgrades.life_buff_improved_description",
         "childs": [
           {
             "name": "Regeneração",
-            "value": "Seu galo regenera 20 de vida a cada ataque",
+            "value": "Seu galo regenera 30 de vida a cada ataque",
             "nameTranslation": "upgrades.regeneration_name",
             "descriptionTranslation": "upgrades.regeneration_description",
             "childs": [
               {
                 "name": "Regeneração Amplificada",
-                "value": "Seu galo regenera 45 de vida a cada ataque",
+                "value": "Seu galo regenera 60 de vida a cada ataque",
                 "nameTranslation": "upgrades.amplified_regeneration_name",
                 "descriptionTranslation": "upgrades.amplified_regeneration_description"
               },
               {
                 "name": "Degeneração",
-                "value": "O galo do oponente perde 40 de vida a cada ataque",
+                "value": "O galo do oponente perde 50 de vida a cada ataque",
                 "nameTranslation": "upgrades.degeneration_name",
                 "descriptionTranslation": "upgrades.degeneration_description"
               }
@@ -173,13 +173,13 @@
           },
           {
             "name": "Mais vida",
-            "value": "Seu galo começa com 115 de vida extra nas batalhas",
+            "value": "Seu galo começa com 450 de vida extra nas batalhas",
             "nameTranslation": "upgrades.more_life_name",
             "descriptionTranslation": "upgrades.more_life_description",
             "childs": [
               {
                 "name": "Intankavel",
-                "value": "Seu galo começa com 200 de vida extra nas batalhas",
+                "value": "Seu galo começa com 750 de vida extra nas batalhas",
                 "nameTranslation": "upgrades.unstoppable_name",
                 "descriptionTranslation": "upgrades.unstoppable_description"
               }

@@ -1,0 +1,23 @@
+{
+  "id": 7,
+  "name": "scarf",
+  "rarity": 2,
+  "sprite": "https://cdn.asurabot.com.br/cdn/pets/scarf.png",
+  "reverseSprite": "https://cdn.asurabot.com.br/cdn/pets/scarfR.png",
+  "skills": [
+    {
+      "name": "Furinho",
+      "damage": [3, 10],
+      "effect": [1, 1]
+    },
+    {
+      "name": "Veneninho",
+      "damage": [10, 15],
+      "effect": [1, 16]
+    },
+    {
+      "name": "CAchecoUUUUU",
+      "damage": [25, 44]
+    }
+  ]
+}

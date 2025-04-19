@@ -66,6 +66,7 @@
     "value": "https://cdn.asurabot.com.br/cdn/skins/SunForestbackground.jpg"
   },
   {
+    "translationName": "Original",
     "name": "Skin Original",
     "rarity": 3,
     "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinOriginalR.png",
@@ -74,6 +75,7 @@
     "extra": 41
   },
   {
+    "translationName": "Popeye",
     "name": "Skin Popeye",
     "rarity": 2,
     "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinPopeyeR.png",
@@ -82,6 +84,7 @@
     "extra": 41
   },
   {
+    "translationName": "Anime",
     "name": "Skin Anime",
     "rarity": 3,
     "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinAnimeR.png",
@@ -90,6 +93,7 @@
     "extra": 41
   },
   {
+    "translationName": "Painter",
     "name": "Skin pintor",
     "rarity": 4,
     "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinpintorR.png",
@@ -98,6 +102,7 @@
     "extra": 41
   },
   {
+    "translationName": "Butterfly",
     "name": "Skin borboleta",
     "rarity": 4,
     "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/tempo2R.png",
@@ -106,6 +111,7 @@
     "extra": 32
   },
   {
+    "translationName": "Archangel2",
     "name": "Skin Arcanjo",
     "rarity": 4,
     "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/angelicalR.png",
@@ -114,6 +120,7 @@
     "extra": 19
   },
   {
+    "translationName": "InfernalFire",
     "name": "Skin Fogo infernal",
     "rarity": 4,
     "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/demoniaco4R.png",
@@ -134,6 +141,7 @@
     "value": "https://cdn.discordapp.com/attachments/932046460969701396/1064630645734772826/Sem_Titulo-1.png"
   },
   {
+    "translationName": "SakuraBlossom",
     "name": "Skin Sakura",
     "rarity": 3,
     "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/phoenix6R.png",
@@ -142,6 +150,7 @@
     "extra": 33
   },
   {
+    "translationName": "Hunger",
     "name": "Skin Fome",
     "rarity": 3,
     "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/apocalipse3R.png",
@@ -150,6 +159,7 @@
     "extra": 45
   },
   {
+    "translationName": "War",
     "name": "Skin Guerra",
     "rarity": 3,
     "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/apocalipse2R.png",
@@ -158,6 +168,7 @@
     "extra": 45
   },
   {
+    "translationName": "Death",
     "name": "Skin Morte",
     "rarity": 3,
     "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/apocalipse1R.png",
@@ -166,6 +177,7 @@
     "extra": 45
   },
   {
+    "translationName": "CursedSkeleton",
     "name": "Skin Esqueleto Amaldicoado",
     "rarity": 1,
     "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinEsqueletoAmaldicoadoR.png",
@@ -174,6 +186,7 @@
     "extra": 42
   },
   {
+    "translationName": "FrozenSkeleton",
     "name": "Skin Esqueleto Congelado",
     "rarity": 0,
     "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinEsqueletoCongeladoR.png",
@@ -182,6 +195,7 @@
     "extra": 42
   },
   {
+    "translationName": "ToastedSkeleton",
     "name": "Skin Esqueleto Tostado",
     "rarity": 3,
     "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinEsqueletoTostadoR.png",
@@ -190,6 +204,7 @@
     "extra": 42
   },
   {
+    "translationName": "BlackHolesEra",
     "name": "Skin Era dos Buracos Negros",
     "rarity": 3,
     "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/existencial3R.png",
@@ -198,6 +213,7 @@
     "extra": 46
   },
   {
+    "translationName": "DigitalExistence",
     "name": "Skin Digital Existence",
     "rarity": 2,
     "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/existencial4R.png",
@@ -206,6 +222,7 @@
     "extra": 46
   },
   {
+    "translationName": "EvilExistence",
     "name": "Skin Existencia Maligna",
     "rarity": 3,
     "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/existencial1R.png",
@@ -214,6 +231,7 @@
     "extra": 46
   },
   {
+    "translationName": "DistortedExistence",
     "name": "Skin Existencia Distorcida",
     "rarity": 3,
     "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/existencial2R.png",
@@ -222,6 +240,7 @@
     "extra": 46
   },
   {
+    "translationName": "DeutschWW2",
     "name": "Skin Deutsch WW2",
     "rarity": 0,
     "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinDeutschWW2R.png",
@@ -230,6 +249,7 @@
     "extra": 44
   },
   {
+    "translationName": "Soviet",
     "name": "Skin Soviet",
     "rarity": 2,
     "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinSovietR.png",
@@ -238,6 +258,7 @@
     "extra": 44
   },
   {
+    "translationName": "Tundra",
     "name": "Skin Tundra",
     "rarity": 3,
     "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinTundraR.png",
@@ -246,6 +267,7 @@
     "extra": 44
   },
   {
+    "translationName": "DrySkeleton",
     "name": "Skin Cadaver Seco",
     "rarity": 0,
     "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinCadaverSecoR.png",
@@ -254,6 +276,7 @@
     "extra": 49
   },
   {
+    "translationName": "Forest",
     "name": "Skin Florestal",
     "rarity": 3,
     "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinFlorestalR.png",
@@ -262,6 +285,7 @@
     "extra": 49
   },
   {
+    "translationName": "AncientMummy",
     "name": "Skin Mumia Antiga",
     "rarity": 1,
     "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinMumiaAntigaR.png",
@@ -270,6 +294,7 @@
     "extra": 49
   },
   {
+    "translationName": "Extraterrestrial",
     "name": "Skin Extra-Terrestre",
     "rarity": 0,
     "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinExtraTerrestreR.png",
@@ -278,6 +303,7 @@
     "extra": 47
   },
   {
+    "translationName": "Fluorescent",
     "name": "Skin Fluorescente",
     "rarity": 1,
     "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinFluorescenteR.png",
@@ -286,6 +312,7 @@
     "extra": 47
   },
   {
+    "translationName": "StrongRed",
     "name": "Skin Strong Red",
     "rarity": 2,
     "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinStrongRedR.png",
@@ -294,6 +321,7 @@
     "extra": 47
   },
   {
+    "translationName": "HeatGradient",
     "name": "Skin Degrade de Calor",
     "rarity": 2,
     "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinDegradedeCalorR.png",
@@ -302,6 +330,7 @@
     "extra": 48
   },
   {
+    "translationName": "Tiled",
     "name": "Skin Ladrilhado",
     "rarity": 1,
     "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinLadrilhadoR.png",
@@ -310,6 +339,7 @@
     "extra": 48
   },
   {
+    "translationName": "StylizedPorcelain",
     "name": "Skin Porcelana Estilizada",
     "rarity": 0,
     "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinPorcelanaEstilizadaR.png",
@@ -318,6 +348,7 @@
     "extra": 48
   },
   {
+    "translationName": "CursedSlime",
     "name": "Skin Slime Maldito",
     "rarity": 1,
     "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinSlimeMalditoR.png",
@@ -326,6 +357,7 @@
     "extra": 43
   },
   {
+    "translationName": "MetallicSlime",
     "name": "Skin Slime Metalico",
     "rarity": 3,
     "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinSlimeMetalicoR.png",
@@ -334,6 +366,7 @@
     "extra": 43
   },
   {
+    "translationName": "IncandescentSlime",
     "name": "Skin Slime Incandescente",
     "rarity": 2,
     "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinSlimeIncandescenteR.png",
@@ -438,6 +471,7 @@
     "value": "https://cdn.asurabot.com.br/cdn/skins/WW2Map.png"
   },
   {
+    "translationName": "InvertedExistence",
     "name": "Skin Existência Invertida",
     "rarity": 3,
     "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/existencial5R.png",
@@ -446,6 +480,7 @@
     "extra": 46
   },
   {
+    "translationName": "Ra",
     "name": "Skin Rá",
     "rarity": 3,
     "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/skinwhite01R.png",
@@ -454,6 +489,7 @@
     "extra": 51
   },
   {
+    "translationName": "BlackFlame",
     "name": "Skin Black Flame",
     "rarity": 3,
     "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/phoenix3R.png",
@@ -462,6 +498,7 @@
     "extra": 33
   },
   {
+    "translationName": "SakuraBlossom",
     "name": "Skin Sakura",
     "rarity": 4,
     "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/existencial6R.png",
@@ -470,6 +507,7 @@
     "extra": 46
   },
   {
+    "translationName": "BlueFlame",
     "name": "Skin Blue Flame",
     "rarity": 4,
     "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/phoenix4R.png",
@@ -478,6 +516,7 @@
     "extra": 33
   },
   {
+    "translationName": "BlueTime",
     "name": "Skin Blue Time",
     "rarity": 4,
     "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/tempo3R.png",
@@ -486,6 +525,7 @@
     "extra": 32
   },
   {
+    "translationName": "Divine",
     "name": "Skin Divino",
     "rarity": 4,
     "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/phoenix7R.png",
@@ -494,6 +534,7 @@
     "extra": 33
   },
   {
+    "translationName": "EnjoyingSummer",
     "name": "Skin Curtindo o verão",
     "rarity": 3,
     "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinCurtindooveroR.png",
@@ -502,6 +543,7 @@
     "extra": 54
   },
   {
+    "translationName": "CrimsonKnight",
     "name": "Skin Crimson Knight",
     "rarity": 2,
     "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinCrimsonKnightR.png",
@@ -510,6 +552,7 @@
     "extra": 55
   },
   {
+    "translationName": "Archangel2",
     "name": "Skin Arcanjo",
     "rarity": 3,
     "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinArcanjoR.png",
@@ -518,6 +561,7 @@
     "extra": 55
   },
   {
+    "translationName": "Zeus",
     "name": "Skin Zeus",
     "rarity": 3,
     "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/skinwhite02R.png",
@@ -526,6 +570,7 @@
     "extra": 51
   },
   {
+    "translationName": "Classic",
     "name": "Skin Classic",
     "rarity": 2,
     "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/skinwhite03R.png",
@@ -534,6 +579,7 @@
     "extra": 51
   },
   {
+    "translationName": "TransversalDiamond",
     "name": "Skin Diamante transversal",
     "rarity": 2,
     "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/cristal1R.png",
@@ -541,8 +587,8 @@
     "type": 2,
     "extra": 58
   },
-
   {
+    "translationName": "FireStone",
     "name": "Skin Pedra de fogo",
     "rarity": 1,
     "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/cristal2R.png",
@@ -551,6 +597,7 @@
     "extra": 58
   },
   {
+    "translationName": "Obsidian",
     "name": "Skin Obsidiana",
     "rarity": 3,
     "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/cristal3R.png",
@@ -607,6 +654,7 @@
     "value": "https://cdn.asurabot.com.br/cdn/backgrounds/redsky.jpg"
   },
   {
+    "translationName": "Green",
     "name": "Skin Verde",
     "rarity": 0,
     "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/holo1R.png",
@@ -615,6 +663,7 @@
     "extra": 56
   },
   {
+    "translationName": "Red",
     "name": "Skin Vermelho",
     "rarity": 1,
     "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/holo2R.png",
@@ -675,5 +724,47 @@
     "type": 0,
     "name": "Fantasyy world background",
     "value": "https://cdn.asurabot.com.br/cdn/backgrounds/fantasyworld.jpg"
+  },
+  {
+    "rarity": 0,
+    "type": 0,
+    "name": "Feudal japan background",
+    "value": "https://cdn.asurabot.com.br/cdn/backgrounds/feudaljapanbackground.jpg"
+  },
+  {
+    "rarity": 0,
+    "type": 0,
+    "name": "Purple bathroom background",
+    "value": "https://cdn.asurabot.com.br/cdn/backgrounds/purplebathroom.jpg"
+  },
+  {
+    "rarity": 1,
+    "type": 0,
+    "name": "Solo house in the sun background",
+    "value": "https://cdn.asurabot.com.br/cdn/backgrounds/solohouseinthesun.jpg"
+  },
+  {
+    "rarity": 1,
+    "type": 0,
+    "name": "Balcony sunset background",
+    "value": "https://cdn.asurabot.com.br/cdn/backgrounds/balconysunset.jpg"
+  },
+  {
+    "rarity": 2,
+    "type": 0,
+    "name": "Lamp forest background",
+    "value": "https://cdn.asurabot.com.br/cdn/backgrounds/lampforest.jpg"
+  },
+  {
+    "rarity": 2,
+    "type": 0,
+    "name": "Girl in city background",
+    "value": "https://cdn.asurabot.com.br/cdn/backgrounds/girlincity.jpg"
+  },
+  {
+    "rarity": 3,
+    "type": 0,
+    "name": "Heaven gates background",
+    "value": "https://cdn.asurabot.com.br/cdn/backgrounds/heavengates.jpg"
   }
 ]

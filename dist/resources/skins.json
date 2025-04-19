@@ -1,5 +1,6 @@
 [
   {
+    "translationName": "PhoenixOfFreedom",
     "name": "Skin Fênix da 'liberdade'",
     "rarity": 1,
     "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/phoenix1R.png",
@@ -8,6 +9,7 @@
     "extra": 33
   },
   {
+    "translationName": "WhiteFirePhoenix",
     "name": "Skin Fênix fogo Branco",
     "rarity": 2,
     "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/phoenix5R.png",
@@ -16,6 +18,7 @@
     "extra": 33
   },
   {
+    "translationName": "RisingFromAshes",
     "name": "Skin Retornando às cinzas",
     "rarity": 3,
     "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/phoenix2R.png",
@@ -24,6 +27,7 @@
     "extra": 33
   },
   {
+    "translationName": "ParticleAccelerator",
     "name": "Skin Acelerador de Partículas",
     "rarity": 3,
     "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/tempo1R.png",
@@ -32,6 +36,7 @@
     "extra": 32
   },
   {
+    "translationName": "BrokenTime",
     "name": "Skin Tempo quebrado",
     "rarity": 3,
     "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/tempo4R.png",
@@ -40,6 +45,7 @@
     "extra": 32
   },
   {
+    "translationName": "FrozenTime",
     "name": "Skin Tempo congelado",
     "rarity": 2,
     "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/tempo5R.png",
@@ -48,6 +54,7 @@
     "extra": 32
   },
   {
+    "translationName": "FemaleAngel",
     "name": "Skin Anjo Feminino",
     "rarity": 2,
     "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/angelical3R.png",
@@ -56,6 +63,7 @@
     "extra": 19
   },
   {
+    "translationName": "DivineWeapons",
     "name": "Skin Armas Divinas",
     "rarity": 1,
     "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/angelical2R.png",
@@ -64,6 +72,7 @@
     "extra": 19
   },
   {
+    "translationName": "Templar",
     "name": "Skin Templário",
     "rarity": 3,
     "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/angelical4R.png",
@@ -72,6 +81,7 @@
     "extra": 19
   },
   {
+    "translationName": "CursedWeapons",
     "name": "Skin Armas Amaldiçoadas",
     "rarity": 0,
     "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/demoniaco1R.png",
@@ -80,6 +90,7 @@
     "extra": 23
   },
   {
+    "translationName": "Goat",
     "name": "Skin Cabra",
     "rarity": 3,
     "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/demoniaco2R.png",
@@ -88,6 +99,7 @@
     "extra": 23
   },
   {
+    "translationName": "Exorcised",
     "name": "Skin Exorcizado",
     "rarity": 2,
     "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/demoniaco3R.png",
@@ -96,6 +108,7 @@
     "extra": 23
   },
   {
+    "translationName": "BloodEclipse",
     "name": "Skin Eclípse de Sangue",
     "rarity": 2,
     "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/eclipse1R.png",
@@ -104,6 +117,7 @@
     "extra": 31
   },
   {
+    "translationName": "PartialEclipse",
     "name": "Skin Eclípse Parcial",
     "rarity": 1,
     "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/eclipse2R.png",
@@ -112,6 +126,7 @@
     "extra": 31
   },
   {
+    "translationName": "TotalEclipse",
     "name": "Skin Eclípse Total",
     "rarity": 0,
     "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/eclipse3R.png",
@@ -120,6 +135,7 @@
     "extra": 31
   },
   {
+    "translationName": "Witch",
     "name": "Skin Bruxa",
     "rarity": 0,
     "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/skinmago01R.png",
@@ -128,6 +144,7 @@
     "extra": 40
   },
   {
+    "translationName": "CorruptedByPower",
     "name": "Skin Corrompido por poder",
     "rarity": 1,
     "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/skinmago03R.png",
@@ -136,6 +153,7 @@
     "extra": 40
   },
   {
+    "translationName": "Mana",
     "name": "Skin Mana",
     "rarity": 3,
     "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/skinmago02R.png",
@@ -144,6 +162,7 @@
     "extra": 40
   },
   {
+    "translationName": "Degeneration",
     "name": "Skin Degeneração",
     "rarity": 3,
     "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/zumbi03R.png",
@@ -152,6 +171,7 @@
     "extra": 36
   },
   {
+    "translationName": "SuperZombie",
     "name": "Skin Super Zumbi",
     "rarity": 0,
     "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/zumbi02R.png",
@@ -160,6 +180,7 @@
     "extra": 36
   },
   {
+    "translationName": "AquaticZombie",
     "name": "Skin Zumbi Aquático",
     "rarity": 1,
     "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/zumbi01R.png",
@@ -168,6 +189,7 @@
     "extra": 36
   },
   {
+    "translationName": "Nature",
     "name": "Skin Natureza",
     "rarity": 1,
     "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinNaturezaR.jpg",
@@ -176,6 +198,7 @@
     "extra": 15
   },
   {
+    "translationName": "LuminousStone",
     "name": "Skin Pedra Luminosa",
     "rarity": 0,
     "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinPedraLuminosaR.jpg",
@@ -184,6 +207,7 @@
     "extra": 15
   },
   {
+    "translationName": "BlueGlass",
     "name": "Skin Vidro Azul",
     "rarity": 2,
     "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinVidroAzulR.jpg",
@@ -192,6 +216,7 @@
     "extra": 15
   },
   {
+    "translationName": "ChineseDragon",
     "name": "Skin Dragão Chinês",
     "rarity": 0,
     "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinDragoChinsR.png",
@@ -200,6 +225,7 @@
     "extra": 29
   },
   {
+    "translationName": "FireDragon",
     "name": "Skin Dragão de fogo",
     "rarity": 1,
     "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinDragodefogoR.png",
@@ -208,6 +234,7 @@
     "extra": 29
   },
   {
+    "translationName": "IceDragon",
     "name": "Skin Dragão de gelo",
     "rarity": 0,
     "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinDragodegeloR.png",
@@ -216,6 +243,7 @@
     "extra": 29
   },
   {
+    "translationName": "BlackLightning",
     "name": "Skin Raios Negros",
     "rarity": 1,
     "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinRaiosNegrosR.jpg",
@@ -224,6 +252,7 @@
     "extra": 13
   },
   {
+    "translationName": "ExoticNoises",
     "name": "Skin Ruídos Exóticos",
     "rarity": 0,
     "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinRudosExticosR.png",
@@ -232,6 +261,7 @@
     "extra": 13
   },
   {
+    "translationName": "WhiteShadow",
     "name": "Skin White Shadow",
     "rarity": 0,
     "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinWhiteShadowR.jpg",
@@ -240,6 +270,7 @@
     "extra": 13
   },
   {
+    "translationName": "Aladdin",
     "name": "Skin Aladin",
     "rarity": 2,
     "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinAladinR.jpg",
@@ -248,6 +279,7 @@
     "extra": 39
   },
   {
+    "translationName": "WithCape",
     "name": "Skin Com Capa",
     "rarity": 0,
     "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinComCapaR.jpg",
@@ -256,6 +288,7 @@
     "extra": 39
   },
   {
+    "translationName": "Inverted",
     "name": "Skin Inverted",
     "rarity": 0,
     "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinInvertedR.jpg",
@@ -264,6 +297,7 @@
     "extra": 39
   },
   {
+    "translationName": "Death",
     "name": "Skin Morte",
     "rarity": 3,
     "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinMorteR.jpg",
@@ -272,6 +306,7 @@
     "extra": 39
   },
   {
+    "translationName": "BlackHole",
     "name": "Skin Buraco Negro",
     "rarity": 3,
     "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinBuracoNegroR.jpg",
@@ -280,6 +315,7 @@
     "extra": 18
   },
   {
+    "translationName": "IsaacNewton",
     "name": "Skin Isaac Newton",
     "rarity": 3,
     "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinIsaacNewtonR.jpg",
@@ -288,6 +324,7 @@
     "extra": 18
   },
   {
+    "translationName": "PlanetarySystem",
     "name": "Skin Sistema Planetário",
     "rarity": 1,
     "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinSistemaPlanetrioR.png",
@@ -296,6 +333,7 @@
     "extra": 18
   },
   {
+    "translationName": "Apollo9",
     "name": "Skin Apolo 9",
     "rarity": 0,
     "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinApolo9R.jpg",
@@ -304,6 +342,7 @@
     "extra": 27
   },
   {
+    "translationName": "Bloodmoon",
     "name": "Skin Bloodmoon",
     "rarity": 0,
     "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinBloodmoonR.jpg",
@@ -312,6 +351,7 @@
     "extra": 27
   },
   {
+    "translationName": "DarkSide",
     "name": "Skin Lado Escuro",
     "rarity": 1,
     "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinLadoEscuroR.jpg",
@@ -320,6 +360,7 @@
     "extra": 27
   },
   {
+    "translationName": "SuperMoon",
     "name": "Skin Super Lua",
     "rarity": 0,
     "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinSuperLuaR.jpg",
@@ -328,6 +369,7 @@
     "extra": 27
   },
   {
+    "translationName": "Rainbow",
     "name": "Skin Arco-íris",
     "rarity": 2,
     "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinArcorisR.png",
@@ -336,6 +378,7 @@
     "extra": 10
   },
   {
+    "translationName": "UVLight",
     "name": "Skin Luz UV",
     "rarity": 1,
     "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinLuzUVR.jpg",
@@ -344,6 +387,7 @@
     "extra": 10
   },
   {
+    "translationName": "Xenon",
     "name": "Skin Xênon",
     "rarity": 0,
     "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinXnonR.png",
@@ -352,6 +396,7 @@
     "extra": 10
   },
   {
+    "translationName": "CIAAgent",
     "name": "Skin Agente da CIA",
     "rarity": 2,
     "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinAgentedaCIAR.jpg",
@@ -360,6 +405,7 @@
     "extra": 30
   },
   {
+    "translationName": "KGBAgent",
     "name": "Skin Agente da KGB",
     "rarity": 1,
     "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinAgentedaKGBR.jpg",
@@ -368,6 +414,7 @@
     "extra": 30
   },
   {
+    "translationName": "JapaneseNinja",
     "name": "Skin Ninja Japonês",
     "rarity": 0,
     "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinNinjaJaponsR.png",
@@ -376,6 +423,7 @@
     "extra": 30
   },
   {
+    "translationName": "Rigel",
     "name": "Skin Rigel",
     "rarity": 0,
     "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinRigelR.jpg",
@@ -384,6 +432,7 @@
     "extra": 22
   },
   {
+    "translationName": "SiriusA",
     "name": "Skin Sírius A",
     "rarity": 0,
     "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinSriusAR.png",
@@ -392,6 +441,7 @@
     "extra": 22
   },
   {
+    "translationName": "UYScuti",
     "name": "Skin UY Scuti",
     "rarity": 1,
     "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinUYScutiR.jpg",
@@ -400,6 +450,7 @@
     "extra": 22
   },
   {
+    "translationName": "Dracula",
     "name": "Skin Drácula",
     "rarity": 0,
     "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinDrculaR.png",
@@ -408,6 +459,7 @@
     "extra": 24
   },
   {
+    "translationName": "Temeracula",
     "name": "Skin Temerácula",
     "rarity": 2,
     "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinTemerculaR.png",
@@ -416,6 +468,7 @@
     "extra": 24
   },
   {
+    "translationName": "BurningVampire",
     "name": "Skin Vampiro em chamas",
     "rarity": 1,
     "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinVampiroemchamasR.jpg",
@@ -424,6 +477,7 @@
     "extra": 24
   },
   {
+    "translationName": "SonOfPoseidon",
     "name": "Skin Filho do Poseidon",
     "rarity": 1,
     "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinFilhodoPoseidonR.jpg",
@@ -432,6 +486,7 @@
     "extra": 8
   },
   {
+    "translationName": "LiquidMetal",
     "name": "Skin Metal Líquido",
     "rarity": 0,
     "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinMetalLquidoR.png",
@@ -440,6 +495,7 @@
     "extra": 8
   },
   {
+    "translationName": "ShallowWaters",
     "name": "Skin Águas rasas",
     "rarity": 0,
     "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinguasrasasR.png",
@@ -448,6 +504,7 @@
     "extra": 8
   },
   {
+    "translationName": "FrozenDesert",
     "name": "Skin Deserto Gelado",
     "rarity": 0,
     "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinDesertoGeladoR.jpg",
@@ -456,6 +513,7 @@
     "extra": 25
   },
   {
+    "translationName": "SemiArid",
     "name": "Skin Semi-Árido",
     "rarity": 0,
     "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinSemiridoR.png",
@@ -464,6 +522,7 @@
     "extra": 25
   },
   {
+    "translationName": "Glass",
     "name": "Skin Vidro",
     "rarity": 1,
     "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinVidroR.jpg",
@@ -472,6 +531,7 @@
     "extra": 25
   },
   {
+    "translationName": "NikolaTesla",
     "name": "Skin Nikola Tesla",
     "rarity": 1,
     "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinNikolaTeslaR.jpg",
@@ -480,6 +540,7 @@
     "extra": 17
   },
   {
+    "translationName": "PlasmaBall",
     "name": "Skin Plasma Ball",
     "rarity": 2,
     "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinPlasmaBallR.jpg",
@@ -488,6 +549,7 @@
     "extra": 17
   },
   {
+    "translationName": "TeslaCoils",
     "name": "Skin Tesla Coils",
     "rarity": 2,
     "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinTeslaCoilsR.jpg",
@@ -496,6 +558,7 @@
     "extra": 17
   },
   {
+    "translationName": "Dynamite",
     "name": "Skin Dinamite",
     "rarity": 3,
     "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinDinamiteR.jpg",
@@ -504,6 +567,7 @@
     "extra": 21
   },
   {
+    "translationName": "IndustrialExplosive",
     "name": "Skin Explosivo Industrial",
     "rarity": 1,
     "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinExplosivoIndustrialR.jpg",
@@ -512,6 +576,7 @@
     "extra": 21
   },
   {
+    "translationName": "Nukes",
     "name": "Skin Nukes",
     "rarity": 2,
     "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinNukesR.jpg",
@@ -520,6 +585,7 @@
     "extra": 21
   },
   {
+    "translationName": "MoltenMetal",
     "name": "Skin Metal Derretido",
     "rarity": 1,
     "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinMetalDerretidoR.jpg",
@@ -528,6 +594,7 @@
     "extra": 7
   },
   {
+    "translationName": "MagmaVeins",
     "name": "Skin Veias de magma",
     "rarity": 0,
     "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinVeiasdemagmaR.jpg",
@@ -536,6 +603,7 @@
     "extra": 7
   },
   {
+    "translationName": "Volcano",
     "name": "Skin Vulcão",
     "rarity": 2,
     "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinVulcoR.png",
@@ -544,6 +612,7 @@
     "extra": 7
   },
   {
+    "translationName": "Amazon",
     "name": "Skin Amazônia",
     "rarity": 2,
     "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinAmazniaR.png",
@@ -552,6 +621,7 @@
     "extra": 9
   },
   {
+    "translationName": "Farmer",
     "name": "Skin Fazendeiro",
     "rarity": 1,
     "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinFazendeiroR.jpg",
@@ -560,6 +630,7 @@
     "extra": 9
   },
   {
+    "translationName": "MotherNature",
     "name": "Skin Mãe Natureza",
     "rarity": 0,
     "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinMeNaturezaR.png",
@@ -568,6 +639,7 @@
     "extra": 9
   },
   {
+    "translationName": "ActivePlasma",
     "name": "Skin Plasma Ativo",
     "rarity": 0,
     "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinPlasmaAtivoR.jpg",
@@ -576,6 +648,7 @@
     "extra": 12
   },
   {
+    "translationName": "BluePlasma",
     "name": "Skin Plasma Azul",
     "rarity": 0,
     "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinPlasmaAzulR.jpg",
@@ -584,6 +657,7 @@
     "extra": 12
   },
   {
+    "translationName": "BlackPlasma",
     "name": "Skin Plasma Negro",
     "rarity": 0,
     "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinPlasmaNegroR.jpg",
@@ -592,6 +666,7 @@
     "extra": 12
   },
   {
+    "translationName": "UraniumCore",
     "name": "Skin Núcleo de urânio",
     "rarity": 1,
     "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinNcleodeurnioR.png",
@@ -600,6 +675,7 @@
     "extra": 28
   },
   {
+    "translationName": "RussianKamaz",
     "name": "Skin Russian Kamaz",
     "rarity": 0,
     "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinRussianKamazR.jpg",
@@ -608,6 +684,7 @@
     "extra": 28
   },
   {
+    "translationName": "ChernobylSuit",
     "name": "Skin Traje Chernobyl",
     "rarity": 0,
     "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinTrajeChernobylR.jpg",
@@ -616,6 +693,7 @@
     "extra": 28
   },
   {
+    "translationName": "Android",
     "name": "Skin Android",
     "rarity": 0,
     "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinAndroidR.jpg",
@@ -624,6 +702,7 @@
     "extra": 14
   },
   {
+    "translationName": "Cyborg",
     "name": "Skin Cyborg",
     "rarity": 1,
     "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinCyborgR.jpg",
@@ -632,6 +711,7 @@
     "extra": 14
   },
   {
+    "translationName": "RussianMachinery",
     "name": "Skin Maquinário Russo",
     "rarity": 1,
     "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinMaquinrioRussoR.png",
@@ -640,6 +720,7 @@
     "extra": 14
   },
   {
+    "translationName": "Robocop",
     "name": "Skin Robocop",
     "rarity": 2,
     "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinRobocopR.jpg",
@@ -648,6 +729,7 @@
     "extra": 14
   },
   {
+    "translationName": "Techno",
     "name": "Skin Techno",
     "rarity": 0,
     "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinTechnoR.jpg",
@@ -656,6 +738,7 @@
     "extra": 14
   },
   {
+    "translationName": "PlateKnight",
     "name": "Skin Cavaleiro de placa",
     "rarity": 2,
     "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinCavaleirodeplacaR.jpg",
@@ -664,6 +747,7 @@
     "extra": 34
   },
   {
+    "translationName": "MongolFighter",
     "name": "Skin Combatente Mongol",
     "rarity": 1,
     "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinCombatenteMongolR.jpg",
@@ -672,6 +756,7 @@
     "extra": 34
   },
   {
+    "translationName": "TurkishWarrior",
     "name": "Skin Guerreiro Turco",
     "rarity": 1,
     "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinGuerreiroTurcoR.jpg",
@@ -680,6 +765,7 @@
     "extra": 34
   },
   {
+    "translationName": "Pirate",
     "name": "Skin Pirata",
     "rarity": 0,
     "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinPirataR.jpg",
@@ -688,6 +774,7 @@
     "extra": 34
   },
   {
+    "translationName": "WindAvatar",
     "name": "Skin Avatar do Vento",
     "rarity": 1,
     "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinAvatardoVentoR.jpg",
@@ -696,6 +783,7 @@
     "extra": 38
   },
   {
+    "translationName": "IcyWinds",
     "name": "Skin Ventos Gélidos",
     "rarity": 0,
     "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinVentosGlidosR.png",
@@ -704,6 +792,7 @@
     "extra": 38
   },
   {
+    "translationName": "ToxicWinds",
     "name": "Skin Ventos Tóxicos",
     "rarity": 0,
     "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinVentosTxicosR.png",
@@ -712,6 +801,7 @@
     "extra": 38
   },
   {
+    "translationName": "Clots",
     "name": "Skin Coágulos",
     "rarity": 1,
     "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinCogulosR.png",
@@ -720,6 +810,7 @@
     "extra": 16
   },
   {
+    "translationName": "GasMask",
     "name": "Skin Gas Mask",
     "rarity": 0,
     "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinGasMaskR.jpg",
@@ -728,6 +819,7 @@
     "extra": 16
   },
   {
+    "translationName": "SulfuricAcid",
     "name": "Skin Ácido Sulfúrico",
     "rarity": 2,
     "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkincidoSulfricoR.png",
@@ -736,6 +828,7 @@
     "extra": 16
   },
   {
+    "translationName": "SchoolEraser",
     "name": "Skin Borracha Escolar",
     "rarity": 2,
     "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinBorrachaEscolarR.jpg",
@@ -744,6 +837,7 @@
     "extra": 26
   },
   {
+    "translationName": "Doctor",
     "name": "Skin Doctor",
     "rarity": 1,
     "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinDoctorR.jpg",
@@ -752,6 +846,7 @@
     "extra": 26
   },
   {
+    "translationName": "PlagueSuit",
     "name": "Skin Roupa da Peste",
     "rarity": 0,
     "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinRoupadaPesteR.jpg",
@@ -760,6 +855,7 @@
     "extra": 26
   },
   {
+    "translationName": "Knives",
     "name": "Skin Facas",
     "rarity": 3,
     "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinFacasR.jpg",
@@ -768,6 +864,7 @@
     "extra": 4
   },
   {
+    "translationName": "GoldenBlades",
     "name": "Skin Lâminas de ouro",
     "rarity": 0,
     "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinLminasdeouroR.png",
@@ -776,6 +873,7 @@
     "extra": 4
   },
   {
+    "translationName": "Serrated",
     "name": "Skin Serrilhado",
     "rarity": 1,
     "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinSerrilhadoR.jpg",
@@ -784,6 +882,7 @@
     "extra": 4
   },
   {
+    "translationName": "BlueDino",
     "name": "Skin Dino Azul",
     "rarity": 0,
     "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinDinoAzulR.jpg",
@@ -792,6 +891,7 @@
     "extra": 37
   },
   {
+    "translationName": "Stegosaurus",
     "name": "Skin Estegossauro",
     "rarity": 0,
     "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinEstegossauroR.jpg",
@@ -800,6 +900,7 @@
     "extra": 37
   },
   {
+    "translationName": "Velociraptor",
     "name": "Skin Velociraptor",
     "rarity": 0,
     "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinVelociraptorR.jpg",
@@ -808,6 +909,7 @@
     "extra": 37
   },
   {
+    "translationName": "DepressedDreads",
     "name": "Skin Dreads deprê",
     "rarity": 0,
     "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinDreadsdeprR.png",
@@ -816,6 +918,7 @@
     "extra": 35
   },
   {
+    "translationName": "Cult",
     "name": "Skin Seita",
     "rarity": 3,
     "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinSeitaR.jpg",
@@ -824,6 +927,7 @@
     "extra": 35
   },
   {
+    "translationName": "WebCorno",
     "name": "Skin Web-Corno",
     "rarity": 0,
     "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinWebCornoR.jpg",
@@ -832,6 +936,7 @@
     "extra": 35
   },
   {
+    "translationName": "BlueFire",
     "name": "Skin Fogo Azul",
     "rarity": 1,
     "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinFogoAzulR.jpg",
@@ -840,6 +945,7 @@
     "extra": 5
   },
   {
+    "translationName": "GreenFire",
     "name": "Skin Fogo Verde",
     "rarity": 1,
     "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinFogoVerdeR.jpg",
@@ -848,6 +954,7 @@
     "extra": 5
   },
   {
+    "translationName": "RedFire",
     "name": "Skin Fogo Vermelho",
     "rarity": 1,
     "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinFogoVermelhoR.jpg",
@@ -856,6 +963,7 @@
     "extra": 5
   },
   {
+    "translationName": "IcePower",
     "name": "Skin Ice Power",
     "rarity": 2,
     "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinIcePowerR.jpg",
@@ -864,6 +972,7 @@
     "extra": 6
   },
   {
+    "translationName": "Blizzard",
     "name": "Skin Nevasca",
     "rarity": 1,
     "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinNevascaR.jpg",
@@ -872,6 +981,7 @@
     "extra": 6
   },
   {
+    "translationName": "Siberian",
     "name": "Skin Siberiano",
     "rarity": 0,
     "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinSiberianoR.jpg",
@@ -880,6 +990,7 @@
     "extra": 6
   },
   {
+    "translationName": "WhiteWood",
     "name": "Skin Madeira branca",
     "rarity": 0,
     "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinMadeirabrancaR.jpg",
@@ -888,6 +999,7 @@
     "extra": 20
   },
   {
+    "translationName": "BlackWood",
     "name": "Skin Madeira Negra",
     "rarity": 0,
     "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinMadeiraNegraR.jpg",
@@ -896,6 +1008,7 @@
     "extra": 20
   },
   {
+    "translationName": "BurningWood",
     "name": "Skin Madeira Queimando",
     "rarity": 1,
     "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinMadeiraQueimandoR.jpg",
@@ -904,6 +1017,7 @@
     "extra": 20
   },
   {
+    "translationName": "WoodenPlanks",
     "name": "Skin Tábuas de madeira",
     "rarity": 1,
     "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinTbuasdemadeiraR.png",
@@ -912,6 +1026,7 @@
     "extra": 20
   },
   {
+    "translationName": "Rust",
     "name": "Skin Ferrugem",
     "rarity": 0,
     "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinFerrugemR.jpg",
@@ -920,6 +1035,7 @@
     "extra": 11
   },
   {
+    "translationName": "Graphene",
     "name": "Skin Grafeno",
     "rarity": 1,
     "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinGrafenoR.jpg",
@@ -928,6 +1044,7 @@
     "extra": 11
   },
   {
+    "translationName": "Titanium",
     "name": "Skin Titânio",
     "rarity": 0,
     "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinTitnioR.png",
@@ -936,6 +1053,7 @@
     "extra": 11
   },
   {
+    "translationName": "Joker",
     "name": "Skin Coringa",
     "rarity": 3,
     "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinCoringaR.jpg",
@@ -944,6 +1062,7 @@
     "extra": 1
   },
   {
+    "translationName": "Executive",
     "name": "Skin Executivo",
     "rarity": 2,
     "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinExecutivoR.jpg",
@@ -952,6 +1071,7 @@
     "extra": 1
   },
   {
+    "translationName": "Flamingo",
     "name": "Skin Flamingo",
     "rarity": 3,
     "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinFlamingoR.jpg",
@@ -960,6 +1080,7 @@
     "extra": 1
   },
   {
+    "translationName": "FunkDancer",
     "name": "Skin Funkeiro",
     "rarity": 1,
     "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinFunkeiroR.jpg",
@@ -968,6 +1089,7 @@
     "extra": 1
   },
   {
+    "translationName": "Russian",
     "name": "Skin Russo",
     "rarity": 1,
     "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinRussoR.jpg",
@@ -976,6 +1098,7 @@
     "extra": 1
   },
   {
+    "translationName": "Printed",
     "name": "Skin Impresso",
     "rarity": 0,
     "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinImpressoR.jpg",
@@ -984,6 +1107,7 @@
     "extra": 2
   },
   {
+    "translationName": "BlackPaper",
     "name": "Skin Papel Negro",
     "rarity": 0,
     "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinPapelNegroR.jpg",
@@ -992,6 +1116,7 @@
     "extra": 2
   },
   {
+    "translationName": "Papyrus",
     "name": "Skin Papiro",
     "rarity": 0,
     "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinPapiroR.jpg",
@@ -1000,6 +1125,7 @@
     "extra": 2
   },
   {
+    "translationName": "StoneMan",
     "name": "Skin Homem Pedra",
     "rarity": 2,
     "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinHomemPedraR.jpg",
@@ -1008,6 +1134,7 @@
     "extra": 3
   },
   {
+    "translationName": "Obsidian",
     "name": "Skin Obsidiana",
     "rarity": 0,
     "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinObsidianaR.jpg",
@@ -1016,6 +1143,7 @@
     "extra": 3
   },
   {
+    "translationName": "StoneWell10",
     "name": "Skin Pedra Well10",
     "rarity": 1,
     "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/SkinPedraWell10R.jpg",

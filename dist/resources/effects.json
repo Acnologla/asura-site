@@ -1,5 +1,6 @@
 [
   {
+    "translationName": "Origami",
     "name": "Origami",
     "turns": 3,
     "type": 1,
@@ -8,6 +9,7 @@
     "range": [3, 10]
   },
   {
+    "translationName": "Bleeding",
     "name": "Sangramento",
     "turns": 2,
     "type": 1,
@@ -16,6 +18,7 @@
     "range": [5, 20]
   },
   {
+    "translationName": "Healing",
     "name": "Cura",
     "turns": 3,
     "type": 2,
@@ -24,6 +27,7 @@
     "range": [5, 10]
   },
   {
+    "translationName": "Stun",
     "name": "Stun",
     "turns": 1,
     "type": 3,
@@ -31,6 +35,7 @@
     "range": [0, 0]
   },
   {
+    "translationName": "Shield",
     "name": "Escudo",
     "turns": 10,
     "type": 4,
@@ -39,6 +44,7 @@
     "range": [50, 50]
   },
   {
+    "translationName": "IronBox",
     "name": "Caixa de ferro",
     "turns": 2,
     "type": 4,
@@ -47,6 +53,7 @@
     "range": [20, 30]
   },
   {
+    "translationName": "IronMaiden",
     "name": "Dama de ferro",
     "turns": 2,
     "type": 4,
@@ -55,6 +62,7 @@
     "range": [20, 30]
   },
   {
+    "translationName": "Hemorrhage",
     "name": "Hemorragia",
     "turns": 3,
     "type": 1,
@@ -63,6 +71,7 @@
     "range": [5, 20]
   },
   {
+    "translationName": "Flames",
     "name": "Chamas",
     "turns": 2,
     "type": 1,
@@ -71,6 +80,7 @@
     "range": [5, 15]
   },
   {
+    "translationName": "PowerfulFlames",
     "name": "Chamas potentes",
     "turns": 2,
     "type": 1,
@@ -79,6 +89,7 @@
     "range": [15, 25]
   },
   {
+    "translationName": "Cremation",
     "name": "Cremação",
     "turns": 1,
     "type": 1,
@@ -87,6 +98,7 @@
     "range": [30, 35]
   },
   {
+    "translationName": "Hypothermia",
     "name": "Hipotermia",
     "turns": 3,
     "type": 1,
@@ -95,6 +107,7 @@
     "range": [9, 10]
   },
   {
+    "translationName": "AbsoluteZero",
     "name": "Zero absoluto",
     "turns": 2,
     "type": 1,
@@ -103,6 +116,7 @@
     "range": [14, 15]
   },
   {
+    "translationName": "SupremeCremation",
     "name": "Cremação suprema",
     "turns": 1,
     "type": 1,
@@ -111,6 +125,7 @@
     "range": [35, 43]
   },
   {
+    "translationName": "PowerfulHealing",
     "name": "Cura Potente",
     "turns": 3,
     "type": 2,
@@ -119,6 +134,7 @@
     "range": [10, 20]
   },
   {
+    "translationName": "Curse",
     "name": "Maldição",
     "turns": 3,
     "type": 1,
@@ -127,6 +143,7 @@
     "range": [10, 20]
   },
   {
+    "translationName": "Poison",
     "name": "Veneno",
     "turns": 2,
     "type": 1,
@@ -135,6 +152,7 @@
     "range": [15, 20]
   },
   {
+    "translationName": "FullHeal",
     "name": "Full Heal",
     "turns": 1,
     "type": 2,
@@ -143,6 +161,7 @@
     "range": [80, 100]
   },
   {
+    "translationName": "Plasma",
     "name": "Plasma",
     "turns": 2,
     "type": 1,
@@ -151,6 +170,7 @@
     "range": [1, 15]
   },
   {
+    "translationName": "DensePlasma",
     "name": "Plasma denso",
     "turns": 2,
     "type": 1,
@@ -159,6 +179,7 @@
     "range": [10, 25]
   },
   {
+    "translationName": "DivinePlasma",
     "name": "Plasma divino",
     "turns": 2,
     "type": 1,
@@ -167,6 +188,7 @@
     "range": [10, 35]
   },
   {
+    "translationName": "Death",
     "name": "Morte",
     "turns": 1,
     "type": 1,
@@ -175,6 +197,7 @@
     "range": [70, 85]
   },
   {
+    "translationName": "MicroRobots",
     "name": "Micro robos",
     "turns": 2,
     "type": 1,
@@ -183,6 +206,7 @@
     "range": [10, 15]
   },
   {
+    "translationName": "Acid",
     "name": "Acido",
     "turns": 2,
     "type": 1,
@@ -190,6 +214,7 @@
     "range": [5, 10]
   },
   {
+    "translationName": "StrongAcid",
     "name": "Acido forte",
     "turns": 2,
     "type": 1,
@@ -197,6 +222,7 @@
     "range": [11, 15]
   },
   {
+    "translationName": "DivineAcid",
     "name": "Acido Divino",
     "turns": 3,
     "type": 1,
@@ -204,6 +230,7 @@
     "range": [20, 35]
   },
   {
+    "translationName": "Shock",
     "name": "Choque",
     "turns": 5,
     "type": 1,
@@ -211,6 +238,7 @@
     "range": [6, 15]
   },
   {
+    "translationName": "StrongShock",
     "name": "Choque forte",
     "turns": 5,
     "type": 1,
@@ -218,6 +246,7 @@
     "range": [15, 25]
   },
   {
+    "translationName": "GravitationalAttraction",
     "name": "Atração gravitacional",
     "turns": 2,
     "type": 1,
@@ -225,6 +254,7 @@
     "range": [1, 30]
   },
   {
+    "translationName": "DivineShield",
     "name": "Escudo divino",
     "turns": 2,
     "type": 4,
@@ -233,6 +263,7 @@
     "range": [70, 90]
   },
   {
+    "translationName": "Reflection",
     "name": "Reflexão",
     "turns": 1,
     "type": 5,
@@ -241,6 +272,7 @@
     "range": [0, 0]
   },
   {
+    "translationName": "SolarCremation",
     "name": "Cremação solar",
     "turns": 1,
     "type": 1,
@@ -249,6 +281,7 @@
     "range": [45, 60]
   },
   {
+    "translationName": "Fragility",
     "name": "Fragilidade",
     "turns": 4,
     "type": 6,
@@ -256,6 +289,7 @@
     "range": [90, 90]
   },
   {
+    "translationName": "Possession",
     "name": "Possessão",
     "turns": 2,
     "type": 1,
@@ -264,6 +298,7 @@
     "range": [20, 35]
   },
   {
+    "translationName": "LifeSteal",
     "name": "Roubar vida",
     "turns": 1,
     "type": 2,
@@ -272,6 +307,7 @@
     "range": [15, 15]
   },
   {
+    "translationName": "LifeSteal",
     "name": "Roubar vida",
     "turns": 1,
     "type": 2,
@@ -280,6 +316,7 @@
     "range": [30, 30]
   },
   {
+    "translationName": "InternalHemorrhage",
     "name": "Hemorragia interna",
     "turns": 2,
     "type": 1,
@@ -288,6 +325,7 @@
     "range": [15, 25]
   },
   {
+    "translationName": "LifeSteal",
     "name": "Roubar vida",
     "turns": 1,
     "type": 2,
@@ -296,6 +334,7 @@
     "range": [40, 40]
   },
   {
+    "translationName": "LifeSteal",
     "name": "Roubar vida",
     "turns": 1,
     "type": 2,
@@ -304,6 +343,7 @@
     "range": [50, 50]
   },
   {
+    "translationName": "Sandstorm",
     "name": "Tempestade de areia",
     "turns": 2,
     "type": 1,
@@ -312,6 +352,7 @@
     "range": [12, 17]
   },
   {
+    "translationName": "Golem",
     "name": "Golem",
     "turns": 3,
     "type": 1,
@@ -320,6 +361,7 @@
     "range": [20, 22]
   },
   {
+    "translationName": "ColdMoonlight",
     "name": "Frio luar",
     "turns": 3,
     "type": 1,
@@ -328,6 +370,7 @@
     "range": [12, 20]
   },
   {
+    "translationName": "Radiation",
     "name": "Radiaçao",
     "turns": 4,
     "type": 1,
@@ -336,6 +379,7 @@
     "range": [4, 8]
   },
   {
+    "translationName": "StrongRadiation",
     "name": "Radiaçao forte",
     "turns": 4,
     "type": 1,
@@ -344,6 +388,7 @@
     "range": [10, 14]
   },
   {
+    "translationName": "LightBomb",
     "name": "Bomba de luz",
     "turns": 1,
     "type": 4,
@@ -352,6 +397,7 @@
     "range": [100, 100]
   },
   {
+    "translationName": "EternalEclipse",
     "name": "Eclipse eterno",
     "turns": 10,
     "type": 1,
@@ -360,6 +406,7 @@
     "range": [40, 90]
   },
   {
+    "translationName": "Aging",
     "name": "Envelhecer",
     "turns": 4,
     "type": 6,
@@ -368,6 +415,7 @@
     "range": [180, 180]
   },
   {
+    "translationName": "DivineHealing",
     "name": "Cura divina",
     "turns": 3,
     "type": 2,
@@ -376,6 +424,7 @@
     "range": [15, 25]
   },
   {
+    "translationName": "FutureTravel",
     "name": "Indo para o futuro",
     "turns": 2,
     "type": 4,
@@ -384,6 +433,7 @@
     "range": [100, 100]
   },
   {
+    "translationName": "PhoenixFire",
     "name": "Fogo da fenix",
     "turns": 1,
     "type": 1,
@@ -392,6 +442,7 @@
     "range": [170, 230]
   },
   {
+    "translationName": "Depression",
     "name": "Depressão",
     "turns": 2,
     "type": 2,
@@ -400,6 +451,7 @@
     "range": [-10, -15]
   },
   {
+    "translationName": "StrongDepression",
     "name": "Depressão forte",
     "turns": 2,
     "type": 2,
@@ -408,6 +460,7 @@
     "range": [-30, -45]
   },
   {
+    "translationName": "Degeneration",
     "name": "Degeneração",
     "turns": 2,
     "type": 1,
@@ -416,6 +469,7 @@
     "range": [10, 15]
   },
   {
+    "translationName": "ZombieAttack",
     "name": "Ataque zumbi",
     "turns": 2,
     "type": 1,
@@ -424,6 +478,7 @@
     "range": [18, 30]
   },
   {
+    "translationName": "PowerfulDegeneration",
     "name": "Degeneração potente",
     "turns": 2,
     "type": 1,
@@ -432,6 +487,7 @@
     "range": [20, 35]
   },
   {
+    "translationName": "InfiniteHealing",
     "name": "Cura infinita",
     "turns": 1,
     "type": 2,
@@ -440,6 +496,7 @@
     "range": [160, 320]
   },
   {
+    "translationName": "OxygenSuction",
     "name": "Sugar oxigenio",
     "turns": 2,
     "type": 1,
@@ -448,6 +505,7 @@
     "range": [10, 20]
   },
   {
+    "translationName": "TurnIntoAir",
     "name": "Virar ar",
     "turns": 2,
     "type": 4,
@@ -456,6 +514,7 @@
     "range": [100, 100]
   },
   {
+    "translationName": "CoveredByInk",
     "range": [10, 15],
     "name": "Coberto por tinta",
     "turns": 2,
@@ -463,6 +522,7 @@
     "phrase": "%s esta coberto por tinta! (-%d)"
   },
   {
+    "translationName": "Exploding",
     "range": [5, 30],
     "name": "Explodindo",
     "turns": 2,
@@ -470,6 +530,7 @@
     "phrase": "%s esta explodindo! (-%d)"
   },
   {
+    "translationName": "Redrawing",
     "range": [15, 25],
     "name": "Redesenhando",
     "turns": 2,
@@ -478,6 +539,7 @@
     "phrase": "%s redesenhou! (+%d)"
   },
   {
+    "translationName": "Frightened",
     "range": [35, 35],
     "name": "Deixou assustado",
     "turns": 3,
@@ -485,6 +547,7 @@
     "phrase": "%s esta assustado! (-%d)"
   },
   {
+    "translationName": "Censored",
     "range": [70, 70],
     "name": "Censurado",
     "turns": 2,
@@ -493,6 +556,7 @@
     "phrase": "%s esta censurado! (%d%%)"
   },
   {
+    "translationName": "Hiding",
     "range": [100, 100],
     "type": 4,
     "name": "Se escondendo",
@@ -501,6 +565,7 @@
     "phrase": "%s esta se escondendo! (%d%%)"
   },
   {
+    "translationName": "Haunted",
     "range": [55, 55],
     "name": "Assombrado",
     "turns": 3,
@@ -508,6 +573,7 @@
     "phrase": "%s esta assombrado! (%d)"
   },
   {
+    "translationName": "Starring",
     "range": [50, 80],
     "name": "Protagonizando",
     "turns": 3,
@@ -516,6 +582,7 @@
     "phrase": "%s esta protagonizando! (+%d)"
   },
   {
+    "translationName": "HypnotizedByMelody",
     "range": [70, 120],
     "name": "Hipnotizado",
     "turns": 4,
@@ -523,6 +590,7 @@
     "phrase": "%s esta hipnotizado! (-%d)"
   },
   {
+    "translationName": "EmpoweredSlime",
     "name": "Slime empoderado",
     "turns": 2,
     "type": 4,
@@ -531,6 +599,7 @@
     "range": [30, 40]
   },
   {
+    "translationName": "Battalion",
     "range": [40, 50],
     "name": "Batalhão",
     "turns": 2,
@@ -538,6 +607,7 @@
     "phrase": "%s esta sob ataque do Batalhão! (-%d)"
   },
   {
+    "translationName": "Malnutrition",
     "range": [15, 25],
     "name": "Desnutrição",
     "turns": 3,
@@ -545,6 +615,7 @@
     "phrase": "%s está desnutrido! (-%d)"
   },
   {
+    "translationName": "TradeBloodForFood",
     "range": [20, 20],
     "type": 2,
     "name": "Trocar Comida por Sangue",
@@ -553,6 +624,7 @@
     "phrase": "%s está trocando comida por sangue! (+%d)"
   },
   {
+    "translationName": "CorpseProtection",
     "range": [50, 50],
     "name": "Proteção de cadáveres",
     "turns": 6,
@@ -561,6 +633,7 @@
     "phrase": "%s está protegido por cadáveres! (%d%%)"
   },
   {
+    "translationName": "Malnutrition",
     "range": [55, 55],
     "name": "Desnutrição",
     "turns": 3,
@@ -568,6 +641,7 @@
     "phrase": "%s está desnutrido! (%d%%)"
   },
   {
+    "translationName": "Disease",
     "range": [10, 15],
     "name": "Doença",
     "turns": 5,
@@ -575,6 +649,7 @@
     "phrase": "%s está doente! (-%d)"
   },
   {
+    "translationName": "TradeBloodForFood",
     "range": [40, 40],
     "name": "Trocar Comida por Sangue",
     "turns": 1,
@@ -583,6 +658,7 @@
     "phrase": "%s está trocando comida por sangue! (+%d)"
   },
   {
+    "translationName": "Dissolving",
     "range": [10, 20],
     "name": "Dissolvendo",
     "turns": 3,
@@ -590,6 +666,7 @@
     "phrase": "%s está dissolvendo em chuva ácida! (-%d)"
   },
   {
+    "translationName": "LackOfResources",
     "range": [0, 0],
     "name": "Falta de recursos",
     "turns": 1,
@@ -597,6 +674,7 @@
     "phrase": "%s não tem recursos para atacar! (%d)"
   },
   {
+    "translationName": "Malnutrition",
     "range": [110, 110],
     "name": "Desnutrição",
     "turns": 3,
@@ -604,6 +682,7 @@
     "phrase": "%s está desnutrido! (%d%%)"
   },
   {
+    "translationName": "TradeBloodForFood",
     "range": [60, 60],
     "name": "Trocar Comida por Sangue",
     "turns": 1,
@@ -612,6 +691,7 @@
     "phrase": "%s está trocando comida por sangue! (+%d)"
   },
   {
+    "translationName": "LackOfResources",
     "range": [0, 0],
     "name": "Falta de Recursos",
     "type": 3,
@@ -619,6 +699,7 @@
     "phrase": "%s não tem recursos para atacar! (%d)"
   },
   {
+    "translationName": "FadingExistence",
     "range": [5, 10],
     "name": "Esvaecer Existência",
     "turns": 3,
@@ -626,6 +707,7 @@
     "phrase": "%s está esvaecendo! (-%d)"
   },
   {
+    "translationName": "RegenerateMass",
     "range": [5, 10],
     "name": "Regenerar Massa",
     "turns": 3,
@@ -634,6 +716,7 @@
     "phrase": "%s está regenerando com matéria exótica! (+%d)"
   },
   {
+    "translationName": "Fire",
     "range": [7, 12],
     "name": "Fogo",
     "turns": 3,
@@ -641,6 +724,7 @@
     "phrase": "%s está em chamas! (-%d)"
   },
   {
+    "translationName": "Confusion",
     "range": [0, 0],
     "name": "Confusão",
     "turns": 1,
@@ -648,6 +732,7 @@
     "phrase": "%s está confuso sobre quem atacar! (%d)"
   },
   {
+    "translationName": "EraseAttacks",
     "range": [50, 50],
     "name": "Apagar Ataques",
     "turns": 5,
@@ -656,6 +741,7 @@
     "phrase": "%s está apagando partes dos ataques inimigos! (%d%%)"
   },
   {
+    "translationName": "RegenerateMass",
     "range": [15, 25],
     "name": "Regenerar Massa",
     "turns": 3,
@@ -664,6 +750,7 @@
     "phrase": "%s está regenerando com matéria exótica! (+%d)"
   },
   {
+    "translationName": "DeepDecayExistence",
     "range": [35, 55],
     "name": "Existência Fragilizada",
     "turns": 4,
@@ -671,6 +758,7 @@
     "phrase": "%s está com suas moléculas instáveis... (-%d)"
   },
   {
+    "translationName": "CompleteReflection",
     "range": [100, 100],
     "name": "Refletir Massas",
     "turns": 1,
@@ -679,6 +767,7 @@
     "phrase": "%s refletiu a existência do ataque! (%d)"
   },
   {
+    "translationName": "CancelAttacks",
     "range": [100, 100],
     "name": "Anular Ataques",
     "turns": 2,
@@ -687,6 +776,7 @@
     "phrase": "%s anulou a existência do ataque inimigo! (%d)"
   },
   {
+    "translationName": "RegenerateMass",
     "range": [90, 125],
     "name": "Regenerar Massa",
     "turns": 3,
@@ -695,6 +785,7 @@
     "phrase": "%s está regenerando com matéria exótica! (+%d)"
   },
   {
+    "translationName": "DeepDecayExistence",
     "range": [190, 190],
     "name": "Existência Fragilizada",
     "turns": 3,
@@ -702,6 +793,7 @@
     "phrase": "%s está com suas molécuas em decaimento profundo... (-%d)"
   },
   {
+    "translationName": "CompleteReflection",
     "range": [100, 100],
     "name": "Refletir Massas",
     "turns": 1,
@@ -710,6 +802,7 @@
     "phrase": "%s refletiu completamente o ataque inimigo! (%d)"
   },
   {
+    "translationName": "Refilling",
     "range": [5, 10],
     "turns": 3,
     "type": 2,
@@ -718,6 +811,7 @@
     "phrase": "%s está trocando seu enchimento! (+%d)"
   },
   {
+    "translationName": "Allergic",
     "range": [7, 12],
     "name": "alérgico",
     "turns": 5,
@@ -725,6 +819,7 @@
     "phrase": "%s está tendo um ataque alérgico! (-%d)"
   },
   {
+    "translationName": "Frustrated",
     "range": [14, 17],
     "type": 1,
     "name": "frustrado",
@@ -732,6 +827,7 @@
     "phrase": "%s está frustrado por comprar produto falsificado! (-%d)"
   },
   {
+    "translationName": "Protected",
     "range": [20, 20],
     "turns": 10,
     "type": 4,
@@ -740,6 +836,7 @@
     "phrase": "%s está embalado no mais alto padrão de conforto. (%d)"
   },
   {
+    "translationName": "Refilling",
     "range": [15, 20],
     "name": "se preenchendo",
     "turns": 3,
@@ -748,6 +845,7 @@
     "phrase": "%s está trocando seu enchimento! (+%d)"
   },
   {
+    "translationName": "BrazilianWay",
     "range": [15, 25],
     "type": 2,
     "name": "jeitinho brasileiro",
@@ -756,6 +854,7 @@
     "phrase": "%s está se curando por meios duvidosos! (+%d)"
   },
   {
+    "translationName": "GluingPieces",
     "range": [10, 15],
     "name": "colando os pedaços",
     "turns": 4,
@@ -764,6 +863,7 @@
     "phrase": "%s está colando seus pedaços! (+%d)"
   },
   {
+    "translationName": "MoreResistant",
     "range": [40, 40],
     "type": 4,
     "turns": 7,
@@ -772,6 +872,7 @@
     "phrase": "%s está sendo protegido por porcelana! (%d)"
   },
   {
+    "translationName": "GluingPieces",
     "range": [25, 35],
     "name": "colando os pedaços",
     "turns": 3,
@@ -780,6 +881,7 @@
     "phrase": "%s está colando seus pedaços! (+%d)"
   },
   {
+    "translationName": "Mummify",
     "range": [8, 15],
     "name": "Mumificar",
     "turns": 3,
@@ -788,6 +890,7 @@
     "phrase": "%s está mumificando! (+%d)"
   },
   {
+    "translationName": "Persecution",
     "range": [10, 20],
     "name": "Perseguição",
     "turns": 3,
@@ -795,6 +898,7 @@
     "phrase": "%s está sendo perseguido! (-%d)"
   },
   {
+    "translationName": "Necrosis",
     "range": [15, 20],
     "name": "Necrose",
     "turns": 2,
@@ -802,6 +906,7 @@
     "phrase": "%s está necrosando! (-%d)"
   },
   {
+    "translationName": "RigorouslyBandaged",
     "range": [20, 20],
     "name": "Enfaixado rigorosamente",
     "turns": 10,
@@ -810,6 +915,7 @@
     "phrase": "%s está rigorosamente enfaixado! (%d)"
   },
   {
+    "translationName": "KevlarWrapped",
     "range": [50, 50],
     "name": "Enfaixado em kevlar",
     "turns": 5,
@@ -818,6 +924,7 @@
     "phrase": "%s está embalado em kevlar! (%d)"
   },
   {
+    "translationName": "Necrosis",
     "range": [20, 30],
     "name": "Necrose",
     "turns": 3,
@@ -825,6 +932,7 @@
     "phrase": "%s está necrosando! (-%d)"
   },
   {
+    "translationName": "Mummify",
     "range": [30, 40],
     "name": "Mumificar",
     "turns": 1,
@@ -833,6 +941,7 @@
     "phrase": "%s está mumificando! (+%d)"
   },
   {
+    "translationName": "WhiteFire",
     "range": [20, 40],
     "name": "Fogo branco",
     "turns": 3,
@@ -840,6 +949,7 @@
     "phrase": "%s está queimando! (-%d)"
   },
   {
+    "translationName": "CelestialLight",
     "range": [45, 50],
     "name": "Luz celestial",
     "turns": 1,
@@ -848,6 +958,7 @@
     "phrase": "%s está curando! (+%d)"
   },
   {
+    "translationName": "ImmaculateAura",
     "range": [50, 65],
     "name": "Aura imaculada",
     "turns": 1,
@@ -856,6 +967,7 @@
     "phrase": "%s está curando! (+%d)"
   },
   {
+    "translationName": "PureFlame",
     "range": [30, 45],
     "name": "Chama pura",
     "turns": 2,
@@ -863,6 +975,7 @@
     "phrase": "%s está queimando! (-%d)"
   },
   {
+    "translationName": "ParadiseBlessing",
     "range": [70, 90],
     "name": "Benção do paraiso",
     "turns": 1,
@@ -871,6 +984,7 @@
     "phrase": "%s está curando! (+%d)"
   },
   {
+    "translationName": "PurifyingTouch",
     "range": [60, 75],
     "name": "Toque purificador",
     "turns": 2,
@@ -878,6 +992,7 @@
     "phrase": "%s está sendo purificado! (-%d)"
   },
   {
+    "translationName": "VeilOfSanctity",
     "range": [80, 130],
     "name": "Véu da Santidade",
     "turns": 1,
@@ -886,6 +1001,7 @@
     "phrase": "%s está curando! (+%d)"
   },
   {
+    "translationName": "AncestralPurity",
     "range": [140, 180],
     "name": "Pureza Ancestral",
     "turns": 2,
@@ -893,6 +1009,7 @@
     "phrase": "%s está sendo purificado! (-%d)"
   },
   {
+    "translationName": "HeavenlyHealing",
     "range": [245, 320],
     "name": "Cura dos Céus",
     "turns": 2,
@@ -901,6 +1018,7 @@
     "phrase": "%s está sendo curando! (+%d)"
   },
   {
+    "translationName": "TimeTravel",
     "range": [55, 70],
     "name": "Voltando no tempo",
     "turns": 2,
@@ -909,6 +1027,7 @@
     "phrase": "%s está sendo curando! (+%d)"
   },
   {
+    "translationName": "GravitationalField",
     "range": [15, 23],
     "name": "Campo gravitacional",
     "turns": 2,
@@ -916,6 +1035,7 @@
     "phrase": "%s está sob gravidade forte! (+%d)"
   },
   {
+    "translationName": "PolarProtection",
     "range": [50, 50],
     "turns": 10,
     "name": "Proteção Polar",
@@ -924,6 +1044,7 @@
     "phrase": "%s está protegido por um campo polar! (%d)"
   },
   {
+    "translationName": "Hypothermia",
     "range": [10, 20],
     "name": "Hipotermia",
     "turns": 2,
@@ -931,6 +1052,7 @@
     "phrase": "%s está congelando! (-%d)"
   },
   {
+    "translationName": "ExplosiveFright",
     "range": [10, 20],
     "turns": 7,
     "type": 1,
@@ -938,6 +1060,7 @@
     "phrase": "%s esta assustado! (-%d)"
   },
   {
+    "translationName": "ChristmasProtection",
     "range": [75, 75],
     "type": 4,
     "turns": 7,
@@ -946,6 +1069,7 @@
     "phrase": "%s está protegido por um campo natalino! (%d)"
   },
   {
+    "translationName": "RandomEffect",
     "range": [65, 85],
     "name": "Efeito Aleatório",
     "turns": 3,
@@ -953,6 +1077,7 @@
     "phrase": "%s está sob efeito aleatório! (-%d)"
   },
   {
+    "translationName": "ChristmasBlessing",
     "range": [190, 380],
     "type": 2,
     "name": "Benção Natalina",
@@ -961,6 +1086,7 @@
     "phrase": "%s está curando! (+%d)"
   },
   {
+    "translationName": "ChristmasTree",
     "range": [110, 125],
     "name": "Arvore natalina",
     "turns": 3,
@@ -968,6 +1094,7 @@
     "phrase": "%s está sob arvore natálina! (-%d)"
   },
   {
+    "translationName": "IcyCycle",
     "range": [25, 30],
     "type": 2,
     "name": "Ciclo Gélido",
@@ -976,6 +1103,7 @@
     "phrase": "%s está curando! (+%d)"
   },
   {
+    "translationName": "ElementalFusion",
     "range": [35, 45],
     "name": "Fusão Elemental",
     "turns": 3,
@@ -983,6 +1111,7 @@
     "phrase": "%s está sob fusão elemental! (-%d)"
   },
   {
+    "translationName": "ThermalBarrier",
     "name": "Barreira Térmica",
     "turns": 8,
     "type": 4,
@@ -991,6 +1120,7 @@
     "range": [85, 85]
   },
   {
+    "translationName": "WarriorDragonAura",
     "range": [37, 50],
     "type": 2,
     "name": "Aura do dragão guerreiro",
@@ -999,6 +1129,7 @@
     "phrase": "%s está sob aura do dragão! (+%d)"
   },
   {
+    "translationName": "InfiniteMirage",
     "range": [40, 50],
     "name": "Miragem infinita",
     "turns": 3,
@@ -1006,6 +1137,7 @@
     "phrase": "%s está sob miragem infinita! (-%d)"
   },
   {
+    "translationName": "AscensionToHeaven",
     "range": [40, 45],
     "type": 2,
     "name": "Ascenção aos Céus",
@@ -1014,6 +1146,7 @@
     "phrase": "%s está sob Ascenção aos Céus! (+%d)"
   },
   {
+    "translationName": "DivineTrial",
     "range": [45, 65],
     "name": "Provação Divina",
     "turns": 1,
@@ -1021,6 +1154,7 @@
     "phrase": "%s está sob provação divina! (-%d)"
   },
   {
+    "translationName": "SalvationAura",
     "range": [85, 135],
     "type": 2,
     "name": "Aura da Salvação",
@@ -1029,6 +1163,7 @@
     "phrase": "%s está sob Aura da Salvação! (+%d)"
   },
   {
+    "translationName": "InfernalBite",
     "range": [60, 80],
     "name": "Mordida infernal",
     "turns": 2,
@@ -1036,6 +1171,7 @@
     "phrase": "%s está sob mordida infernal! (-%d)"
   },
   {
+    "translationName": "Ink",
     "range": [22, 27],
     "name": "Tinta",
     "turns": 2,
@@ -1043,6 +1179,7 @@
     "phrase": "%s está sob molhado de tinta! (-%d)"
   },
   {
+    "translationName": "BlackInk",
     "range": [25, 35],
     "name": "Tinta preta",
     "turns": 2,
@@ -1050,6 +1187,7 @@
     "phrase": "%s está sob molhado de tinta preta! (-%d)"
   },
   {
+    "translationName": "CrystallizingDamage",
     "range": [17, 25],
     "type": 2,
     "name": "Cristalizando",
@@ -1058,6 +1196,7 @@
     "phrase": "%s está cristalizando! (+%d)"
   },
   {
+    "translationName": "CrystallizingDamage",
     "range": [20, 27],
     "name": "Cristalizando",
     "turns": 2,
@@ -1065,6 +1204,7 @@
     "phrase": "%s está cristalizando! (-%d)"
   },
   {
+    "translationName": "Rust",
     "range": [9, 12],
     "name": "Ferrugem",
     "turns": 2,
@@ -1072,14 +1212,16 @@
     "phrase": "%s está enferrugando! (-%d)"
   },
   {
+    "translationName": "Menstruation",
     "name": "Menstruação",
     "turns": 2,
     "type": 2,
     "self": true,
-    "phrase": "%s esta com menstruando! (%d)",
+    "phrase": "%s está menstruando! (%d)",
     "range": [-40, -55]
   },
   {
+    "translationName": "Barrier",
     "name": "Barreira",
     "turns": 1,
     "type": 7,
@@ -1088,6 +1230,7 @@
     "range": [15, 25]
   },
   {
+    "translationName": "HypnotizedByMelody",
     "range": [9, 12],
     "name": "Hipnotizado",
     "turns": 2,
@@ -1095,6 +1238,7 @@
     "phrase": "%s está hipnotizado pela melodia! (-%d)"
   },
   {
+    "translationName": "SonicExplosion",
     "range": [30, 40],
     "name": "Explosão sonora",
     "turns": 1,
@@ -1102,6 +1246,7 @@
     "phrase": "%s está sob explosão sonora! (-%d)"
   },
   {
+    "translationName": "SupremeBarrier",
     "name": "Barreira suprema",
     "turns": 1,
     "type": 7,
@@ -1110,6 +1255,7 @@
     "range": [65, 75]
   },
   {
+    "translationName": "FinalMelody",
     "range": [45, 75],
     "name": "Melodia final",
     "turns": 2,
@@ -1117,17 +1263,27 @@
     "phrase": "%s está sob melodia final! (-%d)"
   },
   {
-    "range": [25, 30],
+    "translationName": "EternalBlessing",
+    "range": [45, 55],
     "name": "Benção eterna",
     "turns": 2,
     "type": 1,
     "phrase": "%s está sob benção eterna! (-%d)"
   },
   {
-    "range": [45, 50],
+    "translationName": "IlluminatedDestiny",
+    "range": [55, 75],
     "name": "Destino iluminado",
     "turns": 2,
     "type": 1,
     "phrase": "%s está tendo o destino iluminado! (-%d)"
+  },
+  {
+    "translationName": "Cresset",
+    "range": [50, 70],
+    "name": "Fogareu",
+    "turns": 2,
+    "type": 1,
+    "phrase": "%s está sob Fogareu! (-%d)"
   }
 ]
