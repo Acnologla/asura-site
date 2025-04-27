@@ -1285,5 +1285,13 @@
     "turns": 2,
     "type": 1,
     "phrase": "%s está sob Fogareu! (-%d)"
+  },
+  {
+    "translationName": "StrongBleeding",
+    "range": [30, 43],
+    "name": "Sangramento potente",
+    "turns": 2,
+    "type": 1,
+    "phrase": "%s está sob sangramento potente! (-%d)"
   }
 ]

@@ -488,5 +488,47 @@
     "effect": 13,
     "level": 6,
     "payload": 5
+  },
+  {
+    "name": "Voodo",
+    "translationNameKey": "ITEM_VOODO",
+    "effect": 14,
+    "level": 0,
+    "payload": 0.1
+  },
+  {
+    "name": "Voodo duplo",
+    "translationNameKey": "ITEM_DUAL_VOODO",
+    "effect": 14,
+    "level": 1,
+    "payload": 0.15
+  },
+  {
+    "name": "Voodo potente",
+    "translationNameKey": "ITEM_STRONG_VOODO",
+    "effect": 14,
+    "level": 2,
+    "payload": 0.2
+  },
+  {
+    "name": "Voodo da morte",
+    "translationNameKey": "ITEM_DEATH_VOODO",
+    "effect": 14,
+    "level": 3,
+    "payload": 0.27
+  },
+  {
+    "name": "Beta voodo",
+    "translationNameKey": "ITEM_BETA_VOODO",
+    "effect": 14,
+    "level": 4,
+    "payload": 0.35
+  },
+  {
+    "name": "Voodo mitico",
+    "translationNameKey": "ITEM_MYTHICAL_VOODO",
+    "effect": 14,
+    "level": 6,
+    "payload": 0.45
   }
 ]

@@ -1,0 +1,22 @@
+{
+  "id": 12,
+  "name": "lord",
+  "rarity": 3,
+  "sprite": "https://cdn.asurabot.com.br/cdn/pets/lord.png",
+  "reverseSprite": "https://cdn.asurabot.com.br/cdn/pets/lordR.png",
+  "skills": [
+    {
+      "name": "Aura demoniaca",
+      "damage": [17, 25]
+    },
+    {
+      "name": "Demonio grande",
+      "damage": [37, 59]
+    },
+    {
+      "name": "Fragilidade",
+      "damage": [20, 25],
+      "effect": [1, 77]
+    }
+  ]
+}

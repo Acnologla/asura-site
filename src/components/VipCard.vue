@@ -22,6 +22,7 @@
           <li>Chance extra para conseguir chaves.</li>
           <li>Xp e money extra no galinheiro.</li>
           <li>50 Treinos extras por dia.</li>
+          <li>Xp extra para seu pet (pombo).</li>
         </ul>
       </div>
     </div>

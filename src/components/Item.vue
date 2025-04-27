@@ -51,6 +51,10 @@
       <p v-if="item.effect == 13">
         Ganha {{ item.payload }} de dinheiro extra por rinha
       </p>
+      <p v-if="item.effect == 14">
+        Seu oponente começa com {{ Math.round(item.payload * 100) }}% de vida
+        faltando
+      </p>
       <p></p>
     </div>
   </div>
