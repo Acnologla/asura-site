@@ -50,7 +50,7 @@ export default {
     getStyle() {
       const color = this.colors[this.classes[this.selected + 1].rarity];
       if (color === "GRADIENT") {
-        return `height: 200px;border-radius: 4px;border-style:solid; border-image: linear-gradient(to bottom right, #b827fc 0%, #2c90fc 25%, #b8fd33 50%, #fec837 75%, #fd1892 100%);  border-image-slice: 1;`;
+        return `height: 200px;border-width: 4px;border-radius: 4px;border-style:solid; border-image: linear-gradient(to bottom right, #b827fc 0%, #2c90fc 25%, #b8fd33 50%, #fec837 75%, #fd1892 100%);  border-image-slice: 1;`;
       }
       return `height: 200px;border: 4px solid ${color}`;
     },

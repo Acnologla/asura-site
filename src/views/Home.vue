@@ -1,6 +1,10 @@
 <template>
   <div>
     <main>
+      <!-- Added rooster images to the background -->
+      <div class="rooster rooster-left"></div>
+      <div class="rooster rooster-right"></div>
+
       <div class="text">
         <h1 class="title">Se divirta no seu Servidor de Discord com o Asura</h1>
         <h2 class="subtitle">
@@ -50,6 +54,45 @@
 </template>
 
 <style>
+.rooster {
+  position: absolute;
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0.7;
+  z-index: 0;
+  width: 30vw;
+  height: 30vh;
+}
+
+.rooster-left {
+  background-image: url("https://i.imgur.com/m3wnR88.png");
+  left: 1%;
+  top: 10%;
+}
+
+.rooster-right {
+  background-image: url("https://i.imgur.com/EvXuFeh.png");
+  right: 1%;
+  bottom: 10%;
+  transform: scaleX(-1);
+}
+
+@media screen and (max-width: 768px) {
+  .rooster {
+    width: 60vw;
+    opacity: 0.65;
+    height: 20vh;
+  }
+  .rooster-left {
+    left: 0;
+  }
+
+  .rooster-right {
+    right: 0;
+    bottom: 5%;
+  }
+}
+
 .object {
   animation: MoveUpDown 2.5s infinite;
   position: absolute;
@@ -92,6 +135,8 @@
   left: 50%;
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
+  z-index: 2; /* Added to ensure text stays above roosters */
+  text-align: center; /* Added to center text */
 }
 [data-theme="dark"] .arrow {
   color: #eceff4;
