@@ -445,28 +445,28 @@ export default {
       currencyOptions: [
         {
           title: "Compra de dinheiro",
-          description: "Comprar dinheiro avisadamente na sua conta.",
+          description: "Comprar dinheiro avulsamente na sua conta.",
           priceValue: "R$ 10",
           priceUnit: "a cada 12000 moedas",
           icon: "coins",
         },
         {
           title: "Compra de Xp",
-          description: "Comprar Xp avisadamente na sua conta.",
+          description: "Comprar Xp avulsamente na sua conta.",
           priceValue: "R$ 10",
           priceUnit: "a cada 8000 Xp",
           icon: "bolt",
         },
         {
           title: "Compra de Asura coins",
-          description: "Comprar Asura coins avisadamente na sua conta.",
+          description: "Comprar Asura coins avulsamente na sua conta.",
           priceValue: "R$ 15",
           priceUnit: "a cada 1 Asura Coin",
           icon: "medal",
         },
         {
           title: "Compra de UserXp",
-          description: "Comprar UserXp avisadamente na sua conta.",
+          description: "Comprar UserXp avulsamente na sua conta.",
           priceValue: "R$ 10",
           priceUnit: "a cada 2000 UserXp",
           icon: "user",
