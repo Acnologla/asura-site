@@ -1,0 +1,29 @@
+/* custom-bulma.css */
+
+/* Base */
+@import url('https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/base/minireset.min.css');
+@import url('https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/base/generic.min.css');
+
+@import url('https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/grid/columns.min.css');
+
+@import url('https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/elements/button.min.css');
+@import url('https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/elements/container.min.css');
+@import url('https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/elements/form.min.css');
+@import url('https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/elements/title.min.css');
+@import url('https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/elements/box.min.css');
+@import url('https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/elements/content.min.css');
+
+@import url('https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/components/card.min.css');
+@import url('https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/components/navbar.min.css');
+@import url('https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/components/menu.min.css');
+@import url('https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/components/tabs.min.css');
+@import url('https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/components/modal.min.css');
+
+@import url('https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/form/shared.min.css');
+@import url('https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/form/input-textarea.min.css');
+@import url('https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/form/checkbox-radio.min.css');
+@import url('https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/form/select.min.css');
+
+
+@import url('https://cdn.jsdelivr.net/npm/buefy@0.9.23/dist/buefy.min.css');
+

@@ -1,4 +1,5 @@
 import "@/assets/tailwind.css";
+import "@/assets/bulma.css";
 
 import Vue from "vue";
 import App from "./App.vue";
@@ -16,7 +17,9 @@ import {
   Field,
   Tabs,
 } from "buefy";
-import "buefy/dist/buefy.css";
+
+//import "buefy/dist/buefy.css";
+
 import { library } from "@fortawesome/fontawesome-svg-core";
 import {
   faChevronDown,

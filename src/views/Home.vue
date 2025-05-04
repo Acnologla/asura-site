@@ -53,7 +53,7 @@
   </div>
 </template>
 
-<style>
+<style scoped>
 .rooster {
   position: absolute;
   background-size: contain;
@@ -135,8 +135,8 @@
   left: 50%;
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
-  z-index: 2; /* Added to ensure text stays above roosters */
-  text-align: center; /* Added to center text */
+  z-index: 2;
+  text-align: center;
 }
 [data-theme="dark"] .arrow {
   color: #eceff4;
@@ -152,6 +152,9 @@
     margin-bottom: 30px !important;
   }
 
+  .text {
+    margin-top: 20px;
+  }
   .arrow {
     top: 82vh;
   }

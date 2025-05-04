@@ -1,10 +1,8 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import AllGalos from "../views/AllGalos.vue";
-import Galos from "../views/Galos";
 import Home from "../views/Home";
 import Donate from "../views/Donate";
-import Commands from "../views/Commands";
 
 const RinhaTutorial = () => import("../views/RinhaTutorial");
 const RinhaInfo = () => import("../views/RinhaInfo");
@@ -16,6 +14,8 @@ const backgrounds = () => import("../views/AllBackgrounds");
 const background = () => import("../views/Background");
 const pets = () => import("../views/AllPets");
 const pet = () => import("../views/Pet");
+const Galos = () => import("../views/Galos.vue");
+const Commands = () => import("../views/Commands.vue");
 
 Vue.use(VueRouter);
 
