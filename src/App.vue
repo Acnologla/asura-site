@@ -15,6 +15,10 @@
   color: #2c3e50;
 }
 
+a {
+  color: #7957d5;
+}
+
 body {
   min-height: 100vh;
 }
