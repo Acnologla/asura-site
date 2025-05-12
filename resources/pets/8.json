@@ -11,13 +11,13 @@
     },
     {
       "name": "Escudinho",
-      "damage": [10, 20],
+      "damage": [10, 18],
       "effect": [1, 4]
     },
     {
       "name": "Beijinho!",
       "damage": [10, 12],
-      "effect": [0.6, 17]
+      "effect": [0.55, 17]
     }
   ]
 }

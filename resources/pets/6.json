@@ -7,11 +7,11 @@
   "skills": [
     {
       "name": "Shuriken",
-      "damage": [18, 22]
+      "damage": [19, 25]
     },
     {
       "name": "Remendo",
-      "damage": [29, 35],
+      "damage": [31, 35],
       "self": true,
       "effect": [1, 47]
     },
