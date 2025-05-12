@@ -17,6 +17,7 @@
 
 hr {
   height: 2px !important;
+  margin: 1rem 0 !important;
 }
 
 a {
