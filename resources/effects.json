@@ -1293,5 +1293,21 @@
     "turns": 2,
     "type": 1,
     "phrase": "%s está sob sangramento potente! (-%d)"
+  },
+  {
+    "translationName": "DevilFire",
+    "range": [30, 60],
+    "name": "Fogo do diabo",
+    "turns": 2,
+    "type": 1,
+    "phrase": "%s está sob fogo do diabo! (-%d)"
+  },
+  {
+    "translationName": "DevilFragility",
+    "name": "Fragilidade do diabo",
+    "turns": 4,
+    "type": 6,
+    "phrase": "%s esta fragilizado! (%d)",
+    "range": [260, 260]
   }
 ]

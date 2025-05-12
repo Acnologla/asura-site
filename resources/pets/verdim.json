@@ -1,0 +1,23 @@
+{
+  "id": 4,
+  "name": "green",
+  "rarity": 2,
+  "sprite": "https://cdn.asurabot.com.br/cdn/pets/verdim.png",
+  "reverseSprite": "https://cdn.asurabot.com.br/cdn/pets/verdimR.png",
+  "skills": [
+    {
+      "name": "Verdinha",
+      "damage": [8, 29]
+    },
+    {
+      "name": "Meio ambiente",
+      "damage": [1, 7],
+      "self": true,
+      "effect": [1, 47]
+    },
+    {
+      "name": "Ambiente verde",
+      "damage": [30, 50]
+    }
+  ]
+}

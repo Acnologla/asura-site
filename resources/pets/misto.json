@@ -1,0 +1,24 @@
+{
+  "id": 1,
+  "name": "mixed",
+  "rarity": 2,
+  "sprite": "https://cdn.asurabot.com.br/cdn/pets/3.png",
+  "reverseSprite": "https://cdn.asurabot.com.br/cdn/pets/3R.png",
+  "skills": [
+    {
+      "name": "Curinha",
+      "damage": [6, 10],
+      "self": true,
+      "effect": [1, 2]
+    },
+    {
+      "name": "Daninho",
+      "damage": [28, 42]
+    },
+    {
+      "name": "Sangrinho",
+      "damage": [27, 38],
+      "effect": [1, 1]
+    }
+  ]
+}
