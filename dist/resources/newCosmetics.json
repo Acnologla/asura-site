@@ -766,5 +766,59 @@
     "type": 0,
     "name": "Heaven gates background",
     "value": "https://cdn.asurabot.com.br/cdn/backgrounds/heavengates.jpg"
+  },
+  {
+    "translationName": "Alchemist",
+    "name": "Skin Alquimista",
+    "rarity": 4,
+    "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/metal5R.png",
+    "value": "https://cdn.asurabot.com.br/cdn/skins/metal5.png",
+    "type": 2,
+    "extra": 11
+  },
+  {
+    "translationName": "Conquest",
+    "name": "Skin Conquista",
+    "rarity": 4,
+    "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/apocalipse10R.png",
+    "value": "https://cdn.asurabot.com.br/cdn/skins/apocalipse10.png",
+    "type": 2,
+    "extra": 45
+  },
+  {
+    "translationName": "Calamity",
+    "name": "Skin Calamidade",
+    "rarity": 4,
+    "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/nephlim33R.png",
+    "value": "https://cdn.asurabot.com.br/cdn/skins/nephlim33.png",
+    "type": 2,
+    "extra": 55
+  },
+  {
+    "translationName": "Flames",
+    "name": "Skin Chamas",
+    "rarity": 4,
+    "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/fogo33R.png",
+    "value": "https://cdn.asurabot.com.br/cdn/skins/fogo33.png",
+    "type": 2,
+    "extra": 5
+  },
+  {
+    "translationName": "FutureExterminator",
+    "name": "Skin Exterminador do futuro",
+    "rarity": 4,
+    "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/robotico33R.png",
+    "value": "https://cdn.asurabot.com.br/cdn/skins/robotico33.png",
+    "type": 2,
+    "extra": 14
+  },
+  {
+    "translationName": "ShadowMonarch",
+    "name": "Skin Shadow Monarch",
+    "rarity": 4,
+    "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/panda33R.png",
+    "value": "https://cdn.asurabot.com.br/cdn/skins/panda33.png",
+    "type": 2,
+    "extra": 54
   }
 ]

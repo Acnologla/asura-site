@@ -1,7 +1,6 @@
 <template>
   <div>
     <main>
-      <!-- Added rooster images to the background -->
       <div class="rooster rooster-left"></div>
       <div class="rooster rooster-right"></div>
 
@@ -173,10 +172,8 @@ export default {
         value: 10.0,
         currency: "BRL",
       });
-      window.open(
-        "https://discordapp.com/oauth2/authorize?client_id=470684281102925844&scope=applications.commands%20bot&permissions=8",
-        "_blank"
-      );
+      const route = this.$router.resolve({ name: "Invite" });
+      window.open(route.href, "_blank");
     },
   },
   data() {

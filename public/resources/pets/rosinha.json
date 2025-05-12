@@ -1,0 +1,23 @@
+{
+  "id": 8,
+  "name": "pinky",
+  "rarity": 2,
+  "sprite": "https://cdn.asurabot.com.br/cdn/pets/pink.png",
+  "reverseSprite": "https://cdn.asurabot.com.br/cdn/pets/pinkR.png",
+  "skills": [
+    {
+      "name": "Amorzinho",
+      "damage": [17, 22]
+    },
+    {
+      "name": "Escudinho",
+      "damage": [10, 18],
+      "effect": [1, 4]
+    },
+    {
+      "name": "Beijinho!",
+      "damage": [10, 12],
+      "effect": [0.55, 17]
+    }
+  ]
+}

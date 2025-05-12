@@ -1,0 +1,50 @@
+[
+  {
+    "translation_key": "FuryEssence",
+    "type": 1,
+    "rarity": 0,
+    "buff_type": 1
+  },
+  {
+    "translation_key": "BersekerHeart",
+    "type": 1,
+    "rarity": 1,
+    "buff_type": 1
+  },
+  {
+    "translation_key": "VitalPill",
+    "type": 1,
+    "rarity": 0,
+    "buff_type": 2
+  },
+  {
+    "translation_key": "Elixir",
+    "type": 1,
+    "rarity": 1,
+    "buff_type": 2
+  },
+  {
+    "translation_key": "AprentiseBook",
+    "type": 1,
+    "rarity": 0,
+    "buff_type": 3
+  },
+  {
+    "translation_key": "Grimoire",
+    "type": 1,
+    "rarity": 1,
+    "buff_type": 3
+  },
+  {
+    "translation_key": "MerchantBag",
+    "type": 1,
+    "rarity": 0,
+    "buff_type": 4
+  },
+  {
+    "translation_key": "Treasure",
+    "type": 1,
+    "rarity": 1,
+    "buff_type": 4
+  }
+]

@@ -1,0 +1,23 @@
+{
+  "id": 11,
+  "name": "slicer",
+  "rarity": 2,
+  "sprite": "https://cdn.asurabot.com.br/cdn/pets/slicer.png",
+  "reverseSprite": "https://cdn.asurabot.com.br/cdn/pets/slicerR.png",
+  "skills": [
+    {
+      "name": "Cortada",
+      "damage": [10, 25]
+    },
+    {
+      "name": "Fatiada",
+      "damage": [10, 20],
+      "effect": [1, 36]
+    },
+    {
+      "name": "Perfurada",
+      "damage": [3, 7],
+      "effect": [1, 149]
+    }
+  ]
+}

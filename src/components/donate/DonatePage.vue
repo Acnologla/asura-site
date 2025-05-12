@@ -1,5 +1,8 @@
 <template>
-  <div class="min-h-screen bg-gradient-to-b from-purple-50 to-white">
+  <div
+    class="min-h-screen bg-gradient-to-b from-purple-50 to-white"
+    :class="{ 'dark-mode': isDarkMode }"
+  >
     <b-modal
       v-model="isComponentModalActive"
       has-modal-card
@@ -437,6 +440,8 @@ export default {
     return {
       activeTab: "compare",
       isComponentModalActive: false,
+      isDarkMode:
+        document.documentElement.getAttribute("data-theme") === "dark",
       tabs: [
         { label: "Comparar Planos", value: "compare" },
         { label: "Prime", value: "prime" },
@@ -578,6 +583,16 @@ export default {
   },
   mounted() {
     this.activeTab = "compare";
+    // Listen for theme changes
+    const observer = new MutationObserver((mutations) => {
+      mutations.forEach((mutation) => {
+        if (mutation.attributeName === "data-theme") {
+          this.isDarkMode =
+            document.documentElement.getAttribute("data-theme") === "dark";
+        }
+      });
+    });
+    observer.observe(document.documentElement, { attributes: true });
   },
   methods: {
     handleClick(event) {
@@ -634,5 +649,82 @@ button:hover {
 
 .w-full {
   width: 100%;
+}
+
+/* Dark mode styles */
+[data-theme="dark"] .min-h-screen {
+  background: linear-gradient(to bottom, #232731, #1a1d21);
+}
+
+[data-theme="dark"] p {
+  color: #eceff4;
+}
+
+[data-theme="dark"] .text-gray-600,
+[data-theme="dark"] .text-gray-700 {
+  color: #d8dee9;
+}
+
+[data-theme="dark"] .bg-white {
+  background-color: #2a2d32;
+}
+
+[data-theme="dark"] .border-gray-100,
+[data-theme="dark"] .border-gray-200 {
+  border-color: #3b4252;
+}
+
+[data-theme="dark"] .bg-gray-100 {
+  background-color: #1d1f21;
+}
+
+[data-theme="dark"] .bg-purple-50 {
+  background-color: rgba(124, 58, 237, 0.1);
+}
+
+[data-theme="dark"] .text-purple-600,
+[data-theme="dark"] .text-purple-700,
+[data-theme="dark"] .text-purple-800 {
+  color: #b39ddb;
+}
+
+[data-theme="dark"] .text-green-600,
+[data-theme="dark"] .text-green-800 {
+  color: #81c784;
+}
+
+[data-theme="dark"] .bg-green-100 {
+  background-color: rgba(74, 222, 128, 0.1);
+}
+
+[data-theme="dark"] .bg-purple-100 {
+  background-color: rgba(124, 58, 237, 0.1);
+}
+
+[data-theme="dark"] .card {
+  background-color: #1d1f21;
+  color: #eceff4;
+}
+
+[data-theme="dark"] .popup-text {
+  color: #eceff4;
+}
+
+[data-theme="dark"] a {
+  color: #88c0d0;
+}
+
+[data-theme="dark"] .tab-btn:not(.bg-white) {
+  color: #d8dee9;
+}
+
+[data-theme="dark"] .tab-btn.bg-white {
+  background-color: #2a2d32;
+  color: #b39ddb;
+}
+
+[data-theme="dark"] .border-2.border-green-400,
+[data-theme="dark"] .border-2.border-purple-400 {
+  border-color: #3b4252;
 }
 </style>

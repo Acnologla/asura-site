@@ -1,0 +1,21 @@
+{
+  "id": 5,
+  "name": "red",
+  "rarity": 2,
+  "sprite": "https://cdn.asurabot.com.br/cdn/pets/raivoso.png",
+  "reverseSprite": "https://cdn.asurabot.com.br/cdn/pets/raivosoR.png",
+  "skills": [
+    {
+      "name": "Soco de raiiva",
+      "damage": [10, 32]
+    },
+    {
+      "name": "Rasteira raivosa",
+      "damage": [20, 44]
+    },
+    {
+      "name": "Raiiiivaaaa",
+      "damage": [30, 62]
+    }
+  ]
+}

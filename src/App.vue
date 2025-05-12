@@ -15,6 +15,10 @@
   color: #2c3e50;
 }
 
+hr {
+  height: 1 !important;
+}
+
 a {
   color: #7957d5;
 }
