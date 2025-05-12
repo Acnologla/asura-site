@@ -7,15 +7,15 @@
   "skills": [
     {
       "name": "Soco de raiiva",
-      "damage": [5, 32]
+      "damage": [10, 32]
     },
     {
       "name": "Rasteira raivosa",
-      "damage": [20, 41]
+      "damage": [20, 44]
     },
     {
       "name": "Raiiiivaaaa",
-      "damage": [25, 62]
+      "damage": [30, 62]
     }
   ]
 }

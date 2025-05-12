@@ -16,7 +16,7 @@
 }
 
 hr {
-  height: 1 !important;
+  height: 2px !important;
 }
 
 a {

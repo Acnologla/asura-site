@@ -16,7 +16,7 @@
     },
     {
       "name": "Perfurada",
-      "damage": [3, 5],
+      "damage": [3, 7],
       "effect": [1, 149]
     }
   ]

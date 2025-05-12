@@ -11,11 +11,11 @@
     },
     {
       "name": "Demonio grande",
-      "damage": [37, 59]
+      "damage": [37, 57]
     },
     {
       "name": "Fragilidade",
-      "damage": [20, 25],
+      "damage": [15, 20],
       "effect": [1, 77]
     }
   ]

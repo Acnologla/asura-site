@@ -7,12 +7,12 @@
   "skills": [
     {
       "name": "Furinho",
-      "damage": [3, 10],
+      "damage": [3, 11],
       "effect": [1, 1]
     },
     {
       "name": "Veneninho",
-      "damage": [10, 15],
+      "damage": [10, 17],
       "effect": [1, 16]
     },
     {
