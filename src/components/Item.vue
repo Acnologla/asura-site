@@ -55,6 +55,10 @@
         Seu oponente começa com {{ Math.round(item.payload * 100) }}% de vida
         faltando
       </p>
+      <p v-if="item.effect == 15">
+        Seu oponente tem {{ Math.round(item.payload * 100) }}% de chance a menos
+        de acertar efeitos
+      </p>
       <p></p>
     </div>
   </div>

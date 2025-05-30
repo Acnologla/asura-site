@@ -1,0 +1,23 @@
+{
+  "id": 15,
+  "name": "politician",
+  "rarity": 3,
+  "sprite": "https://cdn.asurabot.com.br/cdn/pets/politician.png",
+  "reverseSprite": "https://cdn.asurabot.com.br/cdn/pets/politicianR.png",
+  "skills": [
+    {
+      "name": "Bolsa familia",
+      "damage": [15, 33]
+    },
+    {
+      "name": "STF",
+      "damage": [25, 28],
+      "effect": [1, 4]
+    },
+    {
+      "name": "Propaganda politica",
+      "damage": [70, 100],
+      "effect": [1, 50]
+    }
+  ]
+}

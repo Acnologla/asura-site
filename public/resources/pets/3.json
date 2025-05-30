@@ -7,16 +7,16 @@
   "skills": [
     {
       "name": "Ferrugem",
-      "damage": [10, 20],
+      "damage": [10, 21],
       "effect": [1, 139]
     },
     {
       "name": "Bicada da ferrugem",
-      "damage": [46, 51]
+      "damage": [47, 53]
     },
     {
       "name": "Proteção enferrujada",
-      "damage": [34, 40],
+      "damage": [35, 42],
       "effect": [1, 4]
     }
   ]

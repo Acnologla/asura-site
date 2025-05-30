@@ -1,0 +1,23 @@
+{
+  "id": 16,
+  "name": "transcedental",
+  "rarity": 5,
+  "sprite": "https://cdn.asurabot.com.br/cdn/pets/transcedental.png",
+  "reverseSprite": "https://cdn.asurabot.com.br/cdn/pets/transcedentalR.png",
+  "skills": [
+    {
+      "name": "Bicada transcendental",
+      "damage": [26, 35]
+    },
+    {
+      "name": "Barreira da transcendência",
+      "damage": [20, 30],
+      "effect": [1, 141]
+    },
+    {
+      "name": "Transcenda!",
+      "damage": [38, 58],
+      "effect": [1, 86]
+    }
+  ]
+}
