@@ -16,8 +16,8 @@
     },
     {
       "name": "Transcenda!",
-      "damage": [38, 58],
-      "effect": [1, 86]
+      "damage": [30, 50],
+      "effect": [1, 90]
     }
   ]
 }
