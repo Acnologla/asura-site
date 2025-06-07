@@ -1309,5 +1309,13 @@
     "type": 6,
     "phrase": "%s esta fragilizado! (%d)",
     "range": [260, 260]
+  },
+  {
+    "translationName": "Transcend",
+    "name": "Transcenda",
+    "turns": 5,
+    "type": 6,
+    "phrase": "%s esta transcendendo! (%d)",
+    "range": [200, 200]
   }
 ]

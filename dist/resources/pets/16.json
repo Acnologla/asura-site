@@ -11,13 +11,13 @@
     },
     {
       "name": "Barreira da transcendência",
-      "damage": [20, 30],
+      "damage": [40, 55],
       "effect": [1, 141]
     },
     {
       "name": "Transcenda!",
-      "damage": [30, 50],
-      "effect": [1, 90]
+      "damage": [35, 55],
+      "effect": [1, 152]
     }
   ]
 }

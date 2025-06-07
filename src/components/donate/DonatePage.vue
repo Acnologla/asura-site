@@ -129,7 +129,7 @@
                 </div>
                 <h3 class="text-2xl font-bold">Prime</h3>
                 <p class="text-green-100 mt-1">Benefícios essenciais</p>
-                <div class="mt-4 text-4xl font-bold">R$17</div>
+                <div class="mt-4 text-4xl font-bold">R$16</div>
                 <p class="text-green-100">por mês</p>
               </div>
 
@@ -274,7 +274,7 @@
                   </h3>
                   <ul class="space-y-3">
                     <li
-                      v-for="(benefit, index) in primeFeatures"
+                      v-for="(benefit, index) in alignedFeatures.prime"
                       :key="index"
                       class="flex items-start gap-2"
                     >
@@ -350,7 +350,7 @@
                   </h3>
                   <ul class="space-y-3">
                     <li
-                      v-for="(benefit, index) in vipFeatures"
+                      v-for="(benefit, index) in alignedFeatures.allVip"
                       :key="index"
                       class="flex items-start gap-2"
                     >
@@ -484,48 +484,26 @@ export default {
           icon: "user",
         },
       ],
-      primeFeatures: [
-        "Ouro extra e xp extra por treino",
-        "Trocar o nome do galo gratuitamente",
-        "Bônus adicional no comando daily",
-        "Chance extra para conseguir chaves",
-        "Xp e money extra no galinheiro",
-        "20 treinos extras por dia",
-        "Bônus de xp no egg",
-      ],
-      vipFeatures: [
-        "Ouro extra e xp extra por treino",
-        "Trocar o nome do galo gratuitamente",
-        "Xp extra no passe de batalha",
-        "Conteúdo exclusivo no passe de batalha",
-        "Bônus adicional no comando daily",
-        "Ganha mais Asura Coins ao vender galos",
-        "Bônus na torre e nas raids",
-        "Bônus de xp no egg",
-        "Chance extra para conseguir chaves",
-        "Xp e money extra no galinheiro",
-        "50 Treinos extras por dia",
-        "Xp extra para seu pet (pombo)",
-      ],
+
       primePlans: [
         {
           name: "Mensal",
-          price: "R$17",
+          price: "R$16",
           discount: null,
         },
         {
           name: "Trimestral",
-          price: `R$${Math.round(17 * 3 * 0.9)}`,
+          price: `R$${Math.round(16 * 3 * 0.9)}`,
           discount: "10% OFF",
         },
         {
           name: "Semestral",
-          price: `R$${Math.round(17 * 6 * 0.8)}`,
+          price: `R$${Math.round(16 * 6 * 0.8)}`,
           discount: "20% OFF",
         },
         {
           name: "Anual",
-          price: `R$${Math.round(17 * 12 * 0.7)}`,
+          price: `R$${Math.round(16 * 12 * 0.7)}`,
           discount: "30% OFF",
         },
       ],
@@ -557,27 +535,30 @@ export default {
     alignedFeatures() {
       const commonFeatures = [
         "Ouro extra e xp extra por treino",
-        "Trocar o nome do galo gratuitamente",
+        "Trocar o nome do galo de graça",
         "Bônus adicional no comando daily",
         "Chance extra para conseguir chaves",
         "Xp e money extra no galinheiro",
         "Bônus de xp no egg",
+        "Consumíveis duram 30% a mais",
       ];
 
-      const primeOnly = ["20 treinos extras por dia"];
+      const primeOnly = ["35 treinos extras por dia"];
 
       const vipOnly = [
-        "50 Treinos extras por dia",
+        "85 Treinos extras por dia",
         "Xp extra no passe de batalha",
         "Conteúdo exclusivo no passe",
         "Mais Asura Coins ao vender galos",
         "Bônus na torre e nas raids",
         "Xp extra para seu pet (pombo)",
+        "Bonus xp e gold na survival",
       ];
 
       return {
         prime: [...commonFeatures, ...primeOnly],
         vip: ["Todas as vantagens do prime", ...vipOnly],
+        allVip: [...commonFeatures, ...vipOnly],
       };
     },
   },
