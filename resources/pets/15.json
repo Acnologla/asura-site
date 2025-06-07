@@ -11,12 +11,12 @@
     },
     {
       "name": "STF",
-      "damage": [25, 28],
+      "damage": [30, 35],
       "effect": [1, 4]
     },
     {
       "name": "Propaganda politica",
-      "damage": [70, 100],
+      "damage": [80, 130],
       "effect": [1, 50]
     }
   ]

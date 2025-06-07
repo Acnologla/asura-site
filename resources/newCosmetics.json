@@ -820,5 +820,14 @@
     "value": "https://cdn.asurabot.com.br/cdn/skins/panda33.png",
     "type": 2,
     "extra": 54
+  },
+  {
+    "translationName": "SonOfDevilAndAngel",
+    "name": "Skin Filho de anjo e demonio",
+    "rarity": 5,
+    "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/nephlimanjoR.png",
+    "value": "https://cdn.asurabot.com.br/cdn/skins/nephlimanjo.png",
+    "type": 2,
+    "extra": 55
   }
 ]
