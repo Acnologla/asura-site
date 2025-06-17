@@ -369,5 +369,10 @@
     "name": "Diabo",
     "rarity": 4,
     "translationKey": "SATHAN"
+  },
+  {
+    "name": "Lupus",
+    "rarity": 4,
+    "translationKey": "LUPUS"
   }
 ]

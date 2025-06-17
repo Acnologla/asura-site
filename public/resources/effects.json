@@ -86,7 +86,7 @@
     "type": 1,
     "self": false,
     "phrase": "%s está pegando fogo! (-%d)",
-    "range": [15, 25]
+    "range": [16, 26]
   },
   {
     "translationName": "Cremation",
@@ -95,7 +95,7 @@
     "type": 1,
     "self": false,
     "phrase": "%s está cremando! (-%d)",
-    "range": [30, 35]
+    "range": [30, 40]
   },
   {
     "translationName": "Hypothermia",
@@ -278,7 +278,7 @@
     "type": 1,
     "self": false,
     "phrase": "%s está cremando! (-%d)",
-    "range": [45, 60]
+    "range": [55, 70]
   },
   {
     "translationName": "Fragility",
@@ -399,11 +399,11 @@
   {
     "translationName": "EternalEclipse",
     "name": "Eclipse eterno",
-    "turns": 10,
+    "turns": 5,
     "type": 1,
     "self": false,
     "phrase": "%s está sobre eclipse eterno! (-%d)",
-    "range": [40, 90]
+    "range": [60, 90]
   },
   {
     "translationName": "Aging",
@@ -1317,5 +1317,13 @@
     "type": 6,
     "phrase": "%s esta transcendendo! (%d)",
     "range": [200, 200]
+  },
+  {
+    "translationName": "StellarRuin",
+    "range": [50, 60],
+    "name": "Uivo da Ruína Estelar",
+    "turns": 4,
+    "type": 1,
+    "phrase": "%s está sob sangramento potente! (-%d)"
   }
 ]
