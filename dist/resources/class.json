@@ -374,5 +374,10 @@
     "name": "Lupus",
     "rarity": 4,
     "translationKey": "LUPUS"
+  },
+  {
+    "name": "Berseker",
+    "rarity": 6,
+    "translationKey": "BERSEKER"
   }
 ]

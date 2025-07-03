@@ -1,0 +1,60 @@
+[
+  { "damage": [23, 37], "name": "Garras Selvagens", "level": 1 },
+  { "damage": [25, 41], "name": "Investida Furiosa", "level": 2 },
+  {
+    "damage": [25, 34],
+    "name": "Marca da Fúria",
+    "level": 3,
+    "effect": [1, 1]
+  },
+  { "damage": [30, 42], "name": "Uivo da Guerra", "level": 4 },
+  { "damage": [37, 47], "name": "Golpe do Abatedor", "level": 5 },
+  {
+    "damage": [19, 34],
+    "name": "Golpe de fragilidade",
+    "level": 7,
+    "effect": [1, 32]
+  },
+  { "damage": [30, 60], "name": "Explosão de Ira", "level": 9 },
+  { "damage": [30, 65], "name": "Lança Sanguinária", "level": 10 },
+  { "damage": [36, 70], "name": "Salto Brutal", "level": 12 },
+  {
+    "damage": [35, 40],
+    "name": "Toque do Frenesi",
+    "level": 13,
+    "effect": [1, 149]
+  },
+  { "damage": [45, 65], "name": "Corte Implacável", "level": 15 },
+  {
+    "damage": [45, 50],
+    "name": "Mordida da Loucura",
+    "level": 17,
+    "effect": [1, 3]
+  },
+  { "damage": [65, 90], "name": "Chuva de Lâminas", "level": 19 },
+  {
+    "damage": [45, 60],
+    "name": "Coração Indomável",
+    "level": 21,
+    "effect": [1, 144]
+  },
+  {
+    "damage": [60, 100],
+    "name": "Lâmina Flamejante",
+    "level": 22,
+    "effect": [1, 31]
+  },
+  { "damage": [125, 135], "name": "Olhar do Caos", "level": 25 },
+  {
+    "damage": [100, 150],
+    "name": "Ritual de Sangue",
+    "level": 30,
+    "effect": [1, 154]
+  },
+  {
+    "damage": [180, 500],
+    "name": "Danão",
+    "level": 30,
+    "evolved": true
+  }
+]

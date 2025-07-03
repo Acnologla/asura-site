@@ -1324,6 +1324,14 @@
     "name": "Uivo da Ruína Estelar",
     "turns": 4,
     "type": 1,
-    "phrase": "%s está sob sangramento potente! (-%d)"
+    "phrase": "%s está sob ruina estelar! (-%d)"
+  },
+  {
+    "translationName": "BersekerFragility",
+    "name": "Fragilidade do berseker",
+    "turns": 4,
+    "type": 6,
+    "phrase": "%s esta fragilizado! (%d)",
+    "range": [300, 300]
   }
 ]

@@ -1,5 +1,10 @@
 [
-  { "name": "BugError404NotE E E BOOM", "rarity": -1 },
+  {
+    "name": "Stairs Two Background",
+    "rarity": 0,
+    "type": 0,
+    "value": "https://cdn.asurabot.com.br/cdn/backgrounds/stairstwobackground.jpg"
+  },
   {
     "rarity": 4,
     "type": 0,
