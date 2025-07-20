@@ -1333,5 +1333,21 @@
     "type": 6,
     "phrase": "%s esta fragilizado! (%d)",
     "range": [300, 300]
+  },
+  {
+    "translationName": "Knife",
+    "range": [-30, -30],
+    "name": "Facada",
+    "turns": 4,
+    "type": 1,
+    "phrase": "%s usou uma faca em si mesmo! (-%d)"
+  },
+  {
+    "translationName": "DoubleStun",
+    "name": "Dobro de Stun",
+    "turns": 1,
+    "type": 3,
+    "phrase": "%s está atordoado (%d)",
+    "range": [0, 0]
   }
 ]

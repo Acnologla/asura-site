@@ -75,32 +75,32 @@
   },
   {
     "name": "Toque Purificador",
-    "damage": [40, 60],
+    "damage": [55, 70],
     "effect": [1, 113],
     "level": 21
   },
   {
     "name": "Véu da Santidade",
-    "damage": [60, 80],
+    "damage": [70, 85],
     "level": 22,
     "self": true,
     "effect": [1, 114]
   },
   {
     "name": "Flecha Brilhante",
-    "damage": [150, 250],
+    "damage": [160, 250],
     "level": 25
   },
   {
     "name": "Cura dos Céus",
-    "damage": [100, 150],
+    "damage": [150, 175],
     "level": 30,
     "effect": [1, 116],
     "self": true
   },
   {
     "name": "Pureza Ancestral",
-    "damage": [200, 300],
+    "damage": [215, 300],
     "level": 30,
     "effect": [1, 115],
     "evolved": true

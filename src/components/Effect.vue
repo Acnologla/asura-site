@@ -16,7 +16,9 @@
       <br />
       Cura maxima: {{ skill.effect.effect.range[1] }}
     </span>
-    <span v-if="skill.effect.effect.type === 3">Stun: 1 turno</span>
+    <span v-if="skill.effect.effect.type === 3"
+      >Stun {{ skill.effect.effect.turns }} turnos</span
+    >
     <span v-if="skill.effect.effect.type === 4"
       >Dano reduzido: {{ skill.effect.effect.range[0] }}%</span
     >
