@@ -69,5 +69,12 @@
     "name": "Super bonder",
     "self": true,
     "effect": [1, 100]
+  },
+  {
+    "damage": [50, 75],
+    "level": 30,
+    "evolved": true,
+    "name": "Porcelana de obidiana",
+    "effect": [1, 98]
   }
 ]

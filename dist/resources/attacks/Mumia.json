@@ -73,5 +73,12 @@
     "effect": [1, 107]
   },
   { "damage": [60, 75], "level": 25, "name": "Julgamento de Anúbis" },
-  { "damage": [1, 150], "level": 30, "name": "Ascenção do Faraó" }
+  { "damage": [1, 150], "level": 30, "name": "Ascenção do Faraó" },
+  {
+    "damage": [25, 60],
+    "level": 30,
+    "name": "Resurreição do faraó",
+    "effect": [1, 105],
+    "evolved": true
+  }
 ]

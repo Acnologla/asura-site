@@ -93,5 +93,12 @@
     "name": "Obra-prima final",
     "damage": [58, 75],
     "level": 30
+  },
+  {
+    "name": "Explosão de tinta aprimorada final",
+    "damage": [35, 45],
+    "level": 30,
+    "evolved": true,
+    "effect": [1, 135]
   }
 ]

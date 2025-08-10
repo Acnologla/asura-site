@@ -94,5 +94,12 @@
     "damage": [60, 70],
     "level": 30,
     "effect": [1, 9]
+  },
+  {
+    "name": "Universo de magma",
+    "damage": [10, 25],
+    "level": 30,
+    "evolved": true,
+    "effect": [1, 13]
   }
 ]

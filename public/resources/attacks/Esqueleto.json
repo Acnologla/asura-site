@@ -90,5 +90,12 @@
     "damage": [30, 50],
     "level": 30,
     "effect": [1, 36]
+  },
+  {
+    "name": "Flecha venenosa",
+    "damage": [45, 59],
+    "level": 30,
+    "evolved": true,
+    "effect": [1, 16]
   }
 ]

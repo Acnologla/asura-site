@@ -83,5 +83,11 @@
     "name": "Mundo de borracha",
     "damage": [53, 85],
     "level": 30
+  },
+  {
+    "name": "Gear five",
+    "damage": [65, 95],
+    "level": 30,
+    "evolved": true
   }
 ]

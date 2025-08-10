@@ -91,5 +91,12 @@
     "name": "Bomba de hidrogenio",
     "damage": [60, 80],
     "level": 30
+  },
+  {
+    "name": "Chuva de micro robos",
+    "damage": [30, 45],
+    "level": 30,
+    "evolved": true,
+    "effect": [1, 22]
   }
 ]

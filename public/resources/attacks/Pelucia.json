@@ -69,5 +69,12 @@
     "name": "Gambiarra",
     "self": true,
     "effect": [1, 97]
+  },
+  {
+    "damage": [43, 75],
+    "level": 30,
+    "evolved": true,
+    "name": "Embalagem final",
+    "effect": [1, 95]
   }
 ]

@@ -95,5 +95,12 @@
     "damage": [115, 135],
     "level": 30,
     "effect": [1, 140]
+  },
+  {
+    "name": "Meno pausa",
+    "damage": [145, 150],
+    "level": 30,
+    "effect": [1, 140],
+    "evolved": true
   }
 ]

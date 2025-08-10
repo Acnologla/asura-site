@@ -89,5 +89,13 @@
     "name": "Dimensão Invisível",
     "damage": [55, 99],
     "level": 30
+  },
+  {
+    "name": "Névoa final",
+    "damage": [45, 65],
+    "level": 30,
+    "self": true,
+    "effect": [1, 14],
+    "evolved": true
   }
 ]

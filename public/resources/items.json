@@ -487,49 +487,49 @@
     "translationNameKey": "ITEM_MYTHICAL_MINER",
     "effect": 13,
     "level": 6,
-    "payload": 5
+    "payload": 7
   },
   {
     "name": "Voodo",
     "translationNameKey": "ITEM_VOODO",
     "effect": 14,
     "level": 0,
-    "payload": 0.1
+    "payload": 0.2
   },
   {
     "name": "Voodo duplo",
     "translationNameKey": "ITEM_DUAL_VOODO",
     "effect": 14,
     "level": 1,
-    "payload": 0.15
+    "payload": 0.25
   },
   {
     "name": "Voodo potente",
     "translationNameKey": "ITEM_STRONG_VOODO",
     "effect": 14,
     "level": 2,
-    "payload": 0.2
+    "payload": 0.3
   },
   {
     "name": "Voodo da morte",
     "translationNameKey": "ITEM_DEATH_VOODO",
     "effect": 14,
     "level": 3,
-    "payload": 0.27
+    "payload": 0.35
   },
   {
     "name": "Beta voodo",
     "translationNameKey": "ITEM_BETA_VOODO",
     "effect": 14,
     "level": 4,
-    "payload": 0.35
+    "payload": 0.45
   },
   {
     "name": "Voodo mitico",
     "translationNameKey": "ITEM_MYTHICAL_VOODO",
     "effect": 14,
     "level": 6,
-    "payload": 0.45
+    "payload": 0.55
   },
 
   {
@@ -537,41 +537,41 @@
     "translationNameKey": "ITEM_REDUCER",
     "effect": 15,
     "level": 0,
-    "payload": 0.1
+    "payload": 0.2
   },
   {
     "name": "Diminuidor duplo",
     "translationNameKey": "ITEM_DUAL_REDUCER",
     "effect": 15,
     "level": 1,
-    "payload": 0.15
+    "payload": 0.25
   },
   {
     "name": "Diminuidor potente",
     "translationNameKey": "ITEM_STRONG_REDUCER",
     "effect": 15,
     "level": 2,
-    "payload": 0.2
+    "payload": 0.3
   },
   {
     "name": "Diminuidorzinho",
     "translationNameKey": "ITEM_SMALL_REDUCER",
     "effect": 15,
     "level": 3,
-    "payload": 0.27
+    "payload": 0.35
   },
   {
     "name": "Beta Diminuidor",
     "translationNameKey": "ITEM_BETA_REDUCER",
     "effect": 15,
     "level": 4,
-    "payload": 0.35
+    "payload": 0.45
   },
   {
     "name": "Diminuidor mitico",
     "translationNameKey": "ITEM_MYTHICAL_REDUCER",
     "effect": 15,
     "level": 6,
-    "payload": 0.45
+    "payload": 0.55
   }
 ]

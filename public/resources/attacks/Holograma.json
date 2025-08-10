@@ -91,5 +91,13 @@
     "name": "Deleção",
     "damage": [66, 89],
     "level": 30
+  },
+  {
+    "name": "Eco Curador final",
+    "damage": [45, 55],
+    "level": 30,
+    "self": true,
+
+    "evolved": true
   }
 ]

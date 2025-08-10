@@ -379,5 +379,15 @@
     "name": "Berseker",
     "rarity": 6,
     "translationKey": "BERSEKER"
+  },
+  {
+    "name": "Shield",
+    "rarity": 5,
+    "translationKey": "SHIELD"
+  },
+  {
+    "name": "Especial",
+    "rarity": 4,
+    "translationKey": "SPECIAL"
   }
 ]
