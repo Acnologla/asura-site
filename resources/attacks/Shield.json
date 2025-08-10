@@ -1,0 +1,106 @@
+[
+  {
+    "name": "Bicada do Guardião",
+    "damage": [24, 37],
+    "level": 1
+  },
+  {
+    "name": "Chute do Guardião",
+    "damage": [29, 37],
+    "level": 2
+  },
+  {
+    "name": "Proteção Celestial do Guardião",
+    "damage": [36, 41],
+    "level": 3
+  },
+  {
+    "name": "Escudo de proteção",
+    "damage": [15, 25],
+    "effect": [1, 4],
+    "level": 4
+  },
+  {
+    "name": "Faca do Guardião",
+    "damage": [33, 44],
+    "level": 5
+  },
+  {
+    "name": "Bênção Eterna do Guardião",
+    "damage": [35, 38],
+    "level": 7,
+    "self": true,
+    "effect": [1, 14]
+  },
+  {
+    "name": "Lâmina do Guardião",
+    "damage": [39, 48],
+    "level": 9
+  },
+  {
+    "name": "Julgamento do Guardião",
+    "damage": [49, 56],
+    "level": 10
+  },
+  {
+    "name": "Graça Restauradora do Guardião",
+    "damage": [12, 25],
+    "level": 12,
+    "effect": [1, 157]
+  },
+  {
+    "name": "Replicação do Guardião",
+    "damage": [65, 70],
+    "level": 13
+  },
+  {
+    "name": "Barreira do Guardião",
+    "damage": [54, 68],
+    "effect": [1, 141],
+    "level": 15
+  },
+  {
+    "name": "Ascensão do Guardião",
+    "damage": [70, 78],
+    "level": 17
+  },
+  {
+    "name": "Cura do Guardião",
+    "damage": [75, 90],
+    "self": true,
+    "effect": [1, 158],
+    "level": 19
+  },
+  {
+    "name": "Barreira Suprema do Guardião",
+    "damage": [90, 115],
+    "level": 21,
+    "self": true,
+    "effect": [1, 144]
+  },
+  {
+    "name": "Reflexão do Guardião",
+    "damage": [40, 60],
+    "self": true,
+    "effect": [1, 30],
+    "level": 23
+  },
+  {
+    "name": "O cumulo do Guardião",
+    "damage": [120, 130],
+    "level": 25
+  },
+  {
+    "name": "Escudo Supremo do Guardião",
+    "damage": [110, 130],
+    "effect": [1, 159],
+    "level": 30
+  },
+  {
+    "name": "Escudo divino do Guardião",
+    "damage": [145, 225],
+    "level": 30,
+    "evolved": true,
+    "effect": [1, 160]
+  }
+]

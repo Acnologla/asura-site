@@ -92,5 +92,12 @@
     "damage": [50, 70],
     "level": 30,
     "effect": [1, 42]
+  },
+  {
+    "name": "Oceano radioativo",
+    "damage": [50, 75],
+    "level": 30,
+    "evolved": true,
+    "effect": [1, 43]
   }
 ]

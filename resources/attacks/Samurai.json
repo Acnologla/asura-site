@@ -91,5 +91,11 @@
     "damage": [30, 50],
     "level": 30,
     "effect": [1, 36]
+  },
+  {
+    "name": "Katana demoniaca final",
+    "damage": [55, 70],
+    "level": 30,
+    "evolved": true
   }
 ]

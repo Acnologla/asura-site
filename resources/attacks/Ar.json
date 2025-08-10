@@ -93,5 +93,12 @@
     "damage": [5, 10],
     "level": 30,
     "effect": [1, 57]
+  },
+  {
+    "name": "Ausencia total de oxigenio",
+    "damage": [35, 55],
+    "level": 30,
+    "effect": [1, 56],
+    "evolved": true
   }
 ]

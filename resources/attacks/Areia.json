@@ -92,5 +92,12 @@
     "name": "Arenização",
     "damage": [60, 90],
     "level": 30
+  },
+  {
+    "name": "Golem de areia reforçado",
+    "damage": [20, 40],
+    "level": 30,
+    "effect": [1, 40],
+    "evolved": true
   }
 ]

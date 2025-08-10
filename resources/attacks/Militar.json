@@ -90,5 +90,12 @@
     "damage": [10, 15],
     "level": 30,
     "effect": [1, 68]
+  },
+  {
+    "name": "Minigun",
+    "damage": [35, 50],
+    "level": 30,
+    "evolved": true,
+    "effect": [1, 36]
   }
 ]

@@ -88,5 +88,12 @@
     "damage": [105, 145],
     "level": 30,
     "effect": [1, 51]
+  },
+  {
+    "name": "Sofia",
+    "damage": [130, 165],
+    "level": 30,
+    "effect": [1, 51],
+    "evolved": true
   }
 ]

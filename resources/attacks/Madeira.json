@@ -90,5 +90,12 @@
     "damage": [30, 55],
     "level": 30,
     "effect": [1, 14]
+  },
+  {
+    "name": "Arvore do mundo final",
+    "damage": [55, 70],
+    "level": 30,
+    "evolved": true,
+    "effect": [1, 14]
   }
 ]
