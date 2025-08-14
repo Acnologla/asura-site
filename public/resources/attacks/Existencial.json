@@ -76,23 +76,23 @@
     "effect": [1, 89]
   },
   {
-    "damage": [100, 150],
+    "damage": [110, 150],
     "level": 41,
     "name": "Decaimento do Universo",
     "effect": [1, 90]
   },
 
   {
-    "damage": [70, 110],
+    "damage": [90, 125],
     "level": 43,
     "name": "Refletir Existência de Ataques",
     "self": true,
     "effect": [1, 91]
   },
 
-  { "damage": [200, 1000], "level": 45, "name": "Destruição do Multiverso" },
+  { "damage": [200, 1050], "level": 45, "name": "Destruição do Multiverso" },
   {
-    "damage": [270, 400],
+    "damage": [290, 450],
     "level": 45,
     "name": "Destruição completa",
     "evolved": true,

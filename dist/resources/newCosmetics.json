@@ -138,7 +138,7 @@
     "rarity": 4,
     "type": 1,
     "name": "Badge Golden",
-    "value": "https://cdn.asurabot.com.br/cdn/badges/douradinha.png"
+    "value": "https://cdn.asurabot.com.br/cdn/badges/douradinha22233.png"
   },
   {
     "translationName": "SakuraBlossom",
@@ -844,5 +844,65 @@
     "value": "https://cdn.asurabot.com.br/cdn/skins/berserkermodde.png",
     "type": 2,
     "extra": 67
+  },
+  {
+    "rarity": 4,
+    "type": 1,
+    "name": "Badge Master",
+    "value": "https://cdn.asurabot.com.br/cdn/badges/master.png"
+  },
+  {
+    "translationName": "BersekerMode",
+    "name": "Skin Berseker Mode",
+    "rarity": 3,
+    "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/berserkermoddeR.png",
+    "value": "https://cdn.asurabot.com.br/cdn/skins/berserkermodde.png",
+    "type": 2,
+    "extra": 67
+  },
+  {
+    "translationName": "D4C",
+    "name": "Skin D4C",
+    "rarity": 2,
+    "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/pneudc4R.png",
+    "value": "https://cdn.asurabot.com.br/cdn/skins/pneudc4.png",
+    "type": 2,
+    "extra": 59
+  },
+  {
+    "translationName": "DragonBall",
+    "name": "Skin Dragon Ball",
+    "rarity": 3,
+    "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/pandadbR.png",
+    "value": "https://cdn.asurabot.com.br/cdn/skins/pandadb.png",
+    "type": 2,
+    "extra": 54
+  },
+  {
+    "translationName": "Celestial",
+    "name": "Skin Celestial",
+    "rarity": 2,
+    "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/celetsialphxR.png",
+    "value": "https://cdn.asurabot.com.br/cdn/skins/celetsialphx.png",
+    "type": 2,
+    "extra": 33
+  },
+  {
+    "translationName": "MoonKnight",
+    "name": "Skin Soldado da lua",
+    "rarity": 3,
+    "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/luaknightR.png",
+    "value": "https://cdn.asurabot.com.br/cdn/skins/luaknight.png",
+    "type": 2,
+    "extra": 27
+  },
+  {
+    "translationName": "SunKnight",
+    "name": "Skin Soldado do sol",
+    "rarity": 3,
+    "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/sunknightRR.png",
+    "value": "https://cdn.asurabot.com.br/cdn/skins/sunknightR.png",
+    "type": 2,
+    "extra": 22
   }
 ]

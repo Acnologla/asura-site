@@ -79,10 +79,8 @@
     "effect": [1, 144]
   },
   {
-    "name": "Reflexão do Guardião",
-    "damage": [40, 60],
-    "self": true,
-    "effect": [1, 30],
+    "name": "A audácia do Guardião",
+    "damage": [100, 125],
     "level": 23
   },
   {

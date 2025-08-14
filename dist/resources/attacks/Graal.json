@@ -87,18 +87,18 @@
   },
   {
     "name": "Destino Iluminado",
-    "damage": [90, 140],
+    "damage": [95, 150],
     "level": 25,
     "effect": [1, 147]
   },
   {
     "name": "Juízo Final",
-    "damage": [200, 281],
+    "damage": [210, 281],
     "level": 30
   },
   {
     "name": "Ressurreição Suprema",
-    "damage": [60, 88],
+    "damage": [60, 90],
     "level": 30,
     "evolved": true,
     "effect": [1, 156]
