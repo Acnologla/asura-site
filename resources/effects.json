@@ -786,7 +786,7 @@
   },
   {
     "translationName": "DeepDecayExistence",
-    "range": [180, 180],
+    "range": [200, 200],
     "name": "Existência Fragilizada",
     "turns": 3,
     "type": 6,
@@ -993,7 +993,7 @@
   },
   {
     "translationName": "VeilOfSanctity",
-    "range": [80, 130],
+    "range": [85, 135],
     "name": "Véu da Santidade",
     "turns": 1,
     "type": 2,
@@ -1002,7 +1002,7 @@
   },
   {
     "translationName": "AncestralPurity",
-    "range": [140, 180],
+    "range": [150, 190],
     "name": "Pureza Ancestral",
     "turns": 2,
     "type": 1,
@@ -1010,7 +1010,7 @@
   },
   {
     "translationName": "HeavenlyHealing",
-    "range": [245, 320],
+    "range": [260, 330],
     "name": "Cura dos Céus",
     "turns": 2,
     "type": 2,
@@ -1345,9 +1345,45 @@
   {
     "translationName": "DoubleStun",
     "name": "Dobro de Stun",
-    "turns": 1,
+    "turns": 2,
     "type": 3,
     "phrase": "%s está atordoado (%d)",
     "range": [0, 0]
+  },
+  {
+    "translationName": "ShieldOfGuardian",
+    "name": "Escudo do Guardião",
+    "turns": 10,
+    "type": 4,
+    "self": true,
+    "phrase": "%s está com %d%% de proteção!",
+    "range": [75, 75]
+  },
+  {
+    "translationName": "HealOfGuardian",
+    "name": "Cura do Guardião",
+    "turns": 2,
+    "type": 2,
+    "self": true,
+    "phrase": "%s está curando! (+%d)",
+    "range": [80, 200]
+  },
+  {
+    "translationName": "ShieldOfGuardianSupreme",
+    "name": "Escudo Supremo do Guardião",
+    "turns": 10,
+    "type": 4,
+    "self": true,
+    "phrase": "%s está com %d%% de proteção!",
+    "range": [140, 140]
+  },
+  {
+    "translationName": "ShieldOfGuardianDivine",
+    "name": "Escudo divino do Guardião",
+    "turns": 10,
+    "type": 4,
+    "self": true,
+    "phrase": "%s está com %d%% de proteção!",
+    "range": [250, 250]
   }
 ]
