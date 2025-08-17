@@ -31,28 +31,28 @@
     "level": 17,
     "effect": [1, 3]
   },
-  { "damage": [65, 90], "name": "Chuva de Lâminas", "level": 19 },
+  { "damage": [65, 95], "name": "Chuva de Lâminas", "level": 19 },
   {
-    "damage": [45, 60],
+    "damage": [50, 75],
     "name": "Coração Indomável",
     "level": 21,
     "effect": [1, 155]
   },
   {
-    "damage": [60, 100],
+    "damage": [90, 130],
     "name": "Lâmina Flamejante",
     "level": 22,
     "effect": [1, 31]
   },
-  { "damage": [125, 135], "name": "Olhar do Caos", "level": 25 },
+  { "damage": [135, 185], "name": "Olhar do Caos", "level": 25 },
   {
-    "damage": [100, 150],
+    "damage": [140, 190],
     "name": "Ritual de Sangue",
     "level": 30,
     "effect": [1, 154]
   },
   {
-    "damage": [180, 500],
+    "damage": [220, 600],
     "name": "Danão",
     "level": 30,
     "evolved": true

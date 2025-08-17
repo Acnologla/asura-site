@@ -94,7 +94,7 @@
     "effect": [1, 42]
   },
   {
-    "name": "Oceano radioativo",
+    "name": "Letalis Uranium",
     "damage": [50, 75],
     "level": 30,
     "evolved": true,

@@ -435,11 +435,11 @@
   {
     "translationName": "PhoenixFire",
     "name": "Fogo da fenix",
-    "turns": 1,
+    "turns": 2,
     "type": 1,
     "self": false,
     "phrase": "%s está sobre fogo da fenix! (-%d)",
-    "range": [170, 230]
+    "range": [110, 150]
   },
   {
     "translationName": "Depression",
@@ -1339,7 +1339,8 @@
     "range": [-30, -30],
     "name": "Facada",
     "turns": 4,
-    "type": 1,
+    "type": 2,
+    "self": true,
     "phrase": "%s usou uma faca em si mesmo! (-%d)"
   },
   {
@@ -1375,7 +1376,7 @@
     "type": 4,
     "self": true,
     "phrase": "%s está com %d%% de proteção!",
-    "range": [140, 140]
+    "range": [130, 130]
   },
   {
     "translationName": "ShieldOfGuardianDivine",
@@ -1384,6 +1385,14 @@
     "type": 4,
     "self": true,
     "phrase": "%s está com %d%% de proteção!",
-    "range": [250, 250]
+    "range": [220, 220]
+  },
+  {
+    "translationName": "Crack",
+    "range": [30, 53],
+    "name": "Rachadinha",
+    "turns": 2,
+    "type": 1,
+    "phrase": "%s está sob rachadinha! (-%d)"
   }
 ]

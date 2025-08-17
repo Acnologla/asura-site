@@ -18,6 +18,12 @@
       "name": "Transcenda!",
       "damage": [35, 55],
       "effect": [1, 152]
+    },
+    {
+      "name": "O dobro!",
+      "damage": [35, 55],
+      "effect": [0.5, 156],
+      "evolved": true
     }
   ]
 }

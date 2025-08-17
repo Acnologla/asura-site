@@ -94,7 +94,7 @@
     "effect": [1, 29]
   },
   {
-    "name": "Magnetico",
+    "name": "Ferrum Mors",
     "damage": [65, 70],
     "level": 30,
     "evolved": true

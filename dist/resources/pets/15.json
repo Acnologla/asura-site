@@ -18,6 +18,12 @@
       "name": "Propaganda politica",
       "damage": [80, 130],
       "effect": [1, 50]
+    },
+    {
+      "name": "Rachadinha",
+      "damage": [50, 90],
+      "effect": [1, 161],
+      "evolved": true
     }
   ]
 }

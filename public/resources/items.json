@@ -200,21 +200,21 @@
     "translationNameKey": "ITEM_POTENT_REFLECTOR",
     "effect": 7,
     "level": 1,
-    "payload": 0.35
+    "payload": 0.3
   },
   {
     "name": "Refletidor espiritual",
     "translationNameKey": "ITEM_SPIRITUAL_REFLECTOR",
     "effect": 7,
     "level": 2,
-    "payload": 0.4
+    "payload": 0.35
   },
   {
     "name": "Refletidor divino",
     "translationNameKey": "ITEM_DIVINE_REFLECTOR",
     "effect": 7,
     "level": 3,
-    "payload": 0.5
+    "payload": 0.45
   },
   {
     "name": "Beta Escalibur",
@@ -235,7 +235,7 @@
     "translationNameKey": "ITEM_BETA_REFLECTOR",
     "effect": 7,
     "level": 4,
-    "payload": 0.65
+    "payload": 0.55
   },
   {
     "name": "Beta Amplificador",
@@ -375,7 +375,7 @@
     "translationNameKey": "ITEM_MYTHICAL_REFLECTOR",
     "effect": 7,
     "level": 6,
-    "payload": 0.9
+    "payload": 0.8
   },
   {
     "name": "Amplificador mitico",

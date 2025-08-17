@@ -17,6 +17,12 @@
       "name": "Fragilidade",
       "damage": [15, 17],
       "effect": [1, 77]
+    },
+    {
+      "name": "LifeSteal",
+      "damage": [50, 50],
+      "effect": [1, 38],
+      "evolved": true
     }
   ]
 }
