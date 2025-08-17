@@ -89,7 +89,7 @@
     "level": 30
   },
   {
-    "name": "Fragilidade destrutiva",
+    "name": "Daemon Immortalitas",
     "damage": [130, 170],
     "effect": [1, 32],
     "evolved": true,

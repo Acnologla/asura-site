@@ -80,25 +80,25 @@
   },
   {
     "name": "Eternidade Dourada",
-    "damage": [90, 110],
+    "damage": [95, 115],
     "level": 22,
     "self": true,
     "effect": [1, 144]
   },
   {
     "name": "Destino Iluminado",
-    "damage": [95, 150],
+    "damage": [100, 150],
     "level": 25,
     "effect": [1, 147]
   },
   {
     "name": "Juízo Final",
-    "damage": [210, 281],
+    "damage": [215, 281],
     "level": 30
   },
   {
     "name": "Ressurreição Suprema",
-    "damage": [60, 90],
+    "damage": [65, 90],
     "level": 30,
     "evolved": true,
     "effect": [1, 156]

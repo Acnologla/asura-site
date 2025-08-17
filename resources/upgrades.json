@@ -1,7 +1,7 @@
 [
   {
     "name": "Utilitarios",
-    "value": "Ganha 3 de xp a mais por treino",
+    "value": "Ganha 2 de xp a mais por treino",
     "nameTranslation": "upgrades.utilities_name",
     "descriptionTranslation": "upgrades.utilities_description",
     "childs": [
@@ -81,13 +81,13 @@
           },
           {
             "name": "Rinhas habilidosas",
-            "value": "Rinhas dão 6 de xp extra",
+            "value": "Rinhas dão 3 de xp extra",
             "nameTranslation": "upgrades.skilled_fights_name",
             "descriptionTranslation": "upgrades.skilled_fights_description",
             "childs": [
               {
                 "name": "Rinhas mais habilidosas",
-                "value": "Rinhas dão 10 de xp extra",
+                "value": "Rinhas dão 5 de xp extra",
                 "nameTranslation": "upgrades.more_skilled_fights_name",
                 "descriptionTranslation": "upgrades.more_skilled_fights_description"
               },

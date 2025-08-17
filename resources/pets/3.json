@@ -18,6 +18,12 @@
       "name": "Proteção enferrujada",
       "damage": [35, 42],
       "effect": [1, 4]
+    },
+    {
+      "name": "Ferrugem aprimorada",
+      "damage": [80, 95],
+      "effect": [1, 139],
+      "evolved": true
     }
   ]
 }

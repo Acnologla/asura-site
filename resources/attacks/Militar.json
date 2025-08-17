@@ -92,7 +92,7 @@
     "effect": [1, 68]
   },
   {
-    "name": "Minigun",
+    "name": "Autonomus Trebuchet",
     "damage": [35, 50],
     "level": 30,
     "evolved": true,

@@ -18,6 +18,12 @@
     {
       "name": "Ataque ninja",
       "damage": [59, 79]
+    },
+    {
+      "name": "O ultimo ninja",
+      "damage": [39, 69],
+      "effect": [1, 149],
+      "evolved": true
     }
   ]
 }
