@@ -849,7 +849,7 @@
     "rarity": 4,
     "type": 1,
     "name": "Badge Master",
-    "value": "https://cdn.asurabot.com.br/cdn/badges/masterbadgetwo.png"
+    "value": "https://cdn.asurabot.com.br/cdn/badges/masterbadgethree.png"
   },
   {
     "translationName": "BersekerMode",
@@ -904,5 +904,77 @@
     "value": "https://cdn.asurabot.com.br/cdn/skins/sunknightR.png",
     "type": 2,
     "extra": 22
+  },
+  {
+    "translationName": "ShieldCaptain",
+    "name": "Skin Capitao escudo",
+    "rarity": 4,
+    "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/shield1R.png",
+    "value": "https://cdn.asurabot.com.br/cdn/skins/shield1.png",
+    "type": 2,
+    "extra": 68
+  },
+  {
+    "translationName": "ApocalypseAll",
+    "name": "Skin Apocalipse todos",
+    "rarity": 4,
+    "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/apocalipseallR.png",
+    "value": "https://cdn.asurabot.com.br/cdn/skins/apocalipseall.png",
+    "type": 2,
+    "extra": 45
+  },
+  {
+    "translationName": "SunEscanor",
+    "name": "Skin Escanor do sol",
+    "rarity": 4,
+    "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/sunescanorR.png",
+    "value": "https://cdn.asurabot.com.br/cdn/skins/sunescanor.png",
+    "type": 2,
+    "extra": 22
+  },
+  {
+    "translationName": "WhiteBlack",
+    "name": "Skin Hades",
+    "rarity": 4,
+    "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/whiteblackR.png",
+    "value": "https://cdn.asurabot.com.br/cdn/skins/whiteblack.png",
+    "type": 2,
+    "extra": 51
+  },
+  {
+    "translationName": "Katiau",
+    "name": "Skin Katiau",
+    "rarity": 4,
+    "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/katiauR.png",
+    "value": "https://cdn.asurabot.com.br/cdn/skins/katiau.png",
+    "type": 2,
+    "extra": 59
+  },
+  {
+    "translationName": "WoodenPuppet",
+    "name": "Skin Fantoche",
+    "rarity": 4,
+    "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/woodenpuppetR.png",
+    "value": "https://cdn.asurabot.com.br/cdn/skins/woodenpuppet.png",
+    "type": 2,
+    "extra": 20
+  },
+  {
+    "translationName": "TheWorld",
+    "name": "Skin The World",
+    "rarity": 4,
+    "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/theworldR.png",
+    "value": "https://cdn.asurabot.com.br/cdn/skins/theworld.png",
+    "type": 2,
+    "extra": 32
+  },
+  {
+    "translationName": "LightAdmiral",
+    "name": "Skin Almirante da luz",
+    "rarity": 4,
+    "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/lightadmiralR.png",
+    "value": "https://cdn.asurabot.com.br/cdn/skins/lightadmiral.png",
+    "type": 2,
+    "extra": 10
   }
 ]
