@@ -976,5 +976,14 @@
     "value": "https://cdn.asurabot.com.br/cdn/skins/lightadmiral.png",
     "type": 2,
     "extra": 10
+  },
+  {
+    "translationName": "TheKing",
+    "name": "Skin The King",
+    "rarity": 5,
+    "reverseValue": "https://cdn.asurabot.com.br/cdn/skins/nephlimdoidoR.png",
+    "value": "https://cdn.asurabot.com.br/cdn/skins/nephlimdoido.png",
+    "type": 2,
+    "extra": 55
   }
 ]
