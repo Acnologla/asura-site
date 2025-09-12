@@ -263,12 +263,16 @@ export default {
     },
   },
   async created() {
-    await axios.get("/resources/class.json").then((classes) => {
-      this.classes = classes.data;
-    });
-    await axios.get("/resources/effects.json").then((effects) => {
-      this.effects = effects.data;
-    });
+    await axios
+      .get("https://info.asurabot.com.br/class.json")
+      .then((classes) => {
+        this.classes = classes.data;
+      });
+    await axios
+      .get("https://info.asurabot.com.br/effects.json")
+      .then((effects) => {
+        this.effects = effects.data;
+      });
     if (this.$route.query.galo) {
       this.current = parseInt(this.$route.query.galo);
     }

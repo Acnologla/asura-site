@@ -33,10 +33,10 @@ export default {
     };
   },
   created() {
-    axios.get("/resources/effects.json").then((effects) => {
+    axios.get("https://info.asurabot.com.br/effects.json").then((effects) => {
       this.effects = effects.data;
     });
-    axios.get("/resources/items.json").then((items) => {
+    axios.get("https://info.asurabot.com.br/items.json").then((items) => {
       this.items = items.data;
     });
   },

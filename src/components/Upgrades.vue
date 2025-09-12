@@ -19,7 +19,7 @@ export default {
     };
   },
   created() {
-    axios.get("/resources/upgrades.json").then((upgrades) => {
+    axios.get("https://info.asurabot.com.br/upgrades.json").then((upgrades) => {
       this.upgrades = upgrades.data;
     });
   },

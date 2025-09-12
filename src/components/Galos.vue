@@ -59,7 +59,7 @@ export default {
     if (this.$route.query.galo) {
       this.selected = parseInt(this.$route.query.galo);
     }
-    axios.get("/resources/sprites.json").then((result) => {
+    axios.get("https://info.asurabot.com.br/sprites.json").then((result) => {
       this.sprites = result.data[0];
     });
   },
