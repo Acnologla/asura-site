@@ -6,60 +6,9 @@
       {{ item.name }}
     </h2>
     <div style="margin-left: 22px" v-if="active">
-      <p v-if="item.effect == 1">
-        Aumenta o dano das suas habilidades em
-        {{ Math.round((item.payload - 1) * 100) }}%
+      <p>
+        {{ item.description }}
       </p>
-      <p v-if="item.effect == 2">
-        Suas habilidades tem chance de causar:
-        <Effect
-          :skill="{ effect: { chance: 0.3, effect: effects[item.payload] } }"
-        />
-      </p>
-      <p v-if="item.effect == 3">
-        Aumenta a chance dos seus efeitos em
-        {{ Math.round(item.payload * 100) }}%
-      </p>
-      <p v-if="item.effect == 4">
-        Aumenta sua vida em {{ Math.round((item.payload - 1) * 100) }}%
-      </p>
-      <p v-if="item.effect == 5">
-        Diminui o dano que voce recebe em
-        {{ Math.round((1 - item.payload) * 100) }}%
-      </p>
-      <p v-if="item.effect == 6">
-        Aumenta o dano dos seus efeitos em
-        {{ Math.round((item.payload - 1) * 100) }}%
-      </p>
-      <p v-if="item.effect == 7">
-        Reflete todo dano levado em {{ Math.round(item.payload * 100) }}%
-      </p>
-      <p v-if="item.effect == 8">
-        Voce ganha {{ item.payload * 100 }}% de xp adicional todo train
-      </p>
-      <p v-if="item.effect == 9">
-        Voce ganha 2 de xp adicional por treino
-      </p>
-      <p v-if="item.effect == 11">
-        Aumenta a sua cura e diminue a do oponente em
-        {{ Math.round((item.payload - 1) * 100) }}%
-      </p>
-      <p v-if="item.effect == 12">
-        Diminui o dano de efeitos que voce recebe em
-        {{ Math.round((1 - item.payload) * 100) }}%
-      </p>
-      <p v-if="item.effect == 13">
-        Ganha {{ item.payload }} de dinheiro extra por rinha
-      </p>
-      <p v-if="item.effect == 14">
-        Seu oponente começa com {{ Math.round(item.payload * 100) }}% de vida
-        faltando
-      </p>
-      <p v-if="item.effect == 15">
-        Seu oponente tem {{ Math.round(item.payload * 100) }}% de chance a menos
-        de acertar efeitos
-      </p>
-      <p></p>
     </div>
   </div>
 </template>

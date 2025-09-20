@@ -230,14 +230,14 @@ export default {
     map(roosters, items, pets) {
       const r = roosters.map((r) => ({
         ...r,
-        name: this.info.classes[r.type].name,
+        name: this.info.classes[r.type].name + (r.special ? " (Special)" : ""),
         tradeType: "rooster",
         rarity: this.info.classes[r.type].rarity,
       }));
 
       const r2 = pets.map((r) => ({
         ...r,
-        name: this.info.pets[r.type].name,
+        name: this.info.pets[r.type].name + ("Level: " + r.level),
         tradeType: "pet",
         rarity: this.info.pets[r.type].rarity,
       }));
