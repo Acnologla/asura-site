@@ -155,7 +155,9 @@ export default {
 
     if (!isNaN(this.petId)) {
       try {
-        const effectsResponse = await fetch("/resources/effects.json");
+        const effectsResponse = await fetch(
+          "https://info.asurabot.com.br/effects.json"
+        );
         this.effects = await effectsResponse.json();
 
         const petsPromises = GetPets();
