@@ -212,7 +212,7 @@ export default {
     },
     fetchSkills(selectedClass) {
       return axios
-        .get(`/resources/attacks/${selectedClass.name}.json`)
+        .get(`https://info.asurabot.com.br/attacks/${selectedClass.name}.json`)
         .then((skills) => {
           skills.data
             .filter((skill) => skill.effect)
