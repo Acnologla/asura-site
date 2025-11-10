@@ -27,6 +27,23 @@
         @click="scrollToSkins"
         >Skins</b-button
       >
+
+      <!-- Passive Skill Section -->
+      <div v-if="currentClass && currentClass.passive" class="passive-section">
+        <h1 class="passive-title">
+          <span class="passive-icon">✦</span> Habilidade Passiva
+          <span class="passive-icon">✦</span>
+        </h1>
+        <div class="passive-card">
+          <div class="passive-glow"></div>
+          <div class="passive-content">
+            <p class="passive-description">
+              {{ currentClass.passive }}
+            </p>
+          </div>
+        </div>
+      </div>
+
       <h1 style="margin-bottom:20px;font-family: Rubik;font-size: 32px">
         Habilidades
       </h1>
@@ -128,6 +145,126 @@
   border-radius: 8px;
   margin-bottom: 40px;
 }
+
+/* Passive Skill Premium Styling */
+.passive-section {
+  margin: 40px auto;
+  max-width: 900px;
+  padding: 0 20px;
+}
+
+.passive-title {
+  font-family: Rubik, sans-serif;
+  font-size: 32px;
+  text-align: center;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 25px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.passive-icon {
+  color: #fbbf24;
+  animation: sparkle 2s infinite;
+  display: inline-block;
+}
+
+@keyframes sparkle {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(1.1);
+  }
+}
+
+.passive-card {
+  position: relative;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 16px;
+  padding: 4px;
+  box-shadow: 0 10px 40px rgba(102, 126, 234, 0.4);
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.passive-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 50px rgba(102, 126, 234, 0.6);
+}
+
+.passive-glow {
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.3) 0%,
+    transparent 70%
+  );
+  animation: rotate-glow 8s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes rotate-glow {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.passive-content {
+  position: relative;
+  background: white;
+  border-radius: 12px;
+  padding: 35px 30px;
+  text-align: center;
+}
+
+[data-theme="dark"] .passive-content {
+  background: #2a2d32;
+}
+
+.passive-description {
+  font-size: 18px;
+  line-height: 1.8;
+  color: #4b5563;
+  max-width: 700px;
+  margin: 0 auto;
+  font-weight: 500;
+}
+
+[data-theme="dark"] .passive-description {
+  color: #d8dee9;
+}
+
+@media screen and (max-width: 768px) {
+  .passive-section {
+    margin: 30px 20px;
+  }
+
+  .passive-title {
+    font-size: 24px;
+  }
+
+  .passive-content {
+    padding: 25px 20px;
+  }
+
+  .passive-description {
+    font-size: 15px;
+  }
+}
 </style>
 <script>
 import Galos from "@/components/Galos";
@@ -177,6 +314,11 @@ export default {
         },
       ],
     };
+  },
+  computed: {
+    currentClass() {
+      return this.classes[this.current + 1] || {};
+    },
   },
   methods: {
     scrollToSkins() {

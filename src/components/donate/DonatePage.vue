@@ -85,7 +85,7 @@
       </div>
 
       <!-- Membership Plans -->
-      <div class="max-w-5xl mx-auto mb-16">
+      <div class="max-w-7xl mx-auto mb-16">
         <div class="text-center mb-10">
           <h2 class="text-3xl font-bold text-purple-700 mb-2">
             Planos de Assinatura
@@ -96,13 +96,15 @@
         </div>
 
         <div class="w-full">
-          <div class="grid w-full grid-cols-3 mb-8 bg-gray-100 rounded-lg p-1">
+          <div
+            class="grid w-full grid-cols-2 sm:grid-cols-4 mb-8 bg-gray-100 rounded-lg p-1 gap-1"
+          >
             <button
               v-for="tab in tabs"
               :key="tab.value"
               @click="activeTab = tab.value"
               :class="[
-                'py-2 px-4 rounded-md transition-all tab-btn',
+                'py-2 px-2 sm:px-4 rounded-md transition-all tab-btn text-sm sm:text-base',
                 activeTab === tab.value
                   ? 'bg-white shadow-sm text-purple-700 font-medium'
                   : 'text-gray-600',
@@ -115,7 +117,7 @@
           <!-- Compare Tab -->
           <div
             v-if="activeTab === 'compare'"
-            class="grid grid-cols-1 md:grid-cols-2 gap-8"
+            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3"
           >
             <!-- Prime Plan -->
             <div
@@ -242,6 +244,77 @@
                 >
                   Assinar VIP
                 </button>
+              </div>
+            </div>
+
+            <!-- Royal VIP Plan -->
+            <div
+              class="border-2 border-black shadow-xl transition-all duration-300 overflow-hidden relative rounded-lg royal-vip-card"
+            >
+              <div
+                class="text-center py-8 bg-gradient-to-r from-black via-purple-900 to-black text-white relative"
+              >
+                <div class="flex justify-center mb-2">
+                  <font-awesome-icon
+                    icon="crown"
+                    class="h-8 w-8 text-yellow-400"
+                  />
+                </div>
+                <h3 class="text-2xl font-bold">Royal VIP</h3>
+                <p class="text-purple-200 mt-1">
+                  Experiência Premium Definitiva
+                </p>
+                <div class="mt-4 text-4xl font-bold">R$65</div>
+                <p class="text-purple-200">por mês</p>
+              </div>
+
+              <div
+                class="space-y-4 align-helper bg-gradient-to-b from-gray-900 to-gray-800"
+              >
+                <ul class="space-y-3 min-h-[320px]">
+                  <li
+                    v-for="(feature, index) in alignedFeatures.royalVip"
+                    :key="index"
+                    class="flex items-start gap-3"
+                  >
+                    <font-awesome-icon
+                      icon="check"
+                      class="h-5 w-5 text-yellow-400 flex-shrink-0 mt-0.5"
+                    />
+                    <span class="text-gray-200">{{ feature }}</span>
+                  </li>
+                </ul>
+
+                <div class="pt-4 space-y-3 border-t border-purple-800 mt-5">
+                  <div
+                    v-for="(plan, index) in royalVipPlans"
+                    :key="index"
+                    class="flex items-center justify-between"
+                  >
+                    <div class="flex items-center gap-2">
+                      <span class="font-medium text-gray-200">{{
+                        plan.name
+                      }}</span>
+                      <span
+                        v-if="plan.discount"
+                        class="bg-yellow-400 text-black font-medium text-xs px-2 py-1 rounded-full"
+                      >
+                        {{ plan.discount }}
+                      </span>
+                    </div>
+                    <div class="text-lg font-bold text-yellow-400">
+                      {{ plan.price }}
+                    </div>
+                  </div>
+                </div>
+
+                <div class="pt-6 pb-6 px-0">
+                  <button
+                    class="w-full bg-gradient-to-r from-yellow-500 to-yellow-600 text-black font-bold rounded-md py-3 shadow-lg transition-all hover:from-yellow-400 hover:to-yellow-500"
+                  >
+                    Assinar Royal VIP
+                  </button>
+                </div>
               </div>
             </div>
           </div>
@@ -401,6 +474,93 @@
               </div>
             </div>
           </div>
+
+          <!-- Royal VIP Tab -->
+          <div
+            v-if="activeTab === 'royal'"
+            class="border-2 border-black overflow-hidden rounded-lg royal-vip-card"
+          >
+            <div
+              class="bg-gradient-to-r from-black via-purple-900 to-black text-white py-6"
+            >
+              <div class="flex items-center justify-center gap-2 mb-4">
+                <font-awesome-icon
+                  icon="crown"
+                  class="h-6 w-6 text-yellow-400"
+                />
+                <h3 class="text-2xl font-bold">Plano Royal VIP</h3>
+              </div>
+              <p class="text-purple-200 text-center">
+                A experiência premium definitiva com recursos exclusivos
+              </p>
+            </div>
+
+            <div
+              class="align-helper bg-gradient-to-b from-gray-900 to-gray-800"
+            >
+              <div class="grid md:grid-cols-2 gap-8">
+                <div>
+                  <h3
+                    class="text-xl font-bold text-yellow-400 mb-4 flex items-center gap-2"
+                  >
+                    <font-awesome-icon icon="crown" class="h-5 w-5" /> Vantagens
+                    Royal VIP:
+                  </h3>
+                  <ul class="space-y-3">
+                    <li
+                      v-for="(benefit, index) in alignedFeatures.allRoyalVip"
+                      :key="index"
+                      class="flex items-start gap-2"
+                    >
+                      <font-awesome-icon
+                        icon="check"
+                        class="h-5 w-5 text-yellow-400 flex-shrink-0 mt-0.5"
+                      />
+                      <span class="text-gray-200">{{ benefit }}</span>
+                    </li>
+                  </ul>
+                  <br class="is-hidden-mobile" />
+                </div>
+
+                <div>
+                  <h3 class="text-xl font-bold text-yellow-400 mb-4">
+                    Preços:
+                  </h3>
+                  <div class="space-y-4">
+                    <div
+                      v-for="(plan, index) in royalVipPlans"
+                      :key="index"
+                      class="flex items-center justify-between border-b border-purple-800 pb-3"
+                    >
+                      <div>
+                        <div class="font-medium text-gray-200">
+                          {{ plan.name }}
+                        </div>
+                        <span
+                          v-if="plan.discount"
+                          class="bg-yellow-400 text-black font-medium text-xs px-2 py-1 rounded-full"
+                        >
+                          {{ plan.discount }}
+                        </span>
+                      </div>
+                      <div class="text-lg font-bold text-yellow-400">
+                        {{ plan.price }}
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="mt-6 flex justify-center">
+                    <button
+                      class="bg-gradient-to-r from-yellow-500 to-yellow-600 text-black font-bold border-none w-full py-3 rounded-md hover:from-yellow-400 hover:to-yellow-500"
+                    >
+                      Assinar Royal VIP
+                    </button>
+                  </div>
+                  <br />
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -446,6 +606,7 @@ export default {
         { label: "Comparar Planos", value: "compare" },
         { label: "Prime", value: "prime" },
         { label: "VIP", value: "vip" },
+        { label: "Royal VIP", value: "royal" },
       ],
       currencyOptions: [
         {
@@ -529,6 +690,28 @@ export default {
           discount: "35% OFF",
         },
       ],
+      royalVipPlans: [
+        {
+          name: "Mensal",
+          price: "R$65",
+          discount: null,
+        },
+        {
+          name: "Trimestral",
+          price: "R$156",
+          discount: "20% OFF",
+        },
+        {
+          name: "Semestral",
+          price: "R$285",
+          discount: "27% OFF",
+        },
+        {
+          name: "Anual",
+          price: "R$507",
+          discount: "35% OFF",
+        },
+      ],
     };
   },
   computed: {
@@ -555,10 +738,27 @@ export default {
         "Bonus xp e gold na survival",
       ];
 
+      const royalVipOnly = [
+        "Xp extra no passe de batalha",
+        "Conteúdo exclusivo no passe",
+        "Mais Asura Coins ao vender galos",
+        "Bônus na torre e nas raids",
+        "Xp extra para seu pet (pombo)",
+        "Bonus xp e gold na survival",
+        "145 Treinos extras por dia",
+        "Usar qualquer imagem como background",
+        "Utilizar background gifs",
+        "Limite de givemoney 6x maior",
+        "50% de xp e money extra nos contratos",
+        "Badge exclusiva",
+      ];
+
       return {
         prime: [...commonFeatures, ...primeOnly],
         vip: ["Todas as vantagens do prime", ...vipOnly],
         allVip: [...commonFeatures, ...vipOnly],
+        royalVip: ["Todas as vantagens do VIP", ...royalVipOnly.slice(6)],
+        allRoyalVip: [...commonFeatures, ...royalVipOnly],
       };
     },
   },
@@ -604,9 +804,9 @@ export default {
 
 @media (min-width: 640px) {
   .align-helper {
-    padding-top: 2rem;
-    padding-left: 2rem;
-    padding-right: 2rem;
+    padding-top: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 }
 
@@ -707,5 +907,26 @@ button:hover {
 [data-theme="dark"] .border-2.border-green-400,
 [data-theme="dark"] .border-2.border-purple-400 {
   border-color: #3b4252;
+}
+
+/* Royal VIP Premium Styles */
+.royal-vip-card {
+  box-shadow: 0 0 30px rgba(168, 85, 247, 0.4);
+}
+
+.royal-vip-card:hover {
+  box-shadow: 0 0 40px rgba(234, 179, 8, 0.6);
+}
+
+[data-theme="dark"] .royal-vip-card {
+  box-shadow: 0 0 30px rgba(168, 85, 247, 0.6);
+}
+
+[data-theme="dark"] .royal-vip-card:hover {
+  box-shadow: 0 0 50px rgba(234, 179, 8, 0.8);
+}
+
+[data-theme="dark"] .border-2.border-black {
+  border-color: #8b5cf6;
 }
 </style>
