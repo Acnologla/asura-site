@@ -16,7 +16,6 @@ const background = () => import("../views/Background");
 const pets = () => import("../views/AllPets");
 const pet = () => import("../views/Pet");
 const Galos = () => import("../views/Galos.vue");
-const Commands = () => import("../views/Commands.vue");
 
 Vue.use(VueRouter);
 
@@ -65,11 +64,6 @@ const routes = [
     path: "/privacy",
     name: "Privacy",
     component: Privacy,
-  },
-  {
-    path: "/commands",
-    name: "Commands",
-    component: Commands,
   },
   {
     path: "/galo",

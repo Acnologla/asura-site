@@ -8,7 +8,7 @@
   <div class="card-content">
     <div class="content" style="text-align: left">
         <span v-if="galos.length === 0">
-            Nenhum
+            {{ $t('galos.none') }}
         </span>
         <span v-for="(galo, i) in galos" :key="i">
             {{galo.name}}

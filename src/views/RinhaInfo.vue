@@ -2,7 +2,7 @@
   <div>
     <div class="columns is-variable is-centered is-desktop rinhaInfo">
       <div class="column is-full-mobile is-full-tablet is-half-desktop">
-        <h2>Upgrades</h2>
+        <h2>{{ $t('rinhaInfo.upgrades') }}</h2>
         <hr
           style="margin-left: 5vw; margin-right: 5vw; background-color: #552fbc"
         />
@@ -10,7 +10,7 @@
         <Upgrades />
       </div>
       <div class="column is-full-mobile is-full-tablet is-half-desktop">
-        <h2>Items</h2>
+        <h2>{{ $t('rinhaInfo.items') }}</h2>
         <hr
           style="margin-left: 5vw; margin-right: 5vw; background-color: #552fbc"
         />

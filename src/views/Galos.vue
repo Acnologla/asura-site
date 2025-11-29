@@ -12,12 +12,12 @@
       <div class="columns is-variable is-centered cPrincipal">
         <card
           class="column is-three-quarters-mobile is-half-tablet is-one-third"
-          type="Bom contra"
+          :type="$t('galos.goodAgainst')"
           :galos="findGood(this.current)"
         ></card>
         <card
           class="column is-three-quarters-mobile is-half-tablet is-one-third"
-          type="Ruim contra"
+          :type="$t('galos.badAgainst')"
           :galos="findBad(this.current)"
         ></card>
       </div>
@@ -25,13 +25,13 @@
         type="is-primary"
         style="margin-top: -15px;margin-bottom: 15px;"
         @click="scrollToSkins"
-        >Skins</b-button
+        >{{ $t("galos.skins") }}</b-button
       >
 
       <!-- Passive Skill Section -->
       <div v-if="currentClass && currentClass.passive" class="passive-section">
         <h1 class="passive-title">
-          <span class="passive-icon">✦</span> Habilidade Passiva
+          <span class="passive-icon">✦</span> {{ $t("galos.passiveSkill") }}
           <span class="passive-icon">✦</span>
         </h1>
         <div class="passive-card">
@@ -45,7 +45,7 @@
       </div>
 
       <h1 style="margin-bottom:20px;font-family: Rubik;font-size: 32px">
-        Habilidades
+        {{ $t("galos.skills") }}
       </h1>
       <br />
       <div class="columns is-multiline cPrincipal">
@@ -62,7 +62,7 @@
         style="margin-top:40px;margin-bottom:20px;font-family: Rubik;font-size: 32px"
         id="skins-title"
       >
-        Skins Disponíveis
+        {{ $t("galos.availableSkins") }}
       </h1>
       <div
         v-if="skins.length > 0"
@@ -86,7 +86,7 @@
         </div>
       </div>
       <div v-else class="no-skins">
-        <p>Sem skins disponíveis para este personagem</p>
+        <p>{{ $t("galos.noSkinsAvailable") }}</p>
       </div>
     </center>
   </div>
@@ -285,31 +285,35 @@ export default {
       skins: [],
       rarities: [
         {
-          name: "Comum",
+          name: this.$t ? this.$t("selectMultiple.rarities.common") : "Comum",
           color: "#CDE3FF",
         },
         {
-          name: "Raro",
+          name: this.$t ? this.$t("selectMultiple.rarities.rare") : "Raro",
           color: "#0000FF",
         },
         {
-          name: "Epico",
+          name: this.$t ? this.$t("selectMultiple.rarities.epic") : "Epico",
           color: "#9400D3",
         },
         {
-          name: "Lendario",
+          name: this.$t
+            ? this.$t("selectMultiple.rarities.legendary")
+            : "Lendario",
           color: "#FF9000",
         },
         {
-          name: "Especial",
+          name: this.$t
+            ? this.$t("selectMultiple.rarities.special")
+            : "Especial",
           color: "#FF4040",
         },
         {
-          name: "Mitico",
+          name: this.$t ? this.$t("selectMultiple.rarities.mythic") : "Mitico",
           color: "GRADIENT",
         },
         {
-          name: "Deus",
+          name: this.$t ? this.$t("selectMultiple.rarities.god") : "Deus",
           color: "#FF00FF",
         },
       ],
@@ -353,8 +357,11 @@ export default {
       });
     },
     fetchSkills(selectedClass) {
+      const locale = this.$i18n.locale || "pt";
       return axios
-        .get(`https://info.asurabot.com.br/attacks/${selectedClass.name}.json`)
+        .get(
+          `https://info.asurabot.com.br/attacks/${selectedClass.name}.json?language=${locale}`
+        )
         .then((skills) => {
           skills.data
             .filter((skill) => skill.effect)
@@ -405,13 +412,14 @@ export default {
     },
   },
   async created() {
+    const locale = this.$i18n.locale || "pt";
     await axios
-      .get("https://info.asurabot.com.br/class.json")
+      .get(`https://info.asurabot.com.br/class.json?language=${locale}`)
       .then((classes) => {
         this.classes = classes.data;
       });
     await axios
-      .get("https://info.asurabot.com.br/effects.json")
+      .get(`https://info.asurabot.com.br/effects.json?language=${locale}`)
       .then((effects) => {
         this.effects = effects.data;
       });

@@ -18,20 +18,16 @@
           style="text-align: left"
           class="column is-full-mobile is-full-tablet is-half whyDonate"
         >
-          <h1 class="title">Por que doar para o asura?</h1>
-          <p class="aboutDescription">
-            Atualmente é preciso gastar 100 dolares mensalmente (cerca de 600
-            reais) para hospedar o asura.
-            <br />
-            Doar ajuda o bot a se manter online, faz a qualidade do bot
-            aumentar, fique mais divertido, e ajuda o dono do bot.
-            <br />
-            Caso não tenha dinheiro para doar pro asura voce ainda pode ajudar
-            votando no
-            <a target="_blank" href="https://top.gg/bot/470684281102925844"
-              >top.gg</a
-            >.
-          </p>
+          <h1 class="title">{{ $t("donate.title") }}</h1>
+          <p
+            class="aboutDescription"
+            v-html="
+              $t('donate.description') +
+                ' <a target=\'_blank\' href=\'https://top.gg/bot/470684281102925844\'>' +
+                $t('donate.topgg') +
+                '</a>.'
+            "
+          ></p>
         </div>
       </div>
     </section>
@@ -74,9 +70,8 @@
 import "../assets/main.css";
 import DonatePage from "../components/donate/DonatePage.vue";
 import DonateCard from "../components/DonateCard";
-import VipCard from "../components/VipCard.vue";
 export default {
   name: "Donate",
-  components: { DonateCard, VipCard, DonatePage },
+  components: { DonateCard, DonatePage },
 };
 </script>

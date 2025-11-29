@@ -16,11 +16,10 @@
         <div class="card">
           <header class="card-header">
             <p class="popup-text">
-              Atualmente doaçoes devem ser feitas no privado do acnologla, ou em
-              algum canal no servidor de
-              <a target="_blank" href="https://discord.gg/CfkBZyVsd7"
-                >suporte do discord.</a
-              >
+              {{ $t("donatePage.donationNotice") }}
+              <a target="_blank" href="https://discord.gg/CfkBZyVsd7">{{
+                $t("donatePage.supportDiscord")
+              }}</a>
             </p>
           </header>
         </div>
@@ -31,11 +30,10 @@
         <h1
           class="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-purple-800 mb-4"
         >
-          Apoie nosso servidor
+          {{ $t("donatePage.support") }}
         </h1>
         <p class="text-gray-600 max-w-2xl mx-auto text-lg">
-          Escolha a melhor opção para você e aproveite os benefícios exclusivos
-          em nosso bot.
+          {{ $t("donatePage.subtitle") }}
         </p>
       </div>
 
@@ -78,7 +76,7 @@
             <button
               class="bg-green-500 text-white border-none w-full rounded-md font-medium transition-all duration-300 py-3"
             >
-              Comprar
+              {{ $t("donatePage.buy") }}
             </button>
           </div>
         </div>
@@ -88,10 +86,10 @@
       <div class="max-w-7xl mx-auto mb-16">
         <div class="text-center mb-10">
           <h2 class="text-3xl font-bold text-purple-700 mb-2">
-            Planos de Assinatura
+            {{ $t("donatePage.membershipPlans") }}
           </h2>
           <p class="text-gray-600">
-            Escolha o plano que melhor se adapta às suas necessidades
+            {{ $t("donatePage.membershipSubtitle") }}
           </p>
         </div>
 
@@ -130,9 +128,11 @@
                   <font-awesome-icon icon="hand-sparkles" class="h-8 w-8" />
                 </div>
                 <h3 class="text-2xl font-bold">Prime</h3>
-                <p class="text-green-100 mt-1">Benefícios essenciais</p>
+                <p class="text-green-100 mt-1">
+                  {{ $t("donatePage.primeDesc") }}
+                </p>
                 <div class="mt-4 text-4xl font-bold">R$16</div>
-                <p class="text-green-100">por mês</p>
+                <p class="text-green-100">{{ $t("donatePage.perMonth") }}</p>
               </div>
 
               <div class="space-y-4 align-helper">
@@ -178,7 +178,7 @@
                 <button
                   class="w-full bg-green-500 text-white rounded-md py-3 shadow-lg transition-all"
                 >
-                  Assinar Prime
+                  {{ $t("donatePage.subscribePrime") }}
                 </button>
               </div>
             </div>
@@ -193,9 +193,11 @@
                   <font-awesome-icon icon="crown" class="h-8 w-8" />
                 </div>
                 <h3 class="text-2xl font-bold">VIP</h3>
-                <p class="text-purple-100 mt-1">Todos os benefícios</p>
+                <p class="text-purple-100 mt-1">
+                  {{ $t("donatePage.vipDesc") }}
+                </p>
                 <div class="mt-4 text-4xl font-bold">R$35</div>
-                <p class="text-purple-100">por mês</p>
+                <p class="text-purple-100">{{ $t("donatePage.perMonth") }}</p>
               </div>
 
               <div class="space-y-4 align-helper">
@@ -242,7 +244,7 @@
                 <button
                   class="w-full bg-purple-600 text-white rounded-md py-3 shadow-lg transition-all"
                 >
-                  Assinar VIP
+                  {{ $t("donatePage.subscribeVip") }}
                 </button>
               </div>
             </div>
@@ -262,10 +264,10 @@
                 </div>
                 <h3 class="text-2xl font-bold">Royal VIP</h3>
                 <p class="text-purple-200 mt-1">
-                  Experiência Premium Definitiva
+                  {{ $t("donatePage.royalVipDesc") }}
                 </p>
                 <div class="mt-4 text-4xl font-bold">R$65</div>
-                <p class="text-purple-200">por mês</p>
+                <p class="text-purple-200">{{ $t("donatePage.perMonth") }}</p>
               </div>
 
               <div
@@ -312,7 +314,7 @@
                   <button
                     class="w-full bg-gradient-to-r from-yellow-500 to-yellow-600 text-black font-bold rounded-md py-3 shadow-lg transition-all hover:from-yellow-400 hover:to-yellow-500"
                   >
-                    Assinar Royal VIP
+                    {{ $t("donatePage.subscribeRoyalVip") }}
                   </button>
                 </div>
               </div>
@@ -329,10 +331,12 @@
             >
               <div class="flex items-center justify-center gap-2 mb-4">
                 <font-awesome-icon icon="hand-sparkles" class="h-6 w-6" />
-                <h3 class="text-2xl font-bold">Plano Prime</h3>
+                <h3 class="text-2xl font-bold">
+                  {{ $t("vipFeatures.primePlan") }}
+                </h3>
               </div>
               <p class="text-green-100 text-center">
-                Benefícios essenciais por um preço acessível
+                {{ $t("donatePage.primeAccessiblePrice") }}
               </p>
             </div>
 
@@ -342,8 +346,8 @@
                   <h3
                     class="text-xl font-bold text-green-600 mb-4 flex items-center gap-2"
                   >
-                    <font-awesome-icon icon="star" class="h-5 w-5" /> Vantagens
-                    Prime:
+                    <font-awesome-icon icon="star" class="h-5 w-5" />
+                    {{ $t("donatePage.primeFeatures") }}
                   </h3>
                   <ul class="space-y-3">
                     <li
@@ -361,7 +365,9 @@
                 </div>
 
                 <div>
-                  <h3 class="text-xl font-bold text-green-600 mb-4">Preços:</h3>
+                  <h3 class="text-xl font-bold text-green-600 mb-4">
+                    {{ $t("donatePage.prices") }}
+                  </h3>
                   <div class="space-y-4">
                     <div
                       v-for="(plan, index) in primePlans"
@@ -386,7 +392,7 @@
                     <button
                       class="bg-green-500 text-white border-none w-full py-3 rounded-md"
                     >
-                      Assinar Prime
+                      {{ $t("donatePage.subscribePrime") }}
                     </button>
                   </div>
                   <br />
@@ -405,10 +411,12 @@
             >
               <div class="flex items-center justify-center gap-2 mb-4">
                 <font-awesome-icon icon="crown" class="h-6 w-6" />
-                <h3 class="text-2xl font-bold">Plano VIP</h3>
+                <h3 class="text-2xl font-bold">
+                  {{ $t("vipFeatures.vipPlan") }}
+                </h3>
               </div>
               <p class="text-purple-100 text-center">
-                Acesso completo a todos os benefícios premium
+                {{ $t("donatePage.vipCompleteAccess") }}
               </p>
             </div>
 
@@ -418,8 +426,8 @@
                   <h3
                     class="text-xl font-bold text-purple-700 mb-4 flex items-center gap-2"
                   >
-                    <font-awesome-icon icon="crown" class="h-5 w-5" /> Vantagens
-                    VIP:
+                    <font-awesome-icon icon="crown" class="h-5 w-5" />
+                    {{ $t("donatePage.vipFeatures") }}
                   </h3>
                   <ul class="space-y-3">
                     <li
@@ -439,7 +447,7 @@
 
                 <div>
                   <h3 class="text-xl font-bold text-purple-700 mb-4">
-                    Preços:
+                    {{ $t("donatePage.prices") }}
                   </h3>
                   <div class="space-y-4">
                     <div
@@ -466,7 +474,7 @@
                     <button
                       class="bg-purple-600 text-white border-none w-full py-3 rounded-md"
                     >
-                      Assinar VIP
+                      {{ $t("donatePage.subscribeVip") }}
                     </button>
                   </div>
                   <br />
@@ -488,10 +496,12 @@
                   icon="crown"
                   class="h-6 w-6 text-yellow-400"
                 />
-                <h3 class="text-2xl font-bold">Plano Royal VIP</h3>
+                <h3 class="text-2xl font-bold">
+                  {{ $t("vipFeatures.royalVipPlan") }}
+                </h3>
               </div>
               <p class="text-purple-200 text-center">
-                A experiência premium definitiva com recursos exclusivos
+                {{ $t("donatePage.royalUltimateExperience") }}
               </p>
             </div>
 
@@ -503,8 +513,8 @@
                   <h3
                     class="text-xl font-bold text-yellow-400 mb-4 flex items-center gap-2"
                   >
-                    <font-awesome-icon icon="crown" class="h-5 w-5" /> Vantagens
-                    Royal VIP:
+                    <font-awesome-icon icon="crown" class="h-5 w-5" />
+                    {{ $t("donatePage.royalVipFeatures") }}
                   </h3>
                   <ul class="space-y-3">
                     <li
@@ -524,7 +534,7 @@
 
                 <div>
                   <h3 class="text-xl font-bold text-yellow-400 mb-4">
-                    Preços:
+                    {{ $t("donatePage.prices") }}
                   </h3>
                   <div class="space-y-4">
                     <div
@@ -553,7 +563,7 @@
                     <button
                       class="bg-gradient-to-r from-yellow-500 to-yellow-600 text-black font-bold border-none w-full py-3 rounded-md hover:from-yellow-400 hover:to-yellow-500"
                     >
-                      Assinar Royal VIP
+                      {{ $t("donatePage.subscribeRoyalVip") }}
                     </button>
                   </div>
                   <br />
@@ -602,162 +612,154 @@ export default {
       isComponentModalActive: false,
       isDarkMode:
         document.documentElement.getAttribute("data-theme") === "dark",
-      tabs: [
-        { label: "Comparar Planos", value: "compare" },
-        { label: "Prime", value: "prime" },
-        { label: "VIP", value: "vip" },
-        { label: "Royal VIP", value: "royal" },
-      ],
-      currencyOptions: [
+    };
+  },
+  computed: {
+    primePlans() {
+      return [
         {
-          title: "Compra de dinheiro",
-          description: "Comprar dinheiro avulsamente na sua conta.",
-          priceValue: "R$ 10",
-          priceUnit: "a cada 12000 moedas",
-          icon: "coins",
-        },
-        {
-          title: "Compra de Xp",
-          description: "Comprar Xp avulsamente na sua conta.",
-          priceValue: "R$ 10",
-          priceUnit: "a cada 8000 Xp",
-          icon: "bolt",
-        },
-        {
-          title: "Compra de Asura coins",
-          description: "Comprar Asura coins avulsamente na sua conta.",
-          priceValue: "R$ 15",
-          priceUnit: "a cada 1 Asura Coin",
-          icon: "medal",
-        },
-        {
-          title: "Compra de UserXp",
-          description: "Comprar UserXp avulsamente na sua conta.",
-          priceValue: "R$ 10",
-          priceUnit: "a cada 2000 UserXp",
-          icon: "user",
-        },
-        {
-          title: "Compra de Resets",
-          description: "Comprar Um reset de galo avulsamente na sua conta.",
-          priceValue: "R$ 45",
-          priceUnit: "R$ 45 a cada 1 Reset",
-          icon: "user",
-        },
-      ],
-
-      primePlans: [
-        {
-          name: "Mensal",
+          name: this.$t("donatePage.monthlyPlan"),
           price: "R$16",
           discount: null,
         },
         {
-          name: "Trimestral",
+          name: this.$t("donatePage.quarterlyPlan"),
           price: `R$${Math.round(16 * 3 * 0.9)}`,
           discount: "10% OFF",
         },
         {
-          name: "Semestral",
+          name: this.$t("donatePage.semiannualPlan"),
           price: `R$${Math.round(16 * 6 * 0.8)}`,
           discount: "20% OFF",
         },
         {
-          name: "Anual",
+          name: this.$t("donatePage.annualPlan"),
           price: `R$${Math.round(16 * 12 * 0.7)}`,
           discount: "30% OFF",
         },
-      ],
-      vipPlans: [
+      ];
+    },
+    vipPlans() {
+      return [
         {
-          name: "Mensal",
+          name: this.$t("donatePage.monthlyPlan"),
           price: "R$35",
           discount: null,
         },
         {
-          name: "Trimestral",
+          name: this.$t("donatePage.quarterlyPlan"),
           price: "R$84",
           discount: "20% OFF",
         },
         {
-          name: "Semestral",
+          name: this.$t("donatePage.semiannualPlan"),
           price: "R$153",
           discount: "27% OFF",
         },
         {
-          name: "Anual",
+          name: this.$t("donatePage.annualPlan"),
           price: "R$273",
           discount: "35% OFF",
         },
-      ],
-      royalVipPlans: [
+      ];
+    },
+    royalVipPlans() {
+      return [
         {
-          name: "Mensal",
+          name: this.$t("donatePage.monthlyPlan"),
           price: "R$65",
           discount: null,
         },
         {
-          name: "Trimestral",
+          name: this.$t("donatePage.quarterlyPlan"),
           price: "R$156",
           discount: "20% OFF",
         },
         {
-          name: "Semestral",
+          name: this.$t("donatePage.semiannualPlan"),
           price: "R$285",
           discount: "27% OFF",
         },
         {
-          name: "Anual",
+          name: this.$t("donatePage.annualPlan"),
           price: "R$507",
           discount: "35% OFF",
         },
-      ],
-    };
-  },
-  computed: {
+      ];
+    },
+    tabs() {
+      return [
+        {
+          label: this.$t("donatePage.comparePlans"),
+          value: "compare",
+        },
+        {
+          label: this.$t("donatePage.prime"),
+          value: "prime",
+        },
+        {
+          label: this.$t("donatePage.vip"),
+          value: "vip",
+        },
+        {
+          label: this.$t("donatePage.royalVip"),
+          value: "royal",
+        },
+      ];
+    },
+    currencyOptions() {
+      return [
+        {
+          title: this.$t("donatePage.moneyPurchase"),
+          description: this.$t("donatePage.moneyDesc"),
+          priceValue: "R$ 10",
+          priceUnit: this.$t("donatePage.perCoins"),
+          icon: "coins",
+        },
+        {
+          title: this.$t("donatePage.xpPurchase"),
+          description: this.$t("donatePage.xpDesc"),
+          priceValue: "R$ 10",
+          priceUnit: this.$t("donatePage.perXp"),
+          icon: "bolt",
+        },
+        {
+          title: this.$t("donatePage.asuraCoinsPurchase"),
+          description: this.$t("donatePage.asuraCoinsDesc"),
+          priceValue: "R$ 15",
+          priceUnit: this.$t("donatePage.perAsuraCoin"),
+          icon: "medal",
+        },
+        {
+          title: this.$t("donatePage.userXpPurchase"),
+          description: this.$t("donatePage.userXpDesc"),
+          priceValue: "R$ 10",
+          priceUnit: this.$t("donatePage.perUserXp"),
+          icon: "user",
+        },
+        {
+          title: this.$t("donatePage.resetsPurchase"),
+          description: this.$t("donatePage.resetsDesc"),
+          priceValue: "R$ 45",
+          priceUnit: this.$t("donatePage.perReset"),
+          icon: "user",
+        },
+      ];
+    },
     alignedFeatures() {
-      const commonFeatures = [
-        "Ouro extra e xp extra por treino",
-        "Trocar o nome do galo de graça",
-        "Bônus adicional no comando daily",
-        "Chance extra para conseguir chaves",
-        "Xp e money extra no galinheiro",
-        "Bônus de xp no egg",
-        "Consumíveis duram 30% a mais",
-      ];
-
-      const primeOnly = ["35 treinos extras por dia"];
-
-      const vipOnly = [
-        "85 Treinos extras por dia",
-        "Xp extra no passe de batalha",
-        "Conteúdo exclusivo no passe",
-        "Mais Asura Coins ao vender galos",
-        "Bônus na torre e nas raids",
-        "Xp extra para seu pet (pombo)",
-        "Bonus xp e gold na survival",
-      ];
-
-      const royalVipOnly = [
-        "Xp extra no passe de batalha",
-        "Conteúdo exclusivo no passe",
-        "Mais Asura Coins ao vender galos",
-        "Bônus na torre e nas raids",
-        "Xp extra para seu pet (pombo)",
-        "Bonus xp e gold na survival",
-        "145 Treinos extras por dia",
-        "Usar qualquer imagem como background",
-        "Utilizar background gifs",
-        "Limite de givemoney 6x maior",
-        "50% de xp e money extra nos contratos",
-        "Badge exclusiva",
-      ];
+      const commonFeatures = this.$t("vipFeatures.commonFeatures");
+      const primeOnly = this.$t("vipFeatures.primeOnly");
+      const vipOnly = this.$t("vipFeatures.vipOnly");
+      const royalVipOnly = this.$t("vipFeatures.royalVipOnly");
 
       return {
         prime: [...commonFeatures, ...primeOnly],
-        vip: ["Todas as vantagens do prime", ...vipOnly],
+        vip: [this.$t("vipFeatures.allPrimeFeatures"), ...vipOnly],
         allVip: [...commonFeatures, ...vipOnly],
-        royalVip: ["Todas as vantagens do VIP", ...royalVipOnly.slice(6)],
+        royalVip: [
+          this.$t("vipFeatures.allVipFeatures"),
+          ...royalVipOnly.slice(6),
+        ],
         allRoyalVip: [...commonFeatures, ...royalVipOnly],
       };
     },

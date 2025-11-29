@@ -12,12 +12,12 @@
           :items="trade[user.id]"
           :getItemImage="getItemImage"
           :confirmed="user.confirm"
-          title="Sua oferta"
+          :title="$t('trade.yourOffer')"
           :removeItem="removeItem"
         />
         <br />
         <button class="button is-primary" @click="confirm">
-          {{ user.confirm ? "Cancelar troca" : "Confirmar troca" }}
+          {{ user.confirm ? $t('trade.cancelTrade') : $t('trade.confirmTrade') }}
         </button>
         <SelectTradeItems
           :class="user.confirm ? 'is-blocked' : ''"
@@ -36,7 +36,7 @@
           :items="getReverseTrade"
           :getItemImage="getItemImage"
           :confirmed="other.confirm"
-          title="Oferta dele"
+          :title="$t('trade.theirOffer')"
         />
       </div>
     </div>
@@ -161,11 +161,11 @@ export default {
           }, 1000);
           break;
         case "trade_confirmed":
-          alert("Trade confirmada");
+          alert(this.$t('trade.tradeConfirmed'));
           this.$router.push("/");
           break;
         case "trade_error":
-          alert(`Erro troca, desconfirme e tente denovo: ${message.error}`);
+          alert(`${this.$t('trade.tradeError')}: ${message.error}`);
 
           break;
       }

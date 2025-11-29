@@ -23,11 +23,12 @@ export default {
     };
   },
   async created() {
-    axios.get("https://info.asurabot.com.br/sprites.json").then((result) => {
+    const locale = this.$i18n.locale || 'pt';
+    axios.get(`https://info.asurabot.com.br/sprites.json?language=${locale}`).then((result) => {
       this.sprites = result.data[0];
     });
     await axios
-      .get("https://info.asurabot.com.br/class.json")
+      .get(`https://info.asurabot.com.br/class.json?language=${locale}`)
       .then((classes) => {
         this.classes = classes.data;
       });

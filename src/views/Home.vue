@@ -5,10 +5,9 @@
       <div class="rooster rooster-right"></div>
 
       <div class="text">
-        <h1 class="title">Se divirta no seu Servidor de Discord com o Asura</h1>
+        <h1 class="title">{{ $t("home.title") }}</h1>
         <h2 class="subtitle">
-          Batalhe com outros galos, veja avatares antigos, jogue uno e muito
-          mais
+          {{ $t("home.subtitle") }}
         </h2>
         <div>
           <b-button
@@ -20,7 +19,7 @@
             tag="a"
             @click="btn"
           >
-            <span style="font-weight: 500"> Me adicione </span>
+            <span style="font-weight: 500"> {{ $t("home.addMe") }} </span>
           </b-button>
           <b-button
             tag="a"
@@ -29,7 +28,9 @@
             type="is-primary is-light"
             style="width: 180px"
           >
-            <span style="font-weight: 500"> Servidor de suporte </span>
+            <span style="font-weight: 500">
+              {{ $t("home.supportServer") }}
+            </span>
           </b-button>
         </div>
       </div>
@@ -180,26 +181,23 @@ export default {
     return {
       cards: [
         {
-          title: "Rinha de galo",
-          description:
-            "Voce pode batalhar com seu galo, upar de nivel, desbloquear novos galos, enfrentar uma terrivel dungeon e matar inumeros chefes.   <a href='/tutorial'>Clique aqui para ver o tutorial</a>",
+          title: this.$t("home.cards.roosterFight.title"),
+          description: this.$t("home.cards.roosterFight.description"),
           image: "https://i.imgur.com/KRBafek.png",
         },
         {
-          title: "Avatares antigos",
-          description:
-            "Com o asura em seu servidor voce podera ver os antigos avatares dos seus membros.",
+          title: this.$t("home.cards.oldAvatars.title"),
+          description: this.$t("home.cards.oldAvatars.description"),
           image: "https://i.imgur.com/h8k09QR.png",
         },
         {
-          title: "Minijogos",
-          description: "Voce pode jogar uno, 2048, jogo da velha e connect4.",
+          title: this.$t("home.cards.minigames.title"),
+          description: this.$t("home.cards.minigames.description"),
           image: "https://i.imgur.com/bIj7xSH.png",
         },
         {
-          title: "Manipulação de imagens",
-          description:
-            'Voce pode manipular imagens, colocando elas em uma lixeira, ou até mesmo no "morre praga". ',
+          title: this.$t("home.cards.imageManipulation.title"),
+          description: this.$t("home.cards.imageManipulation.description"),
           image: "https://i.imgur.com/09HR1Er.png",
         },
       ],

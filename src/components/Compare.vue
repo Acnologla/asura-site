@@ -7,7 +7,7 @@
         () => (this.isComponentModalActive = !this.isComponentModalActive)
       "
       type="is-primary is-light"
-      >Comparar</b-button
+      >{{ $t('compare.button') }}</b-button
     >
     <b-modal
       v-model="isComponentModalActive"
@@ -22,13 +22,13 @@
         <div v-on:keyup.enter="compareFn">
           <div class="modal-card" style="width: 80vw">
             <header class="modal-card-head">
-              <p class="modal-card-title">Comparar galos</p>
+              <p class="modal-card-title">{{ $t('compare.title') }}</p>
             </header>
             <section class="modal-card-body">
               <b-input
                 v-on:keyup.enter="() => compareFn()"
                v-model="galo"
-                placeholder="Digite o nome do galo que deseja comparar"
+                :placeholder="$t('compare.placeholder')"
               >
               </b-input>
             </section>

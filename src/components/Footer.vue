@@ -28,8 +28,7 @@
         />
         <div class="footerText">
           <p>
-            Batalhe com outros galos, veja avatares antigos, jogue uno e muito
-            mais
+            {{ $t("footer.description") }}
           </p>
           <div style="font-size: 28px; margin-top: 20px">
             <a target="_blank" href="https://github.com/Acnologla/asura">
@@ -48,7 +47,7 @@
         <div class="center">
           <ul>
             <li class="footerTitle">
-              Asura
+              {{ $t("footer.asura") }}
               <hr
                 style="
                   margin-top: 5px;
@@ -58,30 +57,34 @@
               />
             </li>
             <li>
-              <a @click="about" href="#about">Sobre</a>
+              <a @click="about" href="#about">{{ $t("footer.about") }}</a>
             </li>
             <li>
               <a
                 target="_blank"
                 href=" https://discordapp.com/oauth2/authorize?client_id=470684281102925844&scope=applications.commands%20bot&permissions=8"
-                >Convite</a
+                >{{ $t("footer.invite") }}</a
               >
             </li>
             <li>
-              <a target="_blank" href="https://discord.gg/CfkBZyVsd7"
-                >Servidor de suporte</a
-              >
+              <a target="_blank" href="https://discord.gg/CfkBZyVsd7">{{
+                $t("footer.supportServer")
+              }}</a>
             </li>
             <li>
-              <router-link :to="{ name: 'Commands' }"> Comandos </router-link>
+              <router-link :to="{ name: 'Commands' }">
+                {{ $t("footer.commands") }}
+              </router-link>
             </li>
             <li>
               <a target="_blank" href="https://top.gg/bot/470684281102925844">
-                Votar
+                {{ $t("footer.vote") }}
               </a>
             </li>
             <li>
-              <router-link :to="{ name: 'Donate' }"> Doar </router-link>
+              <router-link :to="{ name: 'Donate' }">
+                {{ $t("footer.donate") }}
+              </router-link>
             </li>
           </ul>
         </div>
@@ -90,7 +93,7 @@
         <div class="center">
           <ul>
             <li class="footerTitle">
-              Rinha
+              {{ $t("footer.rinha") }}
               <hr
                 style="
                   margin-top: 5px;
@@ -101,22 +104,22 @@
             </li>
             <li>
               <router-link :to="{ name: 'RinhaTutorial' }">
-                Tutorial rinha
+                {{ $t("footer.rinhaT") }}
               </router-link>
             </li>
             <li>
               <router-link :to="{ name: 'RinhaInfo' }">
-                Informaçoes da rinha
+                {{ $t("footer.rinhaInfo") }}
               </router-link>
             </li>
             <li>
               <router-link :to="{ name: 'Galos' }">
-                Lista de galos
+                {{ $t("footer.roosterList") }}
               </router-link>
             </li>
             <li>
               <router-link :to="{ name: 'Donate' }">
-                Comprar items
+                {{ $t("footer.buyItems") }}
               </router-link>
             </li>
           </ul>

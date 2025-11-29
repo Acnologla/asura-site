@@ -17,30 +17,23 @@
     </template>
     <template #start>
       <b-navbar-item href="#about" @click="about" class="navItem">
-        Sobre
+        {{ $t("nav.about") }}
       </b-navbar-item>
       <b-navbar-item tag="router-link" :to="{ name: 'Galos' }" class="navItem">
-        Galos
+        {{ $t("nav.roosters") }}
       </b-navbar-item>
       <b-navbar-item tag="router-link" :to="{ name: 'Pets' }" class="navItem">
-        Pombos
+        {{ $t("nav.pigeons") }}
       </b-navbar-item>
       <b-navbar-item
         tag="router-link"
         :to="{ name: 'Backgrounds' }"
         class="navItem"
       >
-        Backgrounds
+        {{ $t("nav.backgrounds") }}
       </b-navbar-item>
       <b-navbar-item tag="router-link" :to="{ name: 'Donate' }" class="navItem">
-        Doaçoes
-      </b-navbar-item>
-      <b-navbar-item
-        tag="router-link"
-        :to="{ name: 'Commands' }"
-        class="navItem"
-      >
-        Comandos
+        {{ $t("nav.donations") }}
       </b-navbar-item>
     </template>
     <template #end>
@@ -48,10 +41,26 @@
         <font-awesome-icon v-if="dark" icon="sun" />
         <font-awesome-icon v-else icon="moon" />
       </b-navbar-item>
+      <b-navbar-item class="navItem" tag="div">
+        <div style="display: flex; align-items: center; gap: 8px;" @click.stop>
+          <font-awesome-icon icon="globe" />
+          <b-field style="margin: 0;">
+            <b-select
+              v-model="$i18n.locale"
+              @input="changeLocale"
+              size="is-small"
+              style="min-width: 60px;"
+            >
+              <option value="pt">🇧🇷</option>
+              <option value="en">🇺🇸</option>
+            </b-select>
+          </b-field>
+        </div>
+      </b-navbar-item>
       <b-navbar-item tag="div" id="add" style="margin-right: 30px">
         <div>
           <a target="_blank" @click="btn" href="#" class="button is-primary">
-            <span style="font-weight: 500"> Me adicione</span>
+            <span style="font-weight: 500"> {{ $t("nav.addMe") }}</span>
           </a>
         </div>
       </b-navbar-item>
@@ -143,6 +152,10 @@ export default {
       this.dark
         ? document.body.setAttribute("data-theme", "dark")
         : document.body.removeAttribute("data-theme");
+    },
+    changeLocale(locale) {
+      this.$i18n.locale = locale;
+      localStorage.setItem("locale", locale);
     },
   },
 };

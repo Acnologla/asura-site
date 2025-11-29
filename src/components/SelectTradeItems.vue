@@ -18,7 +18,7 @@
       expanded
       style="margin-top: -20px;margin-bottom: 20px;"
       class="is-hidden-tablet"
-      placeholder="Secione um tipo"
+      :placeholder="$t('selectTrade.selectType')"
       v-model="selectedTab"
     >
       <option
@@ -45,7 +45,6 @@
 
 <script>
 import TradeItemCard from "./TradeItemCard.vue";
-const sections = ["Roosters", "Items", "Cosmetics", "Shards", "Pets"];
 export default {
   name: "SelectTradeItems",
   props: {
@@ -58,7 +57,16 @@ export default {
     TradeItemCard,
   },
   data() {
-    return { sections, selectedTab: 0 };
+    return { 
+      sections: [
+        this.$t ? this.$t('selectTrade.roosters') : "Roosters",
+        this.$t ? this.$t('selectTrade.items') : "Items",
+        this.$t ? this.$t('selectTrade.cosmetics') : "Cosmetics",
+        this.$t ? this.$t('selectTrade.shards') : "Shards",
+        this.$t ? this.$t('selectTrade.pets') : "Pets",
+      ], 
+      selectedTab: 0 
+    };
   },
   methods: {
     getSectionItems(section) {
@@ -68,24 +76,26 @@ export default {
         this.user.pets
       );
       const items = mapped.filter((m) => m.tradeType === "item");
-      switch (section) {
-        case "Roosters":
-          return mapped.filter((m) => m.tradeType === "rooster");
-
-        case "Pets":
-          return mapped.filter((m) => m.tradeType === "pet");
-
-        case "Items":
-          return items
-            .filter((t) => t.type === 2)
-            .filter((t) => t.rarity !== 6);
-
-        case "Cosmetics":
-          return items.filter((t) => t.type === 3);
-
-        case "Shards":
-          return items.filter((t) => t.type === 5);
+      const roostersKey = this.$t ? this.$t('selectTrade.roosters') : "Roosters";
+      const petsKey = this.$t ? this.$t('selectTrade.pets') : "Pets";
+      const itemsKey = this.$t ? this.$t('selectTrade.items') : "Items";
+      const cosmeticsKey = this.$t ? this.$t('selectTrade.cosmetics') : "Cosmetics";
+      const shardsKey = this.$t ? this.$t('selectTrade.shards') : "Shards";
+      
+      if (section === roostersKey) {
+        return mapped.filter((m) => m.tradeType === "rooster");
+      } else if (section === petsKey) {
+        return mapped.filter((m) => m.tradeType === "pet");
+      } else if (section === itemsKey) {
+        return items
+          .filter((t) => t.type === 2)
+          .filter((t) => t.rarity !== 6);
+      } else if (section === cosmeticsKey) {
+        return items.filter((t) => t.type === 3);
+      } else if (section === shardsKey) {
+        return items.filter((t) => t.type === 5);
       }
+      return [];
     },
   },
 };

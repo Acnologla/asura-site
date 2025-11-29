@@ -59,9 +59,12 @@ export default {
     if (this.$route.query.galo) {
       this.selected = parseInt(this.$route.query.galo);
     }
-    axios.get("https://info.asurabot.com.br/sprites.json").then((result) => {
-      this.sprites = result.data[0];
-    });
+    const locale = this.$i18n.locale || "pt";
+    axios
+      .get(`https://info.asurabot.com.br/sprites.json?language=${locale}`)
+      .then((result) => {
+        this.sprites = result.data[0];
+      });
   },
 };
 </script>

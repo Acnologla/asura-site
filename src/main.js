@@ -4,6 +4,7 @@ import "@/assets/bulma.css";
 import Vue from "vue";
 import App from "./App.vue";
 import router from "./router";
+import i18n from "./i18n";
 
 import {
   Button,
@@ -29,6 +30,7 @@ import {
   faMinusCircle,
   faChevronRight,
   faSearch,
+  faGlobe,
 } from "@fortawesome/free-solid-svg-icons";
 import { faGithub, faDiscord } from "@fortawesome/free-brands-svg-icons";
 
@@ -43,7 +45,8 @@ library.add(
   faChevronRight,
   faGithub,
   faDiscord,
-  faSearch
+  faSearch,
+  faGlobe
 );
 Vue.component("font-awesome-icon", FontAwesomeIcon);
 
@@ -61,5 +64,6 @@ Vue.use(Tabs);
 Vue.use(Menu);
 new Vue({
   router,
+  i18n,
   render: (h) => h(App),
 }).$mount("#app");

@@ -7,12 +7,12 @@
     </header>
     <div class="card-content">
       <div class="content" style="text-align: left">
-        Dano minimo: {{ skill.damage[0] }}
+        {{ $t("skill.minDamage") }}: {{ skill.damage[0] }}
         <span v-if="toCompare" :class="this.isBetterDamage()[0]">
           {{ toCompare.damage[0] }}
         </span>
         <br />
-        Dano maximo: {{ skill.damage[1] }}
+        {{ $t("skill.maxDamage") }}: {{ skill.damage[1] }}
         <span v-if="toCompare" :class="this.isBetterDamage()[1]">
           {{ toCompare.damage[1] }}
         </span>
@@ -21,9 +21,9 @@
           <div v-if="effect" style="cursor: pointer" @click="changeEffect">
             <Effect :skill="skill" />
           </div>
-          <b-button v-else @click="changeEffect" type="is-primary is-light"
-            >Efeito</b-button
-          >
+          <b-button v-else @click="changeEffect" type="is-primary is-light">{{
+            $t("skill.effect")
+          }}</b-button>
         </div>
         <div v-if="toCompare && toCompare.effect">
           <hr />
@@ -37,7 +37,7 @@
               >{{ toCompare.effect.effect.name }}
             </span>
             <br />
-            Chance:
+            {{ $t("skill.chance") }}:
             <span
               :class="
                 toCompare.effect.chance >= skill.effect.chance ? 'up' : 'down'
@@ -46,7 +46,7 @@
               {{ toCompare.effect.chance * 100 }}%
             </span>
             <br />
-            Turnos:
+            {{ $t("skill.turns") }}:
             <span
               :class="
                 toCompare.effect.effect.turns >= skill.effect.effect.turns
@@ -58,7 +58,7 @@
             </span>
             <br />
             <span v-if="toCompare.effect.effect.type === 1">
-              Dano minimo:
+              {{ $t("skill.minDamage") }}:
               <span
                 :class="
                   toCompare.effect.effect.range[0] >=
@@ -70,7 +70,7 @@
                 {{ toCompare.effect.effect.range[0] }}
               </span>
               <br />
-              Dano maximo:
+              {{ $t("skill.maxDamage") }}:
               <span
                 :class="
                   toCompare.effect.effect.range[1] >=
@@ -83,7 +83,7 @@
               </span>
             </span>
             <span v-if="toCompare.effect.effect.type === 2">
-              Cura minima:<span
+              {{ $t("skill.minHeal") }}:<span
                 :class="
                   toCompare.effect.effect.range[0] >=
                   skill.effect.effect.range[0]
@@ -94,7 +94,7 @@
                 {{ toCompare.effect.effect.range[0] }}
               </span>
               <br />
-              Cura maxima:
+              {{ $t("skill.maxHeal") }}:
               <span
                 :class="
                   toCompare.effect.effect.range[1] >=
@@ -106,9 +106,11 @@
                 {{ toCompare.effect.effect.range[1] }}
               </span>
             </span>
-            <span v-if="toCompare.effect.effect.type === 3">Stun: 1 turno</span>
+            <span v-if="toCompare.effect.effect.type === 3">{{
+              $t("skill.stun")
+            }}</span>
             <span v-if="toCompare.effect.effect.type === 4"
-              >Dano reduzido:
+              >{{ $t("skill.reducedDamage") }}:
               <span
                 :class="
                   toCompare.effect.effect.range[0] >=
@@ -120,25 +122,26 @@
                 {{ toCompare.effect.effect.range[0] }}%
               </span></span
             >
-            <span v-if="toCompare.effect.effect.type === 5"
-              >Refletir o proximo ataque</span
-            >
+            <span v-if="toCompare.effect.effect.type === 5">{{
+              $t("skill.reflectNext")
+            }}</span>
             <span v-if="toCompare.effect.effect.type === 6"
-              >Fragilidade: {{ toCompare.effect.effect.range[0] }}%</span
+              >{{ $t("skill.fragility") }}:
+              {{ toCompare.effect.effect.range[0] }}%</span
             >
           </p>
           <b-button
             v-else
             @click="toCompareChangeEffect"
             type="is-primary is-light"
-            >Efeito Comparar</b-button
+            >{{ $t("skill.compareEffect") }}</b-button
           >
         </div>
       </div>
     </div>
     <footer class="card-footer">
       <p class="card-footer-item" style="color: #552fbc">
-        Level: {{ skill.level }}
+        {{ $t("skill.level") }}: {{ skill.level }}
         <span
           v-if="toCompare"
           :class="toCompare.level <= skill.level ? 'up' : 'down'"
@@ -148,7 +151,7 @@
       </p>
 
       <p v-if="skill.evolved" class="card-footer-item" style="color: #552fbc">
-        Evoluida
+        {{ $t("skill.evolved") }}
       </p>
     </footer>
   </div>

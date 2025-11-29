@@ -20,25 +20,30 @@ export default {
   data() {
     return {
       names: [
-        "Comum",
-        "Raro",
-        "Epico",
-        "Lendario",
-        "Especial",
-        "Evento",
-        "Mitico",
+        this.$t ? this.$t("items.common") : "Comum",
+        this.$t ? this.$t("items.rare") : "Raro",
+        this.$t ? this.$t("items.epic") : "Epico",
+        this.$t ? this.$t("items.legendary") : "Lendario",
+        this.$t ? this.$t("items.special") : "Especial",
+        this.$t ? this.$t("items.event") : "Evento",
+        this.$t ? this.$t("items.mythic") : "Mitico",
       ],
       items: [],
       effects: [],
     };
   },
   created() {
-    axios.get("https://info.asurabot.com.br/effects.json").then((effects) => {
-      this.effects = effects.data;
-    });
-    axios.get("https://info.asurabot.com.br/items.json").then((items) => {
-      this.items = items.data;
-    });
+    const locale = this.$i18n.locale || "pt";
+    axios
+      .get(`https://info.asurabot.com.br/effects.json?language=${locale}`)
+      .then((effects) => {
+        this.effects = effects.data;
+      });
+    axios
+      .get(`https://info.asurabot.com.br/items.json?language=${locale}`)
+      .then((items) => {
+        this.items = items.data;
+      });
   },
 };
 </script>

@@ -19,9 +19,12 @@ export default {
     };
   },
   created() {
-    axios.get("https://info.asurabot.com.br/upgrades.json").then((upgrades) => {
-      this.upgrades = upgrades.data;
-    });
+    const locale = this.$i18n.locale || "pt";
+    axios
+      .get(`https://info.asurabot.com.br/upgrades.json?language=${locale}`)
+      .then((upgrades) => {
+        this.upgrades = upgrades.data;
+      });
   },
 };
 </script>

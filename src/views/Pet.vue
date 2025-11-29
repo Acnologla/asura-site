@@ -1,9 +1,9 @@
 <template>
   <div class="page-container">
     <div class="back-button">
-      <b-button type="is-primary" @click="$router.push({ name: 'Pets' })"
-        >Voltar</b-button
-      >
+      <b-button type="is-primary" @click="$router.push({ name: 'Pets' })">{{
+        $t("pet.back")
+      }}</b-button>
     </div>
     <div class="pet-detail" v-if="pet">
       <div class="container">
@@ -25,7 +25,7 @@
           </div>
 
           <div class="card-content">
-            <h2 class="section-title">Habilidades</h2>
+            <h2 class="section-title">{{ $t("pet.skills") }}</h2>
             <div class="columns is-multiline is-mobile skills-container">
               <div
                 class="column is-full-mobile is-half-tablet is-one-third-desktop"
@@ -62,31 +62,35 @@ export default {
       effects: [],
       rarities: [
         {
-          name: "Comum",
+          name: this.$t ? this.$t("selectMultiple.rarities.common") : "Comum",
           color: "#CDE3FF",
         },
         {
-          name: "Raro",
+          name: this.$t ? this.$t("selectMultiple.rarities.rare") : "Raro",
           color: "#0000FF",
         },
         {
-          name: "Epico",
+          name: this.$t ? this.$t("selectMultiple.rarities.epic") : "Epico",
           color: "#9400D3",
         },
         {
-          name: "Lendario",
+          name: this.$t
+            ? this.$t("selectMultiple.rarities.legendary")
+            : "Lendario",
           color: "#FF9000",
         },
         {
-          name: "Especial",
+          name: this.$t
+            ? this.$t("selectMultiple.rarities.special")
+            : "Especial",
           color: "#FF4040",
         },
         {
-          name: "Mitico",
+          name: this.$t ? this.$t("selectMultiple.rarities.mythic") : "Mitico",
           color: "GRADIENT",
         },
         {
-          name: "Deus",
+          name: this.$t ? this.$t("selectMultiple.rarities.god") : "Deus",
           color: "#FF00FF",
         },
       ],
@@ -155,8 +159,9 @@ export default {
 
     if (!isNaN(this.petId)) {
       try {
+        const locale = this.$i18n.locale || "pt";
         const effectsResponse = await fetch(
-          "https://info.asurabot.com.br/effects.json"
+          `https://info.asurabot.com.br/effects.json?language=${locale}`
         );
         this.effects = await effectsResponse.json();
 

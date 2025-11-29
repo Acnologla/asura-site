@@ -4,7 +4,7 @@
       <b-field>
         <b-select
           rounded
-          placeholder="Raridade"
+          :placeholder="$t('selectMultiple.rarity')"
           v-model="filterRarity"
           icon="account"
           size="is-medium"
@@ -13,14 +13,14 @@
             {{ rarity.name }}
           </option>
           <option :value="null" key="all">
-            Todas
+            {{ $t('selectMultiple.all') }}
           </option>
         </b-select>
       </b-field>
       <b-field style="min-width: 85%;">
         <b-input
           rounded
-          placeholder="Procurar..."
+          :placeholder="$t('selectMultiple.search')"
           type="search"
           size="is-medium"
           icon="search"
@@ -89,31 +89,31 @@ export default {
       filterRarity: null,
       raritiesData: [
         {
-          name: "Comum",
+          name: this.$t ? this.$t('selectMultiple.rarities.common') : "Comum",
           color: "#CDE3FF",
         },
         {
-          name: "Raro",
+          name: this.$t ? this.$t('selectMultiple.rarities.rare') : "Raro",
           color: "#0000FF",
         },
         {
-          name: "Epico",
+          name: this.$t ? this.$t('selectMultiple.rarities.epic') : "Epico",
           color: "#9400D3",
         },
         {
-          name: "Lendario",
+          name: this.$t ? this.$t('selectMultiple.rarities.legendary') : "Lendario",
           color: "#FF9000",
         },
         {
-          name: "Especial",
+          name: this.$t ? this.$t('selectMultiple.rarities.special') : "Especial",
           color: "#FF4040",
         },
         {
-          name: "Mitico",
+          name: this.$t ? this.$t('selectMultiple.rarities.mythic') : "Mitico",
           color: "GRADIENT",
         },
         {
-          name: "Deus",
+          name: this.$t ? this.$t('selectMultiple.rarities.god') : "Deus",
           color: "#FF00FF",
         },
       ],
