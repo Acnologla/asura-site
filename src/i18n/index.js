@@ -24,7 +24,7 @@ const messages = {
         roosterFight: {
           title: "Rinha de galo",
           description:
-            "Voce pode batalhar com seu galo, upar de nivel, desbloquear novos galos, enfrentar uma terrivel dungeon e matar inumeros chefes.   <a href='/tutorial'>Clique aqui para ver o tutorial</a>",
+            "Voce pode batalhar com seu galo, upar de nivel, desbloquear novos galos, enfrentar uma terrivel dungeon e matar inumeros chefes.   <a href='https://docs.asurabot.com.br'>Clique aqui para ver o tutorial</a>",
         },
         oldAvatars: {
           title: "Avatares antigos",
@@ -262,7 +262,7 @@ const messages = {
         roosterFight: {
           title: "Rooster Fight",
           description:
-            "You can battle with your rooster, level up, unlock new roosters, face a terrible dungeon and kill countless bosses.   <a href='/tutorial'>Click here to see the tutorial</a>",
+            "You can battle with your rooster, level up, unlock new roosters, face a terrible dungeon and kill countless bosses.   <a href='https://docs.asurabot.com.br'>Click here to see the tutorial</a>",
         },
         oldAvatars: {
           title: "Old Avatars",

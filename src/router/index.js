@@ -5,7 +5,6 @@ import Home from "../views/Home";
 import Donate from "../views/Donate";
 import Invite from "../views/Invite.vue";
 
-const RinhaTutorial = () => import("../views/RinhaTutorial");
 const RinhaInfo = () => import("../views/RinhaInfo");
 const CreateGalo = () => import("../views/CreateGalo");
 const Terms = () => import("../views/Terms");
@@ -79,11 +78,6 @@ const routes = [
     path: "/donate",
     name: "Donate",
     component: Donate,
-  },
-  {
-    path: "/tutorial",
-    name: "RinhaTutorial",
-    component: RinhaTutorial,
   },
   {
     path: "/info",
