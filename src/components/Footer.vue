@@ -103,9 +103,13 @@
               />
             </li>
             <li>
-              <router-link :to="{ name: 'RinhaTutorial' }">
+              <a
+                href="https://docs.asurabot.com.br/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 {{ $t("footer.rinhaT") }}
-              </router-link>
+              </a>
             </li>
             <li>
               <router-link :to="{ name: 'RinhaInfo' }">
