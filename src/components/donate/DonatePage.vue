@@ -599,7 +599,7 @@ library.add(
   faBolt,
   faMedal,
   faUser,
-  faHandSparkles
+  faHandSparkles,
 );
 
 export default {
@@ -726,7 +726,7 @@ export default {
         {
           title: this.$t("donatePage.asuraCoinsPurchase"),
           description: this.$t("donatePage.asuraCoinsDesc"),
-          priceValue: "R$ 15",
+          priceValue: "R$ 10",
           priceUnit: this.$t("donatePage.perAsuraCoin"),
           icon: "medal",
         },
@@ -740,7 +740,7 @@ export default {
         {
           title: this.$t("donatePage.resetsPurchase"),
           description: this.$t("donatePage.resetsDesc"),
-          priceValue: "R$ 45",
+          priceValue: "R$ 35",
           priceUnit: this.$t("donatePage.perReset"),
           icon: "user",
         },
