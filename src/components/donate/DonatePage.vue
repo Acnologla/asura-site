@@ -740,7 +740,7 @@ export default {
         {
           title: this.$t("donatePage.resetsPurchase"),
           description: this.$t("donatePage.resetsDesc"),
-          priceValue: "R$ 35",
+          priceValue: "R$ 30",
           priceUnit: this.$t("donatePage.perReset"),
           icon: "user",
         },
