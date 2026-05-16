@@ -15,7 +15,7 @@ export const GetCosmeticInfo = () =>
       return cosmetics.data;
     });
 
-const PET_NUMBER = 20;
+const PET_NUMBER = 21;
 
 export const GetPets = () =>
   new Array(PET_NUMBER).fill(0).map((_, i) =>

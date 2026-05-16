@@ -1,40 +1,59 @@
 <template>
-  <div class="page-container">
-    <div class="back-button">
-      <b-button type="is-primary" @click="$router.push({ name: 'Backgrounds' })"
-        >Voltar</b-button
-      >
-    </div>
-    <div class="background-detail" v-if="background">
+  <div v-if="background" class="bg-detail">
+    <section class="breadcrumb-section">
+      <div class="container breadcrumb">
+        <router-link :to="{ name: 'Home' }">{{
+          $t("nav.about")
+        }}</router-link>
+        <span>/</span>
+        <router-link :to="{ name: 'Backgrounds' }">{{
+          $t("nav.backgrounds")
+        }}</router-link>
+        <span>/</span>
+        <span class="current">{{ background.name }}</span>
+      </div>
+    </section>
+
+    <section class="header-section">
       <div class="container">
-        <div class="card" :class="{ 'mythic-card': background.rarity === 5 }">
-          <div class="card-header">
-            <h1 class="card-title">{{ background.name }}</h1>
-            <div
-              class="rarity-badge"
-              :style="{ backgroundColor: getRarityColor(background.rarity) }"
-            >
-              {{ getRarityName(background.rarity) }}
+        <div class="spec-line">
+          <span>FILE · {{ fileNum }}</span>
+          <span class="dot" />
+          <span class="strong">{{ background.name.toUpperCase() }}</span>
+          <span :class="['rarity-text', `rarity-${background.rarity}`]"
+            >★ {{ rarityLabel.toUpperCase() }}</span
+          >
+        </div>
+
+        <div class="bg-hero">
+          <div class="bg-image-wrap" :class="{ 'mythic-wrap': background.rarity === 5 }">
+            <img :src="background.value" :alt="background.name" class="bg-image" />
+          </div>
+          <div class="bg-meta">
+            <div class="meta-row">
+              <span class="meta-label">{{ $t("background.name") }}</span>
+              <span class="meta-val">{{ background.name }}</span>
             </div>
-          </div>
-
-          <div class="card-image">
-            <figure class="image">
-              <img :src="background.value" :alt="background.name" />
-            </figure>
-          </div>
-
-          <div class="card-content">
-            <div class="details-section">
-              <div class="detail-item">
-                <span class="detail-label">Type:</span>
-                <span class="detail-value">Background</span>
+            <div class="meta-row">
+              <span class="meta-label">{{ $t("background.rarity") }}</span>
+              <div :class="['rarity-pill', `rarity-${background.rarity}`]">
+                ★ {{ rarityLabel }}
               </div>
+            </div>
+            <div class="meta-row">
+              <span class="meta-label">{{ $t("background.type") }}</span>
+              <span class="meta-val">Background</span>
             </div>
           </div>
         </div>
+
+        <div style="text-align: center; margin-top: 32px">
+          <router-link to="/backgrounds" class="btn btn-ghost">
+            ← {{ $t("pet.back") }}
+          </router-link>
+        </div>
       </div>
-    </div>
+    </section>
   </div>
 </template>
 
@@ -44,272 +63,188 @@ import { GetCosmeticInfo } from "../trade/info.js";
 export default {
   name: "BackgroundDetail",
   data() {
-    return {
-      background: null,
-      backgroundId: null,
-      rarities: [
-        {
-          name: "Comum",
-          color: "#CDE3FF",
-        },
-        {
-          name: "Raro",
-          color: "#0000FF",
-        },
-        {
-          name: "Epico",
-          color: "#9400D3",
-        },
-        {
-          name: "Lendario",
-          color: "#FF9000",
-        },
-        {
-          name: "Especial",
-          color: "#FF4040",
-        },
-        {
-          name: "Mitico",
-          color: "GRADIENT",
-        },
-        {
-          name: "Deus",
-          color: "#FF00FF",
-        },
-      ],
-    };
+    return { background: null };
+  },
+  computed: {
+    rarityNames() {
+      return [
+        this.$t("selectMultiple.rarities.common"),
+        this.$t("selectMultiple.rarities.rare"),
+        this.$t("selectMultiple.rarities.epic"),
+        this.$t("selectMultiple.rarities.legendary"),
+        this.$t("selectMultiple.rarities.special"),
+        this.$t("selectMultiple.rarities.mythic"),
+        this.$t("selectMultiple.rarities.god"),
+      ];
+    },
+    rarityLabel() {
+      return (
+        (this.background && this.rarityNames[this.background.rarity]) || ""
+      );
+    },
+    fileNum() {
+      const id = parseInt(this.$route.query.background, 10);
+      return String((isNaN(id) ? 0 : id) + 1).padStart(3, "0");
+    },
   },
   methods: {
-    getRarityName(rarityIndex) {
-      return rarityIndex >= 0 && rarityIndex < this.rarities.length
-        ? this.rarities[rarityIndex].name
-        : "Comum";
-    },
-    getRarityColor(rarityIndex) {
-      const color =
-        rarityIndex >= 0 && rarityIndex < this.rarities.length
-          ? this.rarities[rarityIndex].color
-          : "#CDE3FF";
-
-      if (color === "GRADIENT") {
-        return "#b827fc";
-      }
-
-      return color;
-    },
-    getGradientStyle() {
-      return {
-        background:
-          "linear-gradient(to right, #b827fc, #2c90fc, #b8fd33, #fec837, #fd1892)",
-      };
-    },
-  },
-  async created() {
-    this.backgroundId = parseInt(this.$route.query.background);
-
-    if (!isNaN(this.backgroundId)) {
+    async load() {
+      const id = parseInt(this.$route.query.background, 10);
+      if (isNaN(id)) return;
       try {
         const cosmetics = await GetCosmeticInfo();
         const backgrounds = cosmetics.filter((item) => item.type === 0);
-
-        this.background = backgrounds[this.backgroundId + 1];
-      } catch (error) {
-        console.error("Error fetching background:", error);
+        this.background = backgrounds[id] || backgrounds[id + 1] || null;
+      } catch (e) {
+        /* render empty */
       }
-    }
+    },
+  },
+  watch: {
+    "$i18n.locale"() {
+      this.load();
+    },
+    "$route.query.background"() {
+      this.load();
+    },
+  },
+  created() {
+    this.load();
   },
 };
 </script>
 
 <style scoped>
-.page-container {
-  padding: 2rem;
-  max-width: 1200px;
-  margin: 0 auto;
+.bg-detail {
+  padding-bottom: 60px;
 }
 
-.background-detail {
+.breadcrumb-section {
+  padding: 32px 0 16px;
+}
+.breadcrumb {
   display: flex;
-  flex-direction: column;
   align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: var(--ink-3);
+}
+.breadcrumb a {
+  color: inherit;
+}
+.breadcrumb .current {
+  color: var(--ink);
 }
 
-.container {
-  width: 100%;
-  max-width: 900px;
+.header-section {
+  padding: 8px 0 40px;
 }
-
-.card {
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  background: white;
-  margin-bottom: 2rem;
-}
-
-.mythic-card {
-  position: relative;
-}
-
-.mythic-card::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  border: 3px solid transparent;
-  border-radius: 12px;
-  background: linear-gradient(
-      to bottom right,
-      #b827fc 0%,
-      #2c90fc 25%,
-      #b8fd33 50%,
-      #fec837 75%,
-      #fd1892 100%
-    )
-    border-box;
-  -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
-  -webkit-mask-composite: destination-out;
-  mask-composite: exclude;
-  pointer-events: none;
-}
-
-.card-header {
-  padding: 1.5rem;
+.spec-line {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid #f0f0f0;
+  gap: 14px;
+  flex-wrap: wrap;
+  padding: 14px 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  margin-bottom: 36px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-3);
 }
-
-.card-title {
-  font-family: "Rubik", sans-serif;
-  font-size: 1.75rem;
-  margin: 0;
+.spec-line .dot {
+  width: 4px;
+  height: 4px;
+  border-radius: 999px;
+  background: var(--ink-3);
+}
+.spec-line .strong {
+  color: var(--ink);
   font-weight: 600;
 }
 
-.rarity-badge {
-  padding: 0.5rem 1rem;
-  border-radius: 20px;
-  color: white;
-  font-weight: bold;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+.bg-hero {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 32px;
+  align-items: start;
 }
-
-.card-image {
+.bg-image-wrap {
   width: 100%;
+  border-radius: var(--radius-lg);
+  background: #fff;
+  border: 1px solid var(--line);
+  padding: 12px;
   overflow: hidden;
 }
-
-.image {
-  margin: 0;
-  display: flex;
-  justify-content: center;
-}
-
-.back-button {
-  margin-top: 15px;
-  margin-bottom: 1rem;
-  text-align: left;
-  align-self: left;
-}
-
-.image img {
-  width: auto;
+.bg-image {
+  width: 100%;
   height: auto;
-  max-width: 100%;
+  display: block;
+  border-radius: 12px;
+}
+.mythic-wrap {
+  padding: 4px;
+  border: 0;
+  background: linear-gradient(
+    to bottom right,
+    #b827fc 0%,
+    #2c90fc 25%,
+    #b8fd33 50%,
+    #fec837 75%,
+    #fd1892 100%
+  );
+}
+.mythic-wrap .bg-image {
+  border-radius: 10px;
 }
 
-.card-content {
-  padding: 1.5rem;
-}
-
-.details-section {
-  display: flex;
-  justify-content: center;
-}
-
-.detail-item {
+.bg-meta {
   display: flex;
   flex-direction: column;
-  padding: 0.5rem;
-  background-color: #f9f9f9;
-  border-radius: 8px;
-  min-width: 120px;
-  text-align: center;
+  gap: 14px;
+  padding: 20px;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
 }
-
-.detail-label {
-  font-size: 0.9rem;
-  color: #777;
-  margin-bottom: 0.25rem;
+.meta-row {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
 }
-
-.detail-value {
+.meta-label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+.meta-val {
+  font-size: 16px;
   font-weight: 600;
-  font-size: 1.1rem;
 }
 
-.actions {
-  display: flex;
-  justify-content: center;
-  margin-top: 1rem;
-}
-
-.not-found-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 60vh;
-}
-
-.not-found-content {
-  text-align: center;
-  background-color: white;
-  padding: 3rem;
-  border-radius: 12px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-}
-
-/* Dark mode styles */
-[data-theme="dark"] .card,
-[data-theme="dark"] .not-found-content {
-  background-color: #2a2d32;
-}
-
-[data-theme="dark"] .detail-item {
-  background-color: #363a41;
-}
-
-[data-theme="dark"] .card-title,
-[data-theme="dark"] .title,
-[data-theme="dark"] .detail-value {
-  color: #eceff4;
-}
-
-[data-theme="dark"] .detail-label {
-  color: #adbac7;
-}
-
-[data-theme="dark"] .card-header {
-  border-bottom-color: #363a41;
+.rarity-pill {
+  align-self: flex-start;
+  padding: 6px 12px;
+  border-radius: 999px;
+  border: 1px solid var(--r);
+  color: var(--r);
+  font-weight: 700;
+  font-size: 11px;
+  font-family: var(--font-mono);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  background: color-mix(in oklab, var(--r) 10%, white);
 }
 
 @media (max-width: 768px) {
-  .page-container {
-    padding: 1rem;
-  }
-
-  .card-header {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1rem;
-  }
-
-  .rarity-badge {
-    align-self: flex-start;
+  .bg-hero {
+    grid-template-columns: 1fr;
+    gap: 20px;
   }
 }
 </style>

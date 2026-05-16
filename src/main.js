@@ -1,5 +1,6 @@
 import "@/assets/tailwind.css";
 import "@/assets/bulma.css";
+import "@/assets/main.css";
 
 import Vue from "vue";
 import App from "./App.vue";

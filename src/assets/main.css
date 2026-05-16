@@ -1,26 +1,418 @@
-.title {
-    font-family: Rubik;
-    width: 80vw;
+/* Asura Bot — Design System */
+
+:root {
+  --bg: #f4f1fb;
+  --bg-2: #efeaf7;
+  --surface: #ffffff;
+  --ink: #14101f;
+  --ink-2: #4a4459;
+  --ink-3: #7b758a;
+  --line: #e6e0f0;
+  --line-2: #d8d0e7;
+
+  --primary: #6938ef;
+  --primary-deep: #4a1fd1;
+  --primary-soft: #ede5ff;
+  --primary-ink: #2a1373;
+
+  --amber: #f0a500;
+  --amber-soft: #fff2cc;
+  --emerald: #14a87a;
+  --emerald-soft: #d8f3e6;
+  --rose: #e23d6b;
+
+  --radius-sm: 10px;
+  --radius: 16px;
+  --radius-lg: 22px;
+  --radius-xl: 28px;
+
+  --shadow-sm: 0 1px 2px rgba(20, 16, 31, 0.04),
+    0 1px 1px rgba(20, 16, 31, 0.03);
+  --shadow: 0 8px 28px -10px rgba(64, 40, 140, 0.16),
+    0 2px 6px -2px rgba(20, 16, 31, 0.04);
+  --shadow-lg: 0 30px 60px -20px rgba(64, 40, 140, 0.28),
+    0 8px 20px -10px rgba(20, 16, 31, 0.08);
+
+  --font-display: "Bricolage Grotesque", system-ui, sans-serif;
+  --font-body: "Hanken Grotesk", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  background: radial-gradient(
+      1200px 600px at 80% -100px,
+      rgba(105, 56, 239, 0.1),
+      transparent 60%
+    ),
+    radial-gradient(
+      900px 500px at -10% 30%,
+      rgba(240, 165, 0, 0.06),
+      transparent 60%
+    ),
+    var(--bg);
+  min-height: 100vh;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+::selection {
+  background: var(--primary);
+  color: #fff;
+}
+
+/* ─── Layout ─── */
+.container {
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 28px;
+}
+
+.section {
+  padding: 96px 0;
+}
+.section-tight {
+  padding: 64px 0;
+}
+
+/* ─── Typography helpers ─── */
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.h-display {
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  line-height: 1.02;
+  color: var(--ink);
+  margin: 0;
+}
+
+.mono {
+  font-family: var(--font-mono);
+}
+.muted {
+  color: var(--ink-3);
+}
+.ink-2 {
+  color: var(--ink-2);
+}
+
+/* ─── Pills, chips, badges, commands ─── */
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+  background: var(--primary-soft);
+  color: var(--primary-ink);
+  border: 1px solid #d9c9ff;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+  background: #fff;
+  border: 1px solid var(--line-2);
+  color: var(--ink-2);
+}
+
+.cmd {
+  font-family: var(--font-mono);
+  font-weight: 500;
+  background: #efeaf7;
+  color: var(--primary-ink);
+  padding: 3px 8px;
+  border-radius: 6px;
+  font-size: 13px;
+  border: 1px solid #ddd2f3;
+}
+
+/* ─── Buttons ─── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 20px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 14px;
+  border: 1px solid transparent;
+  transition: transform 0.15s ease, box-shadow 0.2s ease, background 0.2s,
+    color 0.2s, border-color 0.2s;
+  cursor: pointer;
+  font-family: inherit;
+  text-decoration: none;
+}
+
+.btn-primary {
+  background: linear-gradient(180deg, #7a4af5 0%, #5a25e0 100%);
+  color: #fff;
+  box-shadow: 0 8px 20px -8px rgba(105, 56, 239, 0.6),
+    inset 0 1px 0 rgba(255, 255, 255, 0.18);
+}
+.btn-primary:hover {
+  transform: translateY(-1px);
+  color: #fff;
+}
+
+.btn-ghost {
+  background: #fff;
+  border-color: var(--line-2);
+  color: var(--ink);
+}
+.btn-ghost:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.btn-dark {
+  background: var(--ink);
+  color: #fff;
+}
+.btn-dark:hover {
+  color: #fff;
+  opacity: 0.92;
+}
+
+.btn-discord {
+  background: #5865f2;
+  color: #fff;
+}
+.btn-discord:hover {
+  color: #fff;
+  opacity: 0.92;
+}
+
+/* ─── Card ─── */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+}
+
+/* ─── Nav scrolled ─── */
+.nav-scrolled {
+  background: rgba(244, 241, 251, 0.85) !important;
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--line);
+}
+
+/* ─── Nav link ─── */
+.nav-link {
+  position: relative;
+  padding: 8px 4px;
+  font-weight: 500;
+  color: var(--ink-2);
+  font-size: 14px;
+  background: none;
+  border: 0;
+  cursor: pointer;
+  font-family: inherit;
+}
+.nav-link:hover {
+  color: var(--ink);
+}
+.nav-link.active {
+  color: var(--ink);
+  font-weight: 600;
+}
+.nav-link.active::after {
+  content: "";
+  position: absolute;
+  left: 4px;
+  right: 4px;
+  bottom: 0;
+  height: 2px;
+  background: var(--primary);
+  border-radius: 2px;
+}
+
+/* ─── Rarity colors (legacy API rarity index: 0..6) ─── */
+/* 0 Comum, 1 Raro, 2 Épico, 3 Lendário, 4 Especial, 5 Mítico, 6 Deus */
+.rarity-0,
+.rarity-Comum {
+  --r: #9ca3af;
+}
+.rarity-1,
+.rarity-Raro {
+  --r: #3b82f6;
+}
+.rarity-2,
+.rarity-Épico,
+.rarity-Epico {
+  --r: #a855f7;
+}
+.rarity-3,
+.rarity-Lendário,
+.rarity-Lendario {
+  --r: #f59e0b;
+}
+.rarity-4,
+.rarity-Especial {
+  --r: #ef4444;
+}
+.rarity-5,
+.rarity-Mítico,
+.rarity-Mitico {
+  --r: #14b8a6;
+}
+.rarity-6,
+.rarity-Deus,
+.rarity-Divino {
+  --r: #fbbf24;
+}
+
+.rarity-text {
+  color: var(--r);
+}
+
+/* mythic gradient (rarity 5) */
+.rarity-gradient {
+  background: linear-gradient(
+    to bottom right,
+    #b827fc 0%,
+    #2c90fc 25%,
+    #b8fd33 50%,
+    #fec837 75%,
+    #fd1892 100%
+  );
+}
+
+/* ─── Form controls ─── */
+.input-pill {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: #fff;
+  border: 1px solid var(--line);
+}
+.input-pill input {
+  flex: 1;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  font-size: 14px;
+  font-family: inherit;
+  color: var(--ink);
+  min-width: 0;
+}
+
+.select-pill {
+  padding: 10px 16px;
+  border-radius: 999px;
+  background: #fff;
+  border: 1px solid var(--line);
+  font-size: 13px;
+  color: var(--ink);
+  font-family: inherit;
+  cursor: pointer;
+  outline: none;
+}
+
+/* ─── Loading splash ─── */
+#app:empty::after {
+  content: "Carregando…";
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  color: var(--ink-3);
+  font-family: var(--font-mono);
+  font-size: 12px;
+}
+
+/* ─── Hide scrollbar on horizontal scrollers ─── */
+.h-scroll {
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.h-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+/* ─── Animations ─── */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
   }
-.subtitle {
-    font-family: Rubik;
-    font-weight: 400;
-}
-.aboutDescription {
-    font-family: Rubik;
-    font-weight: 400;
-    font-size: 20px;
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
-[data-theme="dark"] .title, [data-theme="dark"] .subtitle{
-  color: #ECEFF4 !important;
 }
 
-[data-theme="dark"] .menu-label, [data-theme="dark"] .menu-list li span {
-  color: #ECEFF4  !important;
+@keyframes fadeSwap {
+  0% {
+    opacity: 0;
+    transform: scale(0.98);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
-[data-theme="dark"] .menu-list li a:hover:not(.is-active){
-  background-color: #1D1F21;
-  opacity: 0.5;
+.fade-swap {
+  animation: fadeSwap 0.5s ease;
 }
 
+/* ─── Mobile helpers (mirror rework) ─── */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 18px;
+  }
+  .section {
+    padding: 56px 0;
+  }
+  .section-tight {
+    padding: 40px 0;
+  }
+  .h-display {
+    letter-spacing: -0.02em;
+  }
+}
+
+/* ─── Legacy bits kept for Trade page (Bulma/Buefy) ─── */
+/* Buefy modal/card colors are scoped to Trade. Keep minimal overrides. */

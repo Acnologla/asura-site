@@ -1,162 +1,328 @@
 <template>
-  <b-navbar
-    centered
-    :type="dark ? 'is-dark' : ''"
-    class="nav"
-    style="box-shadow: 0px 0px 20px rgba(0,0,0,0.1);max-width: 100vw;"
-    fixed-top
-  >
-    <template #brand>
-      <b-navbar-item
-        style="margin-left: 30px"
-        tag="router-link"
-        :to="{ name: 'Home' }"
-      >
-        <span class="navTitle">Asura Bot</span>
-      </b-navbar-item>
-    </template>
-    <template #start>
-      <b-navbar-item href="#about" @click="about" class="navItem">
-        {{ $t("nav.about") }}
-      </b-navbar-item>
-      <b-navbar-item tag="router-link" :to="{ name: 'Galos' }" class="navItem">
-        {{ $t("nav.roosters") }}
-      </b-navbar-item>
-      <b-navbar-item tag="router-link" :to="{ name: 'Pets' }" class="navItem">
-        {{ $t("nav.pigeons") }}
-      </b-navbar-item>
-      <b-navbar-item
-        tag="router-link"
-        :to="{ name: 'Backgrounds' }"
-        class="navItem"
-      >
-        {{ $t("nav.backgrounds") }}
-      </b-navbar-item>
-      <b-navbar-item tag="router-link" :to="{ name: 'Donate' }" class="navItem">
-        {{ $t("nav.donations") }}
-      </b-navbar-item>
-    </template>
-    <template #end>
-      <b-navbar-item class="navItem" @click="changeTheme">
-        <font-awesome-icon v-if="dark" icon="sun" />
-        <font-awesome-icon v-else icon="moon" />
-      </b-navbar-item>
-      <b-navbar-item class="navItem" tag="div">
-        <div style="display: flex; align-items: center; gap: 8px;" @click.stop>
-          <font-awesome-icon icon="globe" />
-          <b-field style="margin: 0;">
-            <b-select
-              v-model="$i18n.locale"
-              @input="changeLocale"
-              size="is-small"
-              style="min-width: 60px;"
-            >
-              <option value="pt">🇧🇷</option>
-              <option value="en">🇺🇸</option>
-            </b-select>
-          </b-field>
+  <nav :class="['site-nav', { 'nav-scrolled': scrolled }]">
+    <div class="container nav-inner">
+      <router-link :to="{ name: 'Home' }" class="logo-btn">
+        <div class="logo-square">A</div>
+        <div class="logo-text">
+          Asura<span style="color: var(--primary)">Bot</span>
         </div>
-      </b-navbar-item>
-      <b-navbar-item tag="div" id="add" style="margin-right: 30px">
-        <div>
-          <a target="_blank" @click="btn" href="#" class="button is-primary">
-            <span style="font-weight: 500"> {{ $t("nav.addMe") }}</span>
-          </a>
+      </router-link>
+
+      <div class="nav-links" v-if="!isMobile">
+        <router-link
+          v-for="item in navItems"
+          :key="item.id"
+          :to="item.to"
+          custom
+          v-slot="{ href, navigate, isActive }"
+        >
+          <a
+            :href="href"
+            :class="['nav-link', { active: isActive }]"
+            @click="navigate"
+            >{{ item.label }}</a
+          >
+        </router-link>
+      </div>
+
+      <div class="nav-actions" v-if="!isMobile">
+        <div class="lang-toggle">
+          <button
+            v-for="l in ['pt', 'en']"
+            :key="l"
+            :class="['lang-btn', { active: $i18n.locale === l }]"
+            @click="setLang(l)"
+          >
+            {{ l }}
+          </button>
         </div>
-      </b-navbar-item>
-    </template>
-    <template slot-scope="{ toggleActive }" slot="burger">
-      <a
-        style="margin-top:5px;margin-right: 30px"
-        role="button"
-        @click="toggleActive"
-        aria-label="menu"
-        class="navbar-burger burger"
-        ><span aria-hidden="true"></span><span aria-hidden="true"></span
-        ><span aria-hidden="true"></span
-      ></a>
-    </template>
-  </b-navbar>
+        <a class="btn btn-primary" href="#" @click.prevent="invite">
+          <DiscordIcon :size="16" />
+          {{ $t("nav.addMe") }}
+        </a>
+      </div>
+
+      <div class="nav-actions" v-else>
+        <div class="lang-toggle">
+          <button
+            v-for="l in ['pt', 'en']"
+            :key="l"
+            :class="['lang-btn', 'compact', { active: $i18n.locale === l }]"
+            @click="setLang(l)"
+          >
+            {{ l }}
+          </button>
+        </div>
+        <button class="burger" @click="menuOpen = !menuOpen" aria-label="Menu">
+          <svg
+            v-if="!menuOpen"
+            width="18"
+            height="18"
+            viewBox="0 0 24 24"
+            fill="none"
+          >
+            <path
+              d="M4 7h16M4 12h16M4 17h16"
+              stroke="currentColor"
+              stroke-width="2.2"
+              stroke-linecap="round"
+            />
+          </svg>
+          <svg v-else width="18" height="18" viewBox="0 0 24 24" fill="none">
+            <path
+              d="M6 6l12 12M18 6L6 18"
+              stroke="currentColor"
+              stroke-width="2.2"
+              stroke-linecap="round"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="mobile-sheet" v-if="isMobile && menuOpen">
+      <router-link
+        v-for="item in navItems"
+        :key="item.id"
+        :to="item.to"
+        custom
+        v-slot="{ href, navigate, isActive }"
+      >
+        <a
+          :href="href"
+          :class="['mobile-link', { active: isActive }]"
+          @click="
+            (e) => {
+              navigate(e);
+              menuOpen = false;
+            }
+          "
+          >{{ item.label }}</a
+        >
+      </router-link>
+      <a class="btn btn-primary mobile-cta" href="#" @click.prevent="invite">
+        <DiscordIcon :size="16" />
+        {{ $t("nav.addMe") }}
+      </a>
+    </div>
+  </nav>
 </template>
 
-<style>
-@media screen and (max-width: 1024px) {
-  #add {
-    margin-right: 0px !important;
-  }
-}
-.navTitle {
-  font-weight: 600;
-  color: rgb(76, 86, 106);
-  font-family: Rubik;
-  font-size: 30px;
-}
-.navItem {
-  font-weight: 400;
-  font-family: Rubik;
-  font-size: 20px;
-}
-[data-theme="dark"] .navTitle {
-  color: #eceff4;
-}
-[data-theme="dark"] .navItem {
-  color: #eceff4;
-}
-[data-theme="dark"] .navItem:hover {
-  color: grey;
-  background-color: #1d1f21;
-}
-[data-theme="dark"] .nav,
-[data-theme="dark"] .navbar-menu {
-  background-color: #2a2d32 !important;
-}
-</style>
 <script>
+import DiscordIcon from "./icons/DiscordIcon.vue";
+
 export default {
   name: "Nav",
+  components: { DiscordIcon },
   data() {
     return {
-      dark: document.body.hasAttribute("theme"),
+      scrolled: false,
+      menuOpen: false,
+      isMobile: false,
     };
   },
+  computed: {
+    navItems() {
+      return [
+        { id: "home", to: { name: "Home" }, label: this.$t("nav.about") },
+        { id: "galos", to: { name: "Galos" }, label: this.$t("nav.roosters") },
+        { id: "pets", to: { name: "Pets" }, label: this.$t("nav.pigeons") },
+        {
+          id: "bg",
+          to: { name: "Backgrounds" },
+          label: this.$t("nav.backgrounds"),
+        },
+        {
+          id: "donate",
+          to: { name: "Donate" },
+          label: this.$t("nav.donations"),
+        },
+      ];
+    },
+  },
+  watch: {
+    $route() {
+      this.menuOpen = false;
+    },
+  },
   mounted() {
-    if (localStorage.getItem("theme") === "dark") {
-      this.dark = true;
-    }
-    this.applyTheme();
+    this.onScroll = () => {
+      this.scrolled = window.scrollY > 8;
+    };
+    this.onResize = () => {
+      this.isMobile = window.innerWidth < 1024;
+    };
+    this.onResize();
+    window.addEventListener("scroll", this.onScroll, { passive: true });
+    window.addEventListener("resize", this.onResize);
+  },
+  beforeDestroy() {
+    window.removeEventListener("scroll", this.onScroll);
+    window.removeEventListener("resize", this.onResize);
   },
   methods: {
-    about() {
-      if (this.$route.name !== "Home") {
-        this.$router.push({ name: "Home" });
-        document.getElementById("about").scrollIntoView();
+    setLang(l) {
+      this.$i18n.locale = l;
+      try {
+        localStorage.setItem("locale", l);
+      } catch (e) {
+        /* ignore */
       }
     },
-    btn() {
-      gtag("event", "conversion", {
-        send_to: "AW-11526751589/-iaDCOaJj_4ZEOWKsfgq",
-        value: 10.0,
-        currency: "BRL",
-      });
+    invite() {
+      if (typeof window !== "undefined" && window.gtag) {
+        window.gtag("event", "conversion", {
+          send_to: "AW-11526751589/-iaDCOaJj_4ZEOWKsfgq",
+          value: 10.0,
+          currency: "BRL",
+        });
+      }
       const route = this.$router.resolve({ name: "Invite" });
       window.open(route.href, "_blank");
-    },
-    changeTheme() {
-      this.dark
-        ? localStorage.removeItem("theme")
-        : localStorage.setItem("theme", "dark");
-      this.dark = !this.dark;
-      this.applyTheme();
-    },
-    applyTheme() {
-      this.dark
-        ? document.body.setAttribute("data-theme", "dark")
-        : document.body.removeAttribute("data-theme");
-    },
-    changeLocale(locale) {
-      this.$i18n.locale = locale;
-      localStorage.setItem("locale", locale);
     },
   },
 };
 </script>
+
+<style scoped>
+.site-nav {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  transition: background 0.2s ease;
+}
+
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 72px;
+}
+
+.logo-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: none;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  color: var(--ink);
+}
+
+.logo-square {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #7c4dff 0%, #4a1fd1 100%);
+  display: grid;
+  place-items: center;
+  color: #fff;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 18px;
+  box-shadow: 0 4px 12px -2px rgba(74, 31, 209, 0.5);
+}
+
+.logo-text {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 18px;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.lang-toggle {
+  display: inline-flex;
+  padding: 3px;
+  border-radius: 999px;
+  background: #fff;
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow-sm);
+}
+.lang-btn {
+  padding: 5px 11px;
+  border-radius: 999px;
+  border: 0;
+  background: transparent;
+  color: var(--ink-2);
+  font-weight: 700;
+  font-size: 11px;
+  font-family: var(--font-mono);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.lang-btn.compact {
+  padding: 4px 9px;
+}
+.lang-btn.active {
+  background: var(--ink);
+  color: #fff;
+}
+
+.burger {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  background: #fff;
+  color: var(--ink);
+  border: 1px solid var(--line);
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+}
+
+.mobile-sheet {
+  position: absolute;
+  top: 60px;
+  left: 0;
+  right: 0;
+  background: #fff;
+  border-bottom: 1px solid var(--line);
+  box-shadow: var(--shadow);
+  padding: 18px 18px 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  animation: slideDown 0.2s ease;
+}
+.mobile-link {
+  background: transparent;
+  color: var(--ink);
+  border: 0;
+  padding: 12px 14px;
+  border-radius: 10px;
+  text-align: left;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+}
+.mobile-link.active {
+  background: var(--primary-soft);
+  color: var(--primary-ink);
+}
+.mobile-cta {
+  margin-top: 12px;
+  padding: 14px 18px;
+}
+
+@media (max-width: 1023px) {
+  .nav-inner {
+    height: 60px;
+  }
+}
+</style>

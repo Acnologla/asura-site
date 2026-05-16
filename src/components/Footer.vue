@@ -1,195 +1,182 @@
 <template>
-  <footer class="footer" style="margin-top: 50px">
-    <div
-      class="columns is-centered is-variable"
-      style="width: 100%; margin-left: 15px; margin-right: 15px"
-    >
-      <div class="column is-one-third" style="text-align: left">
-        <div
-          style="
-            display: flex;
-            align-items: center;
-            width: 100%;
-            justify-content: center;
-          "
-        >
-          <img
-            width="50"
-            height="50"
-            style="border-radius: 50%"
-            src="https://cdn.discordapp.com/avatars/470684281102925844/e1dfb36e69e5b83f081f8ee3ba1adbd3.webp?size=512"
-          />
-          <h3 style="margin-left: 10px; font-size: 28px; font-weight: 600">
-            Asura Bot
-          </h3>
-        </div>
-        <hr
-          style="margin-top:10px;margin-bottom:10px; background-color: #552fbc"
-        />
-        <div class="footerText">
-          <p>
-            {{ $t("footer.description") }}
-          </p>
-          <div style="font-size: 28px; margin-top: 20px">
-            <a target="_blank" href="https://github.com/Acnologla/asura">
-              <font-awesome-icon :icon="['fab', 'github']" />
-            </a>
-            <a target="_blank" href="https://discord.gg/CfkBZyVsd7">
-              <font-awesome-icon
-                style="margin-left: 20px"
-                :icon="['fab', 'discord']"
-              />
-            </a>
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="brand-row">
+            <div class="brand-square">A</div>
+            <div class="brand-name">AsuraBot</div>
           </div>
+          <p class="brand-desc">{{ $t("footer.description") }}</p>
+        </div>
+
+        <div class="footer-col">
+          <div class="col-title">{{ $t("footer.asura") }}</div>
+          <router-link :to="{ name: 'Home' }" class="footer-link">{{
+            $t("footer.about")
+          }}</router-link>
+          <router-link :to="{ name: 'Galos' }" class="footer-link">{{
+            $t("footer.roosterList")
+          }}</router-link>
+          <router-link :to="{ name: 'Donate' }" class="footer-link">{{
+            $t("footer.donate")
+          }}</router-link>
+        </div>
+
+        <div class="footer-col">
+          <div class="col-title">{{ $t("footer.rinha") }}</div>
+          <a
+            href="https://docs.asurabot.com.br/"
+            target="_blank"
+            rel="noopener"
+            class="footer-link"
+            >{{ $t("footer.rinhaT") }}</a
+          >
+          <router-link :to="{ name: 'RinhaInfo' }" class="footer-link">{{
+            $t("footer.rinhaInfo")
+          }}</router-link>
+          <a
+            href="https://discord.gg/CfkBZyVsd7"
+            target="_blank"
+            rel="noopener"
+            class="footer-link"
+            >{{ $t("footer.supportServer") }}</a
+          >
+          <a
+            href="https://top.gg/bot/470684281102925844"
+            target="_blank"
+            rel="noopener"
+            class="footer-link"
+            >{{ $t("footer.vote") }}</a
+          >
+        </div>
+
+        <div class="footer-col">
+          <div class="col-title">Legal</div>
+          <router-link :to="{ name: 'Terms' }" class="footer-link"
+            >Terms</router-link
+          >
+          <router-link :to="{ name: 'Privacy' }" class="footer-link"
+            >Privacy</router-link
+          >
         </div>
       </div>
-      <div class="column is-one-third">
-        <div class="center">
-          <ul>
-            <li class="footerTitle">
-              {{ $t("footer.asura") }}
-              <hr
-                style="
-                  margin-top: 5px;
-                  margin-bottom: 5px;
-                  background-color: #552fbc;
-                "
-              />
-            </li>
-            <li>
-              <a @click="about" href="#about">{{ $t("footer.about") }}</a>
-            </li>
-            <li>
-              <a
-                target="_blank"
-                href=" https://discordapp.com/oauth2/authorize?client_id=470684281102925844&scope=applications.commands%20bot&permissions=8"
-                >{{ $t("footer.invite") }}</a
-              >
-            </li>
-            <li>
-              <a target="_blank" href="https://discord.gg/CfkBZyVsd7">{{
-                $t("footer.supportServer")
-              }}</a>
-            </li>
-            <li>
-              <router-link :to="{ name: 'Commands' }">
-                {{ $t("footer.commands") }}
-              </router-link>
-            </li>
-            <li>
-              <a target="_blank" href="https://top.gg/bot/470684281102925844">
-                {{ $t("footer.vote") }}
-              </a>
-            </li>
-            <li>
-              <router-link :to="{ name: 'Donate' }">
-                {{ $t("footer.donate") }}
-              </router-link>
-            </li>
-          </ul>
-        </div>
-      </div>
-      <div class="column is-one-third">
-        <div class="center">
-          <ul>
-            <li class="footerTitle">
-              {{ $t("footer.rinha") }}
-              <hr
-                style="
-                  margin-top: 5px;
-                  margin-bottom: 5px;
-                  background-color: #552fbc;
-                "
-              />
-            </li>
-            <li>
-              <a
-                href="https://docs.asurabot.com.br/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                {{ $t("footer.rinhaT") }}
-              </a>
-            </li>
-            <li>
-              <router-link :to="{ name: 'RinhaInfo' }">
-                {{ $t("footer.rinhaInfo") }}
-              </router-link>
-            </li>
-            <li>
-              <router-link :to="{ name: 'Galos' }">
-                {{ $t("footer.roosterList") }}
-              </router-link>
-            </li>
-            <li>
-              <router-link :to="{ name: 'Donate' }">
-                {{ $t("footer.buyItems") }}
-              </router-link>
-            </li>
-          </ul>
-        </div>
+
+      <div class="footer-bottom">
+        <div>© {{ year }} Asura Bot. {{ $t("footer.allRights") }}</div>
+        <div>{{ $t("footer.madeWith") }}</div>
       </div>
     </div>
   </footer>
 </template>
-<style scoped>
-.footer {
-  width: 100%;
-  background-color: #f3f4f5;
-  display: flex;
-  align-items: center;
-  text-align: center;
-  flex-flow: wrap;
-  padding: 1.5rem 0.75rem 1rem;
-  justify-content: center;
-}
-ul {
-  text-align: left;
-}
-.center {
-  display: flex;
-  justify-content: center;
-}
-li a {
-  color: #2c3e50;
-}
 
-[data-theme="dark"] .footer {
-  background-color: #1d1f21;
-}
-[data-theme="dark"] h3 {
-  font-weight: 400 !important;
-}
-[data-theme="dark"] li a {
-  color: #eceff4;
-}
-.footerTitle {
-  text-align: center;
-  font-weight: 600;
-  font-size: 20px;
-}
-li a:hover {
-  color: #552fbc;
-}
-@media screen and (max-width: 768px) {
-  ul {
-    text-align: center;
-  }
-  .footerText {
-    text-align: center;
-  }
-}
-</style>
 <script>
 export default {
   name: "Footer",
-  methods: {
-    about() {
-      if (this.$route.name !== "Home") {
-        this.$router.push({ name: "Home" });
-        document.getElementById("about").scrollIntoView();
-      }
-    },
+  data() {
+    return { year: new Date().getFullYear() };
   },
 };
 </script>
+
+<style scoped>
+.site-footer {
+  background: var(--ink);
+  color: #cfc6df;
+  padding: 80px 0 40px;
+  margin-top: 80px;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 48px;
+}
+
+.footer-brand .brand-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+.brand-square {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #7c4dff 0%, #4a1fd1 100%);
+  display: grid;
+  place-items: center;
+  color: #fff;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 18px;
+}
+.brand-name {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 20px;
+  color: #fff;
+}
+.brand-desc {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #9b91b0;
+  max-width: 320px;
+  margin: 0;
+}
+
+.footer-col {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.col-title {
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 6px;
+  font-size: 13px;
+}
+.footer-link {
+  font-size: 13px;
+  color: #cfc6df;
+  background: none;
+  border: 0;
+  padding: 0;
+  text-align: left;
+  cursor: pointer;
+  font-family: inherit;
+}
+.footer-link:hover {
+  color: #fff;
+}
+
+.footer-bottom {
+  margin-top: 56px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  font-size: 12px;
+  color: #7e7497;
+}
+
+@media (max-width: 768px) {
+  .site-footer {
+    padding: 48px 0 28px;
+    margin-top: 40px;
+  }
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+  .footer-brand {
+    grid-column: 1 / -1;
+  }
+  .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+</style>
