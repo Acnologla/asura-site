@@ -22,6 +22,15 @@
               <DiscordIcon :size="18" />
               {{ $t("home.addToDiscord") }}
             </a>
+            <a
+              href="https://discord.gg/bn8yYNNNF3"
+              class="btn btn-ghost"
+              target="_blank"
+              rel="noopener"
+            >
+              <DiscordIcon :size="18" />
+              {{ $t("nav.supportServer") || "Support Server" }}
+            </a>
             <router-link to="/galos" class="btn btn-ghost">
               {{ $t("home.seeRoosters") }}
               <ArrowIcon />
@@ -32,8 +41,6 @@
               <span class="hero-meta-dot" />
               {{ $t("home.activeServers") }}
             </span>
-            <span>·</span>
-            <span>{{ $t("home.zeroFee") }}</span>
           </div>
         </div>
 
@@ -41,32 +48,18 @@
       </div>
     </section>
 
-    <!-- ─── STATS ─── -->
-    <section class="stats-section">
-      <div class="container">
-        <div class="stats-grid">
-          <div class="stats-label">{{ $t("home.live") }}</div>
-          <div class="stats-cells">
-            <div v-for="(s, i) in stats" :key="i" class="stat-cell">
-              <div class="stat-num">{{ s.num }}</div>
-              <div class="stat-label">{{ s.label }}</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <!-- ─── FEATURES ─── -->
     <section class="section">
       <div class="container">
         <div class="features-head">
-          <div class="eyebrow">{{ $t("home.howItWorks") }}</div>
+          <div class="eyebrow" style="font-size: 15px;">
+            {{ $t("home.howItWorks") }}
+          </div>
           <h2 class="h-display features-title">
             {{ $t("home.howTitleA") }}
             <span style="color: var(--primary)">{{
               $t("home.howTitleB")
             }}</span>
-            <br />
             {{ $t("home.howTitleC") }}
           </h2>
           <p class="features-sub">{{ $t("home.howSub") }}</p>
@@ -80,6 +73,47 @@
             </div>
             <h3 class="feature-title">{{ f.title }}</h3>
             <p class="feature-desc">{{ f.desc }}</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── MODOS ─── -->
+    <section class="section" id="modos">
+      <div class="container">
+        <div class="modos-head">
+          <div>
+            <div class="modos-tag">
+              <span>§ 03</span>
+              <span class="modos-tag-line" />
+              <span>{{ $t("home.modos") }}</span>
+            </div>
+            <h2 class="h-display modos-title">
+              {{ $t("home.modosTitleA") }}<br />
+              <span class="modos-title-em">{{ $t("home.modosTitleB") }}</span>
+            </h2>
+          </div>
+          <p class="modos-sub">{{ $t("home.modosSub") }}</p>
+        </div>
+
+        <div class="modes-grid">
+          <div
+            v-for="m in modos"
+            :key="m.nome"
+            class="mode-card card"
+            :class="{ 'mode-featured': m.featured }"
+          >
+            <div class="mode-card-top">
+              <div
+                class="mode-icon"
+                :class="{ 'mode-icon-featured': m.featured }"
+              >
+                {{ m.icon }}
+              </div>
+              <span v-if="m.featured" class="mode-featured-badge">★ TOP 3</span>
+            </div>
+            <div class="mode-card-name">{{ m.nome }}</div>
+            <div class="mode-card-desc">{{ m.desc }}</div>
           </div>
         </div>
       </div>
@@ -116,51 +150,6 @@
       </div>
     </section>
 
-    <!-- ─── MODOS ─── -->
-    <section class="section" id="modos">
-      <div class="container">
-        <div class="modos-head">
-          <div>
-            <div class="modos-tag">
-              <span>§ 03</span>
-              <span class="modos-tag-line" />
-              <span>{{ $t("home.modos") }}</span>
-            </div>
-            <h2 class="h-display modos-title">
-              {{ $t("home.modosTitleA") }}<br />
-              <span class="modos-title-em">{{ $t("home.modosTitleB") }}</span>
-            </h2>
-          </div>
-          <p class="modos-sub">{{ $t("home.modosSub") }}</p>
-        </div>
-
-        <div class="modos-list">
-          <div
-            v-for="(m, i) in modos"
-            :key="m.nome"
-            class="modo-row"
-            :class="{ hovered: hovered === i }"
-            @mouseenter="hovered = i"
-          >
-            <div class="modo-num">{{ String(i + 1).padStart(2, "0") }}</div>
-            <div class="modo-name">
-              {{ m.nome }}
-              <ArrowIcon
-                v-if="hovered === i && !isMobile"
-                :size="20"
-                style="margin-left: 14px"
-              />
-            </div>
-            <div v-if="!isMobile" class="modo-desc">{{ m.desc }}</div>
-            <div class="modo-tag">{{ m.tag }}</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ─── SECONDARY ROOSTER PHOTO (rotates every 5s) ─── -->
-    <SecondaryRoosterCard :rooster="secondaryRooster" />
-
     <!-- ─── RARIDADES ─── -->
     <section class="raridades-section">
       <div class="raridades-line" />
@@ -169,8 +158,6 @@
           <span>§ 04 / {{ $t("home.raritiesEyebrow") }}</span>
           <span>·</span>
           <span>{{ classes.length }} {{ $t("home.type") }}</span>
-          <span>·</span>
-          <span style="color: var(--amber)">v3.2</span>
         </div>
         <div class="raridades-grid">
           <div>
@@ -198,18 +185,23 @@
             @click="goRooster(c.index)"
           >
             <div class="catalog-idx">
-              {{ String(i + 1).padStart(3, "0") }} /
               {{ c.name.toUpperCase() }}
             </div>
-            <div class="catalog-img-wrap">
-              <img :src="c.sprite" :alt="c.name" class="catalog-img" />
+            <div
+              :style="catalogRingStyle(c.rarity)"
+              class="catalog-rarity-ring"
+            >
+              <div class="catalog-img-wrap">
+                <img :src="c.sprite" :alt="c.name" class="catalog-img" />
+              </div>
             </div>
             <div class="catalog-row">
               <div class="catalog-name">{{ c.name }}</div>
-              <div class="catalog-stats">
-                ↑{{ (c.advantages || []).length }} · ↓{{
-                  (c.disadvantages || []).length
-                }}
+              <div
+                class="catalog-rarity"
+                :style="{ color: rarityHex(c.rarity) }"
+              >
+                {{ rarityName(c.rarity) }}
               </div>
             </div>
           </button>
@@ -225,9 +217,7 @@
           <h2 class="h-display cta-title">
             {{ $t("home.ctaTitleA") }}<br />
             {{ $t("home.ctaTitleB") }}
-            <span style="color: var(--primary)">{{
-              $t("home.ctaTitleC")
-            }}</span
+            <span style="color: var(--primary)">{{ $t("home.ctaTitleC") }}</span
             >.
           </h2>
           <p class="cta-sub">{{ $t("home.ctaSub") }}</p>
@@ -252,9 +242,21 @@ import DiscordIcon from "../components/icons/DiscordIcon.vue";
 import ArrowIcon from "../components/icons/ArrowIcon.vue";
 import HeroVisual from "../components/home/HeroVisual.vue";
 import FeatureArt from "../components/home/FeatureArt.vue";
-import SecondaryRoosterCard from "../components/home/SecondaryRoosterCard.vue";
 
-const ROTATE_MS = 5000;
+const ROTATE_MS = 4000;
+const RARITY_HEX = [
+  "#9ca3af",
+  "#3b82f6",
+  "#a855f7",
+  "#f59e0b",
+  "#ef4444",
+  "#14b8a6",
+  "#FF00FF",
+];
+const RARITY_NAMES = {
+  pt: ["Comum", "Raro", "Épico", "Lendário", "Especial", "Mítico", "Deus"],
+  en: ["Common", "Rare", "Epic", "Legendary", "Special", "Mythic", "God"],
+};
 
 export default {
   name: "Home",
@@ -263,25 +265,23 @@ export default {
     ArrowIcon,
     HeroVisual,
     FeatureArt,
-    SecondaryRoosterCard,
   },
   data() {
     return {
       classes: [],
       sprites: [],
       heroIdx: 0,
-      secondaryIdx: 0,
       catalogIndices: [],
       timer: null,
       isMobile: false,
-      hovered: 0,
     };
   },
   computed: {
     pairs() {
       // Build [{ name, sprite, rarity, advantages, disadvantages, index }] aligned by index
       const out = [];
-      const offset = this.classes[0] && /404/.test(this.classes[0].name) ? 1 : 0;
+      const offset =
+        this.classes[0] && /404/.test(this.classes[0].name) ? 1 : 0;
       for (let i = 1; i < this.classes.length; i++) {
         const cls = this.classes[i];
         const sprite = this.sprites[i - offset];
@@ -300,22 +300,11 @@ export default {
     heroRooster() {
       return this.pairs[this.heroIdx] || null;
     },
-    secondaryRooster() {
-      return this.pairs[this.secondaryIdx] || null;
-    },
     catalogStrip() {
       return this.catalogIndices
         .map((i) => this.pairs[i])
         .filter(Boolean)
         .slice(0, this.isMobile ? 4 : 6);
-    },
-    stats() {
-      return [
-        { num: "8.4K+", label: this.$t("home.statsServers") },
-        { num: "2.1M", label: this.$t("home.statsRoosters") },
-        { num: "420K", label: this.$t("home.statsBattles") },
-        { num: "24/7", label: this.$t("home.statsLive") },
-      ];
     },
     features() {
       return [
@@ -342,29 +331,138 @@ export default {
     commands() {
       return [
         { cmd: "j!galo", desc: this.$t("home.cmdsDesc1") || "Veja seu galo" },
-        { cmd: "j!train", desc: this.$t("home.cmdsDesc2") || "Treine seu galo" },
-        { cmd: "j!mission", desc: this.$t("home.cmdsDesc3") || "Missões diárias" },
-        { cmd: "j!raid", desc: this.$t("home.cmdsDesc4") || "Forme equipe para raids" },
-        { cmd: "j!money", desc: this.$t("home.cmdsDesc5") || "Veja seu Gold e moedas" },
-        { cmd: "j!upgrades", desc: this.$t("home.cmdsDesc6") || "Gerencie upgrades" },
+        {
+          cmd: "j!train",
+          desc: this.$t("home.cmdsDesc2") || "Treine seu galo",
+        },
+        {
+          cmd: "j!mission",
+          desc: this.$t("home.cmdsDesc3") || "Missões diárias",
+        },
+        {
+          cmd: "j!raid",
+          desc: this.$t("home.cmdsDesc4") || "Forme equipe para raids",
+        },
+        {
+          cmd: "j!money",
+          desc: this.$t("home.cmdsDesc5") || "Veja seu Gold e moedas",
+        },
+        {
+          cmd: "j!upgrades",
+          desc: this.$t("home.cmdsDesc6") || "Gerencie upgrades",
+        },
       ];
     },
     modos() {
       const pt = this.$i18n.locale === "pt";
       const data = [
-        ["Arena", pt ? "Lute contra outros jogadores com limite de vitórias e derrotas." : "Battle other players with win/loss daily limits.", "PVP"],
-        [pt ? "Ranqueada" : "Ranked", pt ? "Suba de rank e ganhe Elo em batalhas oficiais." : "Climb up the ranks and earn Elo in official battles.", "PVP"],
-        ["Raid", pt ? "Enfrente bosses com até 5 jogadores cooperativos." : "Face bosses with up to 5 cooperative players.", "CO-OP"],
-        [pt ? "Torre" : "Tower", pt ? "Modo semanal com andares progressivos e recompensas crescentes." : "Weekly mode with progressive floors and growing rewards.", "WEEKLY"],
-        [pt ? "Torneio" : "Tournament", pt ? "Eventos automáticos com recompensas para o Top 3." : "Automatic events with rewards for the Top 3.", "AUTO"],
-        ["Portal", pt ? "Eventos em grupo com tempo limitado e drops únicos." : "Group events with time limit and unique drops.", "TIMED"],
-        [pt ? "História" : "Story", pt ? "Episódios com progressão e recompensas por estrelas." : "Episodes with progression and star-based rewards.", "SOLO"],
-        ["Challenge", pt ? "Desafios periódicos com prêmios exclusivos." : "Periodic challenges with exclusive prizes.", "DAILY"],
-        ["Boss", pt ? "Bosses com múltiplas formas e cooldown longo." : "Bosses with multiple forms and long cooldown.", "PVE"],
-        ["Survival", pt ? "Sobreviva o máximo possível com recompensas crescentes." : "Survive as long as you can with growing rewards.", "ENDLESS"],
-        ["Server Battle", pt ? "Evento automático entre servidores inteiros." : "Automatic event between entire servers.", "SERVER"],
+        [
+          "Arena",
+          pt
+            ? "Lute contra outros jogadores com limite de vitórias e derrotas."
+            : "Battle other players with win/loss daily limits.",
+          "PVP",
+          "⚔",
+          false,
+        ],
+        [
+          pt ? "Ranqueada" : "Ranked",
+          pt
+            ? "Suba de rank e ganhe Elo em batalhas oficiais."
+            : "Climb up the ranks and earn Elo in official battles.",
+          "PVP",
+          "★",
+          false,
+        ],
+        [
+          "Raid",
+          pt
+            ? "Enfrente bosses com até 5 jogadores cooperativos."
+            : "Face bosses with up to 5 cooperative players.",
+          "CO-OP",
+          "⚡",
+          false,
+        ],
+        [
+          pt ? "Torre" : "Tower",
+          pt
+            ? "Modo semanal com andares progressivos e recompensas crescentes."
+            : "Weekly mode with progressive floors and growing rewards.",
+          "WEEKLY",
+          "▲",
+          false,
+        ],
+        [
+          pt ? "Torneio" : "Tournament",
+          pt
+            ? "Eventos automáticos com recompensas para o Top 3."
+            : "Automatic events with rewards for the Top 3.",
+          "AUTO",
+          "♛",
+          true,
+        ],
+        [
+          "Portal",
+          pt
+            ? "Eventos em grupo com tempo limitado e drops únicos."
+            : "Group events with time limit and unique drops.",
+          "TIMED",
+          "◎",
+          false,
+        ],
+        [
+          pt ? "História" : "Story",
+          pt
+            ? "Episódios com progressão e recompensas por estrelas."
+            : "Episodes with progression and star-based rewards.",
+          "SOLO",
+          "✦",
+          false,
+        ],
+        [
+          "Challenge",
+          pt
+            ? "Desafios periódicos com prêmios exclusivos."
+            : "Periodic challenges with exclusive prizes.",
+          "DAILY",
+          "◆",
+          false,
+        ],
+        [
+          "Boss",
+          pt
+            ? "Bosses com múltiplas formas e cooldown longo."
+            : "Bosses with multiple forms and long cooldown.",
+          "PVE",
+          "☠",
+          false,
+        ],
+        [
+          "Survival",
+          pt
+            ? "Sobreviva o máximo possível com recompensas crescentes."
+            : "Survive as long as you can with growing rewards.",
+          "ENDLESS",
+          "∞",
+          false,
+        ],
+        [
+          "Server Battle",
+          pt
+            ? "Evento automático entre servidores inteiros."
+            : "Automatic event between entire servers.",
+          "SERVER",
+          "⚑",
+          false,
+        ],
       ];
-      return data.map(([nome, desc, tag]) => ({ nome, desc, tag }));
+      return data.map(([nome, desc, tag, icon, featured]) => ({
+        nome,
+        desc,
+        tag,
+        icon,
+        featured,
+      }));
     },
   },
   methods: {
@@ -397,10 +495,21 @@ export default {
       }
       return out;
     },
+    rarityHex(r) {
+      return RARITY_HEX[r] || "#9ca3af";
+    },
+    rarityName(r) {
+      const lang = this.$i18n.locale === "en" ? "en" : "pt";
+      return RARITY_NAMES[lang][r] || "";
+    },
+    catalogRingStyle(r) {
+      const color =
+        r === 5 ? "rgba(184,39,252,0.7)" : RARITY_HEX[r] || "#9ca3af";
+      return { boxShadow: `0 0 0 1px ${color}` };
+    },
     rotate() {
       if (this.pairs.length === 0) return;
       this.heroIdx = this.rand(this.pairs.length);
-      this.secondaryIdx = this.rand(this.pairs.length);
       this.catalogIndices = this.pickIndices(6);
     },
     onResize() {
@@ -425,10 +534,10 @@ export default {
       try {
         const [spritesRes, classesRes] = await Promise.all([
           axios.get(
-            `https://info.asurabot.com.br/sprites.json?language=${locale}`
+            `https://info.asurabot.com.br/sprites.json?language=${locale}`,
           ),
           axios.get(
-            `https://info.asurabot.com.br/class.json?language=${locale}`
+            `https://info.asurabot.com.br/class.json?language=${locale}`,
           ),
         ]);
         this.sprites = spritesRes.data[0];
@@ -464,6 +573,12 @@ export default {
 .hero-section {
   padding-top: 60px;
   padding-bottom: 80px;
+}
+
+@media (min-width: 1024px) {
+  .hero-section {
+    padding-top: 28px;
+  }
 }
 .hero-grid {
   display: grid;
@@ -545,71 +660,10 @@ export default {
   }
 }
 
-/* ─── Stats ─── */
-.stats-section {
-  padding: 0 0 56px;
-}
-.stats-grid {
-  display: flex;
-  align-items: flex-end;
-  gap: 10px;
-  padding: 28px 0 6px;
-  border-top: 1px solid var(--line);
-}
-.stats-label {
-  font-family: var(--font-mono);
-  font-size: 11px;
-  letter-spacing: 0.18em;
-  color: var(--ink-3);
-  text-transform: uppercase;
-  padding-right: 32px;
-  padding-bottom: 4px;
-}
-.stats-cells {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 40px;
-  flex: 1;
-}
-.stat-cell {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-.stat-num {
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-size: 52px;
-  letter-spacing: -0.03em;
-  line-height: 1;
-  color: var(--ink);
-}
-.stat-label {
-  font-size: 12px;
-  color: var(--ink-3);
-  font-family: var(--font-mono);
-  letter-spacing: 0.06em;
-}
-
-@media (max-width: 768px) {
-  .stats-grid {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 18px;
-  }
-  .stats-cells {
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-  }
-  .stat-num {
-    font-size: 36px;
-  }
-}
-
 /* ─── Features ─── */
 .features-head {
   text-align: center;
-  margin-bottom: 60px;
+  margin-bottom: 20px;
 }
 .features-title {
   font-size: 56px;
@@ -618,7 +672,7 @@ export default {
 .features-sub {
   font-size: 17px;
   color: var(--ink-2);
-  max-width: 580px;
+  max-width: 900px;
   margin: 0 auto;
 }
 .features-grid {
@@ -759,7 +813,7 @@ export default {
   grid-template-columns: 1.1fr 1fr;
   gap: 60px;
   align-items: end;
-  margin-bottom: 56px;
+  margin-bottom: 40px;
   padding-bottom: 24px;
   border-bottom: 1px solid var(--line);
 }
@@ -780,7 +834,7 @@ export default {
   background: var(--ink-3);
 }
 .modos-title {
-  font-size: 64px;
+  font-size: 56px;
   margin: 0;
   line-height: 1;
 }
@@ -790,65 +844,99 @@ export default {
   color: var(--ink-3);
 }
 .modos-sub {
-  font-size: 17px;
+  font-size: 16px;
   color: var(--ink-2);
   line-height: 1.55;
   margin: 0;
   max-width: 420px;
 }
 
-.modos-list {
-  border-top: 1px solid var(--line);
-}
-.modo-row {
+.modes-grid {
   display: grid;
-  grid-template-columns: 60px 1.8fr 2.2fr 90px;
-  gap: 24px;
-  align-items: baseline;
-  padding: 22px 0;
-  border-bottom: 1px solid var(--line);
-  cursor: pointer;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
 }
-.modo-num {
+.mode-card {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-start;
+  transition: transform 0.15s;
+  cursor: default;
+}
+.mode-card:hover {
+  transform: translateY(-2px);
+}
+.mode-featured {
+  grid-column: span 2;
+  background: var(--ink);
+  color: #fff;
+  border-color: transparent;
+}
+.mode-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+}
+.mode-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: var(--primary-soft);
+  color: var(--primary);
+  display: grid;
+  place-items: center;
+  font-size: 16px;
+  flex-shrink: 0;
+}
+.mode-icon-featured {
+  background: rgba(251, 191, 36, 0.2);
+  color: #fbbf24;
+}
+.mode-featured-badge {
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: var(--amber);
+  color: #1a0a3a;
+  font-size: 10px;
   font-family: var(--font-mono);
-  font-size: 13px;
-  color: var(--ink-3);
+  font-weight: 700;
   letter-spacing: 0.06em;
 }
-.modo-name {
+.mode-card-name {
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: 36px;
-  letter-spacing: -0.02em;
-  color: var(--ink);
-  transition: color 0.2s;
-  display: flex;
-  align-items: center;
+  font-size: 20px;
+  line-height: 1.1;
 }
-.modo-row.hovered .modo-name {
-  color: var(--primary);
+.mode-featured .mode-card-name {
+  font-size: 28px;
 }
-.modo-desc {
-  font-size: 14px;
+.mode-card-desc {
+  font-size: 13px;
   color: var(--ink-2);
   line-height: 1.5;
-  max-width: 460px;
+  margin: 0;
 }
-.modo-tag {
-  font-family: var(--font-mono);
-  font-size: 10px;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--ink-3);
-  text-align: right;
-  font-weight: 600;
+.mode-featured .mode-card-desc {
+  color: rgba(255, 255, 255, 0.6);
 }
 
+@media (max-width: 1024px) {
+  .modes-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .mode-featured {
+    grid-column: span 3;
+  }
+}
 @media (max-width: 768px) {
   .modos-head {
     grid-template-columns: 1fr;
     gap: 16px;
-    margin-bottom: 36px;
+    margin-bottom: 28px;
   }
   .modos-title {
     font-size: 36px;
@@ -856,16 +944,25 @@ export default {
   .modos-sub {
     font-size: 15px;
   }
-  .modo-row {
-    grid-template-columns: 30px 1fr 60px;
-    gap: 12px;
-    padding: 16px 0;
+  .modes-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
   }
-  .modo-num {
-    font-size: 11px;
+  .mode-featured {
+    grid-column: span 2;
   }
-  .modo-name {
+  .mode-card {
+    padding: 16px;
+    gap: 8px;
+  }
+  .mode-card-name {
+    font-size: 17px;
+  }
+  .mode-featured .mode-card-name {
     font-size: 22px;
+  }
+  .mode-card-desc {
+    font-size: 12px;
   }
 }
 
@@ -890,7 +987,7 @@ export default {
   flex-wrap: wrap;
   gap: 14px;
   font-family: var(--font-mono);
-  font-size: 10px;
+  font-size: 14px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.4);
@@ -957,12 +1054,15 @@ export default {
   color: rgba(255, 255, 255, 0.4);
   letter-spacing: 0.12em;
 }
+.catalog-rarity-ring {
+  width: 100%;
+  border-radius: 14px;
+}
 .catalog-img-wrap {
   width: 100%;
   aspect-ratio: 1;
   border-radius: 14px;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.06);
   display: grid;
   place-items: center;
   overflow: hidden;
@@ -984,10 +1084,12 @@ export default {
   font-size: 18px;
   color: #fff;
 }
-.catalog-stats {
+.catalog-rarity {
   font-size: 10px;
   font-family: var(--font-mono);
-  color: rgba(255, 255, 255, 0.4);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
 }
 
 @media (max-width: 768px) {
@@ -1012,11 +1114,14 @@ export default {
   .catalog-name {
     font-size: 16px;
   }
+  .section {
+    padding: 0px 0 30px;
+  }
 }
 
 /* ─── CTA ─── */
 .cta-section {
-  padding: 40px 0 80px;
+  padding: 40px 0 0px;
 }
 .cta-card {
   padding: 56px;

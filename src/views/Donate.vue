@@ -1,12 +1,20 @@
 <template>
+  <!-- Scroll progress bar -->
+
   <div class="donate-page">
+    <div v-if="showScrollBar" class="scroll-progress-bar">
+      <span class="scroll-arrow scroll-arrow-up">&#8963;</span>
+      <div class="scroll-track">
+        <div
+          class="scroll-progress-fill"
+          :style="{ height: scrollProgress + '%' }"
+        />
+      </div>
+      <span class="scroll-arrow scroll-arrow-down">&#8964;</span>
+    </div>
     <!-- Hero -->
     <section class="donate-hero">
       <div class="container">
-        <div class="hero-pill pill amber-pill">
-          <span>♛</span>
-          {{ $t("donatePage.support") }}
-        </div>
         <h1 class="h-display donate-title">
           {{ $t("donateNew.titleA") }}<br />
           <span style="color: var(--primary)">{{
@@ -15,31 +23,6 @@
           {{ $t("donateNew.titleC") }}
         </h1>
         <p class="donate-sub">{{ $t("donateNew.sub") }}</p>
-
-        <!-- Period toggle (4 options) -->
-        <div class="period-toggle">
-          <button
-            v-for="p in periods"
-            :key="p.key"
-            :class="['period-btn', { active: period === p.key }]"
-            @click="period = p.key"
-          >
-            {{ p.label }}
-            <span v-if="p.badge" class="period-badge">{{ p.badge }}</span>
-          </button>
-        </div>
-      </div>
-    </section>
-
-    <!-- Plans -->
-    <section class="plans-section">
-      <div class="container plans-grid">
-        <PlanCard
-          v-for="plano in PLANOS"
-          :key="plano.nome"
-          :plano="plano"
-          :periodo="period"
-        />
       </div>
     </section>
 
@@ -52,15 +35,15 @@
             <h2 class="h-display avulsos-title">
               {{ $t("donateNew.oneOffTitle") }}
             </h2>
-            <p class="avulsos-sub">{{ $t("donateNew.oneOffSub") }}</p>
           </div>
-          <div class="chip">{{ $t("donateNew.noRenewal") }}</div>
         </div>
         <div class="avulsos-grid">
           <div v-for="r in RECURSOS" :key="r.nome" class="card recurso-card">
             <div
               class="recurso-icon"
-              :style="{ background: `linear-gradient(160deg, ${r.gradient[0]} 0%, ${r.gradient[1]} 100%)` }"
+              :style="{
+                background: `linear-gradient(160deg, ${r.gradient[0]} 0%, ${r.gradient[1]} 100%)`,
+              }"
             >
               {{ r.icone }}
             </div>
@@ -83,6 +66,34 @@
             </div>
           </div>
         </div>
+      </div>
+    </section>
+
+    <!-- Plans -->
+    <section class="plans-section">
+      <div class="container">
+        <div class="period-toggle-wrap">
+          <div class="period-toggle">
+            <button
+              v-for="p in periods"
+              :key="p.key"
+              :class="['period-btn', { active: period === p.key }]"
+              @click="period = p.key"
+            >
+              {{ p.label }}
+              <span v-if="p.badge" class="period-badge">{{ p.badge }}</span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="container plans-grid">
+        <PlanCard
+          v-for="plano in PLANOS"
+          :key="plano.nome"
+          :plano="plano"
+          :periodo="period"
+          @subscribe="openModal"
+        />
       </div>
     </section>
 
@@ -316,6 +327,8 @@ export default {
       period: "mensal",
       modalOpen: false,
       openIdx: 0,
+      scrollProgress: 0,
+      showScrollBar: true,
       PLANOS,
       RECURSOS,
       costs: [
@@ -353,8 +366,8 @@ export default {
         {
           q: pt ? "Como o pagamento funciona?" : "How does payment work?",
           a: pt
-            ? "Aceitamos PIX, cartão de crédito, PayPal e Mercado Pago. A ativação dos benefícios é automática e instantânea após confirmação."
-            : "We accept PIX, credit card, PayPal and Mercado Pago. Benefits are activated automatically and instantly after confirmation.",
+            ? "Aceitamos PIX e PayPal. A ativação dos benefícios é automática e instantânea após confirmação."
+            : "We accept PIX and PayPal. Benefits are activated automatically and instantly after confirmation.",
         },
         {
           q: pt
@@ -383,22 +396,105 @@ export default {
       ];
     },
   },
+  mounted() {
+    window.addEventListener("scroll", this.onScroll, { passive: true });
+    this.onScroll();
+  },
+  beforeUnmount() {
+    window.removeEventListener("scroll", this.onScroll);
+  },
   methods: {
     openModal() {
       this.modalOpen = true;
+    },
+    onScroll() {
+      const scrollTop = window.scrollY;
+      const docHeight =
+        document.documentElement.scrollHeight - window.innerHeight;
+      this.scrollProgress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+
+      const footer = document.querySelector("footer");
+      if (footer) {
+        const footerTop = footer.getBoundingClientRect().top;
+        this.showScrollBar = footerTop > window.innerHeight * 0.85;
+      }
     },
   },
 };
 </script>
 
 <style scoped>
+/* Scroll progress bar */
+.scroll-progress-bar {
+  position: fixed;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  z-index: 100;
+}
+.scroll-track {
+  width: 4px;
+  height: 100px;
+  background: rgba(124, 77, 255, 0.15);
+  border-radius: 999px;
+  overflow: hidden;
+  position: relative;
+}
+.scroll-progress-fill {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: linear-gradient(to top, var(--primary), #a855f7);
+  border-radius: 999px;
+  transition: height 0.1s linear;
+  min-height: 8px;
+}
+.scroll-arrow {
+  font-size: 26px;
+  color: var(--primary);
+  line-height: 1;
+  opacity: 0.7;
+}
+.scroll-arrow-up {
+  animation: arrowBounceUp 1.4s ease-in-out infinite;
+}
+.scroll-arrow-down {
+  animation: arrowBounceDown 1.4s ease-in-out infinite;
+}
+@keyframes arrowBounceUp {
+  0%,
+  100% {
+    transform: translateY(0);
+    opacity: 0.5;
+  }
+  50% {
+    transform: translateY(-3px);
+    opacity: 1;
+  }
+}
+@keyframes arrowBounceDown {
+  0%,
+  100% {
+    transform: translateY(0);
+    opacity: 0.5;
+  }
+  50% {
+    transform: translateY(3px);
+    opacity: 1;
+  }
+}
+
 .donate-page {
-  padding-bottom: 40px;
+  padding-bottom: 24px;
 }
 
 /* Hero */
 .donate-hero {
-  padding: 60px 0 40px;
+  padding: 12px 0 20px;
   text-align: center;
 }
 .amber-pill {
@@ -408,14 +504,14 @@ export default {
   margin-bottom: 20px;
 }
 .donate-title {
-  font-size: 64px;
-  margin: 0 0 16px;
+  font-size: 56px;
+  margin: 0 0 12px;
 }
 .donate-sub {
-  font-size: 18px;
+  font-size: 17px;
   color: var(--ink-2);
   max-width: 600px;
-  margin: 0 auto 28px;
+  margin: 0 auto 0;
 }
 .period-toggle {
   display: inline-flex;
@@ -452,9 +548,16 @@ export default {
   color: #fff;
 }
 
+/* Period toggle placement */
+.period-toggle-wrap {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
 /* Plans */
 .plans-section {
-  padding: 32px 0 60px;
+  padding: 16px 0 40px;
 }
 .plans-grid {
   display: grid;
@@ -465,14 +568,14 @@ export default {
 /* Avulsos */
 .avulsos-section {
   background: var(--bg-2);
-  padding: 80px 0;
+  padding: 48px 0;
 }
 .avulsos-head {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
   gap: 14px;
-  margin-bottom: 32px;
+  margin-bottom: 20px;
 }
 .avulsos-title {
   font-size: 44px;
@@ -506,7 +609,7 @@ export default {
 }
 .recurso-body {
   flex: 1;
-  padding: 18px 20px;
+  padding: 12px 16px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -524,7 +627,7 @@ export default {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 14px;
+  margin-top: 8px;
 }
 .recurso-price {
   font-family: var(--font-display);
@@ -542,7 +645,7 @@ export default {
 
 /* Why */
 .why-section {
-  padding: 80px 0;
+  padding: 48px 0;
 }
 .why-card {
   padding: 0;
@@ -569,11 +672,7 @@ export default {
   right: 0;
   width: 320px;
   height: 320px;
-  background: radial-gradient(
-    circle,
-    rgba(240, 165, 0, 0.25),
-    transparent 70%
-  );
+  background: radial-gradient(circle, rgba(240, 165, 0, 0.25), transparent 70%);
   pointer-events: none;
 }
 .why-grid {
@@ -676,7 +775,7 @@ export default {
 
 /* FAQ */
 .faq-section {
-  padding: 60px 0;
+  padding: 40px 0;
 }
 .faq-grid {
   display: grid;
@@ -764,13 +863,16 @@ export default {
 /* Mobile */
 @media (max-width: 768px) {
   .donate-hero {
-    padding: 32px 0 24px;
+    padding: 20px 0 12px;
   }
   .donate-title {
-    font-size: 40px;
+    font-size: 36px;
   }
   .donate-sub {
-    font-size: 16px;
+    font-size: 15px;
+  }
+  .scroll-progress-bar {
+    right: 6px;
   }
   .period-toggle {
     width: 100%;
@@ -781,7 +883,7 @@ export default {
     gap: 14px;
   }
   .avulsos-section {
-    padding: 48px 0;
+    padding: 32px 0;
   }
   .avulsos-head {
     flex-direction: column;

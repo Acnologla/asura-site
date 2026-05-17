@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import { GetPets } from "../trade/info.js";
+import { GetAllPets } from "../trade/info.js";
 import CatalogPage from "@/components/CatalogPage.vue";
 
 export default {
@@ -28,16 +28,14 @@ export default {
   methods: {
     async load() {
       try {
-        const petsPromises = GetPets();
-        const petsData = await Promise.all(petsPromises);
-        const validPets = petsData.filter((p) => p !== 1);
-        this.pets = validPets.map((p) => ({
+        const pets = await GetAllPets();
+        this.pets = pets.map((p) => ({
           name: p.name,
           rarity: p.rarity || 0,
           id: p.id,
           skills: p.skills || [],
         }));
-        this.petImages = validPets.map((p) => p.sprite);
+        this.petImages = pets.map((p) => p.sprite);
       } catch (e) {
         /* render empty */
       }

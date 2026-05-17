@@ -52,15 +52,16 @@
             class="catalog-card"
             @click="open(item)"
           >
-            <div class="card-img-wrap" :style="imageWrapStyle">
-              <img
-                :src="getImage(item)"
-                :alt="item.name"
-                class="card-img"
-                :style="imageStyle(item)"
-              />
-              <div :class="['rarity-tag', `rarity-${item.rarity}`]">
-                ★ {{ rarityNames[item.rarity] }}
+            <div :style="rarityRingStyle(item)" class="rarity-ring">
+              <div class="card-img-wrap" :style="imageWrapStyle">
+                <img
+                  :src="getImage(item)"
+                  :alt="item.name"
+                  class="card-img"
+                />
+                <div :class="['rarity-tag', `rarity-${item.rarity}`]">
+                  ★ {{ rarityNames[item.rarity] }}
+                </div>
               </div>
             </div>
             <div class="card-body">
@@ -168,19 +169,23 @@ export default {
           : 0;
       return this.sprites[idx - offset];
     },
-    imageStyle(item) {
-      // Mythic gets the gradient ring, others a tinted border.
-      // Light shading via raridade variable handled by class.
+    rarityRingStyle(item) {
+      const RARITY_HEX = ["#9ca3af", "#3b82f6", "#a855f7", "#f59e0b", "#ef4444", "#14b8a6", "#FF00FF"];
       const r = item.rarity;
       if (r === 5) {
         return {
-          padding: "3px",
-          borderRadius: "10px",
-          background:
-            "linear-gradient(to bottom right, #b827fc 0%, #2c90fc 25%, #b8fd33 50%, #fec837 75%, #fd1892 100%)",
+          background: "linear-gradient(to bottom right, #b827fc 0%, #2c90fc 25%, #b8fd33 50%, #fec837 75%, #fd1892 100%)",
+          padding: "4px",
+          borderRadius: "18px",
+          overflow: "hidden",
         };
       }
-      return {};
+      return {
+        background: RARITY_HEX[r] || "#9ca3af",
+        padding: "4px",
+        borderRadius: "18px",
+        overflow: "hidden",
+      };
     },
   },
 };
@@ -192,6 +197,12 @@ export default {
 }
 .catalog-head-section {
   padding: 60px 0 32px;
+}
+
+@media (min-width: 1024px) {
+  .catalog-head-section {
+    padding-top: 28px;
+  }
 }
 
 .catalog-head {
@@ -268,6 +279,9 @@ export default {
   border-color: var(--primary);
 }
 
+.rarity-ring {
+  width: 100%;
+}
 .card-img-wrap {
   position: relative;
   width: 100%;
@@ -365,6 +379,11 @@ export default {
   }
   .card-name {
     font-size: 17px;
+  }
+}
+@media (max-width: 450px) {
+  .catalog-grid.grid-3 {
+    grid-template-columns: 1fr;
   }
 }
 </style>

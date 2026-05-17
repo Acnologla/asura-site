@@ -2,7 +2,9 @@
   <nav :class="['site-nav', { 'nav-scrolled': scrolled }]">
     <div class="container nav-inner">
       <router-link :to="{ name: 'Home' }" class="logo-btn">
-        <div class="logo-square">A</div>
+        <div class="logo-square">
+          <img src="https://cdn.asurabot.com.br/cdn/etc/bot_image.png" alt="AsuraBot" class="logo-img" />
+        </div>
         <div class="logo-text">
           Asura<span style="color: var(--primary)">Bot</span>
         </div>
@@ -36,6 +38,15 @@
             {{ l }}
           </button>
         </div>
+        <a
+          class="btn btn-ghost"
+          href="https://discord.gg/bn8yYNNNF3"
+          target="_blank"
+          rel="noopener"
+        >
+          <DiscordIcon :size="16" />
+          {{ $t("nav.supportServer") || "Support Server" }}
+        </a>
         <a class="btn btn-primary" href="#" @click.prevent="invite">
           <DiscordIcon :size="16" />
           {{ $t("nav.addMe") }}
@@ -103,6 +114,15 @@
       <a class="btn btn-primary mobile-cta" href="#" @click.prevent="invite">
         <DiscordIcon :size="16" />
         {{ $t("nav.addMe") }}
+      </a>
+      <a
+        class="btn btn-ghost mobile-cta"
+        href="https://discord.gg/bn8yYNNNF3"
+        target="_blank"
+        rel="noopener"
+      >
+        <DiscordIcon :size="16" />
+        {{ $t("nav.supportServer") || "Support Server" }}
       </a>
     </div>
   </nav>
@@ -199,6 +219,12 @@ export default {
   height: 72px;
 }
 
+@media (min-width: 1024px) {
+  .nav-inner {
+    height: 56px;
+  }
+}
+
 .logo-btn {
   display: flex;
   align-items: center;
@@ -214,14 +240,15 @@ export default {
   width: 32px;
   height: 32px;
   border-radius: 8px;
-  background: linear-gradient(135deg, #7c4dff 0%, #4a1fd1 100%);
-  display: grid;
-  place-items: center;
-  color: #fff;
-  font-family: var(--font-display);
-  font-weight: 800;
-  font-size: 18px;
+  overflow: hidden;
+  flex-shrink: 0;
   box-shadow: 0 4px 12px -2px rgba(74, 31, 209, 0.5);
+}
+.logo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 .logo-text {

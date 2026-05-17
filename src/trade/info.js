@@ -1,59 +1,62 @@
 import axios from "axios";
 import i18n from "../i18n";
+import { cachedFetch } from "./cache";
 
-// Helper function to add language parameter to API URLs
-const addLanguageParam = (url) => {
-  const locale = i18n.locale || "pt";
-  const separator = url.includes("?") ? "&" : "?";
-  return `${url}${separator}language=${locale}`;
-};
+const locale = () => i18n.locale || "pt";
+
+const get = (url) =>
+  axios.get(url).then((r) => r.data);
+
+// ─── Individual cached fetchers ───────────────────────────────────────────────
+
+export const GetClasses = () =>
+  cachedFetch(
+    `cache:class:${locale()}`,
+    () => get(`https://info.asurabot.com.br/class.json?language=${locale()}`)
+  );
+
+export const GetSprites = () =>
+  cachedFetch(
+    `cache:sprites:${locale()}`,
+    () => get(`https://info.asurabot.com.br/sprites.json?language=${locale()}`)
+  );
+
+export const GetEffects = () =>
+  cachedFetch(
+    `cache:effects:${locale()}`,
+    () => get(`https://info.asurabot.com.br/effects.json?language=${locale()}`)
+  );
+
+export const GetItems = () =>
+  cachedFetch(
+    `cache:items:${locale()}`,
+    () => get(`https://info.asurabot.com.br/items.json?language=${locale()}`)
+  );
 
 export const GetCosmeticInfo = () =>
-  axios
-    .get(addLanguageParam("https://info.asurabot.com.br/cosmetics.json"))
-    .then(async (cosmetics) => {
-      return cosmetics.data;
-    });
-
-const PET_NUMBER = 21;
-
-export const GetPets = () =>
-  new Array(PET_NUMBER).fill(0).map((_, i) =>
-    axios
-      .get(addLanguageParam(`https://info.asurabot.com.br/pets/${i}.json`))
-      .then((classes) => classes.data)
-      .catch(() => 1),
+  cachedFetch(
+    `cache:cosmetics:${locale()}`,
+    () => get(`https://info.asurabot.com.br/cosmetics.json?language=${locale()}`)
   );
+
+/**
+ * Returns all pets in a single request using the allpets endpoint.
+ * Previously made 21 individual requests.
+ */
+export const GetAllPets = () =>
+  cachedFetch(
+    `cache:allpets:${locale()}`,
+    () => get(`https://info.asurabot.com.br/allpets.json?language=${locale()}`)
+  );
+
+// Kept for backward-compatibility with Trade page (getInfo)
 export const getInfo = async (info) =>
   Promise.all([
-    axios
-      .get(addLanguageParam("https://info.asurabot.com.br/sprites.json"))
-      .then((result) => {
-        info.sprites = result.data[0];
-      }),
-    axios
-      .get(addLanguageParam("https://info.asurabot.com.br/class.json"))
-      .then((classes) => {
-        info.classes = classes.data;
-      }),
-
-    axios
-      .get(addLanguageParam("https://info.asurabot.com.br/items.json"))
-      .then((classes) => {
-        info.items = classes.data;
-      }),
-
-    axios
-      .get(addLanguageParam("https://info.asurabot.com.br/cosmetics.json"))
-      .then(async (cosmetics) => {
-        info.cosmetics = cosmetics.data;
-      }),
-    ...new Array(PET_NUMBER).fill(0).map((_, i) =>
-      axios
-        .get(addLanguageParam(`https://info.asurabot.com.br/pets/${i}.json`))
-        .then((classes) => {
-          info.pets[i] = classes.data;
-        })
-        .catch(() => 1),
-    ),
+    GetSprites().then((data) => { info.sprites = data[0]; }),
+    GetClasses().then((data) => { info.classes = data; }),
+    GetItems().then((data) => { info.items = data; }),
+    GetCosmeticInfo().then((data) => { info.cosmetics = data; }),
+    GetAllPets().then((pets) => {
+      pets.forEach((p, i) => { info.pets[i] = p; });
+    }),
   ]);

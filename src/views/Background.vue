@@ -26,7 +26,7 @@
         </div>
 
         <div class="bg-hero">
-          <div class="bg-image-wrap" :class="{ 'mythic-wrap': background.rarity === 5 }">
+          <div :style="rarityWrapStyle" class="bg-image-wrap">
             <img :src="background.value" :alt="background.name" class="bg-image" />
           </div>
           <div class="bg-meta">
@@ -82,6 +82,24 @@ export default {
         (this.background && this.rarityNames[this.background.rarity]) || ""
       );
     },
+    rarityWrapStyle() {
+      const RARITY_HEX = ["#9ca3af", "#3b82f6", "#a855f7", "#f59e0b", "#ef4444", "#14b8a6", "#FF00FF"];
+      const r = this.background && this.background.rarity;
+      if (r === 5) {
+        return {
+          background: "linear-gradient(to bottom right, #b827fc 0%, #2c90fc 25%, #b8fd33 50%, #fec837 75%, #fd1892 100%)",
+          padding: "5px",
+          border: "none",
+          overflow: "hidden",
+        };
+      }
+      return {
+        background: RARITY_HEX[r] || "#9ca3af",
+        padding: "5px",
+        border: "none",
+        overflow: "hidden",
+      };
+    },
     fileNum() {
       const id = parseInt(this.$route.query.background, 10);
       return String((isNaN(id) ? 0 : id) + 1).padStart(3, "0");
@@ -121,6 +139,12 @@ export default {
 
 .breadcrumb-section {
   padding: 32px 0 16px;
+}
+
+@media (min-width: 1024px) {
+  .breadcrumb-section {
+    padding-top: 14px;
+  }
 }
 .breadcrumb {
   display: flex;
@@ -174,30 +198,12 @@ export default {
 .bg-image-wrap {
   width: 100%;
   border-radius: var(--radius-lg);
-  background: #fff;
-  border: 1px solid var(--line);
-  padding: 12px;
   overflow: hidden;
 }
 .bg-image {
   width: 100%;
   height: auto;
   display: block;
-  border-radius: 12px;
-}
-.mythic-wrap {
-  padding: 4px;
-  border: 0;
-  background: linear-gradient(
-    to bottom right,
-    #b827fc 0%,
-    #2c90fc 25%,
-    #b8fd33 50%,
-    #fec837 75%,
-    #fd1892 100%
-  );
-}
-.mythic-wrap .bg-image {
   border-radius: 10px;
 }
 

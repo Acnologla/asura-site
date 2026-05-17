@@ -15,9 +15,30 @@
         viewBox="0 0 180 180"
         aria-hidden="true"
       >
-        <circle cx="90" cy="90" r="70" stroke="#fff" stroke-width="1" fill="none" />
-        <circle cx="90" cy="90" r="50" stroke="#fff" stroke-width="1" fill="none" />
-        <circle cx="90" cy="90" r="30" stroke="#fff" stroke-width="1" fill="none" />
+        <circle
+          cx="90"
+          cy="90"
+          r="70"
+          stroke="#fff"
+          stroke-width="1"
+          fill="none"
+        />
+        <circle
+          cx="90"
+          cy="90"
+          r="50"
+          stroke="#fff"
+          stroke-width="1"
+          fill="none"
+        />
+        <circle
+          cx="90"
+          cy="90"
+          r="30"
+          stroke="#fff"
+          stroke-width="1"
+          fill="none"
+        />
       </svg>
 
       <div class="plan-icon">{{ plano.icone }}</div>
@@ -38,19 +59,20 @@
     <div class="plan-body">
       <div class="plan-benefits">
         <div v-for="(b, i) in benefits" :key="i" class="benefit-row">
-          <div
-            class="check-bg"
-            :style="{ background: checkBg }"
-          >
+          <div class="check-bg" :style="{ background: checkBg }">
             <CheckIcon :size="11" :color="checkColor" />
           </div>
           {{ b }}
         </div>
       </div>
-      <button class="btn plan-cta" :style="ctaStyle" @click="$emit('subscribe')">
+      <button
+        class="btn plan-cta"
+        :style="ctaStyle"
+        @click="$emit('subscribe')"
+      >
         {{ $t("donatePage.buy") }} {{ plano.nome }}
       </button>
-      <div class="plan-pay">PIX · {{ $t("paymentCard") || "Cartão" }} · PayPal · Mercado Pago</div>
+      <div class="plan-pay">PIX · PayPal</div>
     </div>
   </div>
 </template>
@@ -93,7 +115,8 @@ const BENEF_EN = {
   "Usar qualquer imagem como background": "Use any image as background",
   "Utilizar background gifs": "Use animated GIF backgrounds",
   "Limite de givemoney 6x maior": "Givemoney limit 6× larger",
-  "50% de xp e money extra nos contratos": "50% extra XP and money on contracts",
+  "50% de xp e money extra nos contratos":
+    "50% extra XP and money on contracts",
   "Badge exclusiva": "Exclusive badge",
   "Prioridade no suporte": "Priority support",
 };

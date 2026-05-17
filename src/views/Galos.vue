@@ -3,9 +3,7 @@
     <!-- Breadcrumb -->
     <section class="breadcrumb-section">
       <div class="container breadcrumb">
-        <router-link :to="{ name: 'Home' }">{{
-          $t("nav.about")
-        }}</router-link>
+        <router-link :to="{ name: 'Home' }">{{ $t("nav.about") }}</router-link>
         <span>/</span>
         <router-link :to="{ name: 'Galos' }">{{
           $t("nav.roosters")
@@ -18,35 +16,19 @@
     <!-- Header / Hero -->
     <section class="header-section">
       <div class="container">
-        <div class="spec-line">
-          <span>FILE · #{{ fileNum }} / {{ totalNum }}</span>
-          <span class="dot" />
-          <span class="strong"
-            >{{ $t("home.type") }} {{ current.name.toUpperCase() }}</span
-          >
-          <span :class="['rarity-text', `rarity-${current.rarity}`]"
-            >★ {{ rarityLabel.toUpperCase() }}</span
-          >
-          <div class="nav-arrows">
-            <button @click="prev" aria-label="prev">‹</button>
-            <button @click="next" aria-label="next">›</button>
-          </div>
-        </div>
-
         <div class="hero-grid">
           <div>
-            <div class="hero-img-wrap">
-              <img
-                :src="currentSprite"
-                :alt="current.name"
-                class="hero-img"
-                :key="currentIndex"
-              />
+            <div :style="rarityBorderStyle" class="rarity-ring">
+              <div class="hero-img-wrap">
+                <img
+                  :src="currentSprite"
+                  :alt="current.name"
+                  class="hero-img"
+                  :key="currentIndex"
+                />
+              </div>
             </div>
-            <div class="hero-caption">
-              <span>{{ current.name }}.png</span>
-              <span>placeholder</span>
-            </div>
+
             <div class="hero-tabs">
               <button class="btn btn-ghost" @click="scrollToSkins">
                 {{ $t("galos.skins") }}
@@ -63,7 +45,11 @@
                 class="initials-badge"
                 :style="{
                   background:
-                    'linear-gradient(135deg, ' + rarityColor + '33, ' + rarityColor + ')',
+                    'linear-gradient(135deg, ' +
+                    rarityColor +
+                    '33, ' +
+                    rarityColor +
+                    ')',
                 }"
               >
                 {{ initials }}
@@ -158,65 +144,62 @@
             :key="s.name + i"
             class="skill-card card"
           >
-            <div class="skill-badge" :style="{ background: rarityColor + '22', color: rarityColor }">
-              {{ initials }}
-            </div>
-            <div class="skill-body">
+            <div class="skill-header">
+              <div
+                class="skill-badge"
+                :style="{ background: rarityColor + '22', color: rarityColor }"
+              >
+                {{ initials }}
+              </div>
               <div class="skill-eyebrow">
-                SKILL · {{ String(i + 1).padStart(2, "0") }}
-                <span v-if="s.evolved" class="evolved-tag">
-                  ◇ {{ $t("skill.evolved") }}
-                </span>
-              </div>
-              <div class="skill-name">{{ s.name }}</div>
-              <div class="skill-stats">
-                <div>
-                  <span class="stat-label">{{ $t("skill.minDamage") }}</span>
-                  <span class="stat-val">{{ s.damage[0] }}</span>
-                </div>
-                <div class="stat-sep" />
-                <div>
-                  <span class="stat-label">{{ $t("skill.maxDamage") }}</span>
-                  <span class="stat-val">{{ s.damage[1] }}</span>
-                </div>
-                <div class="stat-sep" />
-                <div>
-                  <span class="stat-label">{{ $t("skill.level") }}</span>
-                  <span class="stat-val">{{ s.level }}</span>
-                </div>
-              </div>
-              <div v-if="s.effect && s.effect.chance > 0" class="skill-effect">
-                <span class="effect-eyebrow">{{ $t("skill.effect") }}</span>
-                <span class="effect-name">{{ s.effect.effect.name }}</span>
-                · {{ Math.round(s.effect.chance * 100) }}% ·
-                {{ s.effect.effect.turns }}t
-                <span v-if="s.effect.effect.type === 1">
-                  · {{ s.effect.effect.range[0] }}-{{
-                    s.effect.effect.range[1]
-                  }}
-                  {{ $t("skill.minDamage") }}
-                </span>
-                <span v-if="s.effect.effect.type === 2">
-                  · {{ s.effect.effect.range[0] }}-{{
-                    s.effect.effect.range[1]
-                  }}
-                  {{ $t("skill.minHeal") }}
-                </span>
-                <span v-if="s.effect.effect.type === 3"
-                  >· {{ $t("skill.stun") }}</span
-                >
-                <span v-if="s.effect.effect.type === 4"
-                  >· {{ $t("skill.reducedDamage") }}
-                  {{ s.effect.effect.range[0] }}%</span
-                >
-                <span v-if="s.effect.effect.type === 5">·
-                  {{ $t("skill.reflectNext") }}</span
-                >
-                <span v-if="s.effect.effect.type === 6"
-                  >· {{ $t("skill.fragility") }}
-                  {{ s.effect.effect.range[0] }}%</span
+                LEVEL {{ s.level }}
+                <span v-if="s.evolved" class="evolved-tag"
+                  >◇ {{ $t("skill.evolved") }}</span
                 >
               </div>
+            </div>
+            <div class="skill-name">{{ s.name }}</div>
+            <div class="skill-stats">
+              <div class="stat-row">
+                <span class="stat-label">{{ $t("skill.minDamage") }}</span>
+                <span class="stat-val">{{ s.damage[0] }}</span>
+              </div>
+              <div class="stat-row">
+                <span class="stat-label">{{ $t("skill.maxDamage") }}</span>
+                <span class="stat-val">{{ s.damage[1] }}</span>
+              </div>
+            </div>
+            <div v-if="s.effect && s.effect.chance > 0" class="skill-effect">
+              <div class="effect-eyebrow">{{ $t("skill.effect") }}</div>
+              <span class="effect-name">{{ s.effect.effect.name }}</span>
+              · {{ Math.round(s.effect.chance * 100) }}% ·
+              {{ s.effect.effect.turns }}t
+              <span v-if="s.effect.effect.type === 1"
+                >· {{ s.effect.effect.range[0] }}-{{
+                  s.effect.effect.range[1]
+                }}
+                {{ $t("skill.minDamage") }}</span
+              >
+              <span v-if="s.effect.effect.type === 2"
+                >· {{ s.effect.effect.range[0] }}-{{
+                  s.effect.effect.range[1]
+                }}
+                {{ $t("skill.minHeal") }}</span
+              >
+              <span v-if="s.effect.effect.type === 3"
+                >· {{ $t("skill.stun") }}</span
+              >
+              <span v-if="s.effect.effect.type === 4"
+                >· {{ $t("skill.reducedDamage") }}
+                {{ s.effect.effect.range[0] }}%</span
+              >
+              <span v-if="s.effect.effect.type === 5"
+                >· {{ $t("skill.reflectNext") }}</span
+              >
+              <span v-if="s.effect.effect.type === 6"
+                >· {{ $t("skill.fragility") }}
+                {{ s.effect.effect.range[0] }}%</span
+              >
             </div>
           </div>
         </div>
@@ -239,14 +222,11 @@
           {{ $t("galos.noSkinsAvailable") }}
         </div>
         <div v-else class="skins-grid">
-          <div
-            v-for="(skin, i) in skins"
-            :key="i"
-            class="skin-card card"
-            :class="{ 'skin-mythic': skin.rarity === 5 }"
-          >
-            <div class="skin-img-wrap">
-              <img :src="skin.value" :alt="skin.name" class="skin-img" />
+          <div v-for="(skin, i) in skins" :key="i" class="skin-card card">
+            <div :style="skinRingStyle(skin.rarity)" class="skin-rarity-ring">
+              <div class="skin-img-wrap">
+                <img :src="skin.value" :alt="skin.name" class="skin-img" />
+              </div>
             </div>
             <div class="skin-info">
               <div class="skin-name">{{ skin.name }}</div>
@@ -312,18 +292,16 @@
             class="other-cell"
             @click="goTo(o.index)"
           >
-            <div class="other-idx">
-              {{ String(o.index + 1).padStart(3, "0") }} /
-              {{ o.name.toUpperCase() }}
-            </div>
-            <div class="other-img-wrap">
-              <img :src="o.sprite" :alt="o.name" class="other-img" />
+            <div :style="otherRingStyle(o.rarity)" class="other-rarity-ring">
+              <div class="other-img-wrap">
+                <img :src="o.sprite" :alt="o.name" class="other-img" />
+              </div>
             </div>
             <div class="other-row">
               <div class="other-name">{{ o.name }}</div>
               <div
                 :class="['rarity-text', `rarity-${o.rarity}`]"
-                style="font-size: 9px"
+                style="font-size: 15px"
               >
                 ★ {{ rarityNames[o.rarity] }}
               </div>
@@ -340,7 +318,15 @@ import axios from "axios";
 import ArrowIcon from "../components/icons/ArrowIcon.vue";
 import { GetCosmeticInfo } from "../trade/info";
 
-const RARITY_HEX = ["#9ca3af", "#3b82f6", "#a855f7", "#f59e0b", "#ef4444", "#14b8a6", "#fbbf24"];
+const RARITY_HEX = [
+  "#9ca3af",
+  "#3b82f6",
+  "#a855f7",
+  "#f59e0b",
+  "#ef4444",
+  "#14b8a6",
+  "#FF00FF",
+];
 
 export default {
   name: "GaloDetail",
@@ -377,6 +363,21 @@ export default {
     rarityColor() {
       return RARITY_HEX[this.current.rarity] || "#9ca3af";
     },
+    rarityBorderStyle() {
+      if (this.current.rarity === 5) {
+        return {
+          background:
+            "linear-gradient(to bottom right, #b827fc 0%, #2c90fc 25%, #b8fd33 50%, #fec837 75%, #fd1892 100%)",
+          padding: "4px",
+          borderRadius: "18px",
+        };
+      }
+      return {
+        background: this.rarityColor,
+        padding: "4px",
+        borderRadius: "18px",
+      };
+    },
     initials() {
       return (this.current.name || "").slice(0, 2).toUpperCase();
     },
@@ -410,7 +411,7 @@ export default {
         .filter((c) => c && c.name);
     },
     others() {
-      return this.classes
+      const all = this.classes
         .map((c, i) => ({
           name: c.name,
           rarity: c.rarity,
@@ -422,13 +423,20 @@ export default {
             c.index >= 0 &&
             c.index !== this.currentIndex &&
             c.rarity !== -1 &&
-            c.sprite
-        )
-        .slice(0, 6);
+            c.sprite,
+        );
+      const sameRarity = all.filter((c) => c.rarity === this.current.rarity);
+      const pool = sameRarity.length >= 2 ? sameRarity : all;
+      const shuffled = [...pool];
+      for (let i = shuffled.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+      }
+      return shuffled.slice(0, 6);
     },
     skins() {
       return this.allSkins.filter(
-        (s) => s.type === 2 && s.extra === this.currentIndex + 1
+        (s) => s.type === 2 && s.extra === this.currentIndex + 1,
       );
     },
   },
@@ -436,11 +444,45 @@ export default {
     rarityHex(r) {
       return RARITY_HEX[r] || "#9ca3af";
     },
+    otherRingStyle(r) {
+      if (r === 5) {
+        return {
+          background:
+            "linear-gradient(to bottom right, #b827fc 0%, #2c90fc 25%, #b8fd33 50%, #fec837 75%, #fd1892 100%)",
+          padding: "2px",
+          borderRadius: "14px",
+          overflow: "hidden",
+        };
+      }
+      return {
+        background: RARITY_HEX[r] || "#9ca3af",
+        padding: "2px",
+        borderRadius: "14px",
+        overflow: "hidden",
+      };
+    },
+    skinRingStyle(r) {
+      if (r === 5) {
+        return {
+          background:
+            "linear-gradient(to bottom right, #b827fc 0%, #2c90fc 25%, #b8fd33 50%, #fec837 75%, #fd1892 100%)",
+          padding: "3px",
+          borderRadius: "15px",
+          overflow: "hidden",
+        };
+      }
+      return {
+        background: RARITY_HEX[r] || "#9ca3af",
+        padding: "3px",
+        borderRadius: "15px",
+        overflow: "hidden",
+      };
+    },
     fetchSkills(cls) {
       const locale = this.$i18n.locale || "pt";
       return axios
         .get(
-          `https://info.asurabot.com.br/attacks/${cls.name}.json?language=${locale}`
+          `https://info.asurabot.com.br/attacks/${cls.name}.json?language=${locale}`,
         )
         .then((r) => {
           (r.data || []).forEach((skill) => {
@@ -507,7 +549,7 @@ export default {
     async runCompare() {
       const target = this.classes.find(
         (c) =>
-          c.name && c.name.toLowerCase() === this.compareName.toLowerCase()
+          c.name && c.name.toLowerCase() === this.compareName.toLowerCase(),
       );
       if (!target) return;
       this.compareSkills = await this.fetchSkills(target);
@@ -517,13 +559,13 @@ export default {
       try {
         const [c, s, e] = await Promise.all([
           axios.get(
-            `https://info.asurabot.com.br/class.json?language=${locale}`
+            `https://info.asurabot.com.br/class.json?language=${locale}`,
           ),
           axios.get(
-            `https://info.asurabot.com.br/sprites.json?language=${locale}`
+            `https://info.asurabot.com.br/sprites.json?language=${locale}`,
           ),
           axios.get(
-            `https://info.asurabot.com.br/effects.json?language=${locale}`
+            `https://info.asurabot.com.br/effects.json?language=${locale}`,
           ),
         ]);
         this.classes = c.data;
@@ -558,6 +600,12 @@ export default {
 /* Breadcrumb */
 .breadcrumb-section {
   padding: 32px 0 16px;
+}
+
+@media (min-width: 1024px) {
+  .breadcrumb-section {
+    padding-top: 14px;
+  }
 }
 .breadcrumb {
   display: flex;
@@ -628,12 +676,21 @@ export default {
   gap: 56px;
   align-items: start;
 }
+@media (min-width: 1200px) {
+  .hero-grid {
+    grid-template-columns: 400px 1fr;
+  }
+}
+.rarity-ring {
+  width: 100%;
+  border-radius: 18px;
+  overflow: hidden;
+}
 .hero-img-wrap {
   width: 100%;
   aspect-ratio: 1;
   border-radius: 14px;
   background: linear-gradient(135deg, #efeaf7, #ddd2f3);
-  border: 1px solid var(--line);
   display: grid;
   place-items: center;
   overflow: hidden;
@@ -685,14 +742,14 @@ export default {
   border: 1px solid rgba(0, 0, 0, 0.1);
 }
 .rarity-pill {
-  padding: 6px 12px;
+  padding: 6px 14px;
   border-radius: 999px;
   border: 1px solid var(--r);
   color: var(--r);
   font-weight: 700;
-  font-size: 11px;
+  font-size: 13px;
   font-family: var(--font-mono);
-  letter-spacing: 0.1em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   background: color-mix(in oklab, var(--r) 10%, white);
 }
@@ -715,7 +772,11 @@ export default {
 .passive-block {
   padding: 18px;
   border-radius: 14px;
-  background: linear-gradient(135deg, rgba(105, 56, 239, 0.06), rgba(105, 56, 239, 0.02));
+  background: linear-gradient(
+    135deg,
+    rgba(105, 56, 239, 0.06),
+    rgba(105, 56, 239, 0.02)
+  );
   border: 1px solid #d9c9ff;
   margin-bottom: 22px;
 }
@@ -821,37 +882,45 @@ export default {
 }
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 18px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
 }
 .skill-card {
-  padding: 26px;
-  display: grid;
-  grid-template-columns: auto 1fr;
-  gap: 18px;
-  align-items: start;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.skill-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
 }
 .skill-badge {
-  width: 48px;
-  height: 48px;
-  border-radius: 10px;
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
   display: grid;
   place-items: center;
   font-family: var(--font-mono);
   font-weight: 700;
-  font-size: 14px;
+  font-size: 13px;
   letter-spacing: 0.04em;
+  flex-shrink: 0;
 }
 .skill-eyebrow {
   font-family: var(--font-mono);
-  font-size: 10px;
+  font-size: 11px;
   letter-spacing: 0.12em;
   color: var(--ink-3);
-  margin-bottom: 4px;
   text-transform: uppercase;
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  text-align: right;
 }
 .evolved-tag {
   background: var(--amber-soft);
@@ -863,55 +932,58 @@ export default {
 .skill-name {
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: 26px;
-  margin-bottom: 10px;
+  font-size: 22px;
   line-height: 1.1;
   letter-spacing: -0.02em;
 }
 .skill-stats {
   display: flex;
-  gap: 18px;
-  margin-bottom: 14px;
-  font-size: 13px;
-  color: var(--ink-2);
-  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 0;
+}
+.stat-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 6px 0;
+  border-bottom: 1px solid var(--line);
 }
 .stat-label {
   color: var(--ink-3);
   font-family: var(--font-mono);
-  font-size: 10px;
+  font-size: 11px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  margin-right: 6px;
 }
 .stat-val {
   font-family: var(--font-mono);
   font-weight: 700;
-}
-.stat-sep {
-  width: 1px;
-  background: var(--line);
+  font-size: 14px;
 }
 .skill-effect {
-  padding-top: 14px;
-  border-top: 1px solid var(--line);
   font-size: 13px;
   color: var(--ink-2);
   line-height: 1.5;
 }
 .effect-eyebrow {
+  display: block;
   font-family: var(--font-mono);
   font-size: 10px;
   color: var(--primary);
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  margin-right: 8px;
+  margin-bottom: 3px;
 }
 .effect-name {
   color: var(--primary);
   font-weight: 600;
 }
 
+@media (max-width: 1024px) {
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
 @media (max-width: 768px) {
   .skills-section {
     padding: 40px 0;
@@ -920,14 +992,14 @@ export default {
     font-size: 32px;
   }
   .skills-grid {
-    grid-template-columns: 1fr;
-    gap: 14px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
   }
   .skill-card {
-    padding: 20px;
+    padding: 16px;
   }
   .skill-name {
-    font-size: 22px;
+    font-size: 18px;
   }
 }
 
@@ -958,6 +1030,11 @@ export default {
   transform: translateY(-3px);
   box-shadow: var(--shadow);
 }
+.skin-rarity-ring {
+  width: 100%;
+  border-radius: 15px;
+  overflow: hidden;
+}
 .skin-img-wrap {
   width: 100%;
   aspect-ratio: 1;
@@ -985,30 +1062,15 @@ export default {
   font-size: 16px;
 }
 .rarity-pill-sm {
-  padding: 3px 8px;
+  padding: 4px 10px;
   border-radius: 999px;
   border: 1px solid var(--r);
   color: var(--r);
   font-weight: 700;
-  font-size: 9px;
+  font-size: 11px;
   font-family: var(--font-mono);
   letter-spacing: 0.08em;
   text-transform: uppercase;
-}
-.skin-mythic {
-  background: linear-gradient(
-      to bottom right,
-      #b827fc 0%,
-      #2c90fc 25%,
-      #b8fd33 50%,
-      #fec837 75%,
-      #fd1892 100%
-    );
-  padding: 3px;
-}
-.skin-mythic > * {
-  background: #fff;
-  border-radius: 9px;
 }
 
 @media (max-width: 1024px) {
@@ -1128,10 +1190,14 @@ export default {
   color: var(--ink-3);
   letter-spacing: 0.08em;
 }
+.other-rarity-ring {
+  width: 100%;
+  border-radius: 14px;
+  overflow: hidden;
+}
 .other-img-wrap {
   width: 100%;
   aspect-ratio: 1;
-  border-radius: 12px;
   background: linear-gradient(135deg, #efeaf7, #ddd2f3);
   display: grid;
   place-items: center;
@@ -1160,6 +1226,14 @@ export default {
   }
   .others-title {
     font-size: 26px;
+  }
+}
+@media (max-width: 450px) {
+  .skins-grid {
+    grid-template-columns: 1fr;
+  }
+  .others-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 </style>

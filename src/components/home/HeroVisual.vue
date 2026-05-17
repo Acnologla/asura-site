@@ -1,21 +1,16 @@
 <template>
   <div class="hero-visual">
-    <div class="spec-strip">
-      <span>FILE · {{ fileNum }}</span>
-      <span class="dot" />
-      <span>{{ $t("home.roosterFile") }}</span>
-      <span class="observed">● {{ $t("home.observed") }}</span>
-    </div>
-
     <div class="rooster-slot">
-      <div class="image-wrap" :key="rooster && rooster.index">
-        <div v-if="!rooster" class="placeholder" />
-        <img
-          v-else
-          :src="rooster.sprite"
-          :alt="rooster.name"
-          class="rooster-img fade-swap"
-        />
+      <div :style="imageRingStyle" class="rarity-ring">
+        <div class="image-wrap" :key="rooster && rooster.index">
+          <div v-if="!rooster" class="placeholder" />
+          <img
+            v-else
+            :src="rooster.sprite"
+            :alt="rooster.name"
+            class="rooster-img fade-swap"
+          />
+        </div>
       </div>
 
       <div class="name-overlay">{{ name }}</div>
@@ -23,15 +18,6 @@
       <div :class="['rarity-tag', `rarity-${rooster && rooster.rarity}`]">
         ★ {{ rarityLabel }}
       </div>
-    </div>
-
-    <div class="caption">
-      <span>{{ $t("home.type") }}</span>
-      <span class="ink-strong">{{ rarityLabel }}</span>
-      <span class="dot" />
-      <span style="color: var(--primary); margin-left: auto">
-        {{ $t("home.seenAgo") }}
-      </span>
     </div>
   </div>
 </template>
@@ -41,6 +27,15 @@ const RARITY_NAMES = {
   pt: ["Comum", "Raro", "Épico", "Lendário", "Especial", "Mítico", "Deus"],
   en: ["Common", "Rare", "Epic", "Legendary", "Special", "Mythic", "God"],
 };
+const RARITY_HEX = [
+  "#9ca3af",
+  "#3b82f6",
+  "#a855f7",
+  "#f59e0b",
+  "#ef4444",
+  "#14b8a6",
+  "#FF00FF",
+];
 
 export default {
   name: "HeroVisual",
@@ -57,6 +52,22 @@ export default {
       const r = (this.rooster && this.rooster.rarity) || 0;
       const lang = this.$i18n.locale === "en" ? "en" : "pt";
       return RARITY_NAMES[lang][r] || "—";
+    },
+    imageRingStyle() {
+      const r = (this.rooster && this.rooster.rarity) || 0;
+      if (r === 5) {
+        return {
+          background:
+            "linear-gradient(to bottom right, #b827fc 0%, #2c90fc 25%, #b8fd33 50%, #fec837 75%, #fd1892 100%)",
+          padding: "3px",
+          borderRadius: "17px",
+        };
+      }
+      return {
+        background: RARITY_HEX[r] || "#9ca3af",
+        padding: "3px",
+        borderRadius: "17px",
+      };
     },
   },
 };
@@ -95,12 +106,16 @@ export default {
 .rooster-slot {
   position: relative;
 }
+.rarity-ring {
+  width: 100%;
+  border-radius: 17px;
+  overflow: hidden;
+}
 .image-wrap {
   width: 100%;
   aspect-ratio: 1.05 / 1;
   border-radius: 14px;
   background: linear-gradient(135deg, #efeaf7, #ddd2f3);
-  border: 1px solid var(--line);
   display: grid;
   place-items: center;
   overflow: hidden;
@@ -137,9 +152,9 @@ export default {
   right: -10px;
   top: 22px;
   padding: 6px 10px;
-  background: #fff7e0;
-  color: #a17404;
-  border: 1px solid #f5d77a;
+  background: color-mix(in oklab, var(--r, #f5d77a) 15%, white);
+  color: var(--r, #a17404);
+  border: 1px solid var(--r, #f5d77a);
   font-size: 10px;
   font-family: var(--font-mono);
   letter-spacing: 0.1em;

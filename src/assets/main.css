@@ -299,7 +299,7 @@ button {
 .rarity-6,
 .rarity-Deus,
 .rarity-Divino {
-  --r: #fbbf24;
+  --r: #FF00FF;
 }
 
 .rarity-text {
@@ -411,6 +411,12 @@ button {
   }
   .h-display {
     letter-spacing: -0.02em;
+  }
+}
+
+@media (max-width: 450px) {
+  .container {
+    padding: 0 12px;
   }
 }
 
