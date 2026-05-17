@@ -177,7 +177,10 @@
           </div>
         </div>
 
-        <div class="catalog-strip">
+        <div
+          class="catalog-strip"
+          :class="{ 'catalog-strip--hidden': !catalogVisible }"
+        >
           <button
             v-for="(c, i) in catalogStrip"
             :key="c.index + '-' + i"
@@ -243,7 +246,8 @@ import ArrowIcon from "../components/icons/ArrowIcon.vue";
 import HeroVisual from "../components/home/HeroVisual.vue";
 import FeatureArt from "../components/home/FeatureArt.vue";
 
-const ROTATE_MS = 4000;
+const HERO_MS = 2500;
+const CATALOG_MS = 4000;
 const RARITY_HEX = [
   "#9ca3af",
   "#3b82f6",
@@ -272,7 +276,9 @@ export default {
       sprites: [],
       heroIdx: 0,
       catalogIndices: [],
-      timer: null,
+      catalogVisible: true,
+      heroTimer: null,
+      catalogTimer: null,
       isMobile: false,
     };
   },
@@ -507,10 +513,17 @@ export default {
         r === 5 ? "rgba(184,39,252,0.7)" : RARITY_HEX[r] || "#9ca3af";
       return { boxShadow: `0 0 0 1px ${color}` };
     },
-    rotate() {
+    rotateHero() {
       if (this.pairs.length === 0) return;
       this.heroIdx = this.rand(this.pairs.length);
-      this.catalogIndices = this.pickIndices(6);
+    },
+    rotateCatalog() {
+      if (this.pairs.length === 0) return;
+      this.catalogVisible = false;
+      setTimeout(() => {
+        this.catalogIndices = this.pickIndices(6);
+        this.catalogVisible = true;
+      }, 320);
     },
     onResize() {
       this.isMobile = window.innerWidth < 768;
@@ -542,7 +555,8 @@ export default {
         ]);
         this.sprites = spritesRes.data[0];
         this.classes = classesRes.data;
-        this.rotate();
+        this.rotateHero();
+        this.rotateCatalog();
       } catch (e) {
         // Network error is non-fatal — page still renders.
       }
@@ -554,11 +568,13 @@ export default {
   mounted() {
     this.onResize();
     window.addEventListener("resize", this.onResize);
-    this.timer = setInterval(this.rotate, ROTATE_MS);
+    this.heroTimer = setInterval(this.rotateHero, HERO_MS);
+    this.catalogTimer = setInterval(this.rotateCatalog, CATALOG_MS);
   },
   beforeDestroy() {
     window.removeEventListener("resize", this.onResize);
-    if (this.timer) clearInterval(this.timer);
+    if (this.heroTimer) clearInterval(this.heroTimer);
+    if (this.catalogTimer) clearInterval(this.catalogTimer);
   },
   watch: {
     "$i18n.locale"() {
@@ -1036,6 +1052,11 @@ export default {
   gap: 14px;
   padding-top: 24px;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
+  transition: opacity 0.28s ease, transform 0.28s ease;
+}
+.catalog-strip--hidden {
+  opacity: 0;
+  transform: translateY(10px);
 }
 .catalog-cell {
   background: transparent;

@@ -131,7 +131,7 @@
                 <a
                   class="btn btn-discord"
                   style="padding: 14px 22px"
-                  href="https://discord.gg/CfkBZyVsd7"
+                  href="https://discord.gg/bn8yYNNNF3"
                   target="_blank"
                   rel="noopener"
                 >
@@ -176,7 +176,7 @@
           <p class="faq-sub">{{ $t("donateNew.faqSub") }}</p>
           <a
             class="btn btn-discord"
-            href="https://discord.gg/CfkBZyVsd7"
+            href="https://discord.gg/bn8yYNNNF3"
             target="_blank"
             rel="noopener"
             style="padding: 12px 20px"
@@ -210,7 +210,7 @@
         <p>
           {{ $t("donatePage.donationNotice") }}
           <a
-            href="https://discord.gg/CfkBZyVsd7"
+            href="https://discord.gg/bn8yYNNNF3"
             target="_blank"
             rel="noopener"
             >{{ $t("donatePage.supportDiscord") }}</a

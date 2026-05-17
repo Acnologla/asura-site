@@ -44,7 +44,7 @@
             </div>
 
             <h1 class="h-display rooster-title">
-              {{ $t("galos.pet") }}<br />
+              {{ $t("galos.pet") }}
               <span :style="{ color: rarityColor }">{{ pet.name }}</span>
             </h1>
           </div>
@@ -386,8 +386,8 @@ export default {
   overflow: hidden;
 }
 .hero-img {
-  max-width: 78%;
-  max-height: 78%;
+  max-width: 90%;
+  max-height: 90%;
   object-fit: contain;
 }
 .hero-caption {
@@ -456,9 +456,7 @@ export default {
   background: var(--bg-2);
 }
 .skills-head {
-  margin-bottom: 28px;
   padding-bottom: 20px;
-  border-bottom: 1px solid var(--line);
 }
 .skills-title {
   font-size: 48px;

@@ -60,7 +60,7 @@
             </div>
 
             <h1 class="h-display rooster-title">
-              {{ $t("galos.rooster") || "Galo" }}<br />
+              {{ $t("galos.rooster") || "Galo" }}
               <span :style="{ color: rarityColor }">{{ current.name }}</span>
             </h1>
             <p v-if="current.description" class="rooster-desc">
@@ -138,7 +138,22 @@
             </h2>
           </div>
         </div>
-        <div class="skills-grid">
+
+        <!-- Compare banner -->
+        <div v-if="compareTarget" class="compare-banner card">
+          <div class="compare-banner-info">
+            <img :src="compareTargetSprite" class="compare-banner-img" />
+            <span
+              >vs <strong>{{ compareTarget.name }}</strong></span
+            >
+          </div>
+          <button class="compare-clear-btn" @click="clearCompare">
+            ✕ Remover
+          </button>
+        </div>
+
+        <!-- Normal skills grid -->
+        <div v-if="!compareTarget" class="skills-grid">
           <div
             v-for="(s, i) in skills"
             :key="s.name + i"
@@ -161,12 +176,12 @@
             <div class="skill-name">{{ s.name }}</div>
             <div class="skill-stats">
               <div class="stat-row">
-                <span class="stat-label">{{ $t("skill.minDamage") }}</span>
-                <span class="stat-val">{{ s.damage[0] }}</span>
+                <span class="stat-label">{{ $t("skill.minDamage") }}</span
+                ><span class="stat-val">{{ s.damage[0] }}</span>
               </div>
               <div class="stat-row">
-                <span class="stat-label">{{ $t("skill.maxDamage") }}</span>
-                <span class="stat-val">{{ s.damage[1] }}</span>
+                <span class="stat-label">{{ $t("skill.maxDamage") }}</span
+                ><span class="stat-val">{{ s.damage[1] }}</span>
               </div>
             </div>
             <div v-if="s.effect && s.effect.chance > 0" class="skill-effect">
@@ -200,6 +215,155 @@
                 >· {{ $t("skill.fragility") }}
                 {{ s.effect.effect.range[0] }}%</span
               >
+            </div>
+          </div>
+        </div>
+
+        <!-- Compare skills grid -->
+        <div v-else class="skills-compare-grid">
+          <div v-for="(s, i) in skills" :key="i" class="skill-compare-row">
+            <!-- Current rooster skill -->
+            <div class="skill-card card skill-compare-card skill-compare-left">
+              <div class="skill-header">
+                <div
+                  class="skill-badge"
+                  :style="{
+                    background: rarityColor + '22',
+                    color: rarityColor,
+                  }"
+                >
+                  {{ initials }}
+                </div>
+                <div class="skill-eyebrow">LEVEL {{ s.level }}</div>
+              </div>
+              <div class="skill-name">{{ s.name }}</div>
+              <div class="skill-stats">
+                <div class="stat-row">
+                  <span class="stat-label">{{ $t("skill.minDamage") }}</span
+                  ><span class="stat-val">{{ s.damage[0] }}</span>
+                </div>
+                <div class="stat-row">
+                  <span class="stat-label">{{ $t("skill.maxDamage") }}</span
+                  ><span class="stat-val">{{ s.damage[1] }}</span>
+                </div>
+              </div>
+              <div v-if="s.effect && s.effect.chance > 0" class="skill-effect">
+                <div class="effect-eyebrow">{{ $t("skill.effect") }}</div>
+                <span class="effect-name">{{ s.effect.effect.name }}</span>
+                · {{ Math.round(s.effect.chance * 100) }}% ·
+                {{ s.effect.effect.turns }}t
+                <span v-if="s.effect.effect.type === 1"
+                  >· {{ s.effect.effect.range[0] }}-{{
+                    s.effect.effect.range[1]
+                  }}
+                  {{ $t("skill.minDamage") }}</span
+                >
+                <span v-if="s.effect.effect.type === 2"
+                  >· {{ s.effect.effect.range[0] }}-{{
+                    s.effect.effect.range[1]
+                  }}
+                  {{ $t("skill.minHeal") }}</span
+                >
+                <span v-if="s.effect.effect.type === 3"
+                  >· {{ $t("skill.stun") }}</span
+                >
+                <span v-if="s.effect.effect.type === 4"
+                  >· {{ $t("skill.reducedDamage") }}
+                  {{ s.effect.effect.range[0] }}%</span
+                >
+                <span v-if="s.effect.effect.type === 5"
+                  >· {{ $t("skill.reflectNext") }}</span
+                >
+                <span v-if="s.effect.effect.type === 6"
+                  >· {{ $t("skill.fragility") }}
+                  {{ s.effect.effect.range[0] }}%</span
+                >
+              </div>
+            </div>
+
+            <div class="skill-compare-vs">VS</div>
+
+            <!-- Opponent skill at same index -->
+            <template v-if="compareSkills[i]">
+              <div
+                class="skill-card card skill-compare-card skill-compare-right"
+              >
+                <div class="skill-header">
+                  <div
+                    class="skill-badge"
+                    :style="{
+                      background: rarityHex(compareTarget.rarity) + '22',
+                      color: rarityHex(compareTarget.rarity),
+                    }"
+                  >
+                    {{ compareTarget.name.slice(0, 2).toUpperCase() }}
+                  </div>
+                  <div class="skill-eyebrow">
+                    LEVEL {{ compareSkills[i].level }}
+                  </div>
+                </div>
+                <div class="skill-name">{{ compareSkills[i].name }}</div>
+                <div class="skill-stats">
+                  <div class="stat-row">
+                    <span class="stat-label">{{ $t("skill.minDamage") }}</span
+                    ><span class="stat-val">{{
+                      compareSkills[i].damage[0]
+                    }}</span>
+                  </div>
+                  <div class="stat-row">
+                    <span class="stat-label">{{ $t("skill.maxDamage") }}</span
+                    ><span class="stat-val">{{
+                      compareSkills[i].damage[1]
+                    }}</span>
+                  </div>
+                </div>
+                <div
+                  v-if="
+                    compareSkills[i].effect &&
+                      compareSkills[i].effect.chance > 0
+                  "
+                  class="skill-effect"
+                >
+                  <div class="effect-eyebrow">{{ $t("skill.effect") }}</div>
+                  <span class="effect-name">{{
+                    compareSkills[i].effect.effect.name
+                  }}</span>
+                  · {{ Math.round(compareSkills[i].effect.chance * 100) }}% ·
+                  {{ compareSkills[i].effect.effect.turns }}t
+                  <span v-if="compareSkills[i].effect.effect.type === 1"
+                    >· {{ compareSkills[i].effect.effect.range[0] }}-{{
+                      compareSkills[i].effect.effect.range[1]
+                    }}
+                    {{ $t("skill.minDamage") }}</span
+                  >
+                  <span v-if="compareSkills[i].effect.effect.type === 2"
+                    >· {{ compareSkills[i].effect.effect.range[0] }}-{{
+                      compareSkills[i].effect.effect.range[1]
+                    }}
+                    {{ $t("skill.minHeal") }}</span
+                  >
+                  <span v-if="compareSkills[i].effect.effect.type === 3"
+                    >· {{ $t("skill.stun") }}</span
+                  >
+                  <span v-if="compareSkills[i].effect.effect.type === 4"
+                    >· {{ $t("skill.reducedDamage") }}
+                    {{ compareSkills[i].effect.effect.range[0] }}%</span
+                  >
+                  <span v-if="compareSkills[i].effect.effect.type === 5"
+                    >· {{ $t("skill.reflectNext") }}</span
+                  >
+                  <span v-if="compareSkills[i].effect.effect.type === 6"
+                    >· {{ $t("skill.fragility") }}
+                    {{ compareSkills[i].effect.effect.range[0] }}%</span
+                  >
+                </div>
+              </div>
+            </template>
+            <div
+              v-else
+              class="skill-card card skill-compare-card skill-compare-right skill-compare-empty"
+            >
+              —
             </div>
           </div>
         </div>
@@ -239,35 +403,38 @@
       </div>
     </section>
 
-    <!-- Compare modal -->
+    <!-- Compare modal (picker only) -->
     <div v-if="compareOpen" class="compare-overlay" @click.self="closeCompare">
       <div class="compare-panel">
         <div class="compare-head">
-          <div class="h-display">{{ $t("compare.title") }}</div>
+          <div class="h-display" style="font-size:22px">
+            {{ $t("compare.title") }}
+          </div>
           <button class="compare-close" @click="closeCompare">×</button>
         </div>
-        <input
-          v-model="compareName"
-          :placeholder="$t('compare.placeholder')"
-          class="compare-input"
-          @keyup.enter="runCompare"
-        />
-        <button class="btn btn-primary" @click="runCompare">
-          {{ $t("compare.button") }}
-        </button>
-        <div v-if="compareSkills.length" class="compare-result">
-          <div
-            v-for="(cs, i) in compareSkills"
-            :key="i"
-            class="compare-row card"
-          >
-            <div>
-              <div class="compare-skill-name">{{ cs.name }}</div>
-              <div class="compare-skill-line">
-                {{ $t("skill.minDamage") }}: {{ cs.damage[0] }} ·
-                {{ $t("skill.maxDamage") }}: {{ cs.damage[1] }}
-              </div>
-            </div>
+        <div class="compare-search-wrap">
+          <input
+            v-model="compareName"
+            :placeholder="$t('compare.placeholder')"
+            class="compare-input"
+            autocomplete="off"
+            @focus="compareDropdownOpen = true"
+          />
+          <div v-if="compareFiltered.length" class="compare-dropdown">
+            <button
+              v-for="r in compareFiltered"
+              :key="r.name"
+              class="compare-option"
+              @mousedown.prevent="selectCompareTarget(r)"
+            >
+              <img :src="compareOptionSprite(r)" class="compare-option-img" />
+              <span class="compare-option-name">{{ r.name }}</span>
+              <span
+                class="compare-option-star"
+                :style="{ color: rarityHex(r.rarity) }"
+                >★</span
+              >
+            </button>
           </div>
         </div>
       </div>
@@ -342,9 +509,20 @@ export default {
       compareOpen: false,
       compareName: "",
       compareSkills: [],
+      compareTarget: null,
+      compareTargetSprite: "",
+      compareDropdownOpen: false,
     };
   },
   computed: {
+    compareFiltered() {
+      const q = this.compareName.toLowerCase().trim();
+      const list = this.classes.slice(1);
+      const filtered = q
+        ? list.filter((c) => c.name && c.name.toLowerCase().includes(q))
+        : list;
+      return filtered.slice(0, 30);
+    },
     ready() {
       return this.classes.length > 1;
     },
@@ -542,17 +720,30 @@ export default {
     },
     openCompare() {
       this.compareOpen = true;
+      this.compareTarget = null;
+      this.compareName = "";
+      this.compareDropdownOpen = false;
     },
     closeCompare() {
       this.compareOpen = false;
     },
-    async runCompare() {
-      const target = this.classes.find(
-        (c) =>
-          c.name && c.name.toLowerCase() === this.compareName.toLowerCase(),
-      );
-      if (!target) return;
-      this.compareSkills = await this.fetchSkills(target);
+    clearCompare() {
+      this.compareTarget = null;
+      this.compareSkills = [];
+      this.compareName = "";
+      this.compareDropdownOpen = false;
+    },
+    compareOptionSprite(r) {
+      const idx = this.classes.findIndex((c) => c.name === r.name);
+      return this.sprites[idx - 1] || "";
+    },
+    async selectCompareTarget(r) {
+      this.compareDropdownOpen = false;
+      this.compareTarget = r;
+      const idx = this.classes.findIndex((c) => c.name === r.name);
+      this.compareTargetSprite = this.sprites[idx - 1] || "";
+      this.compareSkills = await this.fetchSkills(r);
+      this.compareOpen = false;
     },
     async loadAll() {
       const locale = this.$i18n.locale || "pt";
@@ -696,8 +887,8 @@ export default {
   overflow: hidden;
 }
 .hero-img {
-  max-width: 78%;
-  max-height: 78%;
+  max-width: 90%;
+  max-height: 90%;
   object-fit: contain;
 }
 .hero-caption {
@@ -871,9 +1062,7 @@ export default {
   justify-content: space-between;
   align-items: flex-end;
   gap: 12px;
-  margin-bottom: 28px;
   padding-bottom: 20px;
-  border-bottom: 1px solid var(--line);
 }
 .skills-title {
   font-size: 48px;
@@ -1091,21 +1280,21 @@ export default {
 .compare-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(20, 16, 31, 0.5);
+  background: rgba(20, 16, 31, 0.55);
   z-index: 80;
   display: grid;
-  place-items: center;
-  padding: 24px;
+  place-items: start center;
+  padding: 60px 24px 24px;
 }
 .compare-panel {
-  background: #fff;
+  background: var(--bg);
   border-radius: var(--radius-lg);
-  padding: 32px;
-  max-width: 600px;
+  padding: 24px;
+  max-width: 480px;
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 14px;
   box-shadow: var(--shadow-lg);
 }
 .compare-head {
@@ -1113,43 +1302,167 @@ export default {
   justify-content: space-between;
   align-items: center;
 }
-.compare-head .h-display {
-  font-size: 24px;
-}
 .compare-close {
   background: none;
   border: 0;
   font-size: 26px;
   cursor: pointer;
   color: var(--ink-3);
+  line-height: 1;
+}
+.compare-search-wrap {
+  position: relative;
 }
 .compare-input {
+  width: 100%;
   padding: 12px 16px;
   border-radius: 12px;
   border: 1px solid var(--line);
   font-size: 14px;
   font-family: inherit;
   outline: none;
+  background: var(--bg-2);
+  color: var(--ink);
+  box-sizing: border-box;
 }
-.compare-result {
+.compare-dropdown {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  right: 0;
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  box-shadow: var(--shadow-lg);
+  max-height: 300px;
+  overflow-y: auto;
+  z-index: 10;
   display: flex;
   flex-direction: column;
-  gap: 8px;
-  max-height: 280px;
-  overflow-y: auto;
 }
-.compare-row {
-  padding: 14px 18px;
+.compare-option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  border: 0;
+  background: none;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 14px;
+  color: var(--ink);
+  text-align: left;
+  transition: background 0.15s;
 }
-.compare-skill-name {
+.compare-option:hover {
+  background: var(--bg-2);
+}
+.compare-option-img {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+  border-radius: 8px;
+  background: var(--bg-2);
+  flex-shrink: 0;
+}
+.compare-option-name {
+  flex: 1;
+  font-weight: 600;
+}
+.compare-option-star {
+  font-size: 13px;
+  flex-shrink: 0;
+}
+
+/* Compare banner */
+.compare-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 18px;
+  margin-bottom: 16px;
+  gap: 12px;
+}
+.compare-banner-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  color: var(--ink-2);
+}
+.compare-banner-img {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  border-radius: 6px;
+  background: var(--bg-2);
+}
+.compare-clear-btn {
+  font-size: 12px;
+  padding: 7px 14px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--bg-2);
+  cursor: pointer;
+  font-family: inherit;
+  color: var(--ink-2);
+  white-space: nowrap;
+}
+.compare-clear-btn:hover {
+  background: var(--bg);
+}
+
+/* Inline compare grid */
+.skills-compare-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.skill-compare-row {
+  display: grid;
+  grid-template-columns: 1fr 36px 1fr;
+  gap: 0;
+  align-items: stretch;
+}
+.skill-compare-card {
+  flex: 1;
+}
+.skill-compare-vs {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: 16px;
-}
-.compare-skill-line {
-  font-size: 12px;
+  font-size: 11px;
   color: var(--ink-3);
-  font-family: var(--font-mono);
+  letter-spacing: 0.05em;
+}
+.skill-compare-empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--ink-3);
+  font-size: 20px;
+}
+
+@media (max-width: 600px) {
+  .skill-compare-row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  .skill-compare-vs {
+    display: none;
+  }
+  .skill-compare-left {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    border-bottom: none;
+  }
+  .skill-compare-right {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-top: 1px dashed var(--line);
+  }
 }
 
 /* Others */
