@@ -264,10 +264,12 @@ const messages = {
       titleB: "dominar",
       titleC: "o jogo.",
       sub:
-        "Apoie o desenvolvimento do bot e desbloqueie benefícios exclusivos para acelerar seu progresso. Cancele quando quiser.",
+        "Apoie o desenvolvimento do bot e desbloqueie benefícios exclusivos para acelerar seu progresso.",
       mostPopular: "Mais popular",
       oneOffEyebrow: "COMPRAS AVULSAS",
       oneOffTitle: "Recursos individuais",
+      vipEyebrow: "ASSINATURAS MENSAIS",
+      vipTitle: "VIPS",
       oneOffSub:
         "Não quer assinar? Compre o que precisa, quando precisar. Itens entregues instantaneamente na sua conta.",
       noRenewal: "Sem renovação",
@@ -639,10 +641,12 @@ const messages = {
       titleB: "to dominate",
       titleC: "the game.",
       sub:
-        "Support the bot's development and unlock exclusive benefits to accelerate your progress. Cancel anytime.",
+        "Support the bot's development and unlock exclusive benefits to accelerate your progress.",
       mostPopular: "Most popular",
       oneOffEyebrow: "ONE-TIME PURCHASES",
       oneOffTitle: "Individual resources",
+      vipEyebrow: "MONTHLY SUBSCRIPTIONS",
+      vipTitle: "VIPS",
       oneOffSub:
         "Don't want a subscription? Buy what you need, when you need. Items delivered instantly to your account.",
       noRenewal: "No renewal",

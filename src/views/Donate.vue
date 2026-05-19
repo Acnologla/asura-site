@@ -72,6 +72,14 @@
     <!-- Plans -->
     <section class="plans-section">
       <div class="container">
+        <div class="avulsos-head">
+          <div>
+            <div class="eyebrow">{{ $t("donateNew.vipEyebrow") }}</div>
+            <h2 class="h-display avulsos-title">
+              {{ $t("donateNew.vipTitle") }}
+            </h2>
+          </div>
+        </div>
         <div class="period-toggle-wrap">
           <div class="period-toggle">
             <button
@@ -489,6 +497,7 @@ export default {
 }
 
 .donate-page {
+  margin-top: 10px;
   padding-bottom: 24px;
 }
 
@@ -552,7 +561,7 @@ export default {
 .period-toggle-wrap {
   display: flex;
   justify-content: center;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 
 /* Plans */
@@ -575,11 +584,10 @@ export default {
   justify-content: space-between;
   align-items: flex-end;
   gap: 14px;
-  margin-bottom: 20px;
 }
 .avulsos-title {
   font-size: 44px;
-  margin: 8px 0 8px;
+  margin: 4px 0 6px;
 }
 .avulsos-sub {
   font-size: 15px;

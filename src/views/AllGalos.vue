@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import axios from "axios";
+import { GetClasses, GetSprites } from "@/trade/info";
 import CatalogPage from "@/components/CatalogPage.vue";
 
 export default {
@@ -26,18 +26,10 @@ export default {
   },
   methods: {
     async load() {
-      const locale = this.$i18n.locale || "pt";
       try {
-        const [s, c] = await Promise.all([
-          axios.get(
-            `https://info.asurabot.com.br/sprites.json?language=${locale}`
-          ),
-          axios.get(
-            `https://info.asurabot.com.br/class.json?language=${locale}`
-          ),
-        ]);
-        this.sprites = s.data[0];
-        this.classes = c.data;
+        const [sprites, classes] = await Promise.all([GetSprites(), GetClasses()]);
+        this.sprites = sprites[0];
+        this.classes = classes;
       } catch (e) {
         /* page renders empty on failure */
       }

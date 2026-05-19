@@ -240,11 +240,11 @@
               <div class="skill-stats">
                 <div class="stat-row">
                   <span class="stat-label">{{ $t("skill.minDamage") }}</span
-                  ><span class="stat-val">{{ s.damage[0] }}</span>
+                  ><span class="stat-val" :style="compareSkills[i] ? dmgColor(s.damage[0], compareSkills[i].damage[0]) : {}">{{ s.damage[0] }}</span>
                 </div>
                 <div class="stat-row">
                   <span class="stat-label">{{ $t("skill.maxDamage") }}</span
-                  ><span class="stat-val">{{ s.damage[1] }}</span>
+                  ><span class="stat-val" :style="compareSkills[i] ? dmgColor(s.damage[1], compareSkills[i].damage[1]) : {}">{{ s.damage[1] }}</span>
                 </div>
               </div>
               <div v-if="s.effect && s.effect.chance > 0" class="skill-effect">
@@ -306,13 +306,13 @@
                 <div class="skill-stats">
                   <div class="stat-row">
                     <span class="stat-label">{{ $t("skill.minDamage") }}</span
-                    ><span class="stat-val">{{
+                    ><span class="stat-val" :style="dmgColor(compareSkills[i].damage[0], s.damage[0])">{{
                       compareSkills[i].damage[0]
                     }}</span>
                   </div>
                   <div class="stat-row">
                     <span class="stat-label">{{ $t("skill.maxDamage") }}</span
-                    ><span class="stat-val">{{
+                    ><span class="stat-val" :style="dmgColor(compareSkills[i].damage[1], s.damage[1])">{{
                       compareSkills[i].damage[1]
                     }}</span>
                   </div>
@@ -483,7 +483,7 @@
 <script>
 import axios from "axios";
 import ArrowIcon from "../components/icons/ArrowIcon.vue";
-import { GetCosmeticInfo } from "../trade/info";
+import { GetCosmeticInfo, GetClasses, GetSprites, GetEffects } from "../trade/info";
 
 const RARITY_HEX = [
   "#9ca3af",
@@ -622,6 +622,11 @@ export default {
     rarityHex(r) {
       return RARITY_HEX[r] || "#9ca3af";
     },
+    dmgColor(val, other) {
+      if (val > other) return { color: "var(--emerald)" };
+      if (val < other) return { color: "var(--rose)" };
+      return {};
+    },
     otherRingStyle(r) {
       if (r === 5) {
         return {
@@ -746,22 +751,15 @@ export default {
       this.compareOpen = false;
     },
     async loadAll() {
-      const locale = this.$i18n.locale || "pt";
       try {
-        const [c, s, e] = await Promise.all([
-          axios.get(
-            `https://info.asurabot.com.br/class.json?language=${locale}`,
-          ),
-          axios.get(
-            `https://info.asurabot.com.br/sprites.json?language=${locale}`,
-          ),
-          axios.get(
-            `https://info.asurabot.com.br/effects.json?language=${locale}`,
-          ),
+        const [classes, sprites, effects] = await Promise.all([
+          GetClasses(),
+          GetSprites(),
+          GetEffects(),
         ]);
-        this.classes = c.data;
-        this.sprites = s.data[0];
-        this.effects = e.data;
+        this.classes = classes;
+        this.sprites = sprites[0];
+        this.effects = effects;
         if (this.$route.query.galo !== undefined) {
           this.currentIndex = parseInt(this.$route.query.galo, 10) || 0;
         }

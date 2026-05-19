@@ -1,7 +1,7 @@
 <template>
   <div>
     <!-- ─── HERO ─── -->
-    <section class="section hero-section">
+    <section class="home-section hero-section">
       <div class="container hero-grid">
         <div>
           <div class="pill hero-pill">
@@ -49,7 +49,7 @@
     </section>
 
     <!-- ─── FEATURES ─── -->
-    <section class="section">
+    <section class="home-section">
       <div class="container">
         <div class="features-head">
           <div class="eyebrow" style="font-size: 15px;">
@@ -79,7 +79,7 @@
     </section>
 
     <!-- ─── MODOS ─── -->
-    <section class="section" id="modos">
+    <section class="home-section" id="modos">
       <div class="container">
         <div class="modos-head">
           <div>
@@ -120,7 +120,7 @@
     </section>
 
     <!-- ─── COMANDOS ─── -->
-    <section class="section commands-section" id="comandos">
+    <section class="home-section commands-section" id="comandos">
       <div class="container commands-grid">
         <div>
           <div class="eyebrow">{{ $t("home.cmdsEyebrow") }}</div>
@@ -246,8 +246,8 @@ import ArrowIcon from "../components/icons/ArrowIcon.vue";
 import HeroVisual from "../components/home/HeroVisual.vue";
 import FeatureArt from "../components/home/FeatureArt.vue";
 
-const HERO_MS = 2500;
-const CATALOG_MS = 4000;
+const HERO_MS = 3500;
+const CATALOG_MS = 4500;
 const RARITY_HEX = [
   "#9ca3af",
   "#3b82f6",
@@ -559,6 +559,9 @@ export default {
         this.rotateCatalog();
       } catch (e) {
         // Network error is non-fatal — page still renders.
+      } finally {
+        await this.$nextTick();
+        document.dispatchEvent(new Event("app-rendered"));
       }
     },
   },
@@ -586,6 +589,7 @@ export default {
 
 <style scoped>
 /* ─── Hero ─── */
+
 .hero-section {
   padding-top: 60px;
   padding-bottom: 80px;
@@ -1113,6 +1117,10 @@ export default {
   text-transform: uppercase;
 }
 
+.home-section {
+  padding: 3rem 1.5rem;
+}
+
 @media (max-width: 768px) {
   .raridades-section {
     padding: 60px 0;
@@ -1135,7 +1143,7 @@ export default {
   .catalog-name {
     font-size: 16px;
   }
-  .section {
+  .home-section {
     padding: 0px 0 30px;
   }
 }

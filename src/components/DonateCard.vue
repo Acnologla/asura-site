@@ -15,7 +15,7 @@
       </p>
       <br />
       <b-button
-        label="Comprar"
+        :label="$t('donatePage.buy')"
         type="is-success"
         outlined
         size="is-medium"
@@ -36,10 +36,12 @@
           <div class="card">
             <header class="card-header">
               <p class="popup-text">
-                Atualmente doaçoes devem ser feitas no privado do acnologla, ou
-                em algum canal no servidor de
-                <a target="_blank" href="https://discord.gg/bn8yYNNNF3"
-                  >suporte do discord.</a
+                {{ $t("donatePage.donationNotice") }}
+                <a
+                  target="_blank"
+                  style="color: #7957d5 !important"
+                  href="https://discord.gg/bn8yYNNNF3"
+                  >{{ $t("donatePage.supportDiscord") }}</a
                 >
               </p>
             </header>

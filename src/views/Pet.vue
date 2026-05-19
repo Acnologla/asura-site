@@ -47,6 +47,12 @@
               {{ $t("galos.pet") }}
               <span :style="{ color: rarityColor }">{{ pet.name }}</span>
             </h1>
+
+            <div class="hero-tabs">
+              <button class="btn btn-ghost" @click="openCompare">
+                {{ $t("compare.button") }}
+              </button>
+            </div>
           </div>
         </div>
       </div>
@@ -62,10 +68,22 @@
             </h2>
           </div>
         </div>
+
+        <!-- Compare banner -->
+        <div v-if="compareTarget" class="compare-banner card">
+          <div class="compare-banner-info">
+            <img :src="compareTarget.sprite" class="compare-banner-img" />
+            <span>vs <strong>{{ compareTarget.name }}</strong></span>
+          </div>
+          <button class="compare-clear-btn" @click="clearCompare">✕ Remover</button>
+        </div>
+
         <div v-if="formattedSkills.length === 0" class="skills-empty card">
           —
         </div>
-        <div v-else class="skills-grid">
+
+        <!-- Normal skills grid -->
+        <div v-else-if="!compareTarget" class="skills-grid">
           <div
             v-for="(s, i) in formattedSkills"
             :key="i"
@@ -100,6 +118,76 @@
           </div>
         </div>
 
+        <!-- Compare skills grid -->
+        <div v-else class="skills-compare-grid">
+          <div v-for="(s, i) in formattedSkills" :key="i" class="skill-compare-row">
+            <!-- Current pet skill -->
+            <div class="skill-card card skill-compare-card skill-compare-left">
+              <div class="skill-header">
+                <div
+                  class="skill-badge"
+                  :style="{ background: rarityColor + '22', color: rarityColor }"
+                >
+                  {{ initials }}
+                </div>
+                <div class="skill-eyebrow">LEVEL {{ s.level }}</div>
+              </div>
+              <div class="skill-name">{{ s.name }}</div>
+              <div class="skill-stats">
+                <div class="stat-row">
+                  <span class="stat-label">{{ $t("skill.minDamage") }}</span>
+                  <span class="stat-val" :style="compareSkills[i] ? dmgColor(s.damage[0], compareSkills[i].damage[0]) : {}">{{ s.damage[0] }}</span>
+                </div>
+                <div class="stat-row">
+                  <span class="stat-label">{{ $t("skill.maxDamage") }}</span>
+                  <span class="stat-val" :style="compareSkills[i] ? dmgColor(s.damage[1], compareSkills[i].damage[1]) : {}">{{ s.damage[1] }}</span>
+                </div>
+              </div>
+              <div v-if="s.effect && s.effect.chance > 0" class="skill-effect">
+                <div class="effect-eyebrow">{{ $t("skill.effect") }}</div>
+                <span class="effect-name">{{ s.effect.effect.name }}</span>
+                · {{ Math.round(s.effect.chance * 100) }}% ·
+                {{ s.effect.effect.turns }}t
+              </div>
+            </div>
+
+            <div class="skill-compare-vs">VS</div>
+
+            <!-- Opponent pet skill -->
+            <template v-if="compareSkills[i]">
+              <div class="skill-card card skill-compare-card skill-compare-right">
+                <div class="skill-header">
+                  <div
+                    class="skill-badge"
+                    :style="{ background: compareRarityHex + '22', color: compareRarityHex }"
+                  >
+                    {{ compareTarget.name.slice(0, 2).toUpperCase() }}
+                  </div>
+                  <div class="skill-eyebrow">LEVEL {{ compareSkills[i].level }}</div>
+                </div>
+                <div class="skill-name">{{ compareSkills[i].name }}</div>
+                <div class="skill-stats">
+                  <div class="stat-row">
+                    <span class="stat-label">{{ $t("skill.minDamage") }}</span>
+                    <span class="stat-val" :style="dmgColor(compareSkills[i].damage[0], s.damage[0])">{{ compareSkills[i].damage[0] }}</span>
+                  </div>
+                  <div class="stat-row">
+                    <span class="stat-label">{{ $t("skill.maxDamage") }}</span>
+                    <span class="stat-val" :style="dmgColor(compareSkills[i].damage[1], s.damage[1])">{{ compareSkills[i].damage[1] }}</span>
+                  </div>
+                </div>
+                <div v-if="compareSkills[i].effect && compareSkills[i].effect.chance > 0" class="skill-effect">
+                  <div class="effect-eyebrow">{{ $t("skill.effect") }}</div>
+                  <span class="effect-name">{{ compareSkills[i].effect.effect.name }}</span>
+                  · {{ Math.round(compareSkills[i].effect.chance * 100) }}% ·
+                  {{ compareSkills[i].effect.effect.turns }}t
+                </div>
+              </div>
+            </template>
+            <div v-else class="skill-card card skill-compare-card skill-compare-right skill-compare-empty">—</div>
+          </div>
+        </div>
+
         <div style="text-align: center; margin-top: 32px">
           <router-link to="/pets" class="btn btn-ghost">
             ← {{ $t("pet.back") }}
@@ -107,6 +195,37 @@
         </div>
       </div>
     </section>
+
+    <!-- Compare modal -->
+    <div v-if="compareOpen" class="compare-overlay" @click.self="closeCompare">
+      <div class="compare-panel">
+        <div class="compare-head">
+          <div class="h-display" style="font-size:22px">{{ $t("compare.title") }}</div>
+          <button class="compare-close" @click="closeCompare">×</button>
+        </div>
+        <div class="compare-search-wrap">
+          <input
+            v-model="compareName"
+            :placeholder="$t('compare.placeholder')"
+            class="compare-input"
+            autocomplete="off"
+            @focus="compareDropdownOpen = true"
+          />
+          <div v-if="compareFiltered.length" class="compare-dropdown">
+            <button
+              v-for="p in compareFiltered"
+              :key="p.id"
+              class="compare-option"
+              @mousedown.prevent="selectCompareTarget(p)"
+            >
+              <img :src="p.sprite" class="compare-option-img" />
+              <span class="compare-option-name">{{ p.name }}</span>
+              <span class="compare-option-star" :style="{ color: rarityHex(p.rarity) }">★</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <!-- Other pets -->
     <section v-if="otherPets.length" class="others-section">
@@ -170,6 +289,11 @@ export default {
       pet: null,
       allPets: [],
       effects: [],
+      compareOpen: false,
+      compareName: "",
+      compareTarget: null,
+      compareSkills: [],
+      compareDropdownOpen: false,
     };
   },
   computed: {
@@ -224,6 +348,15 @@ export default {
       }
       return shuffled.slice(0, 6);
     },
+    compareFiltered() {
+      const q = this.compareName.toLowerCase().trim();
+      const list = this.allPets.filter((p) => !this.pet || p.id !== this.pet.id);
+      const filtered = q ? list.filter((p) => p.name && p.name.toLowerCase().includes(q)) : list;
+      return filtered.slice(0, 30);
+    },
+    compareRarityHex() {
+      return RARITY_HEX[this.compareTarget && this.compareTarget.rarity] || "#9ca3af";
+    },
     formattedSkills() {
       if (!this.pet || !this.pet.skills) return [];
       return this.pet.skills.map((skill, i) => {
@@ -253,6 +386,54 @@ export default {
     },
   },
   methods: {
+    rarityHex(r) {
+      return RARITY_HEX[r] || "#9ca3af";
+    },
+    dmgColor(val, other) {
+      if (val > other) return { color: "var(--emerald)" };
+      if (val < other) return { color: "var(--rose)" };
+      return {};
+    },
+    formatPetSkills(pet) {
+      if (!pet || !pet.skills) return [];
+      return pet.skills.map((skill, i) => {
+        const formatted = {
+          name: skill.name,
+          damage: skill.damage || [0, 0],
+          level: i + 1,
+        };
+        if (skill.effect) {
+          formatted.effect = {
+            chance: skill.effect[0],
+            effect: this.effects[skill.effect[1]] || { name: "Effect", turns: 1, range: [0, 0], type: 1 },
+          };
+        } else {
+          formatted.effect = { chance: 0, effect: { name: "", turns: 0, range: [0, 0] } };
+        }
+        return formatted;
+      });
+    },
+    openCompare() {
+      this.compareOpen = true;
+      this.compareTarget = null;
+      this.compareName = "";
+      this.compareDropdownOpen = false;
+    },
+    closeCompare() {
+      this.compareOpen = false;
+    },
+    clearCompare() {
+      this.compareTarget = null;
+      this.compareSkills = [];
+      this.compareName = "";
+      this.compareDropdownOpen = false;
+    },
+    selectCompareTarget(p) {
+      this.compareDropdownOpen = false;
+      this.compareTarget = p;
+      this.compareSkills = this.formatPetSkills(p);
+      this.compareOpen = false;
+    },
     otherRingStyle(r) {
       if (r === 5) {
         return {
@@ -577,6 +758,201 @@ export default {
   .skill-name {
     font-size: 18px;
   }
+}
+
+.hero-tabs {
+  display: flex;
+  gap: 8px;
+  margin-top: 16px;
+  flex-wrap: wrap;
+}
+.hero-tabs .btn {
+  padding: 8px 14px;
+  font-size: 12px;
+}
+
+/* Compare banner */
+.compare-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 18px;
+  margin-bottom: 16px;
+  gap: 12px;
+}
+.compare-banner-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  color: var(--ink-2);
+}
+.compare-banner-img {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  border-radius: 6px;
+  background: var(--bg-2);
+}
+.compare-clear-btn {
+  font-size: 12px;
+  padding: 7px 14px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--bg-2);
+  cursor: pointer;
+  font-family: inherit;
+  color: var(--ink-2);
+  white-space: nowrap;
+}
+.compare-clear-btn:hover {
+  background: var(--bg);
+}
+
+/* Compare grid */
+.skills-compare-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.skill-compare-row {
+  display: grid;
+  grid-template-columns: 1fr 36px 1fr;
+  align-items: stretch;
+}
+.skill-compare-vs {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 11px;
+  color: var(--ink-3);
+  letter-spacing: 0.05em;
+}
+.skill-compare-empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--ink-3);
+  font-size: 20px;
+}
+
+@media (max-width: 600px) {
+  .skill-compare-row {
+    grid-template-columns: 1fr;
+  }
+  .skill-compare-vs {
+    display: none;
+  }
+  .skill-compare-left {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    border-bottom: none;
+  }
+  .skill-compare-right {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-top: 1px dashed var(--line);
+  }
+}
+
+/* Compare overlay */
+.compare-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(20, 16, 31, 0.55);
+  z-index: 80;
+  display: grid;
+  place-items: start center;
+  padding: 60px 24px 24px;
+}
+.compare-panel {
+  background: var(--bg);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  max-width: 480px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  box-shadow: var(--shadow-lg);
+}
+.compare-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.compare-close {
+  background: none;
+  border: 0;
+  font-size: 26px;
+  cursor: pointer;
+  color: var(--ink-3);
+  line-height: 1;
+}
+.compare-search-wrap {
+  position: relative;
+}
+.compare-input {
+  width: 100%;
+  padding: 12px 16px;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  font-size: 14px;
+  font-family: inherit;
+  outline: none;
+  background: var(--bg-2);
+  color: var(--ink);
+  box-sizing: border-box;
+}
+.compare-dropdown {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  right: 0;
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  box-shadow: var(--shadow-lg);
+  max-height: 300px;
+  overflow-y: auto;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+}
+.compare-option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  border: 0;
+  background: none;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 14px;
+  color: var(--ink);
+  text-align: left;
+  transition: background 0.15s;
+}
+.compare-option:hover {
+  background: var(--bg-2);
+}
+.compare-option-img {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+  border-radius: 8px;
+  background: var(--bg-2);
+  flex-shrink: 0;
+}
+.compare-option-name {
+  flex: 1;
+  font-weight: 600;
+}
+.compare-option-star {
+  font-size: 13px;
+  flex-shrink: 0;
 }
 
 /* Others */
