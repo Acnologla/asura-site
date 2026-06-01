@@ -31,10 +31,20 @@
               <DiscordIcon :size="18" />
               {{ $t("nav.supportServer") || "Support Server" }}
             </a>
-            <router-link to="/galos" class="btn btn-ghost">
-              {{ $t("home.seeRoosters") }}
-              <ArrowIcon />
-            </router-link>
+            <div class="hero-secondary-actions">
+              <router-link to="/galos" class="hero-text-link">
+                {{ $t("home.seeRoosters") }}
+                <ArrowIcon :size="14" />
+              </router-link>
+              <a
+                href="#asura-card"
+                class="hero-text-link"
+                @click.prevent="scrollAsuraCard"
+              >
+                {{ $t("home.seeAsuraCards") }}
+                <ArrowIcon :size="14" />
+              </a>
+            </div>
           </div>
           <div class="hero-meta">
             <span class="hero-meta-pill">
@@ -118,6 +128,74 @@
         </div>
       </div>
     </section>
+
+    <!-- ─── ASURA CARD ─── -->
+    <section id="asura-card" class="asura-card-section">
+      <div class="container asura-card-grid">
+        <div class="asura-card-copy">
+          <div class="eyebrow">{{ $t("home.asuraCardEyebrow") }}</div>
+          <h2 class="h-display asura-card-title">
+            {{ $t("home.asuraCardTitleA") }}<br />
+            <span>{{ $t("home.asuraCardTitleB") }}</span>
+          </h2>
+          <p class="asura-card-sub">{{ $t("home.asuraCardSub") }}</p>
+
+          <div class="asura-card-points">
+            <span>{{ $t("home.asuraCardPoint1") }}</span>
+            <span>{{ $t("home.asuraCardPoint2") }}</span>
+            <span>{{ $t("home.asuraCardPoint3") }}</span>
+          </div>
+
+          <a
+            class="btn btn-primary asura-card-btn"
+            :href="asuraCardInviteUrl"
+            target="_blank"
+            rel="noopener"
+          >
+            <DiscordIcon :size="18" />
+            {{ $t("home.asuraCardBtn") }}
+          </a>
+        </div>
+
+        <button
+          class="asura-card-visual"
+          type="button"
+          :aria-label="$t('home.asuraCardOpenPreview')"
+          @click="openAsuraCardPreview"
+        >
+          <img
+            :src="asuraCardPreview"
+            :alt="$t('home.asuraCardAlt')"
+            class="asura-card-image"
+          />
+          <span class="asura-card-zoom-label">
+            {{ $t("home.asuraCardOpenPreview") }}
+          </span>
+        </button>
+      </div>
+    </section>
+
+    <div
+      v-if="asuraCardPreviewOpen"
+      class="asura-card-modal"
+      role="dialog"
+      aria-modal="true"
+      :aria-label="$t('home.asuraCardOpenPreview')"
+      @click.self="closeAsuraCardPreview"
+    >
+      <button
+        class="asura-card-modal-close"
+        type="button"
+        @click="closeAsuraCardPreview"
+      >
+        {{ $t("home.asuraCardClosePreview") }}
+      </button>
+      <img
+        :src="asuraCardPreview"
+        :alt="$t('home.asuraCardAlt')"
+        class="asura-card-modal-image"
+      />
+    </div>
 
     <!-- ─── COMANDOS ─── -->
     <section class="home-section commands-section" id="comandos">
@@ -245,7 +323,11 @@ import DiscordIcon from "../components/icons/DiscordIcon.vue";
 import ArrowIcon from "../components/icons/ArrowIcon.vue";
 import HeroVisual from "../components/home/HeroVisual.vue";
 import FeatureArt from "../components/home/FeatureArt.vue";
+import asuraCardPreviewPt from "../assets/asura-card-preview.png";
+import asuraCardPreviewEn from "../assets/asura-card-preview-en.png";
 
+const ASURA_CARD_INVITE_URL =
+  "https://discordapp.com/oauth2/authorize?client_id=1483228177127182416&scope=applications.commands%20bot&permissions=8";
 const HERO_MS = 3500;
 const CATALOG_MS = 4500;
 const RARITY_HEX = [
@@ -280,9 +362,17 @@ export default {
       heroTimer: null,
       catalogTimer: null,
       isMobile: false,
+      asuraCardPreviewOpen: false,
+      previousBodyOverflow: "",
+      asuraCardInviteUrl: ASURA_CARD_INVITE_URL,
     };
   },
   computed: {
+    asuraCardPreview() {
+      return this.$i18n.locale === "en"
+        ? asuraCardPreviewEn
+        : asuraCardPreviewPt;
+    },
     pairs() {
       // Build [{ name, sprite, rarity, advantages, disadvantages, index }] aligned by index
       const out = [];
@@ -539,6 +629,32 @@ export default {
       const route = this.$router.resolve({ name: "Invite" });
       window.open(route.href, "_blank");
     },
+    scrollAsuraCard() {
+      const scroll = () => {
+        const el = document.getElementById("asura-card");
+        if (el) {
+          el.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      };
+
+      scroll();
+      setTimeout(scroll, 700);
+    },
+    openAsuraCardPreview() {
+      if (this.asuraCardPreviewOpen) return;
+      this.asuraCardPreviewOpen = true;
+      if (typeof document !== "undefined") {
+        this.previousBodyOverflow = document.body.style.overflow;
+        document.body.style.overflow = "hidden";
+      }
+    },
+    closeAsuraCardPreview() {
+      if (!this.asuraCardPreviewOpen) return;
+      this.asuraCardPreviewOpen = false;
+      if (typeof document !== "undefined") {
+        document.body.style.overflow = this.previousBodyOverflow;
+      }
+    },
     goRooster(index) {
       this.$router.push({ name: "Galo", query: { galo: index } });
     },
@@ -571,11 +687,19 @@ export default {
   mounted() {
     this.onResize();
     window.addEventListener("resize", this.onResize);
+    this.onKeydown = (e) => {
+      if (e.key === "Escape") {
+        this.closeAsuraCardPreview();
+      }
+    };
+    window.addEventListener("keydown", this.onKeydown);
     this.heroTimer = setInterval(this.rotateHero, HERO_MS);
     this.catalogTimer = setInterval(this.rotateCatalog, CATALOG_MS);
   },
   beforeDestroy() {
     window.removeEventListener("resize", this.onResize);
+    window.removeEventListener("keydown", this.onKeydown);
+    this.closeAsuraCardPreview();
     if (this.heroTimer) clearInterval(this.heroTimer);
     if (this.catalogTimer) clearInterval(this.catalogTimer);
   },
@@ -629,12 +753,59 @@ export default {
 }
 .hero-actions {
   display: flex;
+  flex-wrap: wrap;
   gap: 10px;
   margin-bottom: 28px;
 }
 .hero-actions .btn {
   padding: 14px 22px;
   font-size: 15px;
+}
+.hero-secondary-actions {
+  flex-basis: 100%;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-top: 4px;
+}
+.hero-text-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  position: relative;
+  color: var(--primary);
+  font-size: 15px;
+  font-weight: 800;
+  line-height: 1.2;
+  padding: 8px 2px;
+}
+.hero-text-link::after {
+  content: "";
+  position: absolute;
+  left: 2px;
+  right: 2px;
+  bottom: 3px;
+  height: 2px;
+  background: currentColor;
+  border-radius: 999px;
+  opacity: 0.24;
+  transform: scaleX(0.55);
+  transform-origin: left;
+  transition: opacity 0.18s ease, transform 0.18s ease;
+}
+.hero-text-link svg {
+  color: var(--primary);
+  transition: transform 0.18s ease;
+}
+.hero-text-link:hover {
+  color: var(--primary-deep);
+}
+.hero-text-link:hover::after {
+  opacity: 0.65;
+  transform: scaleX(1);
+}
+.hero-text-link:hover svg {
+  transform: translate(2px, -2px);
 }
 .hero-meta {
   display: flex;
@@ -677,6 +848,15 @@ export default {
   }
   .hero-actions .btn {
     justify-content: center;
+  }
+  .hero-secondary-actions {
+    justify-content: center;
+    gap: 14px;
+    margin-top: 0;
+  }
+  .hero-text-link {
+    font-size: 14px;
+    min-height: 36px;
   }
 }
 
@@ -752,6 +932,176 @@ export default {
   }
   .feature-title {
     font-size: 22px;
+  }
+}
+
+/* ─── Asura Card ─── */
+.asura-card-section {
+  padding: 86px 0;
+  background: #14101f;
+  color: #fff;
+  overflow: hidden;
+  scroll-margin-top: 80px;
+}
+.asura-card-grid {
+  display: grid;
+  grid-template-columns: 0.82fr 1.18fr;
+  gap: 56px;
+  align-items: center;
+}
+.asura-card-copy .eyebrow {
+  color: var(--amber);
+}
+.asura-card-title {
+  color: #fff;
+  font-size: 52px;
+  margin: 12px 0 18px;
+}
+.asura-card-title span {
+  color: var(--amber);
+  font-style: italic;
+  font-weight: 500;
+}
+.asura-card-sub {
+  max-width: 480px;
+  margin: 0 0 24px;
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 16px;
+  line-height: 1.6;
+}
+.asura-card-points {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 26px;
+}
+.asura-card-points span {
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 999px;
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 12px;
+  font-weight: 600;
+  padding: 7px 11px;
+}
+.asura-card-btn {
+  padding: 14px 22px;
+  font-size: 15px;
+}
+.asura-card-visual {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.04);
+  box-shadow: 0 30px 70px -35px rgba(0, 0, 0, 0.72);
+  overflow: hidden;
+  padding: 0;
+  position: relative;
+  width: 100%;
+  cursor: zoom-in;
+  transition: border-color 0.18s ease, transform 0.18s ease;
+}
+.asura-card-visual:hover {
+  border-color: rgba(240, 165, 0, 0.62);
+  transform: translateY(-2px);
+}
+.asura-card-image {
+  display: block;
+  width: 100%;
+  aspect-ratio: 970 / 715;
+  object-fit: cover;
+}
+.asura-card-zoom-label {
+  position: absolute;
+  right: 14px;
+  bottom: 14px;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: rgba(20, 16, 31, 0.86);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 800;
+  line-height: 1;
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 0.18s ease, transform 0.18s ease;
+}
+.asura-card-visual:hover .asura-card-zoom-label,
+.asura-card-visual:focus-visible .asura-card-zoom-label {
+  opacity: 1;
+  transform: translateY(0);
+}
+.asura-card-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: grid;
+  place-items: center;
+  padding: 72px 24px 28px;
+  background: rgba(8, 6, 14, 0.88);
+  backdrop-filter: blur(10px);
+}
+.asura-card-modal-image {
+  display: block;
+  max-width: min(1180px, 96vw);
+  max-height: 86vh;
+  width: auto;
+  height: auto;
+  border-radius: 14px;
+  box-shadow: 0 28px 90px -28px rgba(0, 0, 0, 0.9);
+}
+.asura-card-modal-close {
+  position: fixed;
+  top: 22px;
+  right: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 800;
+  padding: 10px 16px;
+}
+.asura-card-modal-close:hover {
+  background: rgba(255, 255, 255, 0.18);
+}
+
+@media (max-width: 768px) {
+  .asura-card-section {
+    padding: 56px 0;
+  }
+  .asura-card-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  .asura-card-title {
+    font-size: 34px;
+  }
+  .asura-card-sub {
+    font-size: 15px;
+  }
+  .asura-card-btn {
+    width: 100%;
+  }
+  .asura-card-visual {
+    border-radius: 12px;
+  }
+  .asura-card-zoom-label {
+    opacity: 1;
+    transform: none;
+    right: 10px;
+    bottom: 10px;
+    padding: 7px 10px;
+  }
+  .asura-card-modal {
+    padding: 70px 10px 18px;
+  }
+  .asura-card-modal-image {
+    max-width: 100%;
+    max-height: 82vh;
+    border-radius: 10px;
+  }
+  .asura-card-modal-close {
+    top: 16px;
+    right: 14px;
   }
 }
 
