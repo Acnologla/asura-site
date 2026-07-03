@@ -15,6 +15,18 @@
           :title="$t('trade.yourOffer')"
           :removeItem="removeItem"
         />
+        <div class="money-offer">
+          <label>{{ $t('trade.storeMoney') }}:</label>
+          <input
+            v-if="!user.confirm"
+            type="number"
+            min="0"
+            class="input money-input"
+            v-model.number="userMoney"
+            @change="updateMoney"
+          />
+          <span v-else>{{ userMoney }}</span>
+        </div>
         <br />
         <button class="button is-primary" @click="confirm">
           {{ user.confirm ? $t('trade.cancelTrade') : $t('trade.confirmTrade') }}
@@ -38,6 +50,10 @@
           :confirmed="other.confirm"
           :title="$t('trade.theirOffer')"
         />
+        <div class="money-offer">
+          <label>{{ $t('trade.storeMoney') }}:</label>
+          <span>{{ otherMoney }}</span>
+        </div>
       </div>
     </div>
   </main>
@@ -62,6 +78,8 @@ export default {
         confirm: false,
       },
       wsConnection: null,
+      userMoney: 0,
+      otherMoney: 0,
       user: {
         id: "teste",
         confirm: false,
@@ -76,6 +94,8 @@ export default {
         items: [],
         cosmetics: [],
         pets: [],
+        armorItems: [],
+        worldcupCards: [],
         rarities: [
           "Comum",
           "Raro",
@@ -148,6 +168,8 @@ export default {
           this.other.confirm = other.confirmed;
           this.$set(this.trade, this.user.id, this.mapItems(user.items));
           this.$set(this.trade, this.other.id, this.mapItems(other.items));
+          this.userMoney = user.money || 0;
+          this.otherMoney = other.money || 0;
           this.countdown = 0;
           break;
         case "start_countdown":
@@ -180,6 +202,12 @@ export default {
         case "item":
           if (item.type === 3) {
             return this.info.cosmetics[item.item_id].value;
+          }
+          if (item.type === 10) {
+            return this.info.worldcupCards[item.item_id - 1].imageURL;
+          }
+          if (item.type === 11) {
+            return this.info.armorItems[item.item_id].imageURL;
           }
           return "https://static.thenounproject.com/png/4241034-200.png";
       }
@@ -214,6 +242,17 @@ export default {
             remove,
             type: this.itemTypeToInt(item.tradeType),
           },
+        })
+      );
+    },
+    updateMoney() {
+      if (this.userMoney < 0) this.userMoney = 0;
+      this.wsConnection.ws.send(
+        JSON.stringify({
+          type: 3,
+          trade_id: this.tradeID,
+          user_id: this.user.id,
+          data: { amount: this.userMoney },
         })
       );
     },
@@ -273,6 +312,18 @@ export default {
           (itemId) => "Shard " + this.info.rarities[itemId],
           (itemId) => itemId
         ),
+        ...mapItems(
+          items,
+          11,
+          (itemId) => this.info.armorItems[itemId].name,
+          (itemId) => this.info.armorItems[itemId].level
+        ),
+        ...mapItems(
+          items,
+          10,
+          (itemId) => this.info.worldcupCards[itemId - 1].name,
+          (itemId) => this.info.worldcupCards[itemId - 1].rarity
+        ),
       ];
       return r.concat(itemsNew).concat(r2);
     },
@@ -299,7 +350,18 @@ main {
 .is-blocked {
   pointer-events: none;
   cursor: not-allowed;
-  opacity: 0.5; /* Optional: Makes it visually look disabled */
+  opacity: 0.5;
+}
+
+.money-offer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.money-input {
+  width: 120px;
 }
 
 @media screen and (max-width: 768px) {

@@ -49,6 +49,18 @@ export const GetAllPets = () =>
     () => get(`https://info.asurabot.com.br/allpets.json?language=${locale()}`)
   );
 
+export const GetArmorItems = () =>
+  cachedFetch(
+    `cache:armoritems:${locale()}`,
+    () => get(`https://info.asurabot.com.br/armor_items.json?language=${locale()}`)
+  );
+
+export const GetWorldCupCards = () =>
+  cachedFetch(
+    `cache:worldcupcards:${locale()}`,
+    () => get(`https://info.asurabot.com.br/worldcup_cards.json?language=${locale()}`)
+  );
+
 // Kept for backward-compatibility with Trade page (getInfo)
 export const getInfo = async (info) =>
   Promise.all([
@@ -59,4 +71,6 @@ export const getInfo = async (info) =>
     GetAllPets().then((pets) => {
       pets.forEach((p, i) => { info.pets[i] = p; });
     }),
+    GetArmorItems().then((data) => { info.armorItems = data; }),
+    GetWorldCupCards().then((data) => { info.worldcupCards = data; }),
   ]);

@@ -64,7 +64,9 @@ export default {
         this.$t ? this.$t('selectTrade.cosmetics') : "Cosmetics",
         this.$t ? this.$t('selectTrade.shards') : "Shards",
         this.$t ? this.$t('selectTrade.pets') : "Pets",
-      ], 
+        this.$t ? this.$t('selectTrade.armor') : "Armor",
+        this.$t ? this.$t('selectTrade.worldcupCards') : "WorldCup Cards",
+      ],
       selectedTab: 0 
     };
   },
@@ -81,7 +83,9 @@ export default {
       const itemsKey = this.$t ? this.$t('selectTrade.items') : "Items";
       const cosmeticsKey = this.$t ? this.$t('selectTrade.cosmetics') : "Cosmetics";
       const shardsKey = this.$t ? this.$t('selectTrade.shards') : "Shards";
-      
+      const armorKey = this.$t ? this.$t('selectTrade.armor') : "Armor";
+      const worldcupCardsKey = this.$t ? this.$t('selectTrade.worldcupCards') : "WorldCup Cards";
+
       if (section === roostersKey) {
         return mapped.filter((m) => m.tradeType === "rooster");
       } else if (section === petsKey) {
@@ -94,6 +98,10 @@ export default {
         return items.filter((t) => t.type === 3);
       } else if (section === shardsKey) {
         return items.filter((t) => t.type === 5);
+      } else if (section === armorKey) {
+        return items.filter((t) => t.type === 11);
+      } else if (section === worldcupCardsKey) {
+        return items.filter((t) => t.type === 10);
       }
       return [];
     },

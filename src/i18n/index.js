@@ -216,6 +216,7 @@ const messages = {
       cancelTrade: "Cancelar troca",
       tradeConfirmed: "Trade confirmada",
       tradeError: "Erro troca, desconfirme e tente denovo",
+      storeMoney: "Dinheiro da Loja",
     },
     donatePage: {
       support: "Apoie nosso servidor",
@@ -352,6 +353,8 @@ const messages = {
       cosmetics: "Cosmetics",
       shards: "Shards",
       pets: "Pets",
+      armor: "Armaduras",
+      worldcupCards: "Cartas WorldCup",
     },
     vipFeatures: {
       commonFeatures: [
@@ -608,6 +611,7 @@ const messages = {
       cancelTrade: "Cancel trade",
       tradeConfirmed: "Trade confirmed",
       tradeError: "Trade error, unconfirm and try again",
+      storeMoney: "Store Money",
     },
     donatePage: {
       support: "Support our server",
@@ -743,6 +747,8 @@ const messages = {
       cosmetics: "Cosmetics",
       shards: "Shards",
       pets: "Pets",
+      armor: "Armor",
+      worldcupCards: "WorldCup Cards",
     },
     vipFeatures: {
       commonFeatures: [
