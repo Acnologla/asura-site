@@ -36,7 +36,7 @@
             $t("footer.rinhaInfo")
           }}</router-link>
           <a
-            href="https://discord.gg/bn8yYNNNF3"
+            href="https://discord.gg/CfkBZyVsd7"
             target="_blank"
             rel="noopener"
             class="footer-link"

@@ -40,7 +40,7 @@
                 <a
                   target="_blank"
                   style="color: #7957d5 !important"
-                  href="https://discord.gg/bn8yYNNNF3"
+                  href="https://discord.gg/CfkBZyVsd7"
                   >{{ $t("donatePage.supportDiscord") }}</a
                 >
               </p>

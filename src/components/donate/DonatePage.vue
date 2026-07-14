@@ -17,7 +17,7 @@
           <header class="card-header">
             <p class="popup-text">
               {{ $t("donatePage.donationNotice") }}
-              <a target="_blank" href="https://discord.gg/bn8yYNNNF3">{{
+              <a target="_blank" href="https://discord.gg/CfkBZyVsd7">{{
                 $t("donatePage.supportDiscord")
               }}</a>
             </p>

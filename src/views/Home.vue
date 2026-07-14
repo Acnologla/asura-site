@@ -23,7 +23,7 @@
               {{ $t("home.addToDiscord") }}
             </a>
             <a
-              href="https://discord.gg/bn8yYNNNF3"
+              href="https://discord.gg/CfkBZyVsd7"
               class="btn btn-ghost"
               target="_blank"
               rel="noopener"

@@ -3,7 +3,11 @@
     <div class="container nav-inner">
       <router-link :to="{ name: 'Home' }" class="logo-btn">
         <div class="logo-square">
-          <img src="https://cdn.asurabot.com.br/cdn/etc/bot_image.png" alt="AsuraBot" class="logo-img" />
+          <img
+            src="https://cdn.asurabot.com.br/cdn/etc/bot_image.png"
+            alt="AsuraBot"
+            class="logo-img"
+          />
         </div>
         <div class="logo-text">
           Asura<span style="color: var(--primary)">Bot</span>
@@ -25,11 +29,7 @@
             >{{ item.label }}</a
           >
         </router-link>
-        <a
-          href="/#asura-card"
-          class="nav-link"
-          @click.prevent="goAsuraCards"
-        >
+        <a href="/#asura-card" class="nav-link" @click.prevent="goAsuraCards">
           {{ $t("nav.asuraCards") }}
         </a>
       </div>
@@ -47,7 +47,7 @@
         </div>
         <a
           class="btn btn-ghost"
-          href="https://discord.gg/bn8yYNNNF3"
+          href="https://discord.gg/CfkBZyVsd7"
           target="_blank"
           rel="noopener"
         >
@@ -118,11 +118,7 @@
           >{{ item.label }}</a
         >
       </router-link>
-      <a
-        href="/#asura-card"
-        class="mobile-link"
-        @click.prevent="goAsuraCards"
-      >
+      <a href="/#asura-card" class="mobile-link" @click.prevent="goAsuraCards">
         {{ $t("nav.asuraCards") }}
       </a>
       <a class="btn btn-primary mobile-cta" href="#" @click.prevent="invite">
@@ -131,7 +127,7 @@
       </a>
       <a
         class="btn btn-ghost mobile-cta"
-        href="https://discord.gg/bn8yYNNNF3"
+        href="https://discord.gg/CfkBZyVsd7"
         target="_blank"
         rel="noopener"
       >
