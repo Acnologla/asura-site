@@ -9,12 +9,15 @@
 
       <section class="legal-section">
         <h2>1. Information We Collect</h2>
-        <p>Asura only collects the following information:</p>
+        <p>For the bot, Asura collects the following information:</p>
         <ul>
           <li>Guild IDs (Server Identifiers)</li>
           <li>User IDs</li>
         </ul>
-        <p>No other data is collected, stored, or shared.</p>
+        <p>
+          The website also uses PostHog analytics to collect usage data such as
+          page paths. Query parameters are not included in tracked page URLs.
+        </p>
       </section>
 
       <section class="legal-section">
@@ -29,8 +32,9 @@
       <section class="legal-section">
         <h2>3. Data Sharing</h2>
         <p>
-          We do not share, sell, or distribute any collected information to
-          third parties unless required by law.
+          We use PostHog, a third-party analytics provider, to process website
+          analytics. We do not sell or distribute collected information unless
+          required by law.
         </p>
       </section>
 
