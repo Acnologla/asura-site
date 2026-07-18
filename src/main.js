@@ -46,7 +46,7 @@ library.add(
   faGithub,
   faDiscord,
   faSearch,
-  faGlobe
+  faGlobe,
 );
 Vue.component("font-awesome-icon", FontAwesomeIcon);
 
@@ -68,9 +68,9 @@ posthog.init("phc_xE7gJ4Yds7ZLGBtxNkthEzK4S23a6fCNGm5fK95wtZnE", {
   defaults: "2026-05-30",
   autocapture: false,
   capture_pageview: false,
-  disable_session_recording: true,
-  capture_performance: false,
-  capture_exceptions: false,
+  disable_session_recording: false,
+  capture_performance: true,
+  capture_exceptions: true,
   mask_personal_data_properties: true,
   custom_personal_data_properties: ["token"],
 });
