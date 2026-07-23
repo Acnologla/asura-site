@@ -1,6 +1,6 @@
 <template>
   <nav :class="['site-nav', { 'nav-scrolled': scrolled }]">
-    <div class="container nav-inner">
+    <div class="nav-inner">
       <router-link :to="{ name: 'Home' }" class="logo-btn">
         <div class="logo-square">
           <img
@@ -268,11 +268,14 @@ export default {
   align-items: center;
   justify-content: space-between;
   height: 72px;
+  padding: 0 28px;
 }
 
 @media (min-width: 1024px) {
   .nav-inner {
     height: 56px;
+    max-width: 1420px;
+    margin: 0 auto;
   }
 }
 
@@ -401,6 +404,18 @@ export default {
 @media (max-width: 1023px) {
   .nav-inner {
     height: 60px;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-inner {
+    padding: 0 18px;
+  }
+}
+
+@media (max-width: 450px) {
+  .nav-inner {
+    padding: 0 12px;
   }
 }
 </style>
