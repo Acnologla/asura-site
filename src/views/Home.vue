@@ -18,7 +18,7 @@
           </h1>
           <p class="hero-sub">{{ $t("home.heroSub") }}</p>
           <div class="hero-actions">
-            <a href="#" class="btn btn-primary" @click.prevent="invite">
+            <a href="#" class="btn btn-primary" @click.prevent="invite('hero')">
               <DiscordIcon :size="18" />
               {{ $t("home.addToDiscord") }}
             </a>
@@ -27,6 +27,7 @@
               class="btn btn-ghost"
               target="_blank"
               rel="noopener"
+              @click="trackDiscordJoin('hero')"
             >
               <DiscordIcon :size="18" />
               {{ $t("nav.supportServer") || "Support Server" }}
@@ -303,7 +304,11 @@
           </h2>
           <p class="cta-sub">{{ $t("home.ctaSub") }}</p>
           <div class="cta-actions">
-            <a href="#" class="btn btn-primary" @click.prevent="invite">
+            <a
+              href="#"
+              class="btn btn-primary"
+              @click.prevent="invite('footer-cta')"
+            >
               <DiscordIcon :size="18" />
               {{ $t("home.addToDiscord") }}
             </a>
@@ -319,6 +324,7 @@
 
 <script>
 import axios from "axios";
+import posthog from "posthog-js";
 import DiscordIcon from "../components/icons/DiscordIcon.vue";
 import ArrowIcon from "../components/icons/ArrowIcon.vue";
 import HeroVisual from "../components/home/HeroVisual.vue";
@@ -618,7 +624,7 @@ export default {
     onResize() {
       this.isMobile = window.innerWidth < 768;
     },
-    invite() {
+    invite(location) {
       if (typeof window !== "undefined" && window.gtag) {
         window.gtag("event", "conversion", {
           send_to: "AW-11526751589/-iaDCOaJj_4ZEOWKsfgq",
@@ -626,8 +632,12 @@ export default {
           currency: "BRL",
         });
       }
+      posthog.capture("bot_invite_clicked", { location });
       const route = this.$router.resolve({ name: "Invite" });
       window.open(route.href, "_blank");
+    },
+    trackDiscordJoin(location) {
+      posthog.capture("discord_join_clicked", { location });
     },
     scrollAsuraCard() {
       const scroll = () => {

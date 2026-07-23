@@ -68,7 +68,9 @@
       <button
         class="btn plan-cta"
         :style="ctaStyle"
-        @click="$emit('subscribe')"
+        @click="
+          $emit('subscribe', { name: plano.nome, price: price, period: period })
+        "
       >
         {{ $t("donatePage.buy") }} {{ plano.nome }}
       </button>

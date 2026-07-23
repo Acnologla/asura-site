@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /invite
+
+Sitemap: https://asurabot.com.br/sitemap.xml

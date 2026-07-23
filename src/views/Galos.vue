@@ -614,7 +614,7 @@ export default {
     },
     skins() {
       return this.allSkins.filter(
-        (s) => s.type === 2 && s.extra === this.currentIndex + 1,
+        (s) => s.type === 5 || (s.type === 2 && s.extra === this.currentIndex + 1),
       );
     },
   },

@@ -50,11 +50,12 @@
           href="https://discord.gg/CfkBZyVsd7"
           target="_blank"
           rel="noopener"
+          @click="trackDiscordJoin('nav')"
         >
           <DiscordIcon :size="16" />
           {{ $t("nav.supportServer") || "Support Server" }}
         </a>
-        <a class="btn btn-primary" href="#" @click.prevent="invite">
+        <a class="btn btn-primary" href="#" @click.prevent="invite('nav')">
           <DiscordIcon :size="16" />
           {{ $t("nav.addMe") }}
         </a>
@@ -121,7 +122,11 @@
       <a href="/#asura-card" class="mobile-link" @click.prevent="goAsuraCards">
         {{ $t("nav.asuraCards") }}
       </a>
-      <a class="btn btn-primary mobile-cta" href="#" @click.prevent="invite">
+      <a
+        class="btn btn-primary mobile-cta"
+        href="#"
+        @click.prevent="invite('nav-mobile')"
+      >
         <DiscordIcon :size="16" />
         {{ $t("nav.addMe") }}
       </a>
@@ -130,6 +135,7 @@
         href="https://discord.gg/CfkBZyVsd7"
         target="_blank"
         rel="noopener"
+        @click="trackDiscordJoin('nav-mobile')"
       >
         <DiscordIcon :size="16" />
         {{ $t("nav.supportServer") || "Support Server" }}
@@ -139,6 +145,7 @@
 </template>
 
 <script>
+import posthog from "posthog-js";
 import DiscordIcon from "./icons/DiscordIcon.vue";
 
 export default {
@@ -161,6 +168,11 @@ export default {
           id: "bg",
           to: { name: "Backgrounds" },
           label: this.$t("nav.backgrounds"),
+        },
+        {
+          id: "extras",
+          to: { name: "Extras" },
+          label: this.$t("nav.extras"),
         },
         {
           id: "donate",
@@ -199,7 +211,7 @@ export default {
         /* ignore */
       }
     },
-    invite() {
+    invite(location) {
       if (typeof window !== "undefined" && window.gtag) {
         window.gtag("event", "conversion", {
           send_to: "AW-11526751589/-iaDCOaJj_4ZEOWKsfgq",
@@ -207,8 +219,12 @@ export default {
           currency: "BRL",
         });
       }
+      posthog.capture("bot_invite_clicked", { location });
       const route = this.$router.resolve({ name: "Invite" });
       window.open(route.href, "_blank");
+    },
+    trackDiscordJoin(location) {
+      posthog.capture("discord_join_clicked", { location });
     },
     goAsuraCards() {
       this.menuOpen = false;

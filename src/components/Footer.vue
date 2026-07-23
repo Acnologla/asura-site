@@ -40,6 +40,7 @@
             target="_blank"
             rel="noopener"
             class="footer-link"
+            @click="trackDiscordJoin"
             >{{ $t("footer.supportServer") }}</a
           >
           <a
@@ -71,10 +72,17 @@
 </template>
 
 <script>
+import posthog from "posthog-js";
+
 export default {
   name: "Footer",
   data() {
     return { year: new Date().getFullYear() };
+  },
+  methods: {
+    trackDiscordJoin() {
+      posthog.capture("discord_join_clicked", { location: "footer" });
+    },
   },
 };
 </script>

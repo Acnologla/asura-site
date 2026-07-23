@@ -49,7 +49,7 @@
           <button
             v-for="(item, idx) in sorted"
             :key="item.name + '-' + idx"
-            class="catalog-card"
+            :class="['catalog-card', { 'not-clickable': !clickable }]"
             @click="open(item)"
           >
             <div :style="rarityRingStyle(item)" class="rarity-ring">
@@ -72,6 +72,21 @@
                     String(getOriginalIndex(item) + 1).padStart(3, "0")
                   }}
                 </div>
+              </div>
+              <div
+                v-if="item.effects && item.effects.length"
+                class="card-effects"
+              >
+                <span
+                  v-for="(effect, i) in item.effects"
+                  :key="i"
+                  :class="['effect-pill', effect.payload >= 0 ? 'positive' : 'negative']"
+                >
+                  {{ formatEffect(effect) }}
+                </span>
+              </div>
+              <div v-else-if="item.subtitle" class="card-subtitle">
+                {{ item.subtitle }}
               </div>
             </div>
           </button>
@@ -102,6 +117,8 @@ export default {
     itemHeight: { type: Number },
     // skipFirst: API returns a leading "404" entry as classes[0].
     skipLeading404: { type: Boolean, default: true },
+    // When false, cards are display-only (no per-item detail page to open).
+    clickable: { type: Boolean, default: true },
   },
   data() {
     return {
@@ -150,10 +167,17 @@ export default {
     },
   },
   methods: {
+    formatEffect(effect) {
+      const suffixes = { health: "HP", defense: "DEF", crit: "CRIT", damage: "DMG" };
+      const suffix = suffixes[effect.effect] || effect.effect;
+      const pct = Math.round(effect.payload * 100);
+      return `${pct >= 0 ? "+" : ""}${pct}% ${suffix}`;
+    },
     getOriginalIndex(item) {
       return this.classes.findIndex((g) => g.name === item.name);
     },
     open(item) {
+      if (!this.clickable) return;
       const idx = this.getOriginalIndex(item);
       const offset = this.skipLeading404 ? 1 : 0;
       const url = this.detailUrlTemplate.replace("{index}", idx - offset);
@@ -278,6 +302,14 @@ export default {
   box-shadow: var(--shadow);
   border-color: var(--primary);
 }
+.catalog-card.not-clickable {
+  cursor: default;
+}
+.catalog-card.not-clickable:hover {
+  transform: none;
+  box-shadow: none;
+  border-color: var(--line);
+}
 
 .rarity-ring {
   width: 100%;
@@ -337,6 +369,31 @@ export default {
   font-family: var(--font-mono);
   color: var(--ink-3);
   letter-spacing: 0.08em;
+}
+.card-subtitle {
+  font-size: 12px;
+  color: var(--ink-2);
+  font-weight: 600;
+}
+.card-effects {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+.effect-pill {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 2px 7px;
+  border-radius: 999px;
+  font-family: var(--font-mono);
+}
+.effect-pill.positive {
+  background: #e6f7ee;
+  color: #1d8a4c;
+}
+.effect-pill.negative {
+  background: #fbe8e8;
+  color: #c23d3d;
 }
 
 @media (max-width: 1024px) {

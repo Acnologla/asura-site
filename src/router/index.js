@@ -15,6 +15,7 @@ const background = () => import("../views/Background");
 const pets = () => import("../views/AllPets");
 const pet = () => import("../views/Pet");
 const Galos = () => import("../views/Galos.vue");
+const Extras = () => import("../views/Extras.vue");
 
 Vue.use(VueRouter);
 
@@ -78,6 +79,11 @@ const routes = [
     path: "/donate",
     name: "Donate",
     component: Donate,
+  },
+  {
+    path: "/extras",
+    name: "Extras",
+    component: Extras,
   },
   {
     path: "/info",

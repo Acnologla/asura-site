@@ -59,7 +59,12 @@
                   <div class="recurso-price">R${{ r.preco }}</div>
                   <div class="recurso-unit">{{ $t("donateNew.unit") }}</div>
                 </div>
-                <button class="btn btn-primary" @click="openModal">
+                <button
+                  class="btn btn-primary"
+                  @click="
+                    openModal({ type: 'resource', name: r.nome, price: r.preco })
+                  "
+                >
                   {{ $t("donatePage.buy") }}
                 </button>
               </div>
@@ -100,7 +105,9 @@
           :key="plano.nome"
           :plano="plano"
           :periodo="period"
-          @subscribe="openModal"
+          @subscribe="
+            (plan) => openModal({ type: 'plan', ...plan })
+          "
         />
       </div>
     </section>
@@ -231,6 +238,7 @@
 </template>
 
 <script>
+import posthog from "posthog-js";
 import DiscordIcon from "../components/icons/DiscordIcon.vue";
 import PlanCard from "../components/donate/PlanCard.vue";
 
@@ -412,7 +420,8 @@ export default {
     window.removeEventListener("scroll", this.onScroll);
   },
   methods: {
-    openModal() {
+    openModal(item) {
+      posthog.capture("donate_click", item);
       this.modalOpen = true;
     },
     onScroll() {
