@@ -15,6 +15,12 @@ export const GetClasses = () =>
     () => get(`https://info.asurabot.com.br/class.json?language=${locale()}`)
   );
 
+export const GetRoosterGroups = () =>
+  cachedFetch(
+    `cache:roostergroups:${locale()}`,
+    () => get(`https://info.asurabot.com.br/roostergroups.json?language=${locale()}`)
+  );
+
 export const GetSprites = () =>
   cachedFetch(
     `cache:sprites:${locale()}`,

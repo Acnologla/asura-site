@@ -57,6 +57,15 @@
               <div :class="['rarity-pill', `rarity-${current.rarity}`]">
                 ★ {{ rarityLabel }}
               </div>
+              <div v-if="currentGroup" class="class-pill">
+                <img
+                  v-if="currentGroup.emojiURL"
+                  :src="currentGroup.emojiURL"
+                  :alt="currentGroup.name"
+                  class="class-pill-icon"
+                />
+                {{ currentGroup.name }}
+              </div>
             </div>
 
             <h1 class="h-display rooster-title">
@@ -73,7 +82,7 @@
               <div class="passive-text">{{ current.passive }}</div>
             </div>
 
-            <!-- Matchups -->
+            <!-- Matchups (class advantage system) -->
             <div class="matchups">
               <div>
                 <div class="match-eyebrow up">
@@ -82,21 +91,20 @@
                 <div v-if="goodAgainst.length === 0" class="match-empty">
                   {{ $t("galos.none") }}
                 </div>
-                <button
+                <div
                   v-for="g in goodAgainst"
-                  :key="g.name + '-up'"
+                  :key="g.translationKey + '-up'"
                   class="match-row"
-                  @click="goTo(g.index)"
                 >
-                  <div
-                    class="match-thumb"
-                    :class="`rarity-${g.rarity}`"
-                    :style="{ background: rarityHex(g.rarity) + '33' }"
-                  >
-                    {{ g.name.slice(0, 2).toUpperCase() }}
+                  <div class="match-thumb match-thumb-class">
+                    <img
+                      v-if="g.emojiURL"
+                      :src="g.emojiURL"
+                      :alt="g.name"
+                    />
                   </div>
                   {{ g.name }}
-                </button>
+                </div>
               </div>
               <div>
                 <div class="match-eyebrow down">
@@ -105,21 +113,20 @@
                 <div v-if="badAgainst.length === 0" class="match-empty">
                   {{ $t("galos.none") }}
                 </div>
-                <button
+                <div
                   v-for="b in badAgainst"
-                  :key="b.name + '-down'"
+                  :key="b.translationKey + '-down'"
                   class="match-row"
-                  @click="goTo(b.index)"
                 >
-                  <div
-                    class="match-thumb"
-                    :class="`rarity-${b.rarity}`"
-                    :style="{ background: rarityHex(b.rarity) + '33' }"
-                  >
-                    {{ b.name.slice(0, 2).toUpperCase() }}
+                  <div class="match-thumb match-thumb-class">
+                    <img
+                      v-if="b.emojiURL"
+                      :src="b.emojiURL"
+                      :alt="b.name"
+                    />
                   </div>
                   {{ b.name }}
-                </button>
+                </div>
               </div>
             </div>
           </div>
@@ -483,7 +490,13 @@
 <script>
 import axios from "axios";
 import ArrowIcon from "../components/icons/ArrowIcon.vue";
-import { GetCosmeticInfo, GetClasses, GetSprites, GetEffects } from "../trade/info";
+import {
+  GetCosmeticInfo,
+  GetClasses,
+  GetSprites,
+  GetEffects,
+  GetRoosterGroups,
+} from "../trade/info";
 
 const RARITY_HEX = [
   "#9ca3af",
@@ -503,6 +516,7 @@ export default {
       classes: [],
       sprites: [],
       effects: [],
+      roosterGroups: [],
       skills: [],
       allSkins: [],
       currentIndex: 0,
@@ -573,20 +587,24 @@ export default {
     rarityLabel() {
       return this.rarityNames[this.current.rarity] || "";
     },
+    currentGroup() {
+      if (!this.current.group) return null;
+      return this.roosterGroups[this.current.group] || null;
+    },
     goodAgainst() {
-      const target = this.currentIndex + 1;
-      return this.classes
-        .map((c, i) => ({ ...c, index: i - 1 }))
-        .filter((c) => c.disadvantages && c.disadvantages.includes(target));
+      const group = this.currentGroup;
+      if (!group || !group.beats) return [];
+      return group.beats
+        .map((gi) => this.roosterGroups[gi])
+        .filter((g) => g && g.name);
     },
     badAgainst() {
-      if (!this.current.disadvantages) return [];
-      return this.current.disadvantages
-        .map((di) => ({
-          ...this.classes[di],
-          index: di - 1,
-        }))
-        .filter((c) => c && c.name);
+      const ownGroup = this.current.group;
+      if (!ownGroup) return [];
+      return this.roosterGroups.filter(
+        (g, i) =>
+          i !== 0 && i !== ownGroup && g.beats && g.beats.includes(ownGroup)
+      );
     },
     others() {
       const all = this.classes
@@ -614,7 +632,7 @@ export default {
     },
     skins() {
       return this.allSkins.filter(
-        (s) => s.type === 5 || (s.type === 2 && s.extra === this.currentIndex + 1),
+        (s) => s.type === 2 && s.extra === this.currentIndex + 1,
       );
     },
   },
@@ -752,14 +770,16 @@ export default {
     },
     async loadAll() {
       try {
-        const [classes, sprites, effects] = await Promise.all([
+        const [classes, sprites, effects, roosterGroups] = await Promise.all([
           GetClasses(),
           GetSprites(),
           GetEffects(),
+          GetRoosterGroups(),
         ]);
         this.classes = classes;
         this.sprites = sprites[0];
         this.effects = effects;
+        this.roosterGroups = roosterGroups;
         if (this.$route.query.galo !== undefined) {
           this.currentIndex = parseInt(this.$route.query.galo, 10) || 0;
         }
@@ -942,6 +962,25 @@ export default {
   text-transform: uppercase;
   background: color-mix(in oklab, var(--r) 10%, white);
 }
+.class-pill {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px 6px 8px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  color: var(--ink);
+  font-weight: 700;
+  font-size: 13px;
+  font-family: var(--font-mono);
+  letter-spacing: 0.04em;
+}
+.class-pill-icon {
+  width: 22px;
+  height: 22px;
+  border-radius: 6px;
+  object-fit: cover;
+}
 
 .rooster-title {
   font-size: 72px;
@@ -1014,7 +1053,6 @@ export default {
   background: none;
   border: 0;
   padding: 0;
-  cursor: pointer;
   color: var(--ink);
   font-family: inherit;
   text-transform: capitalize;
@@ -1029,6 +1067,15 @@ export default {
   font-size: 9px;
   font-weight: 700;
   font-family: var(--font-mono);
+}
+.match-thumb-class {
+  background: color-mix(in oklab, var(--ink) 6%, white);
+}
+.match-thumb-class img {
+  width: 100%;
+  height: 100%;
+  border-radius: 4px;
+  object-fit: cover;
 }
 
 @media (max-width: 768px) {

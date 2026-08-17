@@ -151,8 +151,8 @@ const messages = {
       topgg: "top.gg",
     },
     galos: {
-      goodAgainst: "Bom contra",
-      badAgainst: "Ruim contra",
+      goodAgainst: "+15% contra",
+      badAgainst: "-10% contra",
       none: "Nenhum",
       skins: "Skins",
       passiveSkill: "Habilidade Passiva",
@@ -556,8 +556,8 @@ const messages = {
       topgg: "top.gg",
     },
     galos: {
-      goodAgainst: "Good against",
-      badAgainst: "Bad against",
+      goodAgainst: "+15% against",
+      badAgainst: "-10% against",
       none: "None",
       skins: "Skins",
       passiveSkill: "Passive Skill",
@@ -815,7 +815,7 @@ const messages = {
 };
 
 export default new VueI18n({
-  locale: localStorage.getItem("locale") || "pt",
-  fallbackLocale: "pt",
+  locale: localStorage.getItem("locale") || "en",
+  fallbackLocale: "en",
   messages,
 });
