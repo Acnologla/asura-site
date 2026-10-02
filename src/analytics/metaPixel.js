@@ -1,11 +1,11 @@
-const pixelId = process.env.VUE_APP_META_PIXEL_ID;
+const pixelId = process.env.VUE_APP_META_PIXEL_ID || "1057839460396137";
 let initialized = false;
 
 function getPixel() {
   if (!pixelId || typeof window === "undefined") return null;
 
   if (!window.fbq) {
-    const fbq = function () {
+    const fbq = function() {
       fbq.callMethod
         ? fbq.callMethod.apply(fbq, arguments)
         : fbq.queue.push(arguments);
@@ -21,7 +21,6 @@ function getPixel() {
     script.async = true;
     script.src = "https://connect.facebook.net/en_US/fbevents.js";
     document.head.appendChild(script);
-
   }
 
   if (!initialized) {
