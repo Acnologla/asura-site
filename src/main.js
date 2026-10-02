@@ -5,6 +5,7 @@ import App from "./App.vue";
 import router from "./router";
 import i18n from "./i18n";
 import posthog from "posthog-js";
+import { initializeMetaPixel, trackMetaEvent } from "./analytics/metaPixel";
 
 import {
   Button,
@@ -75,10 +76,13 @@ posthog.init("phc_xE7gJ4Yds7ZLGBtxNkthEzK4S23a6fCNGm5fK95wtZnE", {
   custom_personal_data_properties: ["token"],
 });
 
+initializeMetaPixel();
+
 router.afterEach((to) => {
   posthog.capture("$pageview", {
     $current_url: `${window.location.origin}${to.path}`,
   });
+  trackMetaEvent("PageView");
 });
 
 new Vue({

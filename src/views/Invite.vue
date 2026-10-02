@@ -14,8 +14,19 @@
 export default {
   name: "Invite",
   mounted() {
-    window.location.href =
-      "https://discord.com/oauth2/authorize?client_id=470684281102925844&scope=applications.commands+bot&permissions=8";
+    const params = new URLSearchParams({
+      client_id: "470684281102925844",
+      scope: "applications.commands bot",
+      permissions: "8",
+      response_type: "code",
+      redirect_uri:
+        process.env.VUE_APP_DISCORD_REDIRECT_URI ||
+        "https://asurabot.com.br/thank-you",
+    });
+
+    window.location.replace(
+      `https://discord.com/oauth2/authorize?${params.toString()}`,
+    );
   },
 };
 </script>

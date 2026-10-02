@@ -29,9 +29,6 @@
             >{{ item.label }}</a
           >
         </router-link>
-        <a href="/#asura-card" class="nav-link" @click.prevent="goAsuraCards">
-          {{ $t("nav.asuraCards") }}
-        </a>
       </div>
 
       <div class="nav-actions" v-if="!isMobile">
@@ -119,9 +116,6 @@
           >{{ item.label }}</a
         >
       </router-link>
-      <a href="/#asura-card" class="mobile-link" @click.prevent="goAsuraCards">
-        {{ $t("nav.asuraCards") }}
-      </a>
       <a
         class="btn btn-primary mobile-cta"
         href="#"
@@ -147,6 +141,7 @@
 <script>
 import posthog from "posthog-js";
 import DiscordIcon from "./icons/DiscordIcon.vue";
+import { trackMetaEvent } from "../analytics/metaPixel";
 
 export default {
   name: "Nav",
@@ -225,31 +220,7 @@ export default {
     },
     trackDiscordJoin(location) {
       posthog.capture("discord_join_clicked", { location });
-    },
-    goAsuraCards() {
-      this.menuOpen = false;
-      const scroll = () => {
-        const el = document.getElementById("asura-card");
-        if (el) {
-          el.scrollIntoView({ behavior: "smooth", block: "start" });
-        }
-      };
-      const scrollAfterLayout = () => {
-        scroll();
-        setTimeout(scroll, 700);
-      };
-
-      if (this.$route.name === "Home") {
-        scrollAfterLayout();
-        return;
-      }
-
-      this.$router
-        .push({ name: "Home" })
-        .catch(() => {})
-        .finally(() => {
-          this.$nextTick(scrollAfterLayout);
-        });
+      trackMetaEvent("InitiateCheckout");
     },
   },
 };

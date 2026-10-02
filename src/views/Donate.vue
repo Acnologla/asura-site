@@ -149,6 +149,7 @@
                   href="https://discord.gg/CfkBZyVsd7"
                   target="_blank"
                   rel="noopener"
+                  @click="trackDiscordJoin('donate-share')"
                 >
                   <DiscordIcon :size="16" />
                   {{ $t("donateNew.shareBot") }}
@@ -195,6 +196,7 @@
             target="_blank"
             rel="noopener"
             style="padding: 12px 20px"
+            @click="trackDiscordJoin('donate-faq')"
           >
             <DiscordIcon :size="16" />
             {{ $t("donateNew.joinDiscord") }}
@@ -228,6 +230,7 @@
             href="https://discord.gg/CfkBZyVsd7"
             target="_blank"
             rel="noopener"
+            @click="trackDiscordJoin('donate-modal')"
             >{{ $t("donatePage.supportDiscord") }}</a
           >
         </p>
@@ -239,6 +242,7 @@
 
 <script>
 import posthog from "posthog-js";
+import { trackMetaEvent } from "../analytics/metaPixel";
 import DiscordIcon from "../components/icons/DiscordIcon.vue";
 import PlanCard from "../components/donate/PlanCard.vue";
 
@@ -420,6 +424,10 @@ export default {
     window.removeEventListener("scroll", this.onScroll);
   },
   methods: {
+    trackDiscordJoin(location) {
+      posthog.capture("discord_join_clicked", { location });
+      trackMetaEvent("InitiateCheckout");
+    },
     openModal(item) {
       posthog.capture("donate_click", item);
       this.modalOpen = true;

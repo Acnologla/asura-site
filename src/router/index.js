@@ -4,6 +4,7 @@ import AllGalos from "../views/AllGalos.vue";
 import Home from "../views/Home";
 import Donate from "../views/Donate";
 import Invite from "../views/Invite.vue";
+import Event from "../views/Event.vue";
 
 const RinhaInfo = () => import("../views/RinhaInfo");
 const CreateGalo = () => import("../views/CreateGalo");
@@ -16,6 +17,7 @@ const pets = () => import("../views/AllPets");
 const pet = () => import("../views/Pet");
 const Galos = () => import("../views/Galos.vue");
 const Extras = () => import("../views/Extras.vue");
+const ThankYou = () => import("../views/ThankYou.vue");
 
 Vue.use(VueRouter);
 
@@ -26,9 +28,19 @@ const routes = [
     component: Home,
   },
   {
+    path: "/event",
+    name: "Event",
+    component: Event,
+  },
+  {
     path: "/invite",
     name: "Invite",
     component: Invite,
+  },
+  {
+    path: "/thank-you",
+    name: "ThankYou",
+    component: ThankYou,
   },
   {
     path: "/backgrounds",

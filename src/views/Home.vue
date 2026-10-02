@@ -4,10 +4,6 @@
     <section class="home-section hero-section">
       <div class="container hero-grid">
         <div>
-          <div class="pill hero-pill">
-            <span class="hero-pill-dot" />
-            {{ $t("home.heroPill") }}
-          </div>
           <h1 class="h-display hero-title">
             {{ $t("home.heroLine1") }}<br />
             {{ $t("home.heroLine2") }}<br />
@@ -37,25 +33,45 @@
                 {{ $t("home.seeRoosters") }}
                 <ArrowIcon :size="14" />
               </router-link>
-              <a
-                href="#asura-card"
-                class="hero-text-link"
-                @click.prevent="scrollAsuraCard"
-              >
-                {{ $t("home.seeAsuraCards") }}
-                <ArrowIcon :size="14" />
-              </a>
             </div>
-          </div>
-          <div class="hero-meta">
-            <span class="hero-meta-pill">
-              <span class="hero-meta-dot" />
-              {{ $t("home.activeServers") }}
-            </span>
           </div>
         </div>
 
-        <HeroVisual :rooster="heroRooster" />
+        <div class="event-promo">
+          <router-link
+            to="/event"
+            class="event-promo-art"
+            aria-label="Conhecer o evento Eleições do Brasil"
+          >
+            <div class="event-promo-topline">
+              <span>EVENTO ESPECIAL</span>
+              <span>ELEIÇÕES DO BRASIL</span>
+            </div>
+            <div class="event-promo-candidates">
+              <img
+                src="https://cdn.asurabot.com.br/cdn/spriteseventos/RenanSantosElectionRoosterSkinV21400x1024_01.png"
+                alt="Renan Santos"
+              />
+              <img
+                src="https://cdn.asurabot.com.br/cdn/spriteseventos/FlavioBolsonaroElectionRoosterSkinV21400x1024_01.png"
+                alt="Flávio Bolsonaro"
+              />
+              <img
+                src="https://cdn.asurabot.com.br/cdn/spriteseventos/LulaPresidentialRoosterSkin1400x1024_01.png"
+                alt="Lula"
+              />
+              <img
+                src="https://cdn.asurabot.com.br/cdn/spriteseventos/AugustoCuryElectionRoosterSkin1400x1024_01.png"
+                alt="Augusto Cury"
+              />
+            </div>
+            <div class="event-promo-title">Escolha seu candidato.</div>
+          </router-link>
+          <router-link to="/event" class="btn btn-primary event-promo-button">
+            Conhecer o evento
+            <ArrowIcon :size="16" />
+          </router-link>
+        </div>
       </div>
     </section>
 
@@ -129,74 +145,6 @@
         </div>
       </div>
     </section>
-
-    <!-- ─── ASURA CARD ─── -->
-    <section id="asura-card" class="asura-card-section">
-      <div class="container asura-card-grid">
-        <div class="asura-card-copy">
-          <div class="eyebrow">{{ $t("home.asuraCardEyebrow") }}</div>
-          <h2 class="h-display asura-card-title">
-            {{ $t("home.asuraCardTitleA") }}<br />
-            <span>{{ $t("home.asuraCardTitleB") }}</span>
-          </h2>
-          <p class="asura-card-sub">{{ $t("home.asuraCardSub") }}</p>
-
-          <div class="asura-card-points">
-            <span>{{ $t("home.asuraCardPoint1") }}</span>
-            <span>{{ $t("home.asuraCardPoint2") }}</span>
-            <span>{{ $t("home.asuraCardPoint3") }}</span>
-          </div>
-
-          <a
-            class="btn btn-primary asura-card-btn"
-            :href="asuraCardInviteUrl"
-            target="_blank"
-            rel="noopener"
-          >
-            <DiscordIcon :size="18" />
-            {{ $t("home.asuraCardBtn") }}
-          </a>
-        </div>
-
-        <button
-          class="asura-card-visual"
-          type="button"
-          :aria-label="$t('home.asuraCardOpenPreview')"
-          @click="openAsuraCardPreview"
-        >
-          <img
-            :src="asuraCardPreview"
-            :alt="$t('home.asuraCardAlt')"
-            class="asura-card-image"
-          />
-          <span class="asura-card-zoom-label">
-            {{ $t("home.asuraCardOpenPreview") }}
-          </span>
-        </button>
-      </div>
-    </section>
-
-    <div
-      v-if="asuraCardPreviewOpen"
-      class="asura-card-modal"
-      role="dialog"
-      aria-modal="true"
-      :aria-label="$t('home.asuraCardOpenPreview')"
-      @click.self="closeAsuraCardPreview"
-    >
-      <button
-        class="asura-card-modal-close"
-        type="button"
-        @click="closeAsuraCardPreview"
-      >
-        {{ $t("home.asuraCardClosePreview") }}
-      </button>
-      <img
-        :src="asuraCardPreview"
-        :alt="$t('home.asuraCardAlt')"
-        class="asura-card-modal-image"
-      />
-    </div>
 
     <!-- ─── COMANDOS ─── -->
     <section class="home-section commands-section" id="comandos">
@@ -325,16 +273,10 @@
 <script>
 import axios from "axios";
 import posthog from "posthog-js";
+import { trackMetaEvent } from "../analytics/metaPixel";
 import DiscordIcon from "../components/icons/DiscordIcon.vue";
 import ArrowIcon from "../components/icons/ArrowIcon.vue";
-import HeroVisual from "../components/home/HeroVisual.vue";
 import FeatureArt from "../components/home/FeatureArt.vue";
-import asuraCardPreviewPt from "../assets/asura-card-preview.png";
-import asuraCardPreviewEn from "../assets/asura-card-preview-en.png";
-
-const ASURA_CARD_INVITE_URL =
-  "https://discordapp.com/oauth2/authorize?client_id=1483228177127182416&scope=applications.commands%20bot&permissions=8";
-const HERO_MS = 3500;
 const CATALOG_MS = 4500;
 const RARITY_HEX = [
   "#9ca3af",
@@ -355,30 +297,19 @@ export default {
   components: {
     DiscordIcon,
     ArrowIcon,
-    HeroVisual,
     FeatureArt,
   },
   data() {
     return {
       classes: [],
       sprites: [],
-      heroIdx: 0,
       catalogIndices: [],
       catalogVisible: true,
-      heroTimer: null,
       catalogTimer: null,
       isMobile: false,
-      asuraCardPreviewOpen: false,
-      previousBodyOverflow: "",
-      asuraCardInviteUrl: ASURA_CARD_INVITE_URL,
     };
   },
   computed: {
-    asuraCardPreview() {
-      return this.$i18n.locale === "en"
-        ? asuraCardPreviewEn
-        : asuraCardPreviewPt;
-    },
     pairs() {
       // Build [{ name, sprite, rarity, advantages, disadvantages, index }] aligned by index
       const out = [];
@@ -398,9 +329,6 @@ export default {
         });
       }
       return out;
-    },
-    heroRooster() {
-      return this.pairs[this.heroIdx] || null;
     },
     catalogStrip() {
       return this.catalogIndices
@@ -609,10 +537,6 @@ export default {
         r === 5 ? "rgba(184,39,252,0.7)" : RARITY_HEX[r] || "#9ca3af";
       return { boxShadow: `0 0 0 1px ${color}` };
     },
-    rotateHero() {
-      if (this.pairs.length === 0) return;
-      this.heroIdx = this.rand(this.pairs.length);
-    },
     rotateCatalog() {
       if (this.pairs.length === 0) return;
       this.catalogVisible = false;
@@ -638,32 +562,7 @@ export default {
     },
     trackDiscordJoin(location) {
       posthog.capture("discord_join_clicked", { location });
-    },
-    scrollAsuraCard() {
-      const scroll = () => {
-        const el = document.getElementById("asura-card");
-        if (el) {
-          el.scrollIntoView({ behavior: "smooth", block: "start" });
-        }
-      };
-
-      scroll();
-      setTimeout(scroll, 700);
-    },
-    openAsuraCardPreview() {
-      if (this.asuraCardPreviewOpen) return;
-      this.asuraCardPreviewOpen = true;
-      if (typeof document !== "undefined") {
-        this.previousBodyOverflow = document.body.style.overflow;
-        document.body.style.overflow = "hidden";
-      }
-    },
-    closeAsuraCardPreview() {
-      if (!this.asuraCardPreviewOpen) return;
-      this.asuraCardPreviewOpen = false;
-      if (typeof document !== "undefined") {
-        document.body.style.overflow = this.previousBodyOverflow;
-      }
+      trackMetaEvent("InitiateCheckout");
     },
     goRooster(index) {
       this.$router.push({ name: "Galo", query: { galo: index } });
@@ -681,7 +580,6 @@ export default {
         ]);
         this.sprites = spritesRes.data[0];
         this.classes = classesRes.data;
-        this.rotateHero();
         this.rotateCatalog();
       } catch (e) {
         // Network error is non-fatal — page still renders.
@@ -697,20 +595,10 @@ export default {
   mounted() {
     this.onResize();
     window.addEventListener("resize", this.onResize);
-    this.onKeydown = (e) => {
-      if (e.key === "Escape") {
-        this.closeAsuraCardPreview();
-      }
-    };
-    window.addEventListener("keydown", this.onKeydown);
-    this.heroTimer = setInterval(this.rotateHero, HERO_MS);
     this.catalogTimer = setInterval(this.rotateCatalog, CATALOG_MS);
   },
   beforeDestroy() {
     window.removeEventListener("resize", this.onResize);
-    window.removeEventListener("keydown", this.onKeydown);
-    this.closeAsuraCardPreview();
-    if (this.heroTimer) clearInterval(this.heroTimer);
     if (this.catalogTimer) clearInterval(this.catalogTimer);
   },
   watch: {
@@ -739,6 +627,69 @@ export default {
   grid-template-columns: 1.05fr 1fr;
   gap: 60px;
   align-items: center;
+}
+.event-promo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 14px;
+}
+.event-promo-art {
+  display: block;
+  width: 100%;
+  padding: 16px;
+  background: var(--ink);
+  color: #fff;
+  box-shadow: var(--shadow-lg);
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+.event-promo-art:hover {
+  color: #fff;
+  transform: translateY(-3px);
+  box-shadow: 0 22px 38px -22px rgba(36, 21, 71, 0.72);
+}
+.event-promo-topline {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  color: rgba(255, 255, 255, 0.62);
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.11em;
+}
+.event-promo-candidates {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+  margin: 14px 0;
+}
+.event-promo-candidates img {
+  width: 100%;
+  height: 150px;
+  object-fit: contain;
+  background: rgba(255, 255, 255, 0.08);
+}
+.event-promo-candidates img:first-child {
+  background: linear-gradient(145deg, #5c2ed7, #25145f);
+}
+.event-promo-candidates img:nth-child(2) {
+  background: linear-gradient(145deg, #d99004, #684109);
+}
+.event-promo-candidates img:last-child {
+  background: linear-gradient(145deg, #c13e37, #661e31);
+}
+.event-promo-candidates img:nth-child(3) {
+  background: linear-gradient(145deg, #22906d, #17624c);
+}
+.event-promo-title {
+  font-family: var(--font-display);
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+.event-promo-button {
+  padding: 13px 18px;
 }
 .hero-pill {
   margin-bottom: 28px;
@@ -817,35 +768,26 @@ export default {
 .hero-text-link:hover svg {
   transform: translate(2px, -2px);
 }
-.hero-meta {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  color: var(--ink-3);
-  font-size: 12px;
-  flex-wrap: wrap;
-  font-family: var(--font-mono);
-  letter-spacing: 0.06em;
-}
-.hero-meta-pill {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-.hero-meta-dot {
-  width: 6px;
-  height: 6px;
-  border-radius: 999px;
-  background: var(--emerald);
-}
-
 @media (max-width: 768px) {
   .hero-section {
     padding: 32px 0 48px;
   }
   .hero-grid {
     grid-template-columns: 1fr;
-    gap: 40px;
+    gap: 0;
+  }
+  .hero-actions {
+    margin-bottom: 0;
+  }
+  .event-promo-candidates img {
+    height: 118px;
+  }
+  .event-promo-title {
+    font-size: 24px;
+  }
+  .event-promo-button {
+    width: 100%;
+    justify-content: center;
   }
   .hero-title {
     font-size: 40px;
@@ -942,176 +884,6 @@ export default {
   }
   .feature-title {
     font-size: 22px;
-  }
-}
-
-/* ─── Asura Card ─── */
-.asura-card-section {
-  padding: 86px 0;
-  background: #14101f;
-  color: #fff;
-  overflow: hidden;
-  scroll-margin-top: 80px;
-}
-.asura-card-grid {
-  display: grid;
-  grid-template-columns: 0.82fr 1.18fr;
-  gap: 56px;
-  align-items: center;
-}
-.asura-card-copy .eyebrow {
-  color: var(--amber);
-}
-.asura-card-title {
-  color: #fff;
-  font-size: 52px;
-  margin: 12px 0 18px;
-}
-.asura-card-title span {
-  color: var(--amber);
-  font-style: italic;
-  font-weight: 500;
-}
-.asura-card-sub {
-  max-width: 480px;
-  margin: 0 0 24px;
-  color: rgba(255, 255, 255, 0.72);
-  font-size: 16px;
-  line-height: 1.6;
-}
-.asura-card-points {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-bottom: 26px;
-}
-.asura-card-points span {
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  border-radius: 999px;
-  color: rgba(255, 255, 255, 0.78);
-  font-size: 12px;
-  font-weight: 600;
-  padding: 7px 11px;
-}
-.asura-card-btn {
-  padding: 14px 22px;
-  font-size: 15px;
-}
-.asura-card-visual {
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 18px;
-  background: rgba(255, 255, 255, 0.04);
-  box-shadow: 0 30px 70px -35px rgba(0, 0, 0, 0.72);
-  overflow: hidden;
-  padding: 0;
-  position: relative;
-  width: 100%;
-  cursor: zoom-in;
-  transition: border-color 0.18s ease, transform 0.18s ease;
-}
-.asura-card-visual:hover {
-  border-color: rgba(240, 165, 0, 0.62);
-  transform: translateY(-2px);
-}
-.asura-card-image {
-  display: block;
-  width: 100%;
-  aspect-ratio: 970 / 715;
-  object-fit: cover;
-}
-.asura-card-zoom-label {
-  position: absolute;
-  right: 14px;
-  bottom: 14px;
-  padding: 8px 12px;
-  border-radius: 999px;
-  background: rgba(20, 16, 31, 0.86);
-  color: #fff;
-  font-size: 12px;
-  font-weight: 800;
-  line-height: 1;
-  opacity: 0;
-  transform: translateY(6px);
-  transition: opacity 0.18s ease, transform 0.18s ease;
-}
-.asura-card-visual:hover .asura-card-zoom-label,
-.asura-card-visual:focus-visible .asura-card-zoom-label {
-  opacity: 1;
-  transform: translateY(0);
-}
-.asura-card-modal {
-  position: fixed;
-  inset: 0;
-  z-index: 100;
-  display: grid;
-  place-items: center;
-  padding: 72px 24px 28px;
-  background: rgba(8, 6, 14, 0.88);
-  backdrop-filter: blur(10px);
-}
-.asura-card-modal-image {
-  display: block;
-  max-width: min(1180px, 96vw);
-  max-height: 86vh;
-  width: auto;
-  height: auto;
-  border-radius: 14px;
-  box-shadow: 0 28px 90px -28px rgba(0, 0, 0, 0.9);
-}
-.asura-card-modal-close {
-  position: fixed;
-  top: 22px;
-  right: 24px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.1);
-  color: #fff;
-  font-size: 14px;
-  font-weight: 800;
-  padding: 10px 16px;
-}
-.asura-card-modal-close:hover {
-  background: rgba(255, 255, 255, 0.18);
-}
-
-@media (max-width: 768px) {
-  .asura-card-section {
-    padding: 56px 0;
-  }
-  .asura-card-grid {
-    grid-template-columns: 1fr;
-    gap: 28px;
-  }
-  .asura-card-title {
-    font-size: 34px;
-  }
-  .asura-card-sub {
-    font-size: 15px;
-  }
-  .asura-card-btn {
-    width: 100%;
-  }
-  .asura-card-visual {
-    border-radius: 12px;
-  }
-  .asura-card-zoom-label {
-    opacity: 1;
-    transform: none;
-    right: 10px;
-    bottom: 10px;
-    padding: 7px 10px;
-  }
-  .asura-card-modal {
-    padding: 70px 10px 18px;
-  }
-  .asura-card-modal-image {
-    max-width: 100%;
-    max-height: 82vh;
-    border-radius: 10px;
-  }
-  .asura-card-modal-close {
-    top: 16px;
-    right: 14px;
   }
 }
 

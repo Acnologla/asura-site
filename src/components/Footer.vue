@@ -73,6 +73,7 @@
 
 <script>
 import posthog from "posthog-js";
+import { trackMetaEvent } from "../analytics/metaPixel";
 
 export default {
   name: "Footer",
@@ -82,6 +83,7 @@ export default {
   methods: {
     trackDiscordJoin() {
       posthog.capture("discord_join_clicked", { location: "footer" });
+      trackMetaEvent("InitiateCheckout");
     },
   },
 };
