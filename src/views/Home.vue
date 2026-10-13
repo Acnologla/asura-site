@@ -75,36 +75,6 @@
       </div>
     </section>
 
-    <!-- ─── FEATURES ─── -->
-    <section class="home-section">
-      <div class="container">
-        <div class="features-head">
-          <div class="eyebrow" style="font-size: 15px;">
-            {{ $t("home.howItWorks") }}
-          </div>
-          <h2 class="h-display features-title">
-            {{ $t("home.howTitleA") }}
-            <span style="color: var(--primary)">{{
-              $t("home.howTitleB")
-            }}</span>
-            {{ $t("home.howTitleC") }}
-          </h2>
-          <p class="features-sub">{{ $t("home.howSub") }}</p>
-        </div>
-        <div class="features-grid">
-          <div v-for="(f, i) in features" :key="i" class="card feature-card">
-            <FeatureArt :kind="f.art" />
-            <div class="feature-head-row">
-              <div class="feature-num">{{ i + 1 }}</div>
-              <div class="eyebrow" style="font-size: 11px">{{ f.eyebrow }}</div>
-            </div>
-            <h3 class="feature-title">{{ f.title }}</h3>
-            <p class="feature-desc">{{ f.desc }}</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <!-- ─── MODOS ─── -->
     <section class="home-section" id="modos">
       <div class="container">
@@ -141,37 +111,6 @@
             </div>
             <div class="mode-card-name">{{ m.nome }}</div>
             <div class="mode-card-desc">{{ m.desc }}</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ─── COMANDOS ─── -->
-    <section class="home-section commands-section" id="comandos">
-      <div class="container commands-grid">
-        <div>
-          <div class="eyebrow">{{ $t("home.cmdsEyebrow") }}</div>
-          <h2 class="h-display commands-title">
-            {{ $t("home.cmdsTitleA") }}<br />
-            {{ $t("home.cmdsTitleB") }}
-            <span style="color: var(--primary)">j!</span>
-          </h2>
-          <p class="commands-sub">{{ $t("home.cmdsSub") }}</p>
-          <a
-            class="btn btn-dark"
-            href="https://docs.asurabot.com.br"
-            target="_blank"
-            rel="noopener"
-          >
-            {{ $t("home.cmdsBtn") }}
-            <ArrowIcon />
-          </a>
-        </div>
-        <div class="commands-list">
-          <div v-for="c in commands" :key="c.cmd" class="card command-card">
-            <span class="cmd command-pill">{{ c.cmd }}</span>
-            <span class="command-desc">{{ c.desc }}</span>
-            <ArrowIcon :size="14" />
           </div>
         </div>
       </div>
@@ -276,7 +215,6 @@ import posthog from "posthog-js";
 import { trackMetaEvent } from "../analytics/metaPixel";
 import DiscordIcon from "../components/icons/DiscordIcon.vue";
 import ArrowIcon from "../components/icons/ArrowIcon.vue";
-import FeatureArt from "../components/home/FeatureArt.vue";
 import { roosterPath } from "../seo/roosters";
 import { markAppRendered } from "../seo/render";
 const CATALOG_MS = 4500;
@@ -299,7 +237,6 @@ export default {
   components: {
     DiscordIcon,
     ArrowIcon,
-    FeatureArt,
   },
   data() {
     return {
@@ -337,53 +274,6 @@ export default {
         .map((i) => this.pairs[i])
         .filter(Boolean)
         .slice(0, this.isMobile ? 4 : 6);
-    },
-    features() {
-      return [
-        {
-          eyebrow: this.$t("home.featStart"),
-          title: this.$t("home.featStartTitle"),
-          desc: this.$t("home.featStartDesc"),
-          art: "rarity",
-        },
-        {
-          eyebrow: this.$t("home.featProg"),
-          title: this.$t("home.featProgTitle"),
-          desc: this.$t("home.featProgDesc"),
-          art: "training",
-        },
-        {
-          eyebrow: this.$t("home.featComp"),
-          title: this.$t("home.featCompTitle"),
-          desc: this.$t("home.featCompDesc"),
-          art: "rank",
-        },
-      ];
-    },
-    commands() {
-      return [
-        { cmd: "j!galo", desc: this.$t("home.cmdsDesc1") || "Veja seu galo" },
-        {
-          cmd: "j!train",
-          desc: this.$t("home.cmdsDesc2") || "Treine seu galo",
-        },
-        {
-          cmd: "j!mission",
-          desc: this.$t("home.cmdsDesc3") || "Missões diárias",
-        },
-        {
-          cmd: "j!raid",
-          desc: this.$t("home.cmdsDesc4") || "Forme equipe para raids",
-        },
-        {
-          cmd: "j!money",
-          desc: this.$t("home.cmdsDesc5") || "Veja seu Gold e moedas",
-        },
-        {
-          cmd: "j!upgrades",
-          desc: this.$t("home.cmdsDesc6") || "Gerencie upgrades",
-        },
-      ];
     },
     modos() {
       const pt = this.$i18n.locale === "pt";
@@ -824,153 +714,6 @@ export default {
   .hero-text-link {
     font-size: 14px;
     min-height: 36px;
-  }
-}
-
-/* ─── Features ─── */
-.features-head {
-  text-align: center;
-  margin-bottom: 20px;
-}
-.features-title {
-  font-size: 56px;
-  margin: 12px 0 16px;
-}
-.features-sub {
-  font-size: 17px;
-  color: var(--ink-2);
-  max-width: 900px;
-  margin: 0 auto;
-}
-.features-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-}
-.feature-card {
-  padding: 28px;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-.feature-head-row {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-.feature-num {
-  width: 28px;
-  height: 28px;
-  border-radius: 8px;
-  background: var(--primary-soft);
-  color: var(--primary);
-  display: grid;
-  place-items: center;
-  font-family: var(--font-display);
-  font-weight: 700;
-}
-.feature-title {
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-size: 24px;
-  margin: 0;
-  line-height: 1.15;
-}
-.feature-desc {
-  color: var(--ink-2);
-  font-size: 14px;
-  line-height: 1.55;
-  margin: 0;
-}
-
-@media (max-width: 768px) {
-  .features-head {
-    margin-bottom: 40px;
-  }
-  .features-title {
-    font-size: 32px;
-  }
-  .features-grid {
-    grid-template-columns: 1fr;
-    gap: 14px;
-  }
-  .feature-card {
-    padding: 22px;
-  }
-  .feature-title {
-    font-size: 22px;
-  }
-}
-
-/* ─── Commands ─── */
-.commands-section {
-  background: var(--bg-2);
-}
-.commands-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
-  align-items: center;
-}
-.commands-title {
-  font-size: 48px;
-  margin: 12px 0 20px;
-}
-.commands-sub {
-  color: var(--ink-2);
-  font-size: 16px;
-  line-height: 1.55;
-  margin-bottom: 24px;
-  max-width: 440px;
-}
-.commands-list {
-  display: grid;
-  gap: 10px;
-}
-.command-card {
-  padding: 16px 20px;
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  transition: transform 0.15s;
-}
-.command-card:hover {
-  transform: translateX(4px);
-}
-.command-pill {
-  min-width: 90px;
-  text-align: center;
-  flex-shrink: 0;
-}
-.command-desc {
-  font-size: 14px;
-  color: var(--ink-2);
-  flex: 1;
-}
-
-@media (max-width: 768px) {
-  .commands-section {
-    padding: 56px 0;
-  }
-  .commands-grid {
-    grid-template-columns: 1fr;
-    gap: 32px;
-  }
-  .commands-title {
-    font-size: 32px;
-  }
-  .commands-sub {
-    font-size: 15px;
-  }
-  .command-card {
-    padding: 14px 16px;
-    gap: 12px;
-  }
-  .command-pill {
-    min-width: 80px;
-  }
-  .command-desc {
-    font-size: 13px;
   }
 }
 

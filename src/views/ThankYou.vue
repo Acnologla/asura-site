@@ -22,6 +22,7 @@
 </template>
 
 <script>
+import posthog from "posthog-js";
 import { trackMetaEvent } from "../analytics/metaPixel";
 
 export default {
@@ -43,6 +44,7 @@ export default {
       // Track the conversion even when session storage is unavailable.
     }
 
+    posthog.capture("bot_added", { guild_id: this.$route.query.guild_id });
     trackMetaEvent("CompleteRegistration");
   },
 };
