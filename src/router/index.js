@@ -66,6 +66,7 @@ const routes = [
     path: "/terms",
     name: "Terms",
     component: Terms,
+    meta: { staticRender: true },
   },
   {
     path: "/trade",
@@ -76,10 +77,16 @@ const routes = [
     path: "/privacy",
     name: "Privacy",
     component: Privacy,
+    meta: { staticRender: true },
   },
   {
     path: "/galo",
-    name: "Galo",
+    name: "LegacyGalo",
+    component: Galos,
+  },
+  {
+    path: "/galos/:slug",
+    name: "Rooster",
     component: Galos,
   },
   {
@@ -91,6 +98,7 @@ const routes = [
     path: "/donate",
     name: "Donate",
     component: Donate,
+    meta: { staticRender: true },
   },
   {
     path: "/extras",

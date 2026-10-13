@@ -22,7 +22,7 @@
               {{ $t("rinhaInfo.upgrades") }}
             </h2>
           </div>
-          <Upgrades />
+          <Upgrades @loaded="contentLoaded" />
         </div>
         <div class="rinha-col card">
           <div class="col-head">
@@ -31,7 +31,7 @@
               {{ $t("rinhaInfo.items") }}
             </h2>
           </div>
-          <Items />
+          <Items @loaded="contentLoaded" />
         </div>
       </div>
     </section>
@@ -41,10 +41,24 @@
 <script>
 import Upgrades from "@/components/Upgrades.vue";
 import Items from "@/components/Items.vue";
+import { markAppRendered } from "@/seo/render";
 
 export default {
   name: "RinhaInfo",
   components: { Upgrades, Items },
+  data() {
+    return { pendingContent: 2 };
+  },
+  methods: {
+    async contentLoaded(loaded) {
+      if (!loaded) return;
+      this.pendingContent -= 1;
+      if (this.pendingContent === 0) {
+        await this.$nextTick();
+        markAppRendered();
+      }
+    },
+  },
 };
 </script>
 

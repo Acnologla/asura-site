@@ -6,6 +6,7 @@ import router from "./router";
 import i18n from "./i18n";
 import posthog from "posthog-js";
 import { initializeMetaPixel, trackMetaEvent } from "./analytics/metaPixel";
+import { applyRouteMeta } from "./seo";
 
 import {
   Button,
@@ -79,6 +80,7 @@ posthog.init("phc_xE7gJ4Yds7ZLGBtxNkthEzK4S23a6fCNGm5fK95wtZnE", {
 initializeMetaPixel();
 
 router.afterEach((to) => {
+  applyRouteMeta(to);
   posthog.capture("$pageview", {
     $current_url: `${window.location.origin}${to.path}`,
   });

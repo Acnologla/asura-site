@@ -41,6 +41,7 @@
 <script>
 import { GetArmorItems, GetCosmeticInfo } from "../trade/info.js";
 import CatalogPage from "@/components/CatalogPage.vue";
+import { markAppRendered } from "@/seo/render";
 
 export default {
   name: "Extras",
@@ -64,8 +65,20 @@ export default {
   },
   methods: {
     async load() {
+      let loaded = false;
       try {
-        const armorItems = await GetArmorItems();
+        const [armorItems, cosmetics] = await Promise.all([
+          GetArmorItems(),
+          GetCosmeticInfo(),
+        ]);
+        if (
+          !Array.isArray(armorItems) ||
+          armorItems.length === 0 ||
+          !Array.isArray(cosmetics) ||
+          cosmetics.length === 0
+        ) {
+          throw new Error("Extras catalog response was incomplete.");
+        }
         this.armors = armorItems.map((a) => ({
           ...a,
           rarity: a.level,
@@ -73,15 +86,16 @@ export default {
           effects: a.effects,
         }));
         this.armorImages = armorItems.map((a) => a.imageURL);
-      } catch (e) {
-        /* render empty */
-      }
-      try {
-        const cosmetics = await GetCosmeticInfo();
         this.globalSkins = cosmetics.filter((item) => item.type === 5);
         this.globalSkinImages = this.globalSkins.map((s) => s.value);
+        loaded = true;
       } catch (e) {
         /* render empty */
+      } finally {
+        if (loaded) {
+          await this.$nextTick();
+          markAppRendered();
+        }
       }
     },
   },

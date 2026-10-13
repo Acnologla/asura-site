@@ -208,11 +208,11 @@
           class="catalog-strip"
           :class="{ 'catalog-strip--hidden': !catalogVisible }"
         >
-          <button
+          <router-link
             v-for="(c, i) in catalogStrip"
             :key="c.index + '-' + i"
+            :to="roosterDetailPath(c, c.index)"
             class="catalog-cell"
-            @click="goRooster(c.index)"
           >
             <div class="catalog-idx">
               {{ c.name.toUpperCase() }}
@@ -234,7 +234,7 @@
                 {{ rarityName(c.rarity) }}
               </div>
             </div>
-          </button>
+          </router-link>
         </div>
       </div>
     </section>
@@ -277,6 +277,8 @@ import { trackMetaEvent } from "../analytics/metaPixel";
 import DiscordIcon from "../components/icons/DiscordIcon.vue";
 import ArrowIcon from "../components/icons/ArrowIcon.vue";
 import FeatureArt from "../components/home/FeatureArt.vue";
+import { roosterPath } from "../seo/roosters";
+import { markAppRendered } from "../seo/render";
 const CATALOG_MS = 4500;
 const RARITY_HEX = [
   "#9ca3af",
@@ -564,11 +566,12 @@ export default {
       posthog.capture("discord_join_clicked", { location });
       trackMetaEvent("InitiateCheckout");
     },
-    goRooster(index) {
-      this.$router.push({ name: "Galo", query: { galo: index } });
+    roosterDetailPath(rooster, index) {
+      return roosterPath(rooster, index);
     },
     async loadData() {
       const locale = this.$i18n.locale || "pt";
+      let loaded = false;
       try {
         const [spritesRes, classesRes] = await Promise.all([
           axios.get(
@@ -578,14 +581,26 @@ export default {
             `https://info.asurabot.com.br/class.json?language=${locale}`,
           ),
         ]);
+        if (
+          !Array.isArray(classesRes.data) ||
+          classesRes.data.length < 2 ||
+          !Array.isArray(spritesRes.data) ||
+          !Array.isArray(spritesRes.data[0]) ||
+          spritesRes.data[0].length === 0
+        ) {
+          throw new Error("Home catalog response was incomplete.");
+        }
         this.sprites = spritesRes.data[0];
         this.classes = classesRes.data;
         this.rotateCatalog();
+        loaded = true;
       } catch (e) {
         // Network error is non-fatal — page still renders.
       } finally {
-        await this.$nextTick();
-        document.dispatchEvent(new Event("app-rendered"));
+        if (loaded) {
+          await this.$nextTick();
+          markAppRendered();
+        }
       }
     },
   },

@@ -15,6 +15,7 @@
 <script>
 import { GetAllPets } from "../trade/info.js";
 import CatalogPage from "@/components/CatalogPage.vue";
+import { markAppRendered } from "@/seo/render";
 
 export default {
   name: "AllPets",
@@ -27,8 +28,12 @@ export default {
   },
   methods: {
     async load() {
+      let loaded = false;
       try {
         const pets = await GetAllPets();
+        if (!Array.isArray(pets) || pets.length === 0) {
+          throw new Error("Pet catalog response was incomplete.");
+        }
         this.pets = pets.map((p) => ({
           name: p.name,
           rarity: p.rarity || 0,
@@ -36,8 +41,14 @@ export default {
           skills: p.skills || [],
         }));
         this.petImages = pets.map((p) => p.sprite);
+        loaded = true;
       } catch (e) {
         /* render empty */
+      } finally {
+        if (loaded) {
+          await this.$nextTick();
+          markAppRendered();
+        }
       }
     },
   },

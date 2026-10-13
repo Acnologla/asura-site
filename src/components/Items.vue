@@ -37,6 +37,7 @@ export default {
   methods: {
     async load() {
       const locale = this.$i18n.locale || "pt";
+      let loaded = false;
       try {
         const [eff, items] = await Promise.all([
           axios.get(
@@ -46,10 +47,16 @@ export default {
             `https://info.asurabot.com.br/items.json?language=${locale}`
           ),
         ]);
+        if (!Array.isArray(eff.data) || !Array.isArray(items.data)) {
+          throw new Error("Items response was incomplete.");
+        }
         this.effects = eff.data;
         this.items = items.data;
+        loaded = true;
       } catch (e) {
         this.items = [];
+      } finally {
+        this.$emit("loaded", loaded);
       }
     },
   },

@@ -11,6 +11,7 @@
 <script>
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
+import { markAppRendered } from "./seo/render";
 
 if (typeof window !== "undefined" && window.gtag) {
   window.gtag("event", "conversion", {
@@ -22,6 +23,21 @@ if (typeof window !== "undefined" && window.gtag) {
 
 export default {
   components: { Nav, Footer },
+  mounted() {
+    this.markStaticRouteRendered();
+  },
+  watch: {
+    $route() {
+      this.markStaticRouteRendered();
+    },
+  },
+  methods: {
+    markStaticRouteRendered() {
+      if (this.$route.meta.staticRender) {
+        this.$nextTick(markAppRendered);
+      }
+    },
+  },
 };
 </script>
 

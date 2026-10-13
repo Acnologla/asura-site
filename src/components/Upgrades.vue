@@ -18,13 +18,20 @@ export default {
   methods: {
     async load() {
       const locale = this.$i18n.locale || "pt";
+      let loaded = false;
       try {
         const { data } = await axios.get(
           `https://info.asurabot.com.br/upgrades.json?language=${locale}`
         );
+        if (!Array.isArray(data)) {
+          throw new Error("Upgrades response was incomplete.");
+        }
         this.upgrades = data;
+        loaded = true;
       } catch (e) {
         this.upgrades = [];
+      } finally {
+        this.$emit("loaded", loaded);
       }
     },
   },

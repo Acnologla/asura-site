@@ -18,6 +18,7 @@
 <script>
 import { GetCosmeticInfo } from "../trade/info.js";
 import CatalogPage from "@/components/CatalogPage.vue";
+import { markAppRendered } from "@/seo/render";
 
 export default {
   name: "AllBackgrounds",
@@ -30,12 +31,22 @@ export default {
   },
   methods: {
     async load() {
+      let loaded = false;
       try {
         const cosmetics = await GetCosmeticInfo();
+        if (!Array.isArray(cosmetics) || cosmetics.length === 0) {
+          throw new Error("Background catalog response was incomplete.");
+        }
         this.backgrounds = cosmetics.filter((item) => item.type === 0);
         this.backgroundImages = this.backgrounds.map((bg) => bg.value);
+        loaded = true;
       } catch (e) {
         /* render empty */
+      } finally {
+        if (loaded) {
+          await this.$nextTick();
+          markAppRendered();
+        }
       }
     },
   },

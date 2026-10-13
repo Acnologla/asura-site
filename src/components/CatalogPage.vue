@@ -46,11 +46,12 @@
         </div>
 
         <div class="catalog-grid" :class="`grid-${gridCols}`">
-          <button
+          <component
             v-for="(item, idx) in sorted"
             :key="item.name + '-' + idx"
+            :is="clickable ? 'router-link' : 'div'"
+            :to="clickable ? detailPath(item) : undefined"
             :class="['catalog-card', { 'not-clickable': !clickable }]"
-            @click="open(item)"
           >
             <div :style="rarityRingStyle(item)" class="rarity-ring">
               <div class="card-img-wrap" :style="imageWrapStyle">
@@ -89,7 +90,7 @@
                 {{ item.subtitle }}
               </div>
             </div>
-          </button>
+          </component>
         </div>
       </div>
     </section>
@@ -103,6 +104,7 @@ export default {
     classesData: { type: Array, required: true, default: () => [] },
     spritesData: { type: Array, required: true, default: () => [] },
     detailUrlTemplate: { type: String, default: "/galo?galo={index}" },
+    detailUrlForItem: { type: Function, default: null },
     eyebrow: { type: String, default: "CATÁLOGO" },
     titleA: { type: String, default: "Todos os" },
     titleB: { type: String, default: "galos" },
@@ -176,12 +178,14 @@ export default {
     getOriginalIndex(item) {
       return this.classes.findIndex((g) => g.name === item.name);
     },
-    open(item) {
-      if (!this.clickable) return;
+    detailPath(item) {
       const idx = this.getOriginalIndex(item);
       const offset = this.skipLeading404 ? 1 : 0;
+      if (this.detailUrlForItem) {
+        return this.detailUrlForItem(item, idx - offset);
+      }
       const url = this.detailUrlTemplate.replace("{index}", idx - offset);
-      window.open(url, "_self");
+      return url;
     },
     getImage(item) {
       const idx = this.getOriginalIndex(item);

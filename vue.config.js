@@ -2,6 +2,23 @@ const path = require("path");
 const fs = require("fs");
 const PrerenderSPAPlugin = require("prerender-spa-plugin");
 const Renderer = PrerenderSPAPlugin.PuppeteerRenderer;
+const generatedRoosters = require("./src/generated/roosters.json");
+
+const staticRoutes = [
+  "/",
+  "/galos",
+  "/info",
+  "/backgrounds",
+  "/pets",
+  "/extras",
+  "/donate",
+  "/terms",
+  "/privacy",
+  "/galo",
+];
+const roosterRoutes = (generatedRoosters.roosters || []).map(
+  (rooster) => `/galos/${rooster.slug}`,
+);
 
 module.exports = {
   lintOnSave: false,
@@ -29,7 +46,9 @@ module.exports = {
               path.join(__dirname, "./dist/CNAME"),
               "asurabot.com.br"
             );
-          } catch (_) {}
+          } catch {
+            // The primary build output remains usable if an auxiliary file cannot be written.
+          }
         });
       },
     });
@@ -38,10 +57,12 @@ module.exports = {
       config.plugins.push(
         new PrerenderSPAPlugin({
           staticDir: path.join(__dirname, "dist"),
-          routes: ["/"],
+          routes: [...staticRoutes, ...roosterRoutes],
           renderer: new Renderer({
             headless: true,
             renderAfterDocumentEvent: "app-rendered",
+            navigationOptions: { waitUntil: "domcontentloaded", timeout: 60000 },
+            maxConcurrentRoutes: 4,
           }),
         })
       );

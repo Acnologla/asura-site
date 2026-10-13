@@ -1,0 +1,414 @@
+{
+  "roosters": [
+    {
+      "index": 0,
+      "name": "Normal",
+      "slug": "normal-0"
+    },
+    {
+      "index": 1,
+      "name": "Papel",
+      "slug": "papel-1"
+    },
+    {
+      "index": 2,
+      "name": "Pedra",
+      "slug": "pedra-2"
+    },
+    {
+      "index": 3,
+      "name": "Cortante",
+      "slug": "cortante-3"
+    },
+    {
+      "index": 4,
+      "name": "Fogo",
+      "slug": "fogo-4"
+    },
+    {
+      "index": 5,
+      "name": "Gelo",
+      "slug": "gelo-5"
+    },
+    {
+      "index": 6,
+      "name": "Magma",
+      "slug": "magma-6"
+    },
+    {
+      "index": 7,
+      "name": "Agua",
+      "slug": "agua-7"
+    },
+    {
+      "index": 8,
+      "name": "Natureza",
+      "slug": "natureza-8"
+    },
+    {
+      "index": 9,
+      "name": "Luz",
+      "slug": "luz-9"
+    },
+    {
+      "index": 10,
+      "name": "Metal",
+      "slug": "metal-10"
+    },
+    {
+      "index": 11,
+      "name": "Plasma",
+      "slug": "plasma-11"
+    },
+    {
+      "index": 12,
+      "name": "Escuridao",
+      "slug": "escuridao-12"
+    },
+    {
+      "index": 13,
+      "name": "Robotico",
+      "slug": "robotico-13"
+    },
+    {
+      "index": 14,
+      "name": "Arcano",
+      "slug": "arcano-14"
+    },
+    {
+      "index": 15,
+      "name": "Acido",
+      "slug": "acido-15"
+    },
+    {
+      "index": 16,
+      "name": "Eletrico",
+      "slug": "eletrico-16"
+    },
+    {
+      "index": 17,
+      "name": "Gravidade",
+      "slug": "gravidade-17"
+    },
+    {
+      "index": 18,
+      "name": "Angelical",
+      "slug": "angelical-18"
+    },
+    {
+      "index": 19,
+      "name": "Madeira",
+      "slug": "madeira-19"
+    },
+    {
+      "index": 20,
+      "name": "Explosão",
+      "slug": "explosao-20"
+    },
+    {
+      "index": 21,
+      "name": "Sol",
+      "slug": "sol-21"
+    },
+    {
+      "index": 22,
+      "name": "Demoniaco",
+      "slug": "demoniaco-22"
+    },
+    {
+      "index": 23,
+      "name": "Vampirico",
+      "slug": "vampirico-23"
+    },
+    {
+      "index": 24,
+      "name": "Areia",
+      "slug": "areia-24"
+    },
+    {
+      "index": 25,
+      "name": "Borracha",
+      "slug": "borracha-25"
+    },
+    {
+      "index": 26,
+      "name": "Lua",
+      "slug": "lua-26"
+    },
+    {
+      "index": 27,
+      "name": "Radioativo",
+      "slug": "radioativo-27"
+    },
+    {
+      "index": 28,
+      "name": "Dragao",
+      "slug": "dragao-28"
+    },
+    {
+      "index": 29,
+      "name": "Ninja",
+      "slug": "ninja-29"
+    },
+    {
+      "index": 30,
+      "name": "Eclipse",
+      "slug": "eclipse-30"
+    },
+    {
+      "index": 31,
+      "name": "Tempo",
+      "slug": "tempo-31"
+    },
+    {
+      "index": 32,
+      "name": "Phoenix",
+      "slug": "phoenix-32"
+    },
+    {
+      "index": 33,
+      "name": "Samurai",
+      "slug": "samurai-33"
+    },
+    {
+      "index": 34,
+      "name": "Emo",
+      "slug": "emo-34"
+    },
+    {
+      "index": 35,
+      "name": "Zumbi",
+      "slug": "zumbi-35"
+    },
+    {
+      "index": 36,
+      "name": "Dinossauro",
+      "slug": "dinossauro-36"
+    },
+    {
+      "index": 37,
+      "name": "Ar",
+      "slug": "ar-37"
+    },
+    {
+      "index": 38,
+      "name": "Fantasma",
+      "slug": "fantasma-38"
+    },
+    {
+      "index": 39,
+      "name": "Mago",
+      "slug": "mago-39"
+    },
+    {
+      "index": 40,
+      "name": "Desenho",
+      "slug": "desenho-40"
+    },
+    {
+      "index": 41,
+      "name": "Esqueleto",
+      "slug": "esqueleto-41"
+    },
+    {
+      "index": 42,
+      "name": "Slime",
+      "slug": "slime-42"
+    },
+    {
+      "index": 43,
+      "name": "Militar",
+      "slug": "militar-43"
+    },
+    {
+      "index": 44,
+      "name": "Apocalipse",
+      "slug": "apocalipse-44"
+    },
+    {
+      "index": 45,
+      "name": "Existencial",
+      "slug": "existencial-45"
+    },
+    {
+      "index": 46,
+      "name": "Pelucia",
+      "slug": "pelucia-46"
+    },
+    {
+      "index": 47,
+      "name": "Porcelana",
+      "slug": "porcelana-47"
+    },
+    {
+      "index": 48,
+      "name": "Mumia",
+      "slug": "mumia-48"
+    },
+    {
+      "index": 49,
+      "name": "Black",
+      "slug": "black-49"
+    },
+    {
+      "index": 50,
+      "name": "White",
+      "slug": "white-50"
+    },
+    {
+      "index": 51,
+      "name": "Natal",
+      "slug": "natal-51"
+    },
+    {
+      "index": 52,
+      "name": "Termico",
+      "slug": "termico-52"
+    },
+    {
+      "index": 53,
+      "name": "Panda",
+      "slug": "panda-53"
+    },
+    {
+      "index": 54,
+      "name": "Nephilim",
+      "slug": "nephilim-54"
+    },
+    {
+      "index": 55,
+      "name": "Holograma",
+      "slug": "holograma-55"
+    },
+    {
+      "index": 56,
+      "name": "Pintor",
+      "slug": "pintor-56"
+    },
+    {
+      "index": 57,
+      "name": "Cristal",
+      "slug": "cristal-57"
+    },
+    {
+      "index": 58,
+      "name": "Pneu",
+      "slug": "pneu-58"
+    },
+    {
+      "index": 59,
+      "name": "Invisivel",
+      "slug": "invisivel-59"
+    },
+    {
+      "index": 60,
+      "name": "Egirl",
+      "slug": "egirl-60"
+    },
+    {
+      "index": 61,
+      "name": "Gigante",
+      "slug": "gigante-61"
+    },
+    {
+      "index": 62,
+      "name": "Musico",
+      "slug": "musico-62"
+    },
+    {
+      "index": 63,
+      "name": "Graal",
+      "slug": "graal-63"
+    },
+    {
+      "index": 64,
+      "name": "Diabo",
+      "slug": "diabo-64"
+    },
+    {
+      "index": 65,
+      "name": "Lupus",
+      "slug": "lupus-65"
+    },
+    {
+      "index": 66,
+      "name": "Berseker",
+      "slug": "berseker-66"
+    },
+    {
+      "index": 67,
+      "name": "Shield",
+      "slug": "shield-67"
+    },
+    {
+      "index": 68,
+      "name": "Especial",
+      "slug": "especial-68"
+    },
+    {
+      "index": 69,
+      "name": "Ctulhu",
+      "slug": "ctulhu-69"
+    },
+    {
+      "index": 70,
+      "name": "Halloween",
+      "slug": "halloween-70"
+    },
+    {
+      "index": 71,
+      "name": "Nemesis",
+      "slug": "nemesis-71"
+    },
+    {
+      "index": 72,
+      "name": "Titan",
+      "slug": "titan-72"
+    },
+    {
+      "index": 73,
+      "name": "Lingering Will",
+      "slug": "lingering-will-73"
+    },
+    {
+      "index": 74,
+      "name": "Vortex",
+      "slug": "vortex-74"
+    },
+    {
+      "index": 75,
+      "name": "Renan Santos",
+      "slug": "renan-santos-75"
+    },
+    {
+      "index": 76,
+      "name": "Lula",
+      "slug": "lula-76"
+    },
+    {
+      "index": 77,
+      "name": "Flávio Bolsonaro",
+      "slug": "flavio-bolsonaro-77"
+    },
+    {
+      "index": 78,
+      "name": "Samara Martins",
+      "slug": "samara-martins-78"
+    },
+    {
+      "index": 79,
+      "name": "Augusto Cury",
+      "slug": "augusto-cury-79"
+    },
+    {
+      "index": 80,
+      "name": "Pablo Marçal",
+      "slug": "pablo-marcal-80"
+    },
+    {
+      "index": 81,
+      "name": "Romeu Zema",
+      "slug": "romeu-zema-81"
+    }
+  ]
+}

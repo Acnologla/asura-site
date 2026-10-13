@@ -18,7 +18,7 @@
           </div>
           <p class="secondary-desc">{{ blurb }}</p>
           <router-link
-            :to="{ name: 'Galo', query: { galo: rooster.index } }"
+            :to="roosterDetailPath"
             class="btn btn-ghost"
           >
             {{ openLabel }}
@@ -32,6 +32,7 @@
 
 <script>
 import ArrowIcon from "../icons/ArrowIcon.vue";
+import { roosterPath } from "../../seo/roosters";
 
 const RARITY_NAMES = {
   pt: ["Comum", "Raro", "Épico", "Lendário", "Especial", "Mítico", "Deus"],
@@ -59,6 +60,9 @@ export default {
     },
     openLabel() {
       return this.$i18n.locale === "pt" ? "Ver perfil" : "View profile";
+    },
+    roosterDetailPath() {
+      return roosterPath(this.rooster, this.rooster.index);
     },
   },
 };

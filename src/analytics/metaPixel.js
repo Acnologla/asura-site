@@ -1,4 +1,4 @@
-const pixelId = process.env.VUE_APP_META_PIXEL_ID || "1057839460396137";
+const pixelId = "1057839460396137";
 let initialized = false;
 
 function getPixel() {

@@ -497,6 +497,9 @@ import {
   GetEffects,
   GetRoosterGroups,
 } from "../trade/info";
+import { applyPageMeta, roosterJsonLd } from "../seo";
+import { roosterPath, roosterSlug } from "../seo/roosters";
+import { markAppRendered } from "../seo/render";
 
 const RARITY_HEX = [
   "#9ca3af",
@@ -526,12 +529,13 @@ export default {
       compareTarget: null,
       compareTargetSprite: "",
       compareDropdownOpen: false,
+      invalidRooster: false,
     };
   },
   computed: {
     compareFiltered() {
       const q = this.compareName.toLowerCase().trim();
-      const list = this.classes.slice(1);
+      const list = this.classes.slice(this.catalogOffset);
       const filtered = q
         ? list.filter((c) => c.name && c.name.toLowerCase().includes(q))
         : list;
@@ -541,16 +545,16 @@ export default {
       return this.classes.length > 1;
     },
     current() {
-      return this.classes[this.currentIndex + 1] || {};
+      return this.classes[this.currentIndex + this.catalogOffset] || {};
     },
     currentSprite() {
       return this.sprites[this.currentIndex] || "";
     },
     fileNum() {
-      return String(this.currentIndex + 1).padStart(3, "0");
+      return String(this.currentIndex + this.catalogOffset).padStart(3, "0");
     },
     totalNum() {
-      return String(this.classes.length - 1).padStart(3, "0");
+      return String(this.classes.length - this.catalogOffset).padStart(3, "0");
     },
     rarityColor() {
       return RARITY_HEX[this.current.rarity] || "#9ca3af";
@@ -611,8 +615,8 @@ export default {
         .map((c, i) => ({
           name: c.name,
           rarity: c.rarity,
-          sprite: this.sprites[i - 1],
-          index: i - 1,
+          sprite: this.sprites[i - this.catalogOffset],
+          index: i - this.catalogOffset,
         }))
         .filter(
           (c) =>
@@ -632,8 +636,13 @@ export default {
     },
     skins() {
       return this.allSkins.filter(
-        (s) => s.type === 2 && s.extra === this.currentIndex + 1,
+        (s) => s.type === 2 && s.extra === this.currentIndex + this.catalogOffset,
       );
+    },
+    catalogOffset() {
+      return this.classes[0] && /404/i.test(this.classes[0].name || "")
+        ? 1
+        : 0;
     },
   },
   methods: {
@@ -679,49 +688,48 @@ export default {
         overflow: "hidden",
       };
     },
-    fetchSkills(cls) {
+    async fetchSkills(cls) {
       const locale = this.$i18n.locale || "pt";
-      return axios
-        .get(
-          `https://info.asurabot.com.br/attacks/${cls.name}.json?language=${locale}`,
-        )
-        .then((r) => {
-          (r.data || []).forEach((skill) => {
-            if (skill.effect) {
-              skill.effect = {
-                chance: skill.effect[0],
-                effect: this.effects[skill.effect[1]] || {
-                  name: "",
-                  turns: 0,
-                  range: [0, 0],
-                  type: 0,
-                },
-              };
-            }
-          });
-          return r.data;
-        })
-        .catch(() => []);
+      const response = await axios.get(
+        `https://info.asurabot.com.br/attacks/${cls.name}.json?language=${locale}`,
+      );
+      if (!Array.isArray(response.data)) {
+        throw new Error("Rooster skills response was incomplete.");
+      }
+      response.data.forEach((skill) => {
+        if (skill.effect) {
+          skill.effect = {
+            chance: skill.effect[0],
+            effect: this.effects[skill.effect[1]] || {
+              name: "",
+              turns: 0,
+              range: [0, 0],
+              type: 0,
+            },
+          };
+        }
+      });
+      return response.data;
     },
     async loadSkills() {
-      const cls = this.classes[this.currentIndex + 1];
+      const cls = this.classes[this.currentIndex + this.catalogOffset];
       if (!cls) return;
       this.skills = await this.fetchSkills(cls);
     },
     async loadSkins() {
-      try {
-        this.allSkins = await GetCosmeticInfo();
-      } catch (e) {
-        this.allSkins = [];
+      const skins = await GetCosmeticInfo();
+      if (!Array.isArray(skins)) {
+        throw new Error("Rooster skins response was incomplete.");
       }
+      this.allSkins = skins;
     },
     next() {
-      const max = this.classes.length - 1;
+      const max = this.classes.length - this.catalogOffset;
       this.currentIndex = (this.currentIndex + 1) % max;
       this.syncRoute();
     },
     prev() {
-      const max = this.classes.length - 1;
+      const max = this.classes.length - this.catalogOffset;
       this.currentIndex = (this.currentIndex - 1 + max) % max;
       this.syncRoute();
     },
@@ -731,11 +739,66 @@ export default {
     },
     syncRoute() {
       this.$router.replace({
-        name: "Galo",
-        query: { galo: this.currentIndex },
+        name: "Rooster",
+        params: { slug: roosterSlug(this.current.name, this.currentIndex) },
       });
       this.loadSkills();
+      this.applySeoMeta();
       window.scrollTo({ top: 0, behavior: "smooth" });
+    },
+    indexFromSlug(slug) {
+      const catalog = this.classes.slice(this.catalogOffset);
+      return catalog.findIndex(
+        (rooster, index) => roosterSlug(rooster.name, index) === slug,
+      );
+    },
+    validIndex(index) {
+      return (
+        Number.isInteger(index) &&
+        index >= 0 &&
+        index < this.classes.length - this.catalogOffset
+      );
+    },
+    applySeoMeta() {
+      if (!this.ready || this.invalidRooster) return;
+      const path = roosterPath(this.current, this.currentIndex);
+      const name = this.current.name;
+      applyPageMeta({
+        title: `${name} | Galos do Asura Bot`,
+        description: `Veja raridade, habilidades, skins e detalhes de ${name}, um galo do Asura Bot para Discord.`,
+        path,
+        jsonLd: roosterJsonLd(name, path),
+      });
+    },
+    resolveRoute() {
+      this.invalidRooster = false;
+      if (this.$route.name === "Rooster") {
+        const index = this.indexFromSlug(this.$route.params.slug);
+        if (!this.validIndex(index)) {
+          this.invalidRooster = true;
+          return false;
+        }
+        this.currentIndex = index;
+        return true;
+      }
+
+      if (this.$route.name === "LegacyGalo") {
+        const legacyIndex = this.$route.query.galo;
+        const index =
+          typeof legacyIndex === "string" && /^\d+$/.test(legacyIndex)
+            ? Number(legacyIndex)
+            : NaN;
+        if (!this.validIndex(index)) {
+          this.invalidRooster = true;
+          return false;
+        }
+        this.currentIndex = index;
+        this.$router.replace({
+          name: "Rooster",
+          params: { slug: roosterSlug(this.current.name, index) },
+        });
+      }
+      return true;
     },
     scrollToSkins() {
       const el = document.getElementById("skins");
@@ -758,17 +821,18 @@ export default {
     },
     compareOptionSprite(r) {
       const idx = this.classes.findIndex((c) => c.name === r.name);
-      return this.sprites[idx - 1] || "";
+      return this.sprites[idx - this.catalogOffset] || "";
     },
     async selectCompareTarget(r) {
       this.compareDropdownOpen = false;
       this.compareTarget = r;
       const idx = this.classes.findIndex((c) => c.name === r.name);
-      this.compareTargetSprite = this.sprites[idx - 1] || "";
-      this.compareSkills = await this.fetchSkills(r);
+      this.compareTargetSprite = this.sprites[idx - this.catalogOffset] || "";
+      this.compareSkills = await this.fetchSkills(r).catch(() => []);
       this.compareOpen = false;
     },
     async loadAll() {
+      let rendered = false;
       try {
         const [classes, sprites, effects, roosterGroups] = await Promise.all([
           GetClasses(),
@@ -776,23 +840,51 @@ export default {
           GetEffects(),
           GetRoosterGroups(),
         ]);
+        if (
+          !Array.isArray(classes) ||
+          classes.length < 2 ||
+          !Array.isArray(sprites) ||
+          !Array.isArray(sprites[0]) ||
+          sprites[0].length === 0 ||
+          !Array.isArray(effects) ||
+          !Array.isArray(roosterGroups)
+        ) {
+          throw new Error("Rooster detail response was incomplete.");
+        }
         this.classes = classes;
         this.sprites = sprites[0];
         this.effects = effects;
         this.roosterGroups = roosterGroups;
-        if (this.$route.query.galo !== undefined) {
-          this.currentIndex = parseInt(this.$route.query.galo, 10) || 0;
+        if (!this.resolveRoute()) {
+          rendered = this.$route.name === "LegacyGalo";
+          return;
         }
         await this.loadSkills();
         await this.loadSkins();
+        this.applySeoMeta();
+        rendered = true;
       } catch (err) {
         /* render empty */
+      } finally {
+        if (rendered) {
+          await this.$nextTick();
+          markAppRendered();
+        }
       }
     },
   },
   watch: {
     "$i18n.locale"() {
       this.loadAll();
+    },
+    $route(to) {
+      if (to.name !== "Rooster" || !this.ready) return;
+      const index = this.indexFromSlug(to.params.slug);
+      if (this.validIndex(index) && index !== this.currentIndex) {
+        this.currentIndex = index;
+        this.loadSkills();
+        this.applySeoMeta();
+      }
     },
   },
   created() {
