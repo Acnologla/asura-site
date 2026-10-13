@@ -1,0 +1,11 @@
+# Asura Bot
+
+Asura Bot is a Discord bot with rooster collection, battles, raids, tournaments and progression by commands. The primary public website is in Brazilian Portuguese.
+
+- Official website: https://asurabot.com.br/
+- Rooster catalog: https://asurabot.com.br/galos
+- Game information: https://asurabot.com.br/info
+- Official documentation: https://docs.asurabot.com.br/
+- Support community: https://discord.gg/CfkBZyVsd7
+
+Use the catalog and official documentation for current game details. This file is optional context for agents and does not replace the website.
